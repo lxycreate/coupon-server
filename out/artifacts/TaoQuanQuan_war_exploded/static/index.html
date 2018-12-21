@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <!-- 关联 http 头部 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- viewport宽度等于设别宽度 初始缩放比例 1 是否允许用户缩放 否  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- 字符编码为 UTF-8 -->
+    <meta charset="UTF-8">
+
+    <title> 首页</title>
+    <meta name="keywords" content="首页" />
+    <meta name="description" content="首页" />
+
+    <!-- 格式检测 -->
+    <meta name="format-detection" content="telephone=no, email=no" />
+
+    <!-- 内核设置 -->
+    <meta name="renderer" content="webkit">
+
+    <!-- 指定渲染引擎 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="../images/iconfont.css">
+    <link rel="stylesheet" href="../images/index.css">
+    <script src="../images/axios.js"></script>
+    <!-- <script src="../images/jquery.js"></script> -->
+    <script src="../images/velocity.min.js"></script>
+    <script src="../images/vue.js"></script>
+</head>
+
+<body>
+    <!-- 内容   START -->
+    <div class="main_body" onmousedown="mouseDown(event)">
+        <!-- 导航   START -->
+        <div class="header">
+            <!-- logo和搜索框   START -->
+            <div v-bind:class="{ceil_fixed : is_fixed}" class="ceil_box js_ceil_box">
+                <div class="header_logo">
+                    <a v-show="is_show" class="logo_box">
+                        <img src="../images/logo.png">
+                    </a>
+                    <form v-bind:class="{no_margin : !is_show}" class="search_input js_search_input">
+                        <input v-model="searchWord" placeholder="请输入搜索内容">
+                        <i class="icon-font i-search-pc"></i>
+                    </form>
+                </div>
+            </div>
+            <p v-show="is_show" class="ceil_filler js_ceil_filler"></p>
+            <!-- logo和搜索框   END -->
+
+            <!-- 按钮   START -->
+            <div class="header_btns">
+                <p class="btn_box">
+                    <a class="cur">全网商品</a>
+                    <a>全天榜单</a>
+                    <a>实时榜单</a>
+                </p>
+            </div>
+            <!-- 按钮   END -->
+        </div>
+        <!-- 导航   END -->
+        <div class="mid_bottom_bg">
+            <!-- 筛选 START-->
+            <div class="filter_box">
+                <div class="filter_container js_filter_container" ref="js_filter_container">
+                    <!-- 分类选择  START -->
+                    <div class="select_box js_catalog_box">
+                        <span class="name"> {{catalog_name}} </span>
+                        <ul>
+                            <li v-for="item in catalog_items" v-bind:value="item.value" v-bind:class="{catalog_btn_bg: item.is_select}"
+                                v-on:click="selectCatalogItem(item.value)">
+                                <a>{{item.name}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 分类选择  END -->
+                    <!-- 多条件筛选   START -->
+                    <div class="multi_select_box">
+                        <span class="name">{{filter_name}}</span>
+                        <ul>
+                            <li v-for="item in filter_items" v-on:click="multiSelect(item.value)" v-bind:class="{is_multi_selected: item.is_small_screen}">
+                                <a type="radio">
+                                    <span v-bind:class="{multi_selected: item.is_select}">
+                                        <i class="icon-font i-tick"></i>
+                                    </span>
+                                    {{item.name}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 多条件筛选   END -->
+                    <!-- 更多筛选条件   START -->
+                    <div class="more_filter">
+                        <span class="name">{{more_filter_name}}</span>
+                        <ul>
+                            <li class="sale">
+                                <span>{{sale_item.name}}</span>
+                                <input v-model="sale_item.value">
+                            </li>
+                            <li class="score">
+                                <span>{{score_item.name}}</span>
+                                <input v-model="score_item.value">
+                                <span class="tip">{{score_item.tip}}</span>
+                            </li>
+                            <li class="quan">
+                                <span>{{quan_item.name}}</span>
+                                <input class="one" v-model="quan_item.start_price" placeholder="最低价">
+                                <span class="split">—</span>
+                                <input class="two" v-model="quan_item.end_price" placeholder="最高价">
+                            </li>
+
+                            <li class="btn">
+                                <span v-show="is_show_confirm" @click="clear" class="confirm">清空</span>
+                                <span v-show="is_show_confirm" @click="confirm" class="confirm">确认</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- 更多筛选条件   END -->
+                </div>
+                <!-- 排序方式   START -->
+                <div class="sort_way js_sort_way">
+                    <p class="confirm_btn js_confirm_btn" ref="js_confirm_btn">
+                        <span class="confirm" @click="clear">清空</span>
+                        <span class="confirm" @click="confirm">确认</span>
+                    </p>
+                    <ul class="btn_box">
+                        <li class="btn">
+                            <a v-bind:class="{is_sort_selected: is_first}">{{select_name}}</a>
+                            <ul class="btn_list">
+                                <li class="btn_item" v-for="item in sort_item">
+                                    <span @click="changeSortWay(item.value)">{{item.name}}</span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="btn">
+                            <a @click="changeSortWay('sale_num')">销量</a>
+                        </li>
+                        <li class="btn">
+                            <a v-show="is_show_toggle" @click="is_toggle_icon = !is_toggle_icon">
+                                <i v-show="is_toggle_icon" class="icon-font i-list-index"></i>
+                                <i v-show="!is_toggle_icon" class="icon-font i-calendar-2"></i>
+                            </a>
+                        </li>
+                        <li class="btn">
+                            <a ref="show_side" @click="toggleSide">筛选</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 排序方式   START -->
+            </div>
+            <!-- 筛选   END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- 商品区域   START -->
+            <div class="goods_area">
+                <!-- 商品列表   START -->
+                <ul class="goods_list js_goods_list">
+                    <li>
+                        <span class="item">
+                            <a class="link">
+                                <span class="img_box">
+                                    <img src="../images/test.jpg">
+                                </span>
+                            </a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="item">
+                            <a class="link">
+                                <span class="img_box">
+                                    <img src="../images/test.jpg">
+                                </span>
+                            </a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="item">
+                            <a class="link">
+                                <span class="img_box">
+                                    <img src="../images/test.jpg">
+                                </span>
+                            </a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="item">
+                            <a class="link">
+                                <span class="img_box">
+                                    <img src="../images/test.jpg">
+                                </span>
+                            </a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="item">
+                            <a class="link">
+                                <span class="img_box">
+                                    <img src="../images/test.jpg">
+                                </span>
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+                <!-- 商品列表   START -->
+            </div>
+            <!-- 商品区域   END -->
+        </div>
+    </div>
+    <!-- 内容   END -->
+    <script src="../images/index.js"></script>
+</body>
+
+
+</html>
