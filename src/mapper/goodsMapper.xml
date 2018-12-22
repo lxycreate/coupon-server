@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.taobaovue.dao">
+    <resultMap type="goods" id="goodsMapper">
+        <id property="goods_id" column="goods_id"></id>
+        <result property="platform_id" column="platform_id"/>
+        <result property="seller_id" column="seller_id"/>
+        <result property="goods_title" column="goods_title"/>
+        <result property="goods_stitle" column="goods_stitle"/>
+        <result property="goods_pic" column="goods_pic"/>
+        <result property="goods_into" column="goods_into"/>
+        <result property="goods_price" column="goods_price"/>
+        <result property="goods_sale" column="goods_sale"/>
+        <result property="goods_cid" column="goods_cid"/>
+        <result property="commission_rate" column="commission_rate"/>
+        <result property="commission_type" column="commission_type"/>
+        <result property="coupon_id" column="coupon_id"/>
+        <result property="coupon_price" column="coupon_price" />
+        <result property="after_coupon" column="after_coupon" />
+        <result property="coupon_condition" column="coupon_condition" />
+        <result property="coupon_start" column="coupon_start" />
+        <result property="coupon_end" column="coupon_end" />
+        <result property="is_tmall" column="is_tmall" />
+        <result property="is_ju" column="is_ju" />
+        <result property="is_qiang" column="is_qiang" />
+        <result property="is_gold" column="is_gold" />
+        <result property="is_ji" column="is_ji" />
+        <result property="is_hai" column="is_hai" />
+        <result property="dsr" column="dsr" />
+    </resultMap>
+
+</mapper>
