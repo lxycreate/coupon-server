@@ -20,4 +20,10 @@ public class SearchController {
     GoodsJson searchGoods(@RequestParam("pageNum") Integer pageNum, @RequestParam("searchWord") String searchWord, @RequestParam("sortWay") String sortWay) {
       return search.searchGoods(pageNum, searchWord, sortWay);
     }
+
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public @ResponseBody Integer test(@RequestParam("test") Integer test){
+        return search.test();
+    }
+
 }

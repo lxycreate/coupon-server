@@ -1,10 +1,12 @@
 package com.taobaovue.service.impl;
 
+import com.taobaovue.dao.GoodsDao;
 import com.taobaovue.entity.Goods;
 import com.taobaovue.entity.GoodsJson;
 import com.taobaovue.service.GoodsService;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
@@ -18,6 +20,8 @@ import java.util.List;
 
 @Service
 public class GoodsServiceImpl implements GoodsService {
+    @Autowired
+    private GoodsDao goodsDao;
 
     @Override
     public GoodsJson searchGoods(Integer pageNum, String searchWord, String sortWay) {
@@ -127,5 +131,11 @@ public class GoodsServiceImpl implements GoodsService {
         data.setGoods(goodsList);
         return data;
     }
+
+    @Override
+    public Integer test() {
+        return goodsDao.getGoodsNum();
+    }
+
 
 }

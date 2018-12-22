@@ -14,10 +14,7 @@
 
     <!-- 设置类型别名 -->
     <typeAliases>
-        <!--<typeAlias type="com.system.entity.User" alias="user" />-->
-        <!--<typeAlias type="com.system.entity.Book" alias="book" />-->
-        <!--<typeAlias type="com.system.entity.OrderItems" alias="orderitems" />-->
-        <!--<typeAlias type="com.system.entity.Orders" alias="orders" />-->
+        <typeAlias type="com.taobaovue.entity.NewGoods" alias="goods" />
     </typeAliases>
 
 
