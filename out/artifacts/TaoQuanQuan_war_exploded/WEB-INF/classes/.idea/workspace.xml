@@ -7,15 +7,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TaoQuanQuan_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/TaoQuanQuan_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaoQuanQuan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TaoQuanQuan.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/artifacts/TaoQuanQuan_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/artifacts/TaoQuanQuan_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/TaoQuanQuan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/TaoQuanQuan.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/controller/SearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/controller/SearchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/dao/GoodsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/dao/GoodsDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/service/GoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/service/GoodsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/service/impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/service/impl/GoodsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/mybatis.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/mybatis.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/artifacts/TaoQuanQuan_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/artifacts/TaoQuanQuan_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/TaoQuanQuan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/TaoQuanQuan.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/controller/SearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/controller/SearchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/dao/GoodsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/dao/GoodsDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/service/GoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/service/GoodsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/service/impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/service/impl/GoodsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/mybatis.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/mybatis.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/images/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,43 +60,102 @@
     <session id="-246403539">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="class" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="13" />
-          <entry key="xml" value="11" />
+          <entry key="java" value="39" />
+          <entry key="js" value="1" />
+          <entry key="properties" value="1" />
+          <entry key="xml" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CLASS" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="13" />
-          <entry key="XML" value="11" />
+          <entry key="JAVA" value="39" />
+          <entry key="JavaScript" value="1" />
+          <entry key="Properties" value="1" />
+          <entry key="XML" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="18" />
-          <entry key="xml" value="26" />
+          <entry key="java" value="1057" />
+          <entry key="js" value="29" />
+          <entry key="xml" value="658" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="18" />
-          <entry key="XML" value="26" />
+          <entry key="JAVA" value="1057" />
+          <entry key="JavaScript" value="29" />
+          <entry key="XML" value="658" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="798">
+              <caret line="42" column="57" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mybatis.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/springMvc.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/GetGoodsData.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -79,46 +166,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/GoodsJson.java">
+        <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/GoodsService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/Goods.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/springMvc.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+            <state relative-caret-position="152">
+              <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -127,16 +178,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/taobaovue/dao/GoodsDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="38">
-              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mybatis.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -148,8 +190,16 @@
       <list>
         <option value="Interface" />
         <option value="spring-beans.schema" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>lxy</find>
+      <find>goodsdao</find>
+      <find>goods</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -159,8 +209,17 @@
       <list>
         <option value="$PROJECT_DIR$/test.java" />
         <option value="$PROJECT_DIR$/src/com/taobaovue/service/GetGoodsData.java" />
-        <option value="$PROJECT_DIR$/src/mybatis.xml" />
+        <option value="$PROJECT_DIR$/src/mapper/platMapper.xml" />
         <option value="$PROJECT_DIR$/src/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/mybatis.xml" />
+        <option value="$PROJECT_DIR$/src/com/taobaovue/entity/NewGoods.java" />
+        <option value="$PROJECT_DIR$/src/com/taobaovue/dao/GoodsDao.java" />
+        <option value="$PROJECT_DIR$/src/com/taobaovue/service/GoodsService.java" />
+        <option value="$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/taobaovue/controller/SearchController.java" />
+        <option value="$PROJECT_DIR$/web/images/index.js" />
+        <option value="$PROJECT_DIR$/src/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/mapper/goodsMapper.xml" />
       </list>
     </option>
   </component>
@@ -761,8 +820,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="57" />
-    <option name="y" value="63" />
+    <option name="x" value="672" />
+    <option name="y" value="30" />
     <option name="width" value="1002" />
     <option name="height" value="930" />
   </component>
@@ -797,6 +856,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -812,35 +873,56 @@
             <path>
               <item name="TaoQuanQuan" type="b2602c69:ProjectViewProjectNode" />
               <item name="TaoQuanQuan" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="taobaovue" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TaoQuanQuan" type="b2602c69:ProjectViewProjectNode" />
               <item name="TaoQuanQuan" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="taobaovue" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaoQuanQuan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaoQuanQuan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="taobaovue" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaoQuanQuan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaoQuanQuan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="taobaovue" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaoQuanQuan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaoQuanQuan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545383000736" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545470031559" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/c3p0-0.9.1.2.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.39885056" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="spring.boot" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -861,6 +943,7 @@
   </component>
   <component name="RunManager">
     <configuration name="TaoQuanQuan" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.13" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="TaoQuanQuan:war exploded">
@@ -945,12 +1028,15 @@
       <updated>1545377930880</updated>
       <workItem from="1545377938143" duration="2507000" />
       <workItem from="1545380653897" duration="740000" />
-      <workItem from="1545381529692" duration="1639000" />
+      <workItem from="1545381529692" duration="2320000" />
+      <workItem from="1545390350930" duration="831000" />
+      <workItem from="1545442454219" duration="9180000" />
+      <workItem from="1545472706871" duration="33000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4886000" />
+    <option name="totallyTimeSpent" value="15611000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -965,30 +1051,30 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25788197" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.27485853" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Web" order="6" side_tool="true" />
+      <window_info id="Web" order="6" sideWeight="0.50162864" side_tool="true" weight="0.2708165" />
       <window_info id="设计师" order="7" />
-      <window_info anchor="bottom" id="Inspection Results" weight="0.3291815" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4995958" weight="0.4395018" />
+      <window_info anchor="bottom" x="335" y="406" width="1237" height="220" id="Run" order="2" sideWeight="0.4995958" weight="0.0035587188" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3291815" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3291815" />
-      <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Spring" order="8" weight="0.3291815" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3291815" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5004042" side_tool="true" weight="0.3291815" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4995958" weight="0.3291815" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.3291815" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.3291815" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1007,13 +1093,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/controller/SearchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7559" />
@@ -1039,41 +1118,126 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/c3p0-0.9.1.2.jar!/com/mchange/v2/c3p0/ComboPooledDataSource.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="6" selection-end-column="30" />
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/GetGoodsData.java">
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/NewGoods.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/GoodsJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/dao/GoodsDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        <state relative-caret-position="-1996">
+          <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+          <folding>
+            <element signature="e#867#868#0" expanded="true" />
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1025#1026#0" expanded="true" />
+            <element signature="e#1059#1060#0" expanded="true" />
+            <element signature="e#1114#1115#0" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="true" />
+            <element signature="e#1196#1197#0" expanded="true" />
+            <element signature="e#1228#1229#0" expanded="true" />
+            <element signature="e#1278#1279#0" expanded="true" />
+            <element signature="e#1320#1321#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1392#1393#0" expanded="true" />
+            <element signature="e#1446#1447#0" expanded="true" />
+            <element signature="e#1492#1493#0" expanded="true" />
+            <element signature="e#1531#1532#0" expanded="true" />
+            <element signature="e#1566#1567#0" expanded="true" />
+            <element signature="e#1622#1623#0" expanded="true" />
+            <element signature="e#1670#1671#0" expanded="true" />
+            <element signature="e#1706#1707#0" expanded="true" />
+            <element signature="e#1738#1739#0" expanded="true" />
+            <element signature="e#1788#1789#0" expanded="true" />
+            <element signature="e#1830#1831#0" expanded="true" />
+            <element signature="e#1868#1869#0" expanded="true" />
+            <element signature="e#1902#1903#0" expanded="true" />
+            <element signature="e#1956#1957#0" expanded="true" />
+            <element signature="e#2002#2003#0" expanded="true" />
+            <element signature="e#2040#2041#0" expanded="true" />
+            <element signature="e#2074#2075#0" expanded="true" />
+            <element signature="e#2128#2129#0" expanded="true" />
+            <element signature="e#2174#2175#0" expanded="true" />
+            <element signature="e#2212#2213#0" expanded="true" />
+            <element signature="e#2245#2246#0" expanded="true" />
+            <element signature="e#2298#2299#0" expanded="true" />
+            <element signature="e#2342#2343#0" expanded="true" />
+            <element signature="e#2379#2380#0" expanded="true" />
+            <element signature="e#2411#2412#0" expanded="true" />
+            <element signature="e#2462#2463#0" expanded="true" />
+            <element signature="e#2504#2505#0" expanded="true" />
+            <element signature="e#2546#2547#0" expanded="true" />
+            <element signature="e#2584#2585#0" expanded="true" />
+            <element signature="e#2646#2647#0" expanded="true" />
+            <element signature="e#2700#2701#0" expanded="true" />
+            <element signature="e#2743#2744#0" expanded="true" />
+            <element signature="e#2781#2782#0" expanded="true" />
+            <element signature="e#2844#2845#0" expanded="true" />
+            <element signature="e#2898#2899#0" expanded="true" />
+            <element signature="e#2934#2935#0" expanded="true" />
+            <element signature="e#2966#2967#0" expanded="true" />
+            <element signature="e#3016#3017#0" expanded="true" />
+            <element signature="e#3058#3059#0" expanded="true" />
+            <element signature="e#3097#3098#0" expanded="true" />
+            <element signature="e#3132#3133#0" expanded="true" />
+            <element signature="e#3188#3189#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3275#3276#0" expanded="true" />
+            <element signature="e#3310#3311#0" expanded="true" />
+            <element signature="e#3366#3367#0" expanded="true" />
+            <element signature="e#3414#3415#0" expanded="true" />
+            <element signature="e#3457#3458#0" expanded="true" />
+            <element signature="e#3496#3497#0" expanded="true" />
+            <element signature="e#3560#3561#0" expanded="true" />
+            <element signature="e#3616#3617#0" expanded="true" />
+            <element signature="e#3655#3656#0" expanded="true" />
+            <element signature="e#3690#3691#0" expanded="true" />
+            <element signature="e#3746#3747#0" expanded="true" />
+            <element signature="e#3794#3795#0" expanded="true" />
+            <element signature="e#3831#3832#0" expanded="true" />
+            <element signature="e#3864#3865#0" expanded="true" />
+            <element signature="e#3916#3917#0" expanded="true" />
+            <element signature="e#3960#3961#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
+            <element signature="e#4027#4028#0" expanded="true" />
+            <element signature="e#4076#4077#0" expanded="true" />
+            <element signature="e#4116#4117#0" expanded="true" />
+            <element signature="e#4149#4150#0" expanded="true" />
+            <element signature="e#4177#4178#0" expanded="true" />
+            <element signature="e#4220#4221#0" expanded="true" />
+            <element signature="e#4254#4255#0" expanded="true" />
+            <element signature="e#4290#4291#0" expanded="true" />
+            <element signature="e#4321#4322#0" expanded="true" />
+            <element signature="e#4370#4371#0" expanded="true" />
+            <element signature="e#4410#4411#0" expanded="true" />
+            <element signature="e#4445#4446#0" expanded="true" />
+            <element signature="e#4475#4476#0" expanded="true" />
+            <element signature="e#4522#4523#0" expanded="true" />
+            <element signature="e#4560#4561#0" expanded="true" />
+            <element signature="e#4593#4594#0" expanded="true" />
+            <element signature="e#4621#4622#0" expanded="true" />
+            <element signature="e#4664#4665#0" expanded="true" />
+            <element signature="e#4698#4699#0" expanded="true" />
+            <element signature="e#4732#4733#0" expanded="true" />
+            <element signature="e#4761#4762#0" expanded="true" />
+            <element signature="e#4806#4807#0" expanded="true" />
+            <element signature="e#4842#4843#0" expanded="true" />
+            <element signature="e#4872#4873#0" expanded="true" />
+            <element signature="e#4898#4899#0" expanded="true" />
+            <element signature="e#4936#4937#0" expanded="true" />
+            <element signature="e#4966#4967#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1084,24 +1248,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/springMvc.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/GoodsJson.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        <state relative-caret-position="228">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/test.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/controller/SearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        <state relative-caret-position="323">
+          <caret line="24" column="57" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="57" />
+          <folding>
+            <element signature="e#1042#1043#0" expanded="true" />
+            <element signature="e#1066#1067#0" expanded="true" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/images/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/山科/大三/软件生产开发实习/BookSystem/src/com/system/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://F:/山科/大三/软件生产开发实习/BookSystem/src/com/system/controller/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapper/platformMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/山科/大三/软件生产开发实习/BookSystem/src/com/system/service/impl/LoginImpl.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+        <state relative-caret-position="798">
+          <caret line="42" column="57" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mybatis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/springMvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/GetGoodsData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/GoodsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/dao/GoodsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1124,7 +1381,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Web (TaoQuanQuan)|Web</last-edited>
+          <last-edited>Spring (TaoQuanQuan)|Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1171,7 +1428,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Spring MVC-4.3.18.RELEASE</last-edited>
+          <last-edited>lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

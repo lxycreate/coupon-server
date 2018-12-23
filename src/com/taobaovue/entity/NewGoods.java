@@ -7,6 +7,7 @@ public class NewGoods {
     private String goods_title;
     private String goods_stitle;
     private String goods_pic;
+    private String goods_url;
     private String goods_intro;
     private Double goods_price;
     private Integer goods_sale;
@@ -14,6 +15,7 @@ public class NewGoods {
     private Double commission_rate;
     private Integer commission_type;
     private String coupon_id;
+    private String coupon_url;
     private Double coupon_price;
     private Double after_coupon;
     private String coupon_condition;
@@ -22,6 +24,7 @@ public class NewGoods {
     private Integer is_tmall;
     private Integer is_ju;
     private Integer is_qiang;
+    private Integer is_yun;
     private Integer is_gold;
     private Integer is_ji;
     private Integer is_hai;
@@ -75,6 +78,13 @@ public class NewGoods {
         this.goods_pic = goods_pic;
     }
 
+    public String getGoods_url() {
+        return goods_url;
+    }
+
+    public void setGoods_url(String goods_url) {
+        this.goods_url = goods_url;
+    }
 
     public String getGoods_intro() {
         return goods_intro;
@@ -130,6 +140,14 @@ public class NewGoods {
 
     public void setCoupon_id(String coupon_id) {
         this.coupon_id = coupon_id;
+    }
+
+    public String getCoupon_url() {
+        return coupon_url;
+    }
+
+    public void setCoupon_url(String coupon_url) {
+        this.coupon_url = coupon_url;
     }
 
     public Double getCoupon_price() {
@@ -194,6 +212,14 @@ public class NewGoods {
 
     public void setIs_qiang(Integer is_qiang) {
         this.is_qiang = is_qiang;
+    }
+
+    public Integer getIs_yun() {
+        return is_yun;
+    }
+
+    public void setIs_yun(Integer is_yun) {
+        this.is_yun = is_yun;
     }
 
     public Integer getIs_gold() {

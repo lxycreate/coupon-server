@@ -18,6 +18,21 @@ window.onload = function () {
     initCatalogBox();
     initSortBtn();
     watchWindow();
+    test();
+}
+
+function test() {
+    axios({
+        url: baseUrl + '/test',
+        method: 'get',
+        params: {
+            test: 1
+        }
+    }).then(function (response) {
+        console.log(response);
+    }).catch(function (error) {
+
+    });
 }
 
 // 搜索框吸顶   开始
@@ -60,6 +75,7 @@ function initScroll() {
         }
     }
 }
+
 // 搜索框吸顶   结束
 // 初始化筛选对象  开始
 function initCatalogBox() {
@@ -70,14 +86,14 @@ function initCatalogBox() {
             catalog_name: "分类:",
             catalog_value: '0',
             catalog_items: [{
-                    name: "全部",
-                    value: 1,
-                    is_select: true
-                }, {
-                    name: "女装",
-                    value: 2,
-                    is_select: false
-                },
+                name: "全部",
+                value: 1,
+                is_select: true
+            }, {
+                name: "女装",
+                value: 2,
+                is_select: false
+            },
                 {
                     name: "男装",
                     value: 3,
@@ -132,18 +148,18 @@ function initCatalogBox() {
             filter_name: '筛选:',
             filter_value: '',
             filter_items: [{
-                    name: '淘抢购',
-                    value: '1',
-                    an_name: 'taoqianggou',
-                    is_select: false,
-                    is_small_screen: false
-                }, {
-                    name: '聚划算',
-                    value: '2',
-                    an_name: 'juhuasuan',
-                    is_select: false,
-                    is_small_screen: false
-                },
+                name: '淘抢购',
+                value: '1',
+                an_name: 'taoqianggou',
+                is_select: false,
+                is_small_screen: false
+            }, {
+                name: '聚划算',
+                value: '2',
+                an_name: 'juhuasuan',
+                is_select: false,
+                is_small_screen: false
+            },
                 {
                     name: '天猫',
                     value: '3',
@@ -207,15 +223,15 @@ function initCatalogBox() {
             is_show_confirm: false,
             is_show_side: false,
             sort_item: [{
-                    name: '综合',
-                    value: ''
-                }, {
-                    name: '最新排序',
-                    value: 'new'
-                }, {
-                    name: '价格升序',
-                    value: 'price_asc'
-                },
+                name: '综合',
+                value: ''
+            }, {
+                name: '最新排序',
+                value: 'new'
+            }, {
+                name: '价格升序',
+                value: 'price_asc'
+            },
                 {
                     name: '价格降序',
                     value: 'price_desc'
@@ -301,6 +317,7 @@ function initCatalogBox() {
     });
     // Vue App
 }
+
 // 初始化筛选对象  结束
 
 // 初始化排序按钮   开始
@@ -310,15 +327,15 @@ function initSortBtn() {
         el: '.js_sort_way',
         data: {
             sort_item: [{
-                    name: '综合',
-                    value: ''
-                }, {
-                    name: '最新排序',
-                    value: 'new'
-                }, {
-                    name: '价格升序',
-                    value: 'price_asc'
-                },
+                name: '综合',
+                value: ''
+            }, {
+                name: '最新排序',
+                value: 'new'
+            }, {
+                name: '价格升序',
+                value: 'price_asc'
+            },
                 {
                     name: '价格降序',
                     value: 'price_desc'
@@ -387,6 +404,7 @@ function initSortBtn() {
     });
     // Vue App
 }
+
 // 初始化排序按钮   结束
 
 
@@ -460,4 +478,5 @@ function mouseDown(event) {
         console.log('same');
     }
 }
+
 // 鼠标按下事件   结束

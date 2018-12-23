@@ -23,6 +23,7 @@ public class SearchController {
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public @ResponseBody Integer test(@RequestParam("test") Integer test){
+        System.out.print(test);
         return search.test();
     }
 
