@@ -7,46 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TaoQuanQuan_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/TaoQuanQuan_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaoQuanQuan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TaoQuanQuan.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/artifacts/TaoQuanQuan_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/artifacts/TaoQuanQuan_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/TaoQuanQuan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/TaoQuanQuan.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/controller/SearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/controller/SearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/dao/GoodsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/dao/GoodsDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/service/GoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/service/GoodsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/service/impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/service/impl/GoodsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/artifacts/TaoQuanQuan_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/artifacts/TaoQuanQuan_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/TaoQuanQuan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/TaoQuanQuan.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/controller/SearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/controller/SearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/dao/GoodsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/dao/GoodsDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/service/GoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/service/GoodsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/service/impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/service/impl/GoodsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/controller/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobaovue/controller/SearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/entity/NewGoods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobaovue/entity/NewGoods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mapper/platformMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapper/platformMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/entity/NewGoods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobaovue/entity/SqlGoods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mybatis.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,23 +26,26 @@
     <session id="-246403539">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.208" value="1" />
           <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="47" />
+          <entry key="java" value="48" />
           <entry key="js" value="1" />
           <entry key="properties" value="1" />
           <entry key="xml" value="28" />
@@ -89,7 +55,7 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="47" />
+          <entry key="JAVA" value="48" />
           <entry key="JavaScript" value="1" />
           <entry key="Properties" value="1" />
           <entry key="XML" value="28" />
@@ -97,6 +63,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="dummy" value="5" />
           <entry key="java" value="1152" />
           <entry key="js" value="29" />
           <entry key="xml" value="675" />
@@ -106,190 +73,32 @@
         <counts>
           <entry key="JAVA" value="1152" />
           <entry key="JavaScript" value="29" />
+          <entry key="PLAIN_TEXT" value="5" />
           <entry key="XML" value="675" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/taobaovue/controller/SearchController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/GetGoodsData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/NewGoods.java">
+        <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/SqlGoods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="216" column="32" lean-forward="true" selection-start-line="216" selection-start-column="32" selection-end-line="216" selection-end-column="32" />
+            <state relative-caret-position="474">
+              <caret line="281" column="5" selection-start-line="281" selection-start-column="5" selection-end-line="281" selection-end-column="5" />
               <folding>
-                <element signature="e#928#929#0" expanded="true" />
-                <element signature="e#959#960#0" expanded="true" />
-                <element signature="e#1007#1008#0" expanded="true" />
-                <element signature="e#1047#1048#0" expanded="true" />
-                <element signature="e#1086#1087#0" expanded="true" />
-                <element signature="e#1120#1121#0" expanded="true" />
-                <element signature="e#1175#1176#0" expanded="true" />
-                <element signature="e#1221#1222#0" expanded="true" />
-                <element signature="e#1257#1258#0" expanded="true" />
-                <element signature="e#1289#1290#0" expanded="true" />
-                <element signature="e#1339#1340#0" expanded="true" />
-                <element signature="e#1381#1382#0" expanded="true" />
-                <element signature="e#1419#1420#0" expanded="true" />
-                <element signature="e#1453#1454#0" expanded="true" />
-                <element signature="e#1507#1508#0" expanded="true" />
-                <element signature="e#1553#1554#0" expanded="true" />
-                <element signature="e#1592#1593#0" expanded="true" />
-                <element signature="e#1627#1628#0" expanded="true" />
-                <element signature="e#1683#1684#0" expanded="true" />
-                <element signature="e#1731#1732#0" expanded="true" />
-                <element signature="e#1767#1768#0" expanded="true" />
-                <element signature="e#1799#1800#0" expanded="true" />
-                <element signature="e#1849#1850#0" expanded="true" />
-                <element signature="e#1891#1892#0" expanded="true" />
-                <element signature="e#1927#1928#0" expanded="true" />
-                <element signature="e#1959#1960#0" expanded="true" />
-                <element signature="e#2009#2010#0" expanded="true" />
-                <element signature="e#2051#2052#0" expanded="true" />
-                <element signature="e#2089#2090#0" expanded="true" />
-                <element signature="e#2123#2124#0" expanded="true" />
-                <element signature="e#2177#2178#0" expanded="true" />
-                <element signature="e#2223#2224#0" expanded="true" />
-                <element signature="e#2261#2262#0" expanded="true" />
-                <element signature="e#2295#2296#0" expanded="true" />
-                <element signature="e#2349#2350#0" expanded="true" />
-                <element signature="e#2395#2396#0" expanded="true" />
-                <element signature="e#2433#2434#0" expanded="true" />
-                <element signature="e#2466#2467#0" expanded="true" />
-                <element signature="e#2519#2520#0" expanded="true" />
-                <element signature="e#2563#2564#0" expanded="true" />
-                <element signature="e#2600#2601#0" expanded="true" />
-                <element signature="e#2632#2633#0" expanded="true" />
-                <element signature="e#2683#2684#0" expanded="true" />
-                <element signature="e#2725#2726#0" expanded="true" />
-                <element signature="e#2767#2768#0" expanded="true" />
-                <element signature="e#2805#2806#0" expanded="true" />
-                <element signature="e#2867#2868#0" expanded="true" />
-                <element signature="e#2921#2922#0" expanded="true" />
-                <element signature="e#2964#2965#0" expanded="true" />
-                <element signature="e#3002#3003#0" expanded="true" />
-                <element signature="e#3065#3066#0" expanded="true" />
-                <element signature="e#3119#3120#0" expanded="true" />
-                <element signature="e#3155#3156#0" expanded="true" />
-                <element signature="e#3187#3188#0" expanded="true" />
-                <element signature="e#3237#3238#0" expanded="true" />
-                <element signature="e#3279#3280#0" expanded="true" />
-                <element signature="e#3316#3317#0" expanded="true" />
-                <element signature="e#3349#3350#0" expanded="true" />
-                <element signature="e#3401#3402#0" expanded="true" />
-                <element signature="e#3445#3446#0" expanded="true" />
-                <element signature="e#3484#3485#0" expanded="true" />
-                <element signature="e#3519#3520#0" expanded="true" />
-                <element signature="e#3575#3576#0" expanded="true" />
-                <element signature="e#3623#3624#0" expanded="true" />
-                <element signature="e#3662#3663#0" expanded="true" />
-                <element signature="e#3697#3698#0" expanded="true" />
-                <element signature="e#3753#3754#0" expanded="true" />
-                <element signature="e#3801#3802#0" expanded="true" />
-                <element signature="e#3844#3845#0" expanded="true" />
-                <element signature="e#3883#3884#0" expanded="true" />
-                <element signature="e#3947#3948#0" expanded="true" />
-                <element signature="e#4003#4004#0" expanded="true" />
-                <element signature="e#4042#4043#0" expanded="true" />
-                <element signature="e#4077#4078#0" expanded="true" />
-                <element signature="e#4133#4134#0" expanded="true" />
-                <element signature="e#4181#4182#0" expanded="true" />
-                <element signature="e#4218#4219#0" expanded="true" />
-                <element signature="e#4251#4252#0" expanded="true" />
-                <element signature="e#4303#4304#0" expanded="true" />
-                <element signature="e#4347#4348#0" expanded="true" />
-                <element signature="e#4383#4384#0" expanded="true" />
-                <element signature="e#4414#4415#0" expanded="true" />
-                <element signature="e#4463#4464#0" expanded="true" />
-                <element signature="e#4503#4504#0" expanded="true" />
-                <element signature="e#4536#4537#0" expanded="true" />
-                <element signature="e#4564#4565#0" expanded="true" />
-                <element signature="e#4607#4608#0" expanded="true" />
-                <element signature="e#4641#4642#0" expanded="true" />
-                <element signature="e#4677#4678#0" expanded="true" />
-                <element signature="e#4708#4709#0" expanded="true" />
-                <element signature="e#4757#4758#0" expanded="true" />
-                <element signature="e#4797#4798#0" expanded="true" />
-                <element signature="e#4888#4889#0" expanded="true" />
-                <element signature="e#4933#4934#0" expanded="true" />
-                <element signature="e#4969#4970#0" expanded="true" />
-                <element signature="e#4832#4833#0" expanded="true" />
-                <element signature="e#4862#4863#0" expanded="true" />
-                <element signature="e#4909#4910#0" expanded="true" />
-                <element signature="e#4947#4948#0" expanded="true" />
-                <element signature="e#4980#4981#0" expanded="true" />
-                <element signature="e#5008#5009#0" expanded="true" />
-                <element signature="e#5051#5052#0" expanded="true" />
-                <element signature="e#5085#5086#0" expanded="true" />
-                <element signature="e#5119#5120#0" expanded="true" />
-                <element signature="e#5148#5149#0" expanded="true" />
-                <element signature="e#5193#5194#0" expanded="true" />
-                <element signature="e#5229#5230#0" expanded="true" />
-                <element signature="e#5259#5260#0" expanded="true" />
-                <element signature="e#5285#5286#0" expanded="true" />
-                <element signature="e#5323#5324#0" expanded="true" />
-                <element signature="e#5353#5354#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/GoodsService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="131" column="20" selection-start-line="131" selection-start-column="20" selection-end-line="131" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#4167#4168#0" expanded="true" />
+                <element signature="e#4202#4203#0" expanded="true" />
+                <element signature="e#4259#4260#0" expanded="true" />
+                <element signature="e#4307#4308#0" expanded="true" />
+                <element signature="e#4346#4347#0" expanded="true" />
+                <element signature="e#4380#4381#0" expanded="true" />
+                <element signature="e#4435#4436#0" expanded="true" />
+                <element signature="e#4481#4482#0" expanded="true" />
+                <element signature="e#4519#4520#0" expanded="true" />
+                <element signature="e#4552#4553#0" expanded="true" />
+                <element signature="e#4605#4606#0" expanded="true" />
+                <element signature="e#4649#4650#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -334,6 +143,7 @@
         <option value="$PROJECT_DIR$/src/com/taobaovue/controller/SearchController.java" />
         <option value="$PROJECT_DIR$/src/mapper/goodsMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/taobaovue/entity/NewGoods.java" />
+        <option value="$PROJECT_DIR$/src/com/taobaovue/entity/SqlGoods.java" />
       </list>
     </option>
   </component>
@@ -935,8 +745,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="522" />
-    <option name="y" value="10" />
-    <option name="width" value="1253" />
+    <option name="y" value="9" />
+    <option name="width" value="1254" />
     <option name="height" value="930" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -970,6 +780,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -996,38 +807,16 @@
               <item name="taobaovue" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="TaoQuanQuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TaoQuanQuan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="taobaovue" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TaoQuanQuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TaoQuanQuan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="taobaovue" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TaoQuanQuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TaoQuanQuan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545530990077" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545568251262" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -1149,11 +938,15 @@
       <workItem from="1545478321256" duration="2933000" />
       <workItem from="1545481808675" duration="2113000" />
       <workItem from="1545528535547" duration="1474000" />
+      <workItem from="1545539630488" duration="1379000" />
+      <workItem from="1545548009163" duration="1213000" />
+      <workItem from="1545560026015" duration="1828000" />
+      <workItem from="1545615697115" duration="12000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22892000" />
+    <option name="totallyTimeSpent" value="27324000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1168,7 +961,7 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.28940988" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.30881163" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1339,6 +1132,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/GoodsService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -1348,144 +1155,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="131" column="20" selection-start-line="131" selection-start-column="20" selection-end-line="131" selection-end-column="20" />
+        <state relative-caret-position="190">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/SqlGoods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="281" column="5" selection-start-line="281" selection-start-column="5" selection-end-line="281" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/NewGoods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="216" column="32" lean-forward="true" selection-start-line="216" selection-start-column="32" selection-end-line="216" selection-end-column="32" />
-          <folding>
-            <element signature="e#928#929#0" expanded="true" />
-            <element signature="e#959#960#0" expanded="true" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1047#1048#0" expanded="true" />
-            <element signature="e#1086#1087#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
-            <element signature="e#1175#1176#0" expanded="true" />
-            <element signature="e#1221#1222#0" expanded="true" />
-            <element signature="e#1257#1258#0" expanded="true" />
-            <element signature="e#1289#1290#0" expanded="true" />
-            <element signature="e#1339#1340#0" expanded="true" />
-            <element signature="e#1381#1382#0" expanded="true" />
-            <element signature="e#1419#1420#0" expanded="true" />
-            <element signature="e#1453#1454#0" expanded="true" />
-            <element signature="e#1507#1508#0" expanded="true" />
-            <element signature="e#1553#1554#0" expanded="true" />
-            <element signature="e#1592#1593#0" expanded="true" />
-            <element signature="e#1627#1628#0" expanded="true" />
-            <element signature="e#1683#1684#0" expanded="true" />
-            <element signature="e#1731#1732#0" expanded="true" />
-            <element signature="e#1767#1768#0" expanded="true" />
-            <element signature="e#1799#1800#0" expanded="true" />
-            <element signature="e#1849#1850#0" expanded="true" />
-            <element signature="e#1891#1892#0" expanded="true" />
-            <element signature="e#1927#1928#0" expanded="true" />
-            <element signature="e#1959#1960#0" expanded="true" />
-            <element signature="e#2009#2010#0" expanded="true" />
-            <element signature="e#2051#2052#0" expanded="true" />
-            <element signature="e#2089#2090#0" expanded="true" />
-            <element signature="e#2123#2124#0" expanded="true" />
-            <element signature="e#2177#2178#0" expanded="true" />
-            <element signature="e#2223#2224#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#2295#2296#0" expanded="true" />
-            <element signature="e#2349#2350#0" expanded="true" />
-            <element signature="e#2395#2396#0" expanded="true" />
-            <element signature="e#2433#2434#0" expanded="true" />
-            <element signature="e#2466#2467#0" expanded="true" />
-            <element signature="e#2519#2520#0" expanded="true" />
-            <element signature="e#2563#2564#0" expanded="true" />
-            <element signature="e#2600#2601#0" expanded="true" />
-            <element signature="e#2632#2633#0" expanded="true" />
-            <element signature="e#2683#2684#0" expanded="true" />
-            <element signature="e#2725#2726#0" expanded="true" />
-            <element signature="e#2767#2768#0" expanded="true" />
-            <element signature="e#2805#2806#0" expanded="true" />
-            <element signature="e#2867#2868#0" expanded="true" />
-            <element signature="e#2921#2922#0" expanded="true" />
-            <element signature="e#2964#2965#0" expanded="true" />
-            <element signature="e#3002#3003#0" expanded="true" />
-            <element signature="e#3065#3066#0" expanded="true" />
-            <element signature="e#3119#3120#0" expanded="true" />
-            <element signature="e#3155#3156#0" expanded="true" />
-            <element signature="e#3187#3188#0" expanded="true" />
-            <element signature="e#3237#3238#0" expanded="true" />
-            <element signature="e#3279#3280#0" expanded="true" />
-            <element signature="e#3316#3317#0" expanded="true" />
-            <element signature="e#3349#3350#0" expanded="true" />
-            <element signature="e#3401#3402#0" expanded="true" />
-            <element signature="e#3445#3446#0" expanded="true" />
-            <element signature="e#3484#3485#0" expanded="true" />
-            <element signature="e#3519#3520#0" expanded="true" />
-            <element signature="e#3575#3576#0" expanded="true" />
-            <element signature="e#3623#3624#0" expanded="true" />
-            <element signature="e#3662#3663#0" expanded="true" />
-            <element signature="e#3697#3698#0" expanded="true" />
-            <element signature="e#3753#3754#0" expanded="true" />
-            <element signature="e#3801#3802#0" expanded="true" />
-            <element signature="e#3844#3845#0" expanded="true" />
-            <element signature="e#3883#3884#0" expanded="true" />
-            <element signature="e#3947#3948#0" expanded="true" />
-            <element signature="e#4003#4004#0" expanded="true" />
-            <element signature="e#4042#4043#0" expanded="true" />
-            <element signature="e#4077#4078#0" expanded="true" />
-            <element signature="e#4133#4134#0" expanded="true" />
-            <element signature="e#4181#4182#0" expanded="true" />
-            <element signature="e#4218#4219#0" expanded="true" />
-            <element signature="e#4251#4252#0" expanded="true" />
-            <element signature="e#4303#4304#0" expanded="true" />
-            <element signature="e#4347#4348#0" expanded="true" />
-            <element signature="e#4383#4384#0" expanded="true" />
-            <element signature="e#4414#4415#0" expanded="true" />
-            <element signature="e#4463#4464#0" expanded="true" />
-            <element signature="e#4503#4504#0" expanded="true" />
-            <element signature="e#4536#4537#0" expanded="true" />
-            <element signature="e#4564#4565#0" expanded="true" />
-            <element signature="e#4607#4608#0" expanded="true" />
-            <element signature="e#4641#4642#0" expanded="true" />
-            <element signature="e#4677#4678#0" expanded="true" />
-            <element signature="e#4708#4709#0" expanded="true" />
-            <element signature="e#4757#4758#0" expanded="true" />
-            <element signature="e#4797#4798#0" expanded="true" />
-            <element signature="e#4888#4889#0" expanded="true" />
-            <element signature="e#4933#4934#0" expanded="true" />
-            <element signature="e#4969#4970#0" expanded="true" />
-            <element signature="e#4832#4833#0" expanded="true" />
-            <element signature="e#4862#4863#0" expanded="true" />
-            <element signature="e#4909#4910#0" expanded="true" />
-            <element signature="e#4947#4948#0" expanded="true" />
-            <element signature="e#4980#4981#0" expanded="true" />
-            <element signature="e#5008#5009#0" expanded="true" />
-            <element signature="e#5051#5052#0" expanded="true" />
-            <element signature="e#5085#5086#0" expanded="true" />
-            <element signature="e#5119#5120#0" expanded="true" />
-            <element signature="e#5148#5149#0" expanded="true" />
-            <element signature="e#5193#5194#0" expanded="true" />
-            <element signature="e#5229#5230#0" expanded="true" />
-            <element signature="e#5259#5260#0" expanded="true" />
-            <element signature="e#5285#5286#0" expanded="true" />
-            <element signature="e#5323#5324#0" expanded="true" />
-            <element signature="e#5353#5354#0" expanded="true" />
+            <element signature="e#4167#4168#0" expanded="true" />
+            <element signature="e#4202#4203#0" expanded="true" />
+            <element signature="e#4259#4260#0" expanded="true" />
+            <element signature="e#4307#4308#0" expanded="true" />
+            <element signature="e#4346#4347#0" expanded="true" />
+            <element signature="e#4380#4381#0" expanded="true" />
+            <element signature="e#4435#4436#0" expanded="true" />
+            <element signature="e#4481#4482#0" expanded="true" />
+            <element signature="e#4519#4520#0" expanded="true" />
+            <element signature="e#4552#4553#0" expanded="true" />
+            <element signature="e#4605#4606#0" expanded="true" />
+            <element signature="e#4649#4650#0" expanded="true" />
           </folding>
         </state>
       </provider>

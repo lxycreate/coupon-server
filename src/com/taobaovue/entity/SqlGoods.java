@@ -1,6 +1,6 @@
 package com.taobaovue.entity;
 
-public class NewGoods {
+public class SqlGoods {
     private String goods_id;
     private Integer platform_id;
     private String seller_id;
@@ -19,6 +19,9 @@ public class NewGoods {
     private Double coupon_price;
     private Double after_coupon;
     private String coupon_condition;
+    private Integer coupon_total;
+    private Integer coupon_rest;
+    private Integer coupon_use;
     private String coupon_start;
     private String coupon_end;
     private Integer is_tmall;
@@ -172,6 +175,30 @@ public class NewGoods {
 
     public void setCoupon_condition(String coupon_condition) {
         this.coupon_condition = coupon_condition;
+    }
+
+    public Integer getCoupon_total() {
+        return coupon_total;
+    }
+
+    public void setCoupon_total(Integer coupon_total) {
+        this.coupon_total = coupon_total;
+    }
+
+    public Integer getCoupon_rest() {
+        return coupon_rest;
+    }
+
+    public void setCoupon_rest(Integer coupon_rest) {
+        this.coupon_rest = coupon_rest;
+    }
+
+    public Integer getCoupon_use() {
+        return coupon_use;
+    }
+
+    public void setCoupon_use(Integer coupon_use) {
+        this.coupon_use = coupon_use;
     }
 
     public String getCoupon_start() {
