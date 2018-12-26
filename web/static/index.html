@@ -61,6 +61,7 @@
             <!-- 按钮   END -->
         </div>
         <!-- 导航   END -->
+
         <div class="mid_bottom_bg">
             <!-- 筛选 START-->
             <div class="filter_box">
@@ -69,10 +70,12 @@
                     <div class="select_box js_catalog_box">
                         <span class="name"> {{catalog_name}} </span>
                         <ul>
-                            <li v-for="item in catalog_items" v-bind:value="item.value" v-bind:class="{catalog_btn_bg: item.is_select}"
+                            <!--  -->
+                            <li v-for="item in catalog_items" v-bind:class="{catalog_btn_bg: item.is_select}"
                                 v-on:click="selectCatalogItem(item.value)">
                                 <a>{{item.name}}</a>
                             </li>
+                            <!--  -->
                         </ul>
                     </div>
                     <!-- 分类选择  END -->
@@ -80,7 +83,8 @@
                     <div class="multi_select_box">
                         <span class="name">{{filter_name}}</span>
                         <ul>
-                            <li v-for="item in filter_items" v-on:click="multiSelect(item.value)" v-bind:class="{is_multi_selected: item.is_small_screen}">
+                            <!--  -->
+                            <li v-for="(item,index) in filter_items" v-on:click="multiSelect(index)" v-bind:class="{is_multi_selected: item.is_small_select}">
                                 <a type="radio">
                                     <span v-bind:class="{multi_selected: item.is_select}">
                                         <i class="icon-font i-tick"></i>
@@ -88,6 +92,7 @@
                                     {{item.name}}
                                 </a>
                             </li>
+                            <!--  -->
                         </ul>
                     </div>
                     <!-- 多条件筛选   END -->
@@ -122,13 +127,15 @@
                 </div>
                 <!-- 排序方式   START -->
                 <div class="sort_way js_sort_way">
+                    <!-- 放在这是因为上面的元素过度动画会影响这个元素的动画 -->
                     <p class="confirm_btn js_confirm_btn" ref="js_confirm_btn">
                         <span class="confirm" @click="clear">清空</span>
                         <span class="confirm" @click="confirm">确认</span>
                     </p>
+                    <!--  -->
                     <ul class="btn_box">
                         <li class="btn">
-                            <a v-bind:class="{is_sort_selected: is_first}">{{select_name}}</a>
+                            <a>{{sort_item[1].name}}</a>
                         </li>
                         <li class="btn">
                             <a @click="changeSortWay('sale_num')">销量</a>
@@ -143,6 +150,7 @@
                             <a ref="show_side" @click="toggleSide">筛选</a>
                         </li>
                     </ul>
+                    <!--  -->
                 </div>
                 <!-- 排序方式   START -->
             </div>

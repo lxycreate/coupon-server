@@ -223,7 +223,6 @@ li {
 /* -----------------------------------------------筛选   开始----------------------------------- */
 .filter_box {
     max-width: 1190px;
-    min-height: 50px;
     margin: auto;
     font-size: 0;
 }
@@ -611,15 +610,6 @@ li {
     }
 
     .filter_box .more_filter .btn {
-        /* position: fixed;
-        top: 100%;
-        left: 100%;
-        width: 298px;
-        height: 50px;
-        margin: -50px 0 0 0;
-        text-align: right;
-        background-color: #ffffff;
-        background-color: yellow; */
         display: none !important;
     }
 

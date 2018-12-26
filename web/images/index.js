@@ -74,20 +74,21 @@ function initScroll() {
         }
     }
 }
-
 // 搜索框吸顶   结束
+
 // 初始化筛选对象  开始
 function initCatalogBox() {
     // Vue App
     js_filter_container = new Vue({
         el: '.js_filter_container',
         data: {
+            // 目录选择
             catalog_name: "分类:",
             catalog_value: '0',
             catalog_items: [{
-                    name: "全部",
-                    value: 1,
-                    is_select: true
+                    name: "全部", // 目录名
+                    value: 1, //目录对应值
+                    is_select: true //是否被选中
                 }, {
                     name: "女装",
                     value: 2,
@@ -144,88 +145,68 @@ function initCatalogBox() {
                     is_select: false
                 }
             ],
+            // 多选筛选条件
             filter_name: '筛选:',
-            filter_value: '',
+            filter_value: '', //当前(选中/取消)的是哪个,相应的从参数添加/删除
             filter_items: [{
-                    name: '淘抢购',
-                    value: '1',
-                    an_name: 'is_qiang',
-                    is_select: false,
-                    is_small_screen: false
+                    name: '淘抢购', //名称   
+                    an_name: 'is_qiang', //搜索时的对应的参数名
+                    is_select: false, //是否被选中
+                    is_small_select: false //是否被选中(小屏幕)
                 }, {
                     name: '聚划算',
-                    value: '2',
                     an_name: 'is_ju',
                     is_select: false,
-                    is_small_screen: false
+                    is_small_select: false
                 },
                 {
                     name: '天猫',
-                    value: '3',
                     an_name: 'is_tmall',
                     is_select: false,
-                    is_small_screen: false
+                    is_small_select: false
                 }, {
                     name: '金牌卖家',
-                    value: '4',
                     an_name: 'is_gold',
                     is_select: false,
-                    is_small_screen: false
+                    is_small_select: false
                 }, {
                     name: '极有家',
-                    value: '5',
                     an_name: 'is_ji',
                     is_select: false,
-                    is_small_screen: false
+                    is_small_select: false
                 }, {
                     name: '海淘',
-                    value: '6',
                     an_name: 'is_hai',
                     is_select: false,
-                    is_small_screen: false
+                    is_small_select: false
                 },
                 {
                     name: '运费险',
-                    value: '7',
                     an_name: 'is_yun',
                     is_select: false,
-                    is_small_screen: false
+                    is_small_select: false
                 }
             ],
+            //更多 筛选条件
             more_filter_name: '更多:',
+            //券后价格区间筛选
             quan_item: {
                 name: '券后价格区间',
-                start_price: '',
-                end_price: ''
+                start_price: '', //最低价
+                end_price: '' //最高价
             },
+            //评分筛选
             score_item: {
                 name: '动态评分≥',
                 value: '',
                 tip: ' (0分-5分)'
             },
+            //销量筛选
             sale_item: {
                 name: '总销量≥',
                 value: ''
             },
-            is_show_confirm: false,
-            is_show_side: false,
-            sort_item: [{
-                    name: '综合',
-                    value: ''
-                }, {
-                    name: '最新排序',
-                    value: 'new'
-                }, {
-                    name: '价格升序',
-                    value: 'price_asc'
-                },
-                {
-                    name: '价格降序',
-                    value: 'price_desc'
-                }
-            ],
-            select_name: '综合',
-            is_first: true
+            is_show_confirm: false, //是否显示“清空 确认按钮”
         },
         created: function () {
             // 初始化目录
@@ -234,7 +215,7 @@ function initCatalogBox() {
         watch: {
             // 监听目录参数
             catalog_value: function () {
-                //    参数中添加目录信息
+                // 参数中添加目录信息
                 addProperty('goods_cid', this.catalog_value);
             },
             // 监听筛选参数
@@ -261,6 +242,7 @@ function initCatalogBox() {
             }
         },
         methods: {
+            //是否显示隐藏的清空和确认按钮
             isShowConfirmBtn: function () {
                 if (this.quan_item.start_price == '' && this.quan_item.end_price == '' && this.sale_item.value == '' && this.score_item.value == '') {
                     this.is_show_confirm = false;
@@ -268,26 +250,32 @@ function initCatalogBox() {
                     this.is_show_confirm = true;
                 }
             },
-            selectCatalogItem: function (index) {
-                this.catalog_value = index;
+            // 单选目录事件
+            selectCatalogItem: function (value) {
+                this.catalog_value = value;
                 for (var i = 0; i < this.catalog_items.length; ++i) {
                     this.catalog_items[i].is_select = false;
                 }
-                this.catalog_items[index - 1].is_select = true;
+                this.catalog_items[value - 1].is_select = true;
             },
+            // 多选筛选条件事件
             multiSelect: function (index) {
                 var temp_width = document.body.clientWidth;
-                if (this.filter_items[index - 1].is_select) {
-                    this.filter_items[index - 1].is_select = false;
+                // 多选取消选中
+                if (this.filter_items[index].is_select) {
+                    this.filter_items[index].is_select = false;
                     this.filter_value = "-" + index;
                     if (temp_width <= 991) {
-                        this.filter_items[index - 1].is_small_screen = false;
+                        //小屏幕下选中背景变橙色标志
+                        this.filter_items[index].is_small_select = false;
                     }
-                } else {
-                    this.filter_items[index - 1].is_select = true;
+                }
+                // 多选选中
+                else {
+                    this.filter_items[index].is_select = true;
                     this.filter_value = index;
                     if (temp_width <= 991) {
-                        this.filter_items[index - 1].is_small_screen = true;
+                        this.filter_items[index].is_small_select = true;
                     }
                 }
             },
@@ -301,7 +289,6 @@ function initCatalogBox() {
     });
     // Vue App
 }
-
 // 初始化筛选对象  结束
 
 // 初始化排序按钮   开始
@@ -310,6 +297,7 @@ function initSortBtn() {
     js_sort_way = new Vue({
         el: '.js_sort_way',
         data: {
+            is_show_side: false, //侧边栏当前是否显示
             sort_item: [{
                     name: '综合',
                     value: ''
@@ -345,9 +333,9 @@ function initSortBtn() {
             // 显示筛选侧边
             showSide: function (event) {
                 var screen_width = document.body.clientWidth;
-                if (screen_width < 992 && !js_filter_container.is_show_side) {
+                if (screen_width < 992 && !this.is_show_side) {
                     this.stopSideAnimate();
-                    js_filter_container.is_show_side = true;
+                    this.is_show_side = true;
                     Velocity(this.$refs.js_confirm_btn, {
                         'margin-left': '-298px',
                     });
@@ -360,27 +348,30 @@ function initSortBtn() {
             // 隐藏筛选侧边
             hideSide: function () {
                 var screen_width = document.body.clientWidth;
-                if (screen_width < 992 && js_filter_container.is_show_side) {
+                if (screen_width < 992 && this.is_show_side) {
                     this.stopSideAnimate();
-                    js_filter_container.is_show_side = false;
+                    this.is_show_side = false;
                     Velocity(this.$refs.js_confirm_btn, {
                         'margin-left': '5px'
+                        // 必须带px单位
+                        // 设置为5px而不是0px是为了消除box-shadow的影响(侧边显示一些颜色块)
                     });
                     Velocity(js_filter_container.$refs.js_filter_container, {
                         'margin-left': '5px'
+                        // 同上
                     });
                     console.log('隐藏侧边栏');
                 }
             },
             // 切换侧边显示状态
             toggleSide: function () {
-                if (js_filter_container.is_show_side) {
+                if (this.is_show_side) {
                     this.hideSide();
                 } else {
                     this.showSide();
                 }
             },
-            // 停止侧边动画
+            // 停止侧边动画(防止操作频率过快导致异常)
             stopSideAnimate: function () {
                 Velocity(this.$refs.js_confirm_btn, 'stop');
                 Velocity(js_filter_container.$refs.js_filter_container, 'stop');
@@ -411,10 +402,18 @@ function checkWindowWidth() {
         js_filter_container.catalog_name = "分类:";
         js_filter_container.filter_name = "筛选:";
         js_sort_way.is_show_toggle = false;
+
+        //虽然实际使用中几乎不存在设备的尺寸突然变大变小(除了开发者模式调试)
+        //还是将该元素定位重置
+        js_filter_container.$refs.js_filter_container.style.marginLeft = '0px';
+        js_sort_way.$refs.js_confirm_btn.style.marginLeft = '0px';
     } else {
         js_filter_container.catalog_name = "分类";
         js_filter_container.filter_name = "筛选";
         js_sort_way.is_show_toggle = true;
+        //虽然实际使用中几乎不存在设备的尺寸突然变大变小(除了开发者模式调试)
+        //还是将该元素定位重置
+        js_sort_way.hideSide();
     }
 }
 
