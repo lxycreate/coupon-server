@@ -46,7 +46,7 @@ li {
     top: 0;
     padding: 15px 0 20px 0;
     z-index: 100;
-    box-shadow: 0 3px 5px #eeeeee;
+    box-shadow: 0 3px 2px #dddddd;
 }
 
 .header .logo_box {
@@ -344,11 +344,12 @@ li {
     display: inline-block;
     width: 45px;
     height: 20px;
-    margin: 5px 5px 0 5px;
+    margin: 5px 5px 0 10px;
     outline: none;
     font-size: 13px;
     vertical-align: top;
     border-radius: 5px;
+    padding-bottom: 1px;
     text-align: center;
     transition: all .3s ease;
     border: 1px solid #dddddd;
@@ -495,7 +496,7 @@ li {
         height: 100%;
         overflow: auto;
         margin-left: 5px;
-        box-shadow: -2px 0 5px #eeeeee;
+        box-shadow: -2px 0 2px #eeeeee;
         background-color: #ffffff;
     }
 
@@ -509,7 +510,7 @@ li {
 
     .filter_box .select_box>ul {
         padding: 0 0 0 15px;
-        text-align: center;
+        text-align: left;
     }
 
     .filter_box .select_box>ul>li {
@@ -530,7 +531,7 @@ li {
 
     .filter_box .multi_select_box ul {
         padding: 0 0 0 15px;
-        text-align: center;
+        text-align: left;
     }
 
     .filter_box .multi_select_box>ul>li {

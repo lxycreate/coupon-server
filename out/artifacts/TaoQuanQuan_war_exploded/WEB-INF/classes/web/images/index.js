@@ -1,5 +1,5 @@
 // 域名加端口号
-var baseUrl = 'http://127.0.0.1:8090';
+var baseUrl = 'http://127.0.0.1:8088';
 // 搜索框对象
 var vueSearch;
 // 商品列表

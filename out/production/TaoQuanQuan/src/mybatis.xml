@@ -14,7 +14,7 @@
 
     <!-- 设置类型别名 -->
     <typeAliases>
-        <typeAlias type="com.taobaovue.entity.NewGoods" alias="goods" />
+        <typeAlias type="com.taobaovue.entity.SqlGoods" alias="goods" />
     </typeAliases>
 
 

@@ -54,8 +54,8 @@
             <div class="header_btns">
                 <p class="btn_box">
                     <a class="cur">全网商品</a>
-                    <a>全天榜单</a>
-                    <a>实时榜单</a>
+                    <a>特惠商品</a>
+                    <a>百元精品</a>
                 </p>
             </div>
             <!-- 按钮   END -->
@@ -129,11 +129,6 @@
                     <ul class="btn_box">
                         <li class="btn">
                             <a v-bind:class="{is_sort_selected: is_first}">{{select_name}}</a>
-                            <ul class="btn_list">
-                                <li class="btn_item" v-for="item in sort_item">
-                                    <span @click="changeSortWay(item.value)">{{item.name}}</span>
-                                </li>
-                            </ul>
                         </li>
                         <li class="btn">
                             <a @click="changeSortWay('sale_num')">销量</a>

@@ -1,5 +1,5 @@
 // 域名加端口号
-var baseUrl = 'http://127.0.0.1:8090';
+var baseUrl = 'http://127.0.0.1:8088';
 // 搜索框对象
 var vueSearch;
 // 商品列表
@@ -18,7 +18,6 @@ window.onload = function () {
     initCatalogBox();
     initSortBtn();
     watchWindow();
-    test();
 }
 
 function test() {
@@ -86,14 +85,14 @@ function initCatalogBox() {
             catalog_name: "分类:",
             catalog_value: '0',
             catalog_items: [{
-                name: "全部",
-                value: 1,
-                is_select: true
-            }, {
-                name: "女装",
-                value: 2,
-                is_select: false
-            },
+                    name: "全部",
+                    value: 1,
+                    is_select: true
+                }, {
+                    name: "女装",
+                    value: 2,
+                    is_select: false
+                },
                 {
                     name: "男装",
                     value: 3,
@@ -148,18 +147,18 @@ function initCatalogBox() {
             filter_name: '筛选:',
             filter_value: '',
             filter_items: [{
-                name: '淘抢购',
-                value: '1',
-                an_name: 'taoqianggou',
-                is_select: false,
-                is_small_screen: false
-            }, {
-                name: '聚划算',
-                value: '2',
-                an_name: 'juhuasuan',
-                is_select: false,
-                is_small_screen: false
-            },
+                    name: '淘抢购',
+                    value: '1',
+                    an_name: 'is_qiang',
+                    is_select: false,
+                    is_small_screen: false
+                }, {
+                    name: '聚划算',
+                    value: '2',
+                    an_name: 'is_ju',
+                    is_select: false,
+                    is_small_screen: false
+                },
                 {
                     name: '天猫',
                     value: '3',
@@ -169,38 +168,26 @@ function initCatalogBox() {
                 }, {
                     name: '金牌卖家',
                     value: '4',
-                    an_name: 'gold_seller',
-                    is_select: false,
-                    is_small_screen: false
-                }, {
-                    name: '天猫超市',
-                    value: '5',
-                    an_name: 'chaoshi',
+                    an_name: 'is_gold',
                     is_select: false,
                     is_small_screen: false
                 }, {
                     name: '极有家',
-                    value: '6',
-                    an_name: 'jiyoujia',
+                    value: '5',
+                    an_name: 'is_ji',
                     is_select: false,
                     is_small_screen: false
                 }, {
                     name: '海淘',
-                    value: '7',
-                    an_name: 'haitao',
-                    is_select: false,
-                    is_small_screen: false
-                }, {
-                    name: '今日发布',
-                    value: '8',
-                    an_name: 'today',
+                    value: '6',
+                    an_name: 'is_hai',
                     is_select: false,
                     is_small_screen: false
                 },
                 {
                     name: '运费险',
-                    value: '9',
-                    an_name: 'yunfeixian',
+                    value: '7',
+                    an_name: 'is_yun',
                     is_select: false,
                     is_small_screen: false
                 }
@@ -223,15 +210,15 @@ function initCatalogBox() {
             is_show_confirm: false,
             is_show_side: false,
             sort_item: [{
-                name: '综合',
-                value: ''
-            }, {
-                name: '最新排序',
-                value: 'new'
-            }, {
-                name: '价格升序',
-                value: 'price_asc'
-            },
+                    name: '综合',
+                    value: ''
+                }, {
+                    name: '最新排序',
+                    value: 'new'
+                }, {
+                    name: '价格升序',
+                    value: 'price_asc'
+                },
                 {
                     name: '价格降序',
                     value: 'price_desc'
@@ -245,22 +232,19 @@ function initCatalogBox() {
             this.catalog_value = '1';
         },
         watch: {
+            // 监听目录参数
             catalog_value: function () {
                 //    参数中添加目录信息
-                search_data.cate_id = this.catalog_value;
-                console.log('添加属性' + this.catalog_value);
+                addProperty('goods_cid', this.catalog_value);
             },
+            // 监听筛选参数
             filter_value: function () {
                 var temp = parseInt(this.filter_value);
                 if (temp < 0) {
                     temp = -temp;
-                    if (search_data.hasOwnProperty(this.filter_items[temp - 1].an_name)) {
-                        delete search_data[this.filter_items[temp - 1].an_name];
-                        console.log('删除属性' + this.filter_items[temp - 1].an_name);
-                    }
+                    deleteProperty(this.filter_items[temp - 1].an_name);
                 } else {
-                    search_data[this.filter_items[temp - 1].an_name] = '1';
-                    console.log('添加属性' + this.filter_items[temp - 1].an_name);
+                    addProperty(this.filter_items[temp - 1].an_name, '1');
                 }
             },
             'quan_item.start_price': function () {
@@ -327,15 +311,15 @@ function initSortBtn() {
         el: '.js_sort_way',
         data: {
             sort_item: [{
-                name: '综合',
-                value: ''
-            }, {
-                name: '最新排序',
-                value: 'new'
-            }, {
-                name: '价格升序',
-                value: 'price_asc'
-            },
+                    name: '综合',
+                    value: ''
+                }, {
+                    name: '最新排序',
+                    value: 'new'
+                }, {
+                    name: '价格升序',
+                    value: 'price_asc'
+                },
                 {
                     name: '价格降序',
                     value: 'price_desc'
@@ -358,6 +342,7 @@ function initSortBtn() {
             confirm: function () {
                 js_filter_container.Confirm();
             },
+            // 显示筛选侧边
             showSide: function (event) {
                 var screen_width = document.body.clientWidth;
                 if (screen_width < 992 && !js_filter_container.is_show_side) {
@@ -372,6 +357,7 @@ function initSortBtn() {
                     console.log('显示侧边栏');
                 }
             },
+            // 隐藏筛选侧边
             hideSide: function () {
                 var screen_width = document.body.clientWidth;
                 if (screen_width < 992 && js_filter_container.is_show_side) {
@@ -386,6 +372,7 @@ function initSortBtn() {
                     console.log('隐藏侧边栏');
                 }
             },
+            // 切换侧边显示状态
             toggleSide: function () {
                 if (js_filter_container.is_show_side) {
                     this.hideSide();
@@ -393,6 +380,7 @@ function initSortBtn() {
                     this.showSide();
                 }
             },
+            // 停止侧边动画
             stopSideAnimate: function () {
                 Velocity(this.$refs.js_confirm_btn, 'stop');
                 Velocity(js_filter_container.$refs.js_filter_container, 'stop');
@@ -416,20 +404,16 @@ function watchWindow() {
     }
 }
 
-// 判断窗口大小
+// 判断窗口大小，根据窗口大小显示或隐藏元素
 function checkWindowWidth() {
     var screen_width = document.body.clientWidth;
     if (screen_width >= 992) {
         js_filter_container.catalog_name = "分类:";
         js_filter_container.filter_name = "筛选:";
-        js_filter_container.sale_item.name = "总销量≥";
-        js_filter_container.score_item.name = "动态评分≥";
         js_sort_way.is_show_toggle = false;
     } else {
         js_filter_container.catalog_name = "分类";
         js_filter_container.filter_name = "筛选";
-        js_filter_container.sale_item.name = "总销量";
-        js_filter_container.score_item.name = "动态评分";
         js_sort_way.is_show_toggle = true;
     }
 }
@@ -466,7 +450,7 @@ function searchGoods() {
     });
 }
 
-// 鼠标按下事件   开始
+// 鼠标按下事件（显示或隐藏侧边栏）   开始
 function mouseDown(event) {
     var point = event || window.event;
     var screen_width = document.body.clientWidth;
@@ -480,3 +464,17 @@ function mouseDown(event) {
 }
 
 // 鼠标按下事件   结束
+
+//添加搜索参数属性
+function addProperty(pro_name, pro_value) {
+    search_data[pro_name] = pro_name;
+    console.log('添加属性：' + pro_name + '  属性值为：' + pro_value);
+}
+
+//删除搜索参数中的属性
+function deleteProperty(pro_name) {
+    if (search_data.hasOwnProperty(pro_name)) {
+        delete search_data[pro_name];
+        console.log('删除属性' + pro_name);
+    }
+}
