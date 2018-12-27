@@ -232,6 +232,25 @@ li {
     background-color: #ffffff;
 }
 
+.filter_box .clear_all {
+    display: none;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+}
+
+.filter_box .clear_all>a {
+    display: inline-block;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 30px;
+    vertical-align: middle;
+    background-color: #ff4200;
+}
+
 .filter_box>div ul {
     display: inline-block;
     font-size: 0;
@@ -369,9 +388,9 @@ li {
 }
 
 .filter_box .more_filter ul li .confirm {
-    width: 45px;
-    height: 20px;
-    line-height: 20px;
+    width: 50px;
+    height: 25px;
+    line-height: 25px;
     margin-left: 15px;
     margin-top: 3px;
     color: #ffffff;
@@ -396,60 +415,53 @@ li {
 
 .filter_box .sort_way .btn_box .btn {
     display: inline-block;
-    /* width: 140px; */
+    width: 140px;
     height: 30px;
+    font-size: 0;
     vertical-align: top;
+    text-align: center;
 }
-
 
 .filter_box .sort_way .btn_box .btn:hover {
     cursor: pointer;
+    color: #ff4200;
 }
 
 .filter_box .sort_way .btn_box .btn>a {
     display: block;
-    width: 140px;
     height: 30px;
     line-height: 29px;
     font-size: 15px;
     text-align: center;
 }
 
-.filter_box .sort_way .btn_box .btn .btn_list {
-    position: relative;
-    width: 140px;
-    z-index: 5;
-    background-color: #ffffff;
-    box-shadow: 0 2px 3px #cccccc;
+/* "列表切换"按钮  992及以上不显示 */
+.filter_box .sort_way .btn_box .list_toggle {
+    display: none;
 }
 
-.filter_box .sort_way .btn_box .btn .btn_list>li {
+/* "筛选"按钮  992及以上不显示 */
+.filter_box .sort_way .btn_box .filter_btn {
+    display: none;
+}
+
+.filter_box .sort_way .btn_box .price span {
+    display: inline-block;
+    width: 12px;
+    height: 100%;
+    vertical-align: top;
+}
+
+.filter_box .sort_way .btn_box .price i {
     display: block;
-}
-
-.filter_box .sort_way .btn_box .btn .btn_list>li span {
-    display: block;
-    width: 130px;
-    height: 30px;
-    margin: auto;
-    font-size: 15px;
-    line-height: 30px;
-    text-indent: 1em;
-    color: #666666;
-    border-top: 1px solid #eeeeee;
-}
-
-.filter_box .sort_way .btn_box .btn .btn_list>li:first-child span {
-    border: none;
-}
-
-.filter_box .sort_way .btn_box .btn .btn_list>li span:hover {
-    color: #ffffff;
-    background-color: #ff4200;
+    margin-top: 12px;
+    font-size: 6px;
+    line-height: 1;
+    color: #999999;
 }
 
 .is_sort_selected {
-    color: #ff4200;
+    color: #ff4200 !important;
 }
 
 @media(min-width:992px) and (max-width:1199px) {
@@ -658,6 +670,18 @@ li {
     .filter_box .confirm_btn .confirm:first-child {
         margin-left: 0;
         background-color: #666666;
+    }
+
+    .filter_box .sort_way .btn_box .btn:hover {
+        color: black;
+    }
+
+    .filter_box .sort_way .btn_box .list_toggle {
+        display: inline-block;
+    }
+
+    .filter_box .sort_way .btn_box .filter_btn {
+        display: inline-block;
     }
 }
 
