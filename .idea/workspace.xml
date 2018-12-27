@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/images/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/index.html" afterDir="false" />
@@ -27,7 +26,7 @@
     <session id="-246403539">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.19" value="1" />
@@ -39,9 +38,10 @@
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.41" value="1" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -123,7 +123,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
+            <state relative-caret-position="2299">
               <caret line="139" selection-start-line="139" selection-end-line="139" />
             </state>
           </provider>
@@ -133,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
-              <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+              <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -854,7 +854,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -923,6 +922,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1057,11 +1057,12 @@
       <workItem from="1545741233397" duration="1114000" />
       <workItem from="1545788554907" duration="651000" />
       <workItem from="1545879562791" duration="696000" />
+      <workItem from="1545913808710" duration="361000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30490000" />
+    <option name="totallyTimeSpent" value="30851000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1074,9 +1075,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.3241714" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.32983023" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1237,6 +1237,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2299">
+          <caret line="139" selection-start-line="139" selection-end-line="139" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="931">
@@ -1268,17 +1275,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="139" selection-start-line="139" selection-end-line="139" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
         </state>
       </provider>
     </entry>

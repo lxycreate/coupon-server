@@ -46,7 +46,7 @@ li {
     top: 0;
     padding: 15px 0 20px 0;
     z-index: 100;
-    box-shadow: 0 3px 5px #eeeeee;
+    box-shadow: 0 3px 2px #dddddd;
 }
 
 .header .logo_box {
@@ -116,7 +116,7 @@ li {
     max-width: 1920px;
     margin: 40px auto 0 auto;
     background-color: #ff4200;
-    height: 40px;
+    height: auto;
 }
 
 .header .header_btns .btn_box {
@@ -184,6 +184,14 @@ li {
         margin-top: 20px;
     }
 
+    .header .header_btns .btn_box {
+        padding: 0 10px;
+    }
+
+    .header .header_btns .btn_box>a {
+        margin-left: 0;
+    }
+
     .header .ceil_filler {
         height: 110px;
     }
@@ -216,14 +224,13 @@ li {
 .mid_bottom_bg {
     max-width: 1920px;
     margin: auto;
-    padding-top: 20px;
+    padding: 20px 0;
     background-color: #f5f5f5;
 }
 
 /* -----------------------------------------------筛选   开始----------------------------------- */
 .filter_box {
     max-width: 1190px;
-    min-height: 50px;
     margin: auto;
     font-size: 0;
 }
@@ -231,6 +238,25 @@ li {
 .filter_box .filter_container {
     padding-bottom: 10px;
     background-color: #ffffff;
+}
+
+.filter_box .clear_all {
+    display: none;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+}
+
+.filter_box .clear_all>a {
+    display: inline-block;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 30px;
+    vertical-align: middle;
+    background-color: #ff4200;
 }
 
 .filter_box>div ul {
@@ -344,11 +370,12 @@ li {
     display: inline-block;
     width: 45px;
     height: 20px;
-    margin: 5px 5px 0 5px;
+    margin: 5px 5px 0 10px;
     outline: none;
     font-size: 13px;
     vertical-align: top;
     border-radius: 5px;
+    padding-bottom: 1px;
     text-align: center;
     transition: all .3s ease;
     border: 1px solid #dddddd;
@@ -369,9 +396,9 @@ li {
 }
 
 .filter_box .more_filter ul li .confirm {
-    width: 45px;
-    height: 20px;
-    line-height: 20px;
+    width: 50px;
+    height: 25px;
+    line-height: 25px;
     margin-left: 15px;
     margin-top: 3px;
     color: #ffffff;
@@ -394,62 +421,59 @@ li {
     background-color: #eeeeee;
 }
 
-.filter_box .sort_way .btn_box .btn {
-    display: inline-block;
-    /* width: 140px; */
-    height: 30px;
-    vertical-align: top;
+.filter_box .sort_way .btn_box {
+    display: block;
 }
 
+.filter_box .sort_way .btn_box .btn {
+    display: inline-block;
+    width: 140px;
+    height: 30px;
+    font-size: 0;
+    vertical-align: top;
+    text-align: center;
+}
 
 .filter_box .sort_way .btn_box .btn:hover {
     cursor: pointer;
+    color: #ff4200;
 }
 
 .filter_box .sort_way .btn_box .btn>a {
     display: block;
-    width: 140px;
     height: 30px;
     line-height: 29px;
     font-size: 15px;
     text-align: center;
 }
 
-.filter_box .sort_way .btn_box .btn .btn_list {
-    position: relative;
-    width: 140px;
-    z-index: 5;
-    background-color: #ffffff;
-    box-shadow: 0 2px 3px #cccccc;
+/* "列表切换"按钮  992及以上不显示 */
+.filter_box .sort_way .btn_box .list_toggle {
+    display: none;
 }
 
-.filter_box .sort_way .btn_box .btn .btn_list>li {
+/* "筛选"按钮  992及以上不显示 */
+.filter_box .sort_way .btn_box .filter_btn {
+    display: none;
+}
+
+.filter_box .sort_way .btn_box .price span {
+    display: inline-block;
+    width: 12px;
+    height: 100%;
+    vertical-align: top;
+}
+
+.filter_box .sort_way .btn_box .price i {
     display: block;
-}
-
-.filter_box .sort_way .btn_box .btn .btn_list>li span {
-    display: block;
-    width: 130px;
-    height: 30px;
-    margin: auto;
-    font-size: 15px;
-    line-height: 30px;
-    text-indent: 1em;
-    color: #666666;
-    border-top: 1px solid #eeeeee;
-}
-
-.filter_box .sort_way .btn_box .btn .btn_list>li:first-child span {
-    border: none;
-}
-
-.filter_box .sort_way .btn_box .btn .btn_list>li span:hover {
-    color: #ffffff;
-    background-color: #ff4200;
+    margin-top: 12px;
+    font-size: 6px;
+    line-height: 1;
+    color: #999999;
 }
 
 .is_sort_selected {
-    color: #ff4200;
+    color: #ff4200 !important;
 }
 
 @media(min-width:992px) and (max-width:1199px) {
@@ -495,7 +519,7 @@ li {
         height: 100%;
         overflow: auto;
         margin-left: 5px;
-        box-shadow: -2px 0 5px #eeeeee;
+        box-shadow: -2px 0 2px #eeeeee;
         background-color: #ffffff;
     }
 
@@ -509,7 +533,7 @@ li {
 
     .filter_box .select_box>ul {
         padding: 0 0 0 15px;
-        text-align: center;
+        text-align: left;
     }
 
     .filter_box .select_box>ul>li {
@@ -530,7 +554,7 @@ li {
 
     .filter_box .multi_select_box ul {
         padding: 0 0 0 15px;
-        text-align: center;
+        text-align: left;
     }
 
     .filter_box .multi_select_box>ul>li {
@@ -610,15 +634,6 @@ li {
     }
 
     .filter_box .more_filter .btn {
-        /* position: fixed;
-        top: 100%;
-        left: 100%;
-        width: 298px;
-        height: 50px;
-        margin: -50px 0 0 0;
-        text-align: right;
-        background-color: #ffffff;
-        background-color: yellow; */
         display: none !important;
     }
 
@@ -668,6 +683,20 @@ li {
         margin-left: 0;
         background-color: #666666;
     }
+
+    .filter_box .sort_way .btn_box .filter_btn {
+        display: inline-block;
+    }
+}
+
+@media(max-width:767px) {
+    .filter_box .sort_way .btn_box .btn {
+        width: 20%;
+    }
+
+    .filter_box .sort_way .btn_box .list_toggle {
+        display: inline-block;
+    }
 }
 
 /* -----------------------------------------------筛选   结束----------------------------------- */
@@ -687,13 +716,14 @@ li {
     display: inline-block;
     margin-top: 20px;
     width: 20%;
+    vertical-align: top;
 }
 
 .goods_area .goods_list>li .item {
     display: block;
     width: 95%;
     margin: auto;
-    background-color: aqua;
+    background-color: #ffffff;
 }
 
 .goods_area .goods_list .item .link {
@@ -715,6 +745,25 @@ li {
     top: 0;
     left: 0;
     width: 100%;
+}
+
+.goods_area .goods_list .item .text_box {
+    display: block;
+    padding: 0 5px 5px 5px;
+}
+
+.goods_area .goods_list .item .text_box .title {
+    display: block;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.goods_area .goods_list .item .text_box .title>img {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    vertical-align: middle;
 }
 
 @media(max-width:1199px) {

@@ -1,38 +1,35 @@
 // 域名加端口号
-var baseUrl = 'http://127.0.0.1:8088';
+var base_url = 'http://127.0.0.1:8088';
 // 搜索框对象
 var vueSearch;
-// 商品列表
-var vueGoodsLlist;
 // 筛选条件对象
 var js_filter_container;
 // 排序方式
 var js_sort_way;
-//Ajax参数
+//商品列表
+var js_goods_area;
+
+//Ajax获取数所需的参数
 var search_data = {};
+
+
 // 初始化函数
 window.onload = function () {
     // searchGoods();
     // initGoodsList();
+
+    // 搜索框吸顶
     initScroll();
+    // 筛选
     initCatalogBox();
+    // 排序
     initSortBtn();
+    // 商品列表
+    initGoodsList();
+    // 窗口大小监听
     watchWindow();
-    test();
-}
-
-function test() {
-    axios({
-        url: baseUrl + '/test',
-        method: 'get',
-        params: {
-            test: 1
-        }
-    }).then(function (response) {
-        console.log(response);
-    }).catch(function (error) {
-
-    });
+    var s = 'abc';
+    console.log('长度：' + s.length);
 }
 
 // 搜索框吸顶   开始
@@ -75,25 +72,26 @@ function initScroll() {
         }
     }
 }
-
 // 搜索框吸顶   结束
-// 初始化筛选对象  开始
+
+// 筛选对象  开始
 function initCatalogBox() {
     // Vue App
     js_filter_container = new Vue({
         el: '.js_filter_container',
         data: {
+            // 目录选择
             catalog_name: "分类:",
             catalog_value: '0',
             catalog_items: [{
-                name: "全部",
-                value: 1,
-                is_select: true
-            }, {
-                name: "女装",
-                value: 2,
-                is_select: false
-            },
+                    name: "全部", // 目录名
+                    value: 1, //目录对应值
+                    is_select: true //是否被选中
+                }, {
+                    name: "女装",
+                    value: 2,
+                    is_select: false
+                },
                 {
                     name: "男装",
                     value: 3,
@@ -145,122 +143,94 @@ function initCatalogBox() {
                     is_select: false
                 }
             ],
+            // 多选筛选条件
             filter_name: '筛选:',
-            filter_value: '',
+            filter_value: '', //当前(选中/取消)的是哪个,相应的从参数添加/删除
             filter_items: [{
-                name: '淘抢购',
-                value: '1',
-                an_name: 'taoqianggou',
-                is_select: false,
-                is_small_screen: false
-            }, {
-                name: '聚划算',
-                value: '2',
-                an_name: 'juhuasuan',
-                is_select: false,
-                is_small_screen: false
-            },
+                    name: '淘抢购', //名称   
+                    index: 1, //必须使用自定义的index，否则监听filter_value的函数中出现异常出现-0
+                    an_name: 'is_qiang', //搜索时的对应的参数名
+                    is_select: false, //是否被选中
+                    is_small_select: false //是否被选中(中小屏幕)
+                }, {
+                    name: '聚划算',
+                    index: 2,
+                    an_name: 'is_ju',
+                    is_select: false,
+                    is_small_select: false
+                },
                 {
                     name: '天猫',
-                    value: '3',
+                    index: 3,
                     an_name: 'is_tmall',
                     is_select: false,
-                    is_small_screen: false
+                    is_small_select: false
                 }, {
                     name: '金牌卖家',
-                    value: '4',
-                    an_name: 'gold_seller',
+                    index: 4,
+                    an_name: 'is_gold',
                     is_select: false,
-                    is_small_screen: false
-                }, {
-                    name: '天猫超市',
-                    value: '5',
-                    an_name: 'chaoshi',
-                    is_select: false,
-                    is_small_screen: false
+                    is_small_select: false
                 }, {
                     name: '极有家',
-                    value: '6',
-                    an_name: 'jiyoujia',
+                    index: 5,
+                    an_name: 'is_ji',
                     is_select: false,
-                    is_small_screen: false
+                    is_small_select: false
                 }, {
                     name: '海淘',
-                    value: '7',
-                    an_name: 'haitao',
+                    index: 6,
+                    an_name: 'is_hai',
                     is_select: false,
-                    is_small_screen: false
-                }, {
-                    name: '今日发布',
-                    value: '8',
-                    an_name: 'today',
-                    is_select: false,
-                    is_small_screen: false
+                    is_small_select: false
                 },
                 {
                     name: '运费险',
-                    value: '9',
-                    an_name: 'yunfeixian',
+                    index: 7,
+                    an_name: 'is_yun',
                     is_select: false,
-                    is_small_screen: false
+                    is_small_select: false
                 }
             ],
+            //更多 筛选条件
             more_filter_name: '更多:',
+            //券后价格区间筛选
             quan_item: {
                 name: '券后价格区间',
-                start_price: '',
-                end_price: ''
+                start_price: '', //最低价
+                end_price: '' //最高价
             },
+            //评分筛选
             score_item: {
                 name: '动态评分≥',
                 value: '',
                 tip: ' (0分-5分)'
             },
+            //销量筛选
             sale_item: {
                 name: '总销量≥',
                 value: ''
             },
-            is_show_confirm: false,
-            is_show_side: false,
-            sort_item: [{
-                name: '综合',
-                value: ''
-            }, {
-                name: '最新排序',
-                value: 'new'
-            }, {
-                name: '价格升序',
-                value: 'price_asc'
-            },
-                {
-                    name: '价格降序',
-                    value: 'price_desc'
-                }
-            ],
-            select_name: '综合',
-            is_first: true
+            is_show_confirm: false, //是否显示“清空 确认按钮”
         },
         created: function () {
             // 初始化目录
             this.catalog_value = '1';
         },
         watch: {
+            // 监听目录参数
             catalog_value: function () {
-                //    参数中添加目录信息
-                search_data.cate_id = this.catalog_value;
-                console.log('添加属性' + this.catalog_value);
+                // 参数中添加目录信息
+                addProperty('goods_cid', this.catalog_value);
             },
+            // 监听筛选参数
             filter_value: function () {
-                var temp = parseInt(this.filter_value);
-                if (temp < 0) {
-                    temp = -temp;
-                    if (search_data.hasOwnProperty(this.filter_items[temp - 1].an_name)) {
-                        delete search_data[this.filter_items[temp - 1].an_name];
-                        console.log('删除属性' + this.filter_items[temp - 1].an_name);
-                    }
+                var index = parseInt(this.filter_value);
+                if (index < 0) {
+                    index = -index;
+                    deleteProperty(this.filter_items[index - 1].an_name);
                 } else {
-                    search_data[this.filter_items[temp - 1].an_name] = '1';
-                    console.log('添加属性' + this.filter_items[temp - 1].an_name);
+                    addProperty(this.filter_items[index - 1].an_name, '1');
                 }
             },
             'quan_item.start_price': function () {
@@ -277,6 +247,7 @@ function initCatalogBox() {
             }
         },
         methods: {
+            //是否显示隐藏的清空和确认按钮
             isShowConfirmBtn: function () {
                 if (this.quan_item.start_price == '' && this.quan_item.end_price == '' && this.sale_item.value == '' && this.score_item.value == '') {
                     this.is_show_confirm = false;
@@ -284,26 +255,31 @@ function initCatalogBox() {
                     this.is_show_confirm = true;
                 }
             },
-            selectCatalogItem: function (index) {
-                this.catalog_value = index;
+            // 单选目录事件
+            selectCatalogItem: function (value) {
+                this.catalog_value = value;
                 for (var i = 0; i < this.catalog_items.length; ++i) {
                     this.catalog_items[i].is_select = false;
                 }
-                this.catalog_items[index - 1].is_select = true;
+                this.catalog_items[value - 1].is_select = true;
             },
+            // 多选筛选条件事件
             multiSelect: function (index) {
-                var temp_width = document.body.clientWidth;
+                // 多选取消选中
                 if (this.filter_items[index - 1].is_select) {
                     this.filter_items[index - 1].is_select = false;
                     this.filter_value = "-" + index;
-                    if (temp_width <= 991) {
-                        this.filter_items[index - 1].is_small_screen = false;
+                    if (isMidSmallScreen()) {
+                        //小屏幕下选中背景变橙色标志
+                        this.filter_items[index - 1].is_small_select = false;
                     }
-                } else {
+                }
+                // 多选选中
+                else {
                     this.filter_items[index - 1].is_select = true;
                     this.filter_value = index;
-                    if (temp_width <= 991) {
-                        this.filter_items[index - 1].is_small_screen = true;
+                    if (isMidSmallScreen()) {
+                        this.filter_items[index - 1].is_small_select = true;
                     }
                 }
             },
@@ -317,52 +293,79 @@ function initCatalogBox() {
     });
     // Vue App
 }
+// 筛选对象  结束
 
-// 初始化筛选对象  结束
-
-// 初始化排序按钮   开始
+// 排序按钮   开始
 function initSortBtn() {
     // Vue App
     js_sort_way = new Vue({
         el: '.js_sort_way',
         data: {
+            is_show_side: false, //侧边栏当前是否显示
             sort_item: [{
-                name: '综合',
-                value: ''
+                name: '综合', //名称
+                type: '', //类型
+                is_select: true //是否选中
             }, {
-                name: '最新排序',
-                value: 'new'
+                name: '销量',
+                type: 'goods_sale',
+                is_select: false
+                // 销量只有降序排序
             }, {
-                name: '价格升序',
-                value: 'price_asc'
-            },
-                {
-                    name: '价格降序',
-                    value: 'price_desc'
-                }
-            ],
-            select_name: '综合',
-            is_first: true,
-            is_toggle_icon: true,
-            is_show_toggle: false
-        },
-        watch: {
-            is_toggle_icon: function () {
-
+                name: '价格',
+                type: 'goods_price',
+                is_select: false,
+                is_up: false //升序排序
+            }],
+            //  列表显示方式
+            toggle_list: {
+                is_first_icon: true
             }
         },
         methods: {
-            clear: function () {
-                js_filter_container.Clear();
+            // 价格排序
+            sortByPrice() {
+                this.changeSelectedColor(2);
+                this.transformIcon();
+                this.sort_item[2].is_up = !this.sort_item[2].is_up;
             },
-            confirm: function () {
-                js_filter_container.Confirm();
+            //  切换价格排序的icon
+            transformIcon() {
+                Velocity(this.$refs.js_transform, 'stop');
+                if (!this.sort_item[2].is_up) {
+                    Velocity(this.$refs.js_transform, {
+                        'margin-top': '8px',
+                        rotateZ: '-180deg'
+                    });
+                    // 价格升序排序
+                    addProperty('sort', 'price asc');
+                } else {
+                    Velocity(this.$refs.js_transform, {
+                        'margin-top': '12px',
+                        rotateZ: '0deg'
+                    });
+                    // 价格降序排序
+                    addProperty('sort', 'price desc');
+                }
             },
-            showSide: function (event) {
-                var screen_width = document.body.clientWidth;
-                if (screen_width < 992 && !js_filter_container.is_show_side) {
+            // 重置价格排序的icon
+            resetPriceIcon: function () {
+                Velocity(this.$refs.js_transform, 'stop');
+                Velocity(this.$refs.js_transform, {
+                    'margin-top': '12px',
+                    rotateZ: '0deg'
+                });
+                this.sort_item[2].is_up = false;
+            },
+            // 切换列表显示方式
+            toggleList: function () {
+                this.toggle_list.is_first_icon = !this.toggle_list.is_first_icon;
+            },
+            // 显示筛选侧边
+            showSide: function () {
+                if (isMidSmallScreen() && !this.is_show_side) {
                     this.stopSideAnimate();
-                    js_filter_container.is_show_side = true;
+                    this.is_show_side = true;
                     Velocity(this.$refs.js_confirm_btn, {
                         'margin-left': '-298px',
                     });
@@ -372,41 +375,79 @@ function initSortBtn() {
                     console.log('显示侧边栏');
                 }
             },
+            // 隐藏筛选侧边
             hideSide: function () {
-                var screen_width = document.body.clientWidth;
-                if (screen_width < 992 && js_filter_container.is_show_side) {
+                if (isMidSmallScreen() && this.is_show_side) {
                     this.stopSideAnimate();
-                    js_filter_container.is_show_side = false;
+                    this.is_show_side = false;
                     Velocity(this.$refs.js_confirm_btn, {
                         'margin-left': '5px'
+                        // 必须带px单位
+                        // 设置为5px而不是0px是为了消除box-shadow的影响(侧边显示一些颜色块)
                     });
                     Velocity(js_filter_container.$refs.js_filter_container, {
                         'margin-left': '5px'
+                        // 同上
                     });
                     console.log('隐藏侧边栏');
                 }
             },
+            // 切换侧边显示状态
             toggleSide: function () {
-                if (js_filter_container.is_show_side) {
+                if (this.is_show_side) {
                     this.hideSide();
                 } else {
                     this.showSide();
                 }
             },
+            // 停止侧边动画(防止操作频率过快导致异常)
             stopSideAnimate: function () {
                 Velocity(this.$refs.js_confirm_btn, 'stop');
                 Velocity(js_filter_container.$refs.js_filter_container, 'stop');
             },
-            changeSortWay: function (sort_way) {
-
+            // 切换排序方式
+            changeSortWay: function (index, way) {
+                this.changeSelectedColor(index);
+                addProperty('sort', way);
+            },
+            // 改变被选中的排序按钮的颜色
+            changeSelectedColor: function (index) {
+                // 价格图标按钮重置
+                if (index != 2) {
+                    this.resetPriceIcon();
+                }
+                for (var i = 0; i < this.sort_item.length; ++i) {
+                    this.sort_item[i].is_select = false;
+                }
+                this.sort_item[index].is_select = true;
+            },
+            // 清空
+            clear: function () {
+                js_filter_container.Clear();
+            },
+            // 确认
+            confirm: function () {
+                js_filter_container.Confirm();
             }
+            // 事件 end
         }
     });
     // Vue App
 }
+// 排序按钮   结束
 
-// 初始化排序按钮   结束
-
+//商品列表   开始
+function initGoodsList() {
+    js_goods_area = new Vue({
+        el: ".js_goods_area",
+        data: {
+            items: [{
+                title: "123"
+            }]
+        }
+    });
+}
+// 商品列表  结束
 
 // 监测窗口大小变化
 function watchWindow() {
@@ -416,34 +457,65 @@ function watchWindow() {
     }
 }
 
-// 判断窗口大小
+// 判断窗口大小，根据窗口大小显示或隐藏元素
 function checkWindowWidth() {
-    var screen_width = document.body.clientWidth;
-    if (screen_width >= 992) {
+    if (!isMidSmallScreen()) {
         js_filter_container.catalog_name = "分类:";
         js_filter_container.filter_name = "筛选:";
-        js_filter_container.sale_item.name = "总销量≥";
-        js_filter_container.score_item.name = "动态评分≥";
-        js_sort_way.is_show_toggle = false;
+
+        //虽然实际使用中几乎不存在设备的尺寸突然变大变小(除了开发者模式调试)
+        //还是将该元素定位重置
+        js_filter_container.$refs.js_filter_container.style.marginLeft = '0px';
+        js_sort_way.$refs.js_confirm_btn.style.marginLeft = '0px';
     } else {
         js_filter_container.catalog_name = "分类";
         js_filter_container.filter_name = "筛选";
-        js_filter_container.sale_item.name = "总销量";
-        js_filter_container.score_item.name = "动态评分";
-        js_sort_way.is_show_toggle = true;
+
+        //虽然实际使用中几乎不存在设备的尺寸突然变大变小(除了开发者模式调试)
+        //还是将该元素定位重置
+        js_sort_way.hideSide();
+        //小屏幕就显示列表切换按钮
+
     }
 }
 
-//初始化商品列表
-function initGoodsList() {
-    vueSearch = new Vue({
-        el: ".js_goods_list",
-        data: {
-            items: [{
-                title: "123"
-            }]
-        }
-    });
+//判断当前是不是中小屏幕
+function isMidSmallScreen() {
+    var screen_width = document.body.clientWidth;
+    if (screen_width >= 992) {
+        return false;
+    }
+    return true;
+}
+
+// 鼠标按下事件（显示或隐藏侧边栏）   开始
+function mouseDown(event) {
+    var point = event || window.event;
+    var screen_width = document.body.clientWidth;
+    if (screen_width < 992 && screen_width - point.clientX > 300 && event.target != js_sort_way.$refs.js_show_side) {
+        console.log('在侧栏外');
+        js_sort_way.hideSide();
+    }
+    if (event.target == js_sort_way.$refs.js_show_side) {
+        console.log("单击筛选");
+    }
+}
+// 鼠标按下事件   结束
+
+//添加搜索参数属性
+function addProperty(pro_name, pro_value) {
+    search_data[pro_name] = pro_value;
+    console.log('添加属性：' + pro_name + '  属性值为：' + pro_value);
+    console.log(JSON.stringify(search_data));
+}
+
+//删除搜索参数中的属性
+function deleteProperty(pro_name) {
+    if (search_data.hasOwnProperty(pro_name)) {
+        delete search_data[pro_name];
+        console.log('删除属性' + pro_name);
+    }
+    console.log(JSON.stringify(search_data));
 }
 
 // 搜索商品
@@ -452,7 +524,7 @@ function searchGoods() {
     var searchWord = 'macbook';
     var sortWay = 'sale_num';
     axios({
-        url: baseUrl + '/getGoods/searchGoods',
+        url: base_url + '/getGoods/searchGoods',
         method: 'get',
         params: {
             pageNum: pageNum,
@@ -466,17 +538,16 @@ function searchGoods() {
     });
 }
 
-// 鼠标按下事件   开始
-function mouseDown(event) {
-    var point = event || window.event;
-    var screen_width = document.body.clientWidth;
-    if (screen_width < 992 && screen_width - point.clientX > 300 && event.target != js_sort_way.$refs.show_side) {
-        console.log('在侧栏外');
-        js_sort_way.hideSide();
-    }
-    if (event.target == js_sort_way.$refs.show_side) {
-        console.log('same');
-    }
-}
+function test() {
+    axios({
+        url: base_url + '/test',
+        method: 'get',
+        params: {
+            test: 1
+        }
+    }).then(function (response) {
+        console.log(response);
+    }).catch(function (error) {
 
-// 鼠标按下事件   结束
+    });
+}

@@ -28,6 +28,8 @@ window.onload = function () {
     initGoodsList();
     // 窗口大小监听
     watchWindow();
+    var s = 'abc';
+    console.log('长度：' + s.length);
 }
 
 // 搜索框吸顶   开始
@@ -365,7 +367,7 @@ function initSortBtn() {
                     this.stopSideAnimate();
                     this.is_show_side = true;
                     Velocity(this.$refs.js_confirm_btn, {
-                        'margin-left': '-298px',
+                        'margin-left': '-298px'
                     });
                     Velocity(js_filter_container.$refs.js_filter_container, {
                         'margin-left': '-300px'
@@ -471,7 +473,9 @@ function checkWindowWidth() {
 
         //虽然实际使用中几乎不存在设备的尺寸突然变大变小(除了开发者模式调试)
         //还是将该元素定位重置
-        js_sort_way.hideSide();
+        // 这里不能将元素定位重置，当弹出输入法框的时候会触发onsize事件，从而调用这个事件
+        // 造成侧栏自动隐藏
+        // js_sort_way.hideSide();
         //小屏幕就显示列表切换按钮
 
     }
@@ -484,26 +488,6 @@ function isMidSmallScreen() {
         return false;
     }
     return true;
-}
-
-// 搜索商品
-function searchGoods() {
-    var pageNum = 1;
-    var searchWord = 'macbook';
-    var sortWay = 'sale_num';
-    axios({
-        url: base_url + '/getGoods/searchGoods',
-        method: 'get',
-        params: {
-            pageNum: pageNum,
-            searchWord: searchWord,
-            sortWay: sortWay
-        }
-    }).then(function (response) {
-        console.log(response);
-    }).catch(function (error) {
-
-    });
 }
 
 // 鼠标按下事件（显示或隐藏侧边栏）   开始
@@ -534,6 +518,26 @@ function deleteProperty(pro_name) {
         console.log('删除属性' + pro_name);
     }
     console.log(JSON.stringify(search_data));
+}
+
+// 搜索商品
+function searchGoods() {
+    var pageNum = 1;
+    var searchWord = 'macbook';
+    var sortWay = 'sale_num';
+    axios({
+        url: base_url + '/getGoods/searchGoods',
+        method: 'get',
+        params: {
+            pageNum: pageNum,
+            searchWord: searchWord,
+            sortWay: sortWay
+        }
+    }).then(function (response) {
+        console.log(response);
+    }).catch(function (error) {
+
+    });
 }
 
 function test() {
