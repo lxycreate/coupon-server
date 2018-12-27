@@ -116,7 +116,7 @@ li {
     max-width: 1920px;
     margin: 40px auto 0 auto;
     background-color: #ff4200;
-    height: 40px;
+    height: auto;
 }
 
 .header .header_btns .btn_box {
@@ -182,6 +182,14 @@ li {
 @media (max-width:767px) {
     .header {
         margin-top: 20px;
+    }
+
+    .header .header_btns .btn_box {
+        padding: 0 10px;
+    }
+
+    .header .header_btns .btn_box>a {
+        margin-left: 0;
     }
 
     .header .ceil_filler {
@@ -411,6 +419,10 @@ li {
 .filter_box .sort_way {
     min-height: 30px;
     background-color: #eeeeee;
+}
+
+.filter_box .sort_way .btn_box {
+    display: block;
 }
 
 .filter_box .sort_way .btn_box .btn {
@@ -685,6 +697,12 @@ li {
     }
 }
 
+@media(max-width:767px) {
+    .filter_box .sort_way .btn_box .btn {
+        width: 20%;
+    }
+}
+
 /* -----------------------------------------------筛选   结束----------------------------------- */
 /* -----------------------------------------------商品   开始----------------------------------- */
 
@@ -708,7 +726,7 @@ li {
     display: block;
     width: 95%;
     margin: auto;
-    background-color: aqua;
+    background-color: #ffffff;
 }
 
 .goods_area .goods_list .item .link {
