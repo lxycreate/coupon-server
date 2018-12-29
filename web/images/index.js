@@ -281,6 +281,22 @@ function initCatalogBox() {
                     if (isMidSmallScreen()) {
                         this.filter_items[index - 1].is_small_select = true;
                     }
+                    //"淘抢购"和"聚划算"是互斥的
+                    //当两个同时被选中时,取消之前被选中的那个
+                    if (index == 1 && this.filter_items[1].is_select) {
+                        //取消选中"聚划算"
+                        this.filter_items[1].is_select = false;
+                        this.filter_items[1].is_small_select = false;
+                        // this.filter_value = "-2";
+                        deleteProperty('is_ju');
+                    }
+                    if (index == 2 && this.filter_items[0].is_select) {
+                        //取消选中"淘抢购"
+                        this.filter_items[0].is_select = false;
+                        this.filter_items[0].is_small_select = false;
+                        // this.filter_value = "-1";
+                        deleteProperty('is_qiang');
+                    }
                 }
             },
             clear: function () {
@@ -443,7 +459,8 @@ function initGoodsList() {
         data: {
             items: [{
                 title: "123"
-            }]
+            }],
+            is_show: 1
         }
     });
 }
