@@ -1,22 +1,25 @@
 // 域名加端口号
 var base_url = 'http://127.0.0.1:8088';
-// 搜索框对象
-var vueSearch;
+
 // 筛选条件对象
 var js_filter_container;
 // 排序方式
 var js_sort_way;
 //商品列表
 var js_goods_area;
-
+//当前页码
+var page_num = 1;
+//每页数据量
+var page_size = 25;
 //Ajax获取数所需的参数
 var search_data = {};
 
 
 // 初始化函数
 window.onload = function () {
-    // searchGoods();
-    // initGoodsList();
+    // 向ajax参数中添加页码和每页数据量
+    addProperty('page_num', page_num);
+    addProperty('page_size', page_size);
 
     // 搜索框吸顶
     initScroll();
@@ -28,8 +31,8 @@ window.onload = function () {
     initGoodsList();
     // 窗口大小监听
     watchWindow();
-    var s = 'abc';
-    console.log('长度：' + s.length);
+
+    getGoods();
 }
 
 // 搜索框吸顶   开始
@@ -376,6 +379,7 @@ function initSortBtn() {
             // 切换列表显示方式
             toggleList: function () {
                 this.toggle_list.is_first_icon = !this.toggle_list.is_first_icon;
+                js_goods_area.toggle_list = !js_goods_area.toggle_list;
             },
             // 显示筛选侧边
             showSide: function () {
@@ -460,7 +464,8 @@ function initGoodsList() {
             items: [{
                 title: "123"
             }],
-            is_show: 1
+            is_show: 1,
+            toggle_list: false //切换列表显示方式
         }
     });
 }
@@ -537,19 +542,12 @@ function deleteProperty(pro_name) {
     console.log(JSON.stringify(search_data));
 }
 
-// 搜索商品
-function searchGoods() {
-    var pageNum = 1;
-    var searchWord = 'macbook';
-    var sortWay = 'sale_num';
+// 获取商品
+function getGoods() {
     axios({
-        url: base_url + '/getGoods/searchGoods',
+        url: base_url + '/getGoods',
         method: 'get',
-        params: {
-            pageNum: pageNum,
-            searchWord: searchWord,
-            sortWay: sortWay
-        }
+        params: search_data
     }).then(function (response) {
         console.log(response);
     }).catch(function (error) {
@@ -557,6 +555,7 @@ function searchGoods() {
     });
 }
 
+// 测试
 function test() {
     axios({
         url: base_url + '/test',

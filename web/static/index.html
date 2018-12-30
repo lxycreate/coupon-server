@@ -42,7 +42,7 @@
                         <img src="../images/logo.png">
                     </a>
                     <form v-bind:class="{no_margin : !is_show}" class="search_input js_search_input">
-                        <input v-model="searchWord" placeholder="请输入搜索内容">
+                        <input v-model="searchWord" placeholder="商品标题、链接、关键字">
                         <i class="icon-font i-search-pc"></i>
                     </form>
                 </div>
@@ -173,11 +173,11 @@
             <!-- 筛选   END -->
 
             <!-- 商品区域   START -->
-            <div class="goods_area js_goods_area" id="toggle-goods_area">
+            <div class="goods_area  toggle-goods_area js_goods_area">
                 <!-- 商品列表   START -->
-                <ul class="goods_list js_goods_list" id="toggle-goods_list">
-                    <li id="toggle-li">
-                        <span class="item" id="toggle-item">
+                <ul class="goods_list js_goods_list">
+                    <li class="toggle-li">
+                        <span class="item toggle-item">
                             <span class="container toggle-container">
                                 <!-- 图片 -->
                                 <span class="img_box toggle-box-first">

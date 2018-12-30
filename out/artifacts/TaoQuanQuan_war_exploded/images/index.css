@@ -44,7 +44,7 @@ li {
 .ceil_fixed {
     position: fixed;
     top: 0;
-    padding: 15px 0 20px 0;
+    padding: 10px 0 15px 0;
     z-index: 100;
     box-shadow: 0 3px 2px #dddddd;
 }
@@ -155,7 +155,7 @@ li {
     }
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media (min-width:767px) and (max-width:991px) {
     .header {
         margin-top: 30px;
     }
@@ -583,7 +583,7 @@ li {
     .filter_box .more_filter ul li {
         display: block;
         height: auto;
-        margin: 10px 0 0 0;
+        margin: 12px 0 0 0;
         text-align: left;
     }
 
@@ -598,9 +598,9 @@ li {
     }
 
     .filter_box .more_filter ul li input {
-        width: 40px;
-        height: 20px;
-        margin-top: 5px;
+        width: 50px;
+        height: 25px;
+        margin-top: 3px;
         margin-left: 15px;
     }
 
@@ -723,49 +723,346 @@ li {
     display: block;
     width: 95%;
     margin: auto;
+    transition: all .3s ease;
     background-color: #ffffff;
 }
 
-.goods_area .goods_list .item .link {
+.goods_area .goods_list .item .container {
     position: relative;
     display: block;
-    padding: 5px;
+    padding: 6px;
     margin: auto;
 }
 
-.goods_area .goods_list .item .link .img_box {
+.goods_area .goods_list .item .container .img_box {
     position: relative;
     display: block;
     padding-top: 100%;
     overflow: hidden;
 }
 
-.goods_area .goods_list .item .link .img_box>img {
+.goods_area .goods_list .item .container .img_box>img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
 }
 
-.goods_area .goods_list .item .text_box {
+.goods_area .goods_list .item .container .img_box .link_box {
+    position: relative;
+    display: none;
+    height: 30px;
+    margin-top: -30px;
+    font-size: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.goods_area .goods_list .item:hover {
+    box-shadow: 0 0 8px #888888;
+}
+
+.goods_area .goods_list .item:hover .link_box {
+    display: block !important;
+}
+
+.goods_area .goods_list .item .container .img_box .link_box>a {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.goods_area .goods_list .item .container .img_box .link_box>a:hover {
+    cursor: pointer;
+    background-color: #ff4200;
+}
+
+.goods_area .goods_list .item .container .img_box .link_box>a i {
+    margin-right: 3px;
+}
+
+.goods_area .goods_list .item .container .img_box .ju {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    color: #ffffff;
+    font-size: 15px;
+    background-color: #7144d5;
+    background: -webkit-linear-gradient(right, #63aff9, #8b16f5);
+    background: -o-linear-gradient(right, #63aff9, #8b16f5);
+    background: -moz-linear-gradient(right, #63aff9, #8b16f5);
+    background: linear-gradient(right, #63aff9, #8b16f5);
+}
+
+.goods_area .goods_list .item .container:last-child {
+    padding-top: 0;
+}
+
+.goods_area .goods_list .item .container .text_box {
+    position: relative;
     display: block;
-    padding: 0 5px 5px 5px;
+    font-size: 0;
 }
 
 .goods_area .goods_list .item .text_box .title {
+    position: relative;
     display: block;
     font-size: 15px;
     line-height: 25px;
 }
 
+.goods_area .goods_list .item .text_box .title:hover {
+    cursor: pointer;
+    color: #ff4200;
+}
+
 .goods_area .goods_list .item .text_box .title>img {
     display: inline-block;
-    width: 14px;
-    height: 14px;
-    margin-right: 5px;
+    width: 18px;
+    height: 18px;
+    margin: -3px 5px 0 0;
     vertical-align: middle;
 }
 
+/* 原价   start */
+.goods_area .goods_list .item .text_box .org_price {
+    display: block;
+    font-size: 0;
+    margin-top: 3px;
+    padding-right: 3px;
+}
+
+.goods_area .goods_list .item .text_box .org_price>span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.goods_area .goods_list .item .text_box .org_price .box {
+    width: 80%;
+}
+
+.goods_area .goods_list .item .text_box .org_price .tag_box {
+    width: 20%;
+}
+
+.goods_area .goods_list .item .text_box .org_price .price_title {
+    font-size: 14px;
+    color: #999999;
+}
+
+.goods_area .goods_list .item .text_box .org_price .icon {
+    font-size: 14px;
+    color: #999999;
+    margin-left: 3px;
+}
+
+.goods_area .goods_list .item .text_box .org_price .num {
+    margin-left: 2px;
+    font-size: 15px;
+    color: #999999;
+}
+
+.goods_area .goods_list .item .text_box .tag_box {
+    text-align: right;
+}
+
+.goods_area .goods_list .item .text_box .tag_box>span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 18px;
+    background-color: #ff0036;
+}
+
+/* 原价   end */
+/* 券后   start */
+.goods_area .goods_list .item .text_box .price {
+    display: block;
+    font-size: 0;
+    margin-top: 3px;
+}
+
+.goods_area .goods_list .item .text_box .price>span {
+    display: inline-block;
+    vertical-align: middle;
+    color: #ff0036;
+    line-height: 20px;
+}
+
+.goods_area .goods_list .item .text_box .price .price_title {
+    font-size: 14px;
+}
+
+.goods_area .goods_list .item .text_box .price .icon {
+    font-size: 14px;
+    margin-left: 3px;
+}
+
+.goods_area .goods_list .item .text_box .price .num {
+    margin-left: 2px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 券后   end */
+/* 销量   start */
+.goods_area .goods_list .item .text_box .sale {
+    display: block;
+    font-size: 0;
+    margin-top: 3px;
+}
+
+.goods_area .goods_list .item .text_box .sale>span {
+    display: inline-block;
+    color: #666666;
+    vertical-align: middle;
+}
+
+.goods_area .goods_list .item .text_box .sale .sale_title {
+    font-size: 14px;
+}
+
+.goods_area .goods_list .item .text_box .sale .num {
+    margin-left: 3px;
+    font-size: 18px;
+}
+
+/* 销量   end */
+/* 领券   start */
+.goods_area .goods_list .item .text_box .quan {
+    display: block;
+    margin-top: 3px;
+    color: #ff4200;
+    text-align: right;
+}
+
+.goods_area .goods_list .item .text_box .quan .quan_title {
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.goods_area .goods_list .item .text_box .quan i {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 3px;
+    margin-top: 2px;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+.goods_area .goods_list .item .text_box .quan .num {
+    display: inline-block;
+    margin-left: 3px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+/* 领券   end */
+/* 切换列表显示方式   start */
+.toggle-goods_area {
+    padding: 0 !important;
+}
+
+.toggle-li {
+    width: 100% !important;
+}
+
+.toggle-item {
+    width: auto !important;
+    padding: 6px !important;
+    font-size: 0 !important;
+}
+
+.toggle-container {
+    display: inline-block !important;
+    padding: 0 !important;
+    width: 50% !important;
+    padding-top: 48% !important;
+    vertical-align: top !important;
+}
+
+.toggle-container:first-child {
+    width: 48% !important;
+    margin-right: 2% !important;
+    padding-top: 48% !important;
+}
+
+.toggle-box-first {
+    margin-top: -100%;
+}
+
+.toggle-box-second {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.toggle-sale {
+    position: absolute;
+    display: inline-block !important;
+    top: 100%;
+    width: 40%;
+    margin-top: -48px !important;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.toggle-sale_container {
+    display: inline-block;
+    width: 100%;
+    max-width: 100px;
+}
+
+.toggle-sale_child {
+    display: block !important;
+    text-align: center;
+    margin: 2px 0 0 0 !important;
+}
+
+.toggle-quan {
+    position: absolute;
+    display: inline-block !important;
+    top: 100%;
+    left: 50%;
+    width: 48%;
+    margin-top: -44px !important;
+    vertical-align: middle;
+    text-align: right !important;
+}
+
+.toggle-quan_container {
+    display: inline-block;
+    width: 100%;
+    max-width: 100px;
+    min-height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #ff4200;
+}
+
+.toggle-quan_title {
+    display: block !important;
+    height: 20px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 18px;
+    border-radius: 2px;
+    background-color: #ff4200;
+}
+
+/* 切换列表显示方式   end */
 @media(max-width:1199px) {
     .goods_area .goods_list>li {
         width: 25%;

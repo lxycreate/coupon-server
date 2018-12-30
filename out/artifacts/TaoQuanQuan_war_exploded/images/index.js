@@ -1,22 +1,25 @@
 // 域名加端口号
 var base_url = 'http://127.0.0.1:8088';
-// 搜索框对象
-var vueSearch;
+
 // 筛选条件对象
 var js_filter_container;
 // 排序方式
 var js_sort_way;
 //商品列表
 var js_goods_area;
-
+//当前页码
+var page_num = 1;
+//每页数据量
+var page_size = 25;
 //Ajax获取数所需的参数
 var search_data = {};
 
 
 // 初始化函数
 window.onload = function () {
-    // searchGoods();
-    // initGoodsList();
+    // 向ajax参数中添加页码和每页数据量
+    addProperty('page_num', page_num);
+    addProperty('page_size', page_size);
 
     // 搜索框吸顶
     initScroll();
@@ -28,8 +31,8 @@ window.onload = function () {
     initGoodsList();
     // 窗口大小监听
     watchWindow();
-    var s = 'abc';
-    console.log('长度：' + s.length);
+
+    getGoods();
 }
 
 // 搜索框吸顶   开始
@@ -281,6 +284,22 @@ function initCatalogBox() {
                     if (isMidSmallScreen()) {
                         this.filter_items[index - 1].is_small_select = true;
                     }
+                    //"淘抢购"和"聚划算"是互斥的
+                    //当两个同时被选中时,取消之前被选中的那个
+                    if (index == 1 && this.filter_items[1].is_select) {
+                        //取消选中"聚划算"
+                        this.filter_items[1].is_select = false;
+                        this.filter_items[1].is_small_select = false;
+                        // this.filter_value = "-2";
+                        deleteProperty('is_ju');
+                    }
+                    if (index == 2 && this.filter_items[0].is_select) {
+                        //取消选中"淘抢购"
+                        this.filter_items[0].is_select = false;
+                        this.filter_items[0].is_small_select = false;
+                        // this.filter_value = "-1";
+                        deleteProperty('is_qiang');
+                    }
                 }
             },
             clear: function () {
@@ -360,6 +379,7 @@ function initSortBtn() {
             // 切换列表显示方式
             toggleList: function () {
                 this.toggle_list.is_first_icon = !this.toggle_list.is_first_icon;
+                js_goods_area.toggle_list = !js_goods_area.toggle_list;
             },
             // 显示筛选侧边
             showSide: function () {
@@ -367,7 +387,7 @@ function initSortBtn() {
                     this.stopSideAnimate();
                     this.is_show_side = true;
                     Velocity(this.$refs.js_confirm_btn, {
-                        'margin-left': '-298px',
+                        'margin-left': '-298px'
                     });
                     Velocity(js_filter_container.$refs.js_filter_container, {
                         'margin-left': '-300px'
@@ -443,7 +463,9 @@ function initGoodsList() {
         data: {
             items: [{
                 title: "123"
-            }]
+            }],
+            is_show: 1,
+            toggle_list: false //切换列表显示方式
         }
     });
 }
@@ -473,7 +495,9 @@ function checkWindowWidth() {
 
         //虽然实际使用中几乎不存在设备的尺寸突然变大变小(除了开发者模式调试)
         //还是将该元素定位重置
-        js_sort_way.hideSide();
+        // 这里不能将元素定位重置，当弹出输入法框的时候会触发onsize事件，从而调用这个事件
+        // 造成侧栏自动隐藏
+        // js_sort_way.hideSide();
         //小屏幕就显示列表切换按钮
 
     }
@@ -518,19 +542,12 @@ function deleteProperty(pro_name) {
     console.log(JSON.stringify(search_data));
 }
 
-// 搜索商品
-function searchGoods() {
-    var pageNum = 1;
-    var searchWord = 'macbook';
-    var sortWay = 'sale_num';
+// 获取商品
+function getGoods() {
     axios({
-        url: base_url + '/getGoods/searchGoods',
+        url: base_url + '/getGoods',
         method: 'get',
-        params: {
-            pageNum: pageNum,
-            searchWord: searchWord,
-            sortWay: sortWay
-        }
+        params: search_data
     }).then(function (response) {
         console.log(response);
     }).catch(function (error) {
@@ -538,6 +555,7 @@ function searchGoods() {
     });
 }
 
+// 测试
 function test() {
     axios({
         url: base_url + '/test',

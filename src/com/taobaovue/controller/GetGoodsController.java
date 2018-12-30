@@ -9,22 +9,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
+
 @Controller
 
-public class SearchController {
+public class GetGoodsController {
     @Autowired
-    GoodsService search;
+    GoodsService goods_service;
 
-    @RequestMapping(value = "/getGoods/searchGoods", method = RequestMethod.GET)
+    @Autowired
+    HttpServletRequest request;
+
+    @RequestMapping(value = "/getGoods", method = RequestMethod.GET)
     public @ResponseBody
-    GoodsJson searchGoods(@RequestParam("pageNum") Integer pageNum, @RequestParam("searchWord") String searchWord, @RequestParam("sortWay") String sortWay) {
-      return search.searchGoods(pageNum, searchWord, sortWay);
+    GoodsJson getGoods() {
+        
+        return null;
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public @ResponseBody Integer test(@RequestParam("test") Integer test){
+    public @ResponseBody
+    Integer test(@RequestParam("test") Integer test) {
         System.out.print(test);
-        return search.test();
+        return goods_service.test();
     }
 
 }

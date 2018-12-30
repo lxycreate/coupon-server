@@ -969,20 +969,18 @@ li {
 
 /* 领券   end */
 /* 切换列表显示方式   start */
-#toggle-goods_area {
-    padding: 0;
+.toggle-goods_area {
+    padding: 0 !important;
 }
 
-#toggle-goods_list {}
-
-#toggle-li {
-    width: 100%;
+.toggle-li {
+    width: 100% !important;
 }
 
-#toggle-item {
-    width: auto;
-    padding: 6px;
-    font-size: 0;
+.toggle-item {
+    width: auto !important;
+    padding: 6px !important;
+    font-size: 0 !important;
 }
 
 .toggle-container {
@@ -999,12 +997,10 @@ li {
     padding-top: 48% !important;
 }
 
-/* 商品图片 */
 .toggle-box-first {
     margin-top: -100%;
 }
 
-/* 文字 */
 .toggle-box-second {
     position: absolute !important;
     top: 0;
