@@ -1,5 +1,6 @@
 package com.taobaovue.controller;
 
+import com.taobaovue.entity.AjaxParameter;
 import com.taobaovue.entity.GoodsJson;
 import com.taobaovue.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,8 @@ public class GetGoodsController {
     @RequestMapping(value = "/getGoods", method = RequestMethod.GET)
     public @ResponseBody
     GoodsJson getGoods() {
-
-        return null;
+        AjaxParameter temp = new AjaxParameter(request);
+        return goods_service.getGoods(temp);
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)

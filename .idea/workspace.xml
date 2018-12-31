@@ -7,9 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/controller/GetGoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobaovue/controller/GetGoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/dao/GoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobaovue/dao/GoodsDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/taobaovue/entity/AjaxParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobaovue/entity/AjaxParameter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/service/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobaovue/service/GoodsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mybatis.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,7 +56,7 @@
           <entry key="java" value="65" />
           <entry key="js" value="1" />
           <entry key="properties" value="1" />
-          <entry key="xml" value="34" />
+          <entry key="xml" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -62,23 +66,24 @@
           <entry key="JAVA" value="65" />
           <entry key="JavaScript" value="1" />
           <entry key="Properties" value="1" />
-          <entry key="XML" value="34" />
+          <entry key="XML" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="14" />
-          <entry key="java" value="3100" />
+          <entry key="java" value="3356" />
           <entry key="js" value="29" />
-          <entry key="xml" value="678" />
+          <entry key="xml" value="1087" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3100" />
+          <entry key="JAVA" value="3356" />
           <entry key="JavaScript" value="29" />
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="XML" value="678" />
+          <entry key="SQL" value="14" />
+          <entry key="XML" value="1073" />
         </counts>
       </usages-collector>
     </session>
@@ -94,11 +99,88 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/AjaxParameter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+            <state relative-caret-position="-2523">
+              <caret line="113" column="44" selection-start-line="113" selection-start-column="44" selection-end-line="113" selection-end-column="44" />
+              <folding>
+                <element signature="e#3956#3957#0" expanded="true" />
+                <element signature="e#4014#4015#0" expanded="true" />
+                <element signature="e#4052#4053#0" expanded="true" />
+                <element signature="e#4088#4089#0" expanded="true" />
+                <element signature="e#4119#4120#0" expanded="true" />
+                <element signature="e#4168#4169#0" expanded="true" />
+                <element signature="e#4208#4209#0" expanded="true" />
+                <element signature="e#4245#4246#0" expanded="true" />
+                <element signature="e#4277#4278#0" expanded="true" />
+                <element signature="e#4328#4329#0" expanded="true" />
+                <element signature="e#4370#4371#0" expanded="true" />
+                <element signature="e#4410#4411#0" expanded="true" />
+                <element signature="e#4445#4446#0" expanded="true" />
+                <element signature="e#4502#4503#0" expanded="true" />
+                <element signature="e#4550#4551#0" expanded="true" />
+                <element signature="e#4588#4589#0" expanded="true" />
+                <element signature="e#4621#4622#0" expanded="true" />
+                <element signature="e#4674#4675#0" expanded="true" />
+                <element signature="e#4718#4719#0" expanded="true" />
+                <element signature="e#4749#4750#0" expanded="true" />
+                <element signature="e#4776#4777#0" expanded="true" />
+                <element signature="e#4816#4817#0" expanded="true" />
+                <element signature="e#4848#4849#0" expanded="true" />
+                <element signature="e#4879#4880#0" expanded="true" />
+                <element signature="e#4906#4907#0" expanded="true" />
+                <element signature="e#4946#4947#0" expanded="true" />
+                <element signature="e#4978#4979#0" expanded="true" />
+                <element signature="e#5015#5016#0" expanded="true" />
+                <element signature="e#5047#5048#0" expanded="true" />
+                <element signature="e#5098#5099#0" expanded="true" />
+                <element signature="e#5140#5141#0" expanded="true" />
+                <element signature="e#5176#5177#0" expanded="true" />
+                <element signature="e#5207#5208#0" expanded="true" />
+                <element signature="e#5256#5257#0" expanded="true" />
+                <element signature="e#5296#5297#0" expanded="true" />
+                <element signature="e#5329#5330#0" expanded="true" />
+                <element signature="e#5357#5358#0" expanded="true" />
+                <element signature="e#5400#5401#0" expanded="true" />
+                <element signature="e#5434#5435#0" expanded="true" />
+                <element signature="e#5470#5471#0" expanded="true" />
+                <element signature="e#5501#5502#0" expanded="true" />
+                <element signature="e#5550#5551#0" expanded="true" />
+                <element signature="e#5590#5591#0" expanded="true" />
+                <element signature="e#5625#5626#0" expanded="true" />
+                <element signature="e#5655#5656#0" expanded="true" />
+                <element signature="e#5702#5703#0" expanded="true" />
+                <element signature="e#5740#5741#0" expanded="true" />
+                <element signature="e#5773#5774#0" expanded="true" />
+                <element signature="e#5801#5802#0" expanded="true" />
+                <element signature="e#5844#5845#0" expanded="true" />
+                <element signature="e#5878#5879#0" expanded="true" />
+                <element signature="e#5912#5913#0" expanded="true" />
+                <element signature="e#5941#5942#0" expanded="true" />
+                <element signature="e#5986#5987#0" expanded="true" />
+                <element signature="e#6022#6023#0" expanded="true" />
+                <element signature="e#6056#6057#0" expanded="true" />
+                <element signature="e#6085#6086#0" expanded="true" />
+                <element signature="e#6130#6131#0" expanded="true" />
+                <element signature="e#6166#6167#0" expanded="true" />
+                <element signature="e#6202#6203#0" expanded="true" />
+                <element signature="e#6233#6234#0" expanded="true" />
+                <element signature="e#6282#6283#0" expanded="true" />
+                <element signature="e#6322#6323#0" expanded="true" />
+                <element signature="e#6352#6353#0" expanded="true" />
+                <element signature="e#6378#6379#0" expanded="true" />
+                <element signature="e#6416#6417#0" expanded="true" />
+                <element signature="e#6446#6447#0" expanded="true" />
+                <element signature="e#6484#6485#0" expanded="true" />
+                <element signature="e#6518#6519#0" expanded="true" />
+                <element signature="e#6572#6573#0" expanded="true" />
+                <element signature="e#6618#6619#0" expanded="true" />
+                <element signature="e#6654#6655#0" expanded="true" />
+                <element signature="e#6686#6687#0" expanded="true" />
+                <element signature="e#6736#6737#0" expanded="true" />
+                <element signature="e#6778#6779#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,16 +198,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/GoodsService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <caret line="6" column="48" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,10 +207,50 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#585#586#0" expanded="true" />
+                <element signature="e#612#613#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taobaovue/dao/GoodsDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+            <state relative-caret-position="57">
+              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="85" column="27" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
+              <folding>
+                <element signature="e#3272#3276#0" expanded="true" />
+                <element signature="e#3387#3391#0" expanded="true" />
+                <element signature="e#3501#3505#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mybatis.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="16" column="72" selection-start-line="16" selection-start-column="72" selection-end-line="16" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -145,8 +258,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taobaovue/controller/GetGoodsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="247">
+              <caret line="28" column="44" lean-forward="true" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,6 +284,8 @@
       <find>goodsdao</find>
       <find>goods</find>
       <find>jsonObject</find>
+      <find>Integer</find>
+      <find>getGoodsNum</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,20 +298,20 @@
         <option value="$PROJECT_DIR$/src/com/taobaovue/service/GetGoodsData.java" />
         <option value="$PROJECT_DIR$/src/mapper/platMapper.xml" />
         <option value="$PROJECT_DIR$/src/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/src/mybatis.xml" />
-        <option value="$PROJECT_DIR$/src/com/taobaovue/dao/GoodsDao.java" />
         <option value="$PROJECT_DIR$/web/images/index.js" />
         <option value="$PROJECT_DIR$/src/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/mapper/goodsMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/taobaovue/entity/NewGoods.java" />
         <option value="$PROJECT_DIR$/src/com/taobaovue/entity/SqlGoods.java" />
         <option value="$PROJECT_DIR$/src/mapper/platformMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/taobaovue/controller/SearchController.java" />
         <option value="$PROJECT_DIR$/src/com/taobaovue/entity/Ajax.java" />
-        <option value="$PROJECT_DIR$/src/com/taobaovue/service/GoodsService.java" />
-        <option value="$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/com/taobaovue/controller/GetGoodsController.java" />
         <option value="$PROJECT_DIR$/src/com/taobaovue/entity/AjaxParameter.java" />
+        <option value="$PROJECT_DIR$/src/mybatis.xml" />
+        <option value="$PROJECT_DIR$/src/com/taobaovue/service/GoodsService.java" />
+        <option value="$PROJECT_DIR$/src/com/taobaovue/dao/GoodsDao.java" />
+        <option value="$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/mapper/goodsMapper.xml" />
       </list>
     </option>
   </component>
@@ -797,8 +912,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
+    <option name="x" value="670" />
+    <option name="y" value="63" />
     <option name="width" value="1254" />
     <option name="height" value="930" />
   </component>
@@ -908,7 +1023,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546174478099" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546258881183" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -1039,12 +1154,12 @@
       <workItem from="1545879562791" duration="696000" />
       <workItem from="1545913808710" duration="361000" />
       <workItem from="1546167015474" duration="5669000" />
-      <workItem from="1546242268709" duration="5125000" />
+      <workItem from="1546242268709" duration="9200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41645000" />
+    <option name="totallyTimeSpent" value="45720000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1056,10 +1171,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="441" y="35" width="836" height="620" extended-state="0" />
+    <frame x="447" y="42" width="836" height="620" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" weight="0.30800325" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" weight="0.466581" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1069,7 +1184,7 @@
       <window_info id="设计师" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291815" />
-      <window_info anchor="bottom" x="335" y="406" width="1237" height="220" id="Run" order="2" sideWeight="0.4995958" weight="0.4341637" />
+      <window_info active="true" anchor="bottom" x="335" y="406" width="1237" height="220" id="Run" order="2" sideWeight="0.4995958" visible="true" weight="0.15811089" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1093,41 +1208,6 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.3031528" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Web" order="6" sideWeight="0.50162864" side_tool="true" weight="0.2708165" />
-      <window_info id="设计师" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3291815" />
-      <window_info active="true" anchor="bottom" x="335" y="406" width="1237" height="220" id="Run" order="2" sideWeight="0.4995958" visible="true" weight="0.4341637" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3291815" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3291815" />
-      <window_info anchor="bottom" id="Spring" order="8" weight="0.3291815" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3291815" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5004042" side_tool="true" weight="0.3291815" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4995958" weight="0.3291815" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.3291815" />
-      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.3291815" />
-      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.3291815" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1206,13 +1286,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/system/dataservice/GetData.java" />
-    <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/SqlGoods.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -1234,13 +1307,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -1250,30 +1316,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/GetGoodsData.java" />
     <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/Ajax.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/GoodsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/dao/GoodsDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/controller/GetGoodsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/GoodsJson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1288,20 +1330,148 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/AjaxParameter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="-2523">
+          <caret line="113" column="44" selection-start-line="113" selection-start-column="44" selection-end-line="113" selection-end-column="44" />
+          <folding>
+            <element signature="e#3956#3957#0" expanded="true" />
+            <element signature="e#4014#4015#0" expanded="true" />
+            <element signature="e#4052#4053#0" expanded="true" />
+            <element signature="e#4088#4089#0" expanded="true" />
+            <element signature="e#4119#4120#0" expanded="true" />
+            <element signature="e#4168#4169#0" expanded="true" />
+            <element signature="e#4208#4209#0" expanded="true" />
+            <element signature="e#4245#4246#0" expanded="true" />
+            <element signature="e#4277#4278#0" expanded="true" />
+            <element signature="e#4328#4329#0" expanded="true" />
+            <element signature="e#4370#4371#0" expanded="true" />
+            <element signature="e#4410#4411#0" expanded="true" />
+            <element signature="e#4445#4446#0" expanded="true" />
+            <element signature="e#4502#4503#0" expanded="true" />
+            <element signature="e#4550#4551#0" expanded="true" />
+            <element signature="e#4588#4589#0" expanded="true" />
+            <element signature="e#4621#4622#0" expanded="true" />
+            <element signature="e#4674#4675#0" expanded="true" />
+            <element signature="e#4718#4719#0" expanded="true" />
+            <element signature="e#4749#4750#0" expanded="true" />
+            <element signature="e#4776#4777#0" expanded="true" />
+            <element signature="e#4816#4817#0" expanded="true" />
+            <element signature="e#4848#4849#0" expanded="true" />
+            <element signature="e#4879#4880#0" expanded="true" />
+            <element signature="e#4906#4907#0" expanded="true" />
+            <element signature="e#4946#4947#0" expanded="true" />
+            <element signature="e#4978#4979#0" expanded="true" />
+            <element signature="e#5015#5016#0" expanded="true" />
+            <element signature="e#5047#5048#0" expanded="true" />
+            <element signature="e#5098#5099#0" expanded="true" />
+            <element signature="e#5140#5141#0" expanded="true" />
+            <element signature="e#5176#5177#0" expanded="true" />
+            <element signature="e#5207#5208#0" expanded="true" />
+            <element signature="e#5256#5257#0" expanded="true" />
+            <element signature="e#5296#5297#0" expanded="true" />
+            <element signature="e#5329#5330#0" expanded="true" />
+            <element signature="e#5357#5358#0" expanded="true" />
+            <element signature="e#5400#5401#0" expanded="true" />
+            <element signature="e#5434#5435#0" expanded="true" />
+            <element signature="e#5470#5471#0" expanded="true" />
+            <element signature="e#5501#5502#0" expanded="true" />
+            <element signature="e#5550#5551#0" expanded="true" />
+            <element signature="e#5590#5591#0" expanded="true" />
+            <element signature="e#5625#5626#0" expanded="true" />
+            <element signature="e#5655#5656#0" expanded="true" />
+            <element signature="e#5702#5703#0" expanded="true" />
+            <element signature="e#5740#5741#0" expanded="true" />
+            <element signature="e#5773#5774#0" expanded="true" />
+            <element signature="e#5801#5802#0" expanded="true" />
+            <element signature="e#5844#5845#0" expanded="true" />
+            <element signature="e#5878#5879#0" expanded="true" />
+            <element signature="e#5912#5913#0" expanded="true" />
+            <element signature="e#5941#5942#0" expanded="true" />
+            <element signature="e#5986#5987#0" expanded="true" />
+            <element signature="e#6022#6023#0" expanded="true" />
+            <element signature="e#6056#6057#0" expanded="true" />
+            <element signature="e#6085#6086#0" expanded="true" />
+            <element signature="e#6130#6131#0" expanded="true" />
+            <element signature="e#6166#6167#0" expanded="true" />
+            <element signature="e#6202#6203#0" expanded="true" />
+            <element signature="e#6233#6234#0" expanded="true" />
+            <element signature="e#6282#6283#0" expanded="true" />
+            <element signature="e#6322#6323#0" expanded="true" />
+            <element signature="e#6352#6353#0" expanded="true" />
+            <element signature="e#6378#6379#0" expanded="true" />
+            <element signature="e#6416#6417#0" expanded="true" />
+            <element signature="e#6446#6447#0" expanded="true" />
+            <element signature="e#6484#6485#0" expanded="true" />
+            <element signature="e#6518#6519#0" expanded="true" />
+            <element signature="e#6572#6573#0" expanded="true" />
+            <element signature="e#6618#6619#0" expanded="true" />
+            <element signature="e#6654#6655#0" expanded="true" />
+            <element signature="e#6686#6687#0" expanded="true" />
+            <element signature="e#6736#6737#0" expanded="true" />
+            <element signature="e#6778#6779#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/controller/GetGoodsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="28" column="44" lean-forward="true" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/AjaxParameter.java">
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/GoodsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+        <state relative-caret-position="114">
+          <caret line="6" column="48" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/dao/GoodsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mybatis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="16" column="72" selection-start-line="16" selection-start-column="72" selection-end-line="16" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="85" column="27" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
+          <folding>
+            <element signature="e#3272#3276#0" expanded="true" />
+            <element signature="e#3387#3391#0" expanded="true" />
+            <element signature="e#3501#3505#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

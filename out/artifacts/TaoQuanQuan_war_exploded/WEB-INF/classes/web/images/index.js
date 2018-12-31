@@ -7,19 +7,14 @@ var js_filter_container;
 var js_sort_way;
 //商品列表
 var js_goods_area;
-//当前页码
-var page_num = 1;
-//每页数据量
-var page_size = 25;
+
 //Ajax获取数所需的参数
 var search_data = {};
 
 
 // 初始化函数
 window.onload = function () {
-    // 向ajax参数中添加页码和每页数据量
-    addProperty('page_num', page_num);
-    addProperty('page_size', page_size);
+
 
     // 搜索框吸顶
     initScroll();
@@ -224,7 +219,11 @@ function initCatalogBox() {
             // 监听目录参数
             catalog_value: function () {
                 // 参数中添加目录信息
-                addProperty('goods_cid', this.catalog_value);
+                if (this.catalog_value != 1) {
+                    addProperty('goods_cid', this.catalog_value);
+                } else {
+                    deleteProperty('goods_cid');
+                }
             },
             // 监听筛选参数
             filter_value: function () {
@@ -443,11 +442,11 @@ function initSortBtn() {
             },
             // 清空
             clear: function () {
-                js_filter_container.Clear();
+                js_filter_container.clear();
             },
             // 确认
             confirm: function () {
-                js_filter_container.Confirm();
+                js_filter_container.confirm();
             }
             // 事件 end
         }
@@ -461,11 +460,22 @@ function initGoodsList() {
     js_goods_area = new Vue({
         el: ".js_goods_area",
         data: {
+            page_num: 1, //当前页码
+            page_size: 20, //每页数据量
             items: [{
                 title: "123"
             }],
             is_show: 1,
-            toggle_list: false //切换列表显示方式
+            toggle_list: false, //切换列表显示方式
+
+        },
+        created: function () {
+            // 初始化search_data
+            search_data['page_num'] = this.page_num;
+            search_data['page_size'] = this.page_size;
+        },
+        methods: {
+
         }
     });
 }
