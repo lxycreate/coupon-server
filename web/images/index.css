@@ -81,11 +81,11 @@ li {
     outline: none;
     font-size: 16px;
     transition: all .5s ease;
-    border: 2px solid #ff4200;
+    border: 2px solid #fa5319;
 }
 
 .header .search_input>input:focus {
-    box-shadow: 0 0 5px #ff4200;
+    box-shadow: 0 0 5px #fa5319;
 }
 
 .header .search_input>i {
@@ -102,7 +102,7 @@ li {
     text-align: center;
     font-size: 23px;
     font-weight: 800;
-    background-color: #ff4200;
+    background-color: #fa5319;
 }
 
 .header .search_input>i:hover {
@@ -115,7 +115,7 @@ li {
 .header .header_btns {
     max-width: 1920px;
     margin: 40px auto 0 auto;
-    background-color: #ff4200;
+    background-color: #fa5319;
     height: auto;
 }
 
@@ -141,7 +141,7 @@ li {
 
 .header .header_btns .btn_box>a:hover {
     cursor: pointer;
-    background-color: #d13904;
+    background-color: #e44108;
 }
 
 /* 导航按钮   结束 */
@@ -256,7 +256,7 @@ li {
     color: #ffffff;
     line-height: 30px;
     vertical-align: middle;
-    background-color: #ff4200;
+    background-color: #fa5319;
 }
 
 .filter_box>div ul {
@@ -278,12 +278,12 @@ li {
 .filter_box .select_box ul li:hover {
     cursor: pointer;
     color: #ffffff;
-    background-color: #ff4200;
+    background-color: #fa5319;
 }
 
 .catalog_btn_bg {
     color: #ffffff;
-    background-color: #ff4200 !important;
+    background-color: #fa5319 !important;
 }
 
 .filter_box .multi_select_box {
@@ -329,7 +329,7 @@ li {
 }
 
 .multi_selected {
-    background-color: #ff4200 !important;
+    background-color: #fa5319 !important;
 }
 
 .filter_box>div .name {
@@ -382,8 +382,8 @@ li {
 }
 
 .filter_box .more_filter ul li>input:focus {
-    border-color: #ff4200;
-    box-shadow: 0 0 3px #ff4200;
+    border-color: #fa5319;
+    box-shadow: 0 0 3px #fa5319;
 }
 
 .filter_box .more_filter ul li .tip {
@@ -405,7 +405,7 @@ li {
     border-radius: 5px;
     font-size: 14px;
     vertical-align: middle;
-    background-color: #ff4200;
+    background-color: #fa5319;
 }
 
 .filter_box .more_filter ul li .confirm:first-child {
@@ -436,7 +436,7 @@ li {
 
 .filter_box .sort_way .btn_box .btn:hover {
     cursor: pointer;
-    color: #ff4200;
+    color: #fa5319;
 }
 
 .filter_box .sort_way .btn_box .btn>a {
@@ -473,7 +473,7 @@ li {
 }
 
 .is_sort_selected {
-    color: #ff4200 !important;
+    color: #fa5319 !important;
 }
 
 @media(min-width:992px) and (max-width:1199px) {
@@ -568,7 +568,7 @@ li {
 
     .is_multi_selected {
         color: #ffffff;
-        background-color: #ff4200 !important;
+        background-color: #fa5319 !important;
     }
 
     .filter_box .more_filter .name {
@@ -676,7 +676,7 @@ li {
         color: #ffffff;
         text-align: center;
         border-radius: 5px;
-        background-color: #ff4200;
+        background-color: #fa5319;
     }
 
     .filter_box .confirm_btn .confirm:first-child {
@@ -742,6 +742,7 @@ li {
     display: block;
     padding-top: 100%;
     overflow: hidden;
+    border-radius: 5px;
 }
 
 .goods_area .goods_list .item .container .img_box>img {
@@ -779,7 +780,7 @@ li {
 
 .goods_area .goods_list .item .container .img_box .link_box>a:hover {
     cursor: pointer;
-    background-color: #ff4200;
+    background-color: #fa5319;
 }
 
 .goods_area .goods_list .item .container .img_box .link_box>a i {
@@ -793,6 +794,7 @@ li {
     padding: 5px;
     color: #ffffff;
     font-size: 14px;
+    border-radius: 3px;
     background-color: #7144d5;
     background: -webkit-linear-gradient(right, #63aff9, #8b16f5);
     background: -o-linear-gradient(right, #63aff9, #8b16f5);
@@ -822,7 +824,7 @@ li {
 
 .goods_area .goods_list .item .text_box .title:hover {
     cursor: pointer;
-    color: #ff4200;
+    color: #fa5319;
 }
 
 .goods_area .goods_list .item .text_box .title>img {
@@ -945,7 +947,7 @@ li {
 .goods_area .goods_list .item .text_box .quan {
     display: block;
     margin-top: 3px;
-    color: #ff4200;
+    color: #fa5319;
     text-align: right;
 }
 
@@ -994,22 +996,13 @@ li {
     width: calc(100% - 146px);
     height: 140px;
     padding: 0 !important;
-    /* width: 58% !important;
-    padding-top: 40% !important; */
     vertical-align: top !important;
 }
 
 .toggle-container:first-child {
-    /* width: 40% !important;
-    margin-right: 2% !important;
-    padding-top: 40% !important; */
     width: 140px !important;
     height: 140px !important;
     margin-right: 6px !important;
-}
-
-.toggle-box-first {
-    /* margin-top: -100%; */
 }
 
 .toggle-box-second {
@@ -1060,7 +1053,7 @@ li {
     min-height: 40px;
     border-radius: 5px;
     text-align: center;
-    border: 1px solid #ff4200;
+    border: 1px solid #fa5319;
 }
 
 .toggle-quan_title {
@@ -1070,7 +1063,7 @@ li {
     color: #ffffff;
     line-height: 20px;
     border-radius: 2px 2px 0 0;
-    background-color: #ff4200;
+    background-color: #fa5319;
 }
 
 /* 切换列表显示方式   end */
