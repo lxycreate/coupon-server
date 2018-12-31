@@ -693,7 +693,10 @@ li {
     .filter_box .sort_way .btn_box .btn {
         width: 20%;
     }
+}
 
+/* 屏幕宽度大于450不显示列表切换按钮 */
+@media(max-width:450px) {
     .filter_box .sort_way .btn_box .list_toggle {
         display: inline-block;
     }
@@ -770,7 +773,7 @@ li {
     width: 50%;
     text-align: center;
     line-height: 30px;
-    font-size: 15px;
+    font-size: 14px;
     color: #ffffff;
 }
 
@@ -789,7 +792,7 @@ li {
     left: 0;
     padding: 5px;
     color: #ffffff;
-    font-size: 15px;
+    font-size: 14px;
     background-color: #7144d5;
     background: -webkit-linear-gradient(right, #63aff9, #8b16f5);
     background: -o-linear-gradient(right, #63aff9, #8b16f5);
@@ -812,6 +815,9 @@ li {
     display: block;
     font-size: 15px;
     line-height: 25px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .goods_area .goods_list .item .text_box .title:hover {
@@ -985,20 +991,25 @@ li {
 
 .toggle-container {
     display: inline-block !important;
+    width: calc(100% - 146px);
+    height: 140px;
     padding: 0 !important;
-    width: 50% !important;
-    padding-top: 48% !important;
+    /* width: 58% !important;
+    padding-top: 40% !important; */
     vertical-align: top !important;
 }
 
 .toggle-container:first-child {
-    width: 48% !important;
+    /* width: 40% !important;
     margin-right: 2% !important;
-    padding-top: 48% !important;
+    padding-top: 40% !important; */
+    width: 140px !important;
+    height: 140px !important;
+    margin-right: 6px !important;
 }
 
 .toggle-box-first {
-    margin-top: -100%;
+    /* margin-top: -100%; */
 }
 
 .toggle-box-second {
@@ -1057,8 +1068,8 @@ li {
     height: 20px;
     text-align: center;
     color: #ffffff;
-    line-height: 18px;
-    border-radius: 2px;
+    line-height: 20px;
+    border-radius: 2px 2px 0 0;
     background-color: #ff4200;
 }
 

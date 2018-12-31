@@ -24,7 +24,7 @@ public class GetGoodsController {
     @RequestMapping(value = "/getGoods", method = RequestMethod.GET)
     public @ResponseBody
     GoodsJson getGoods() {
-        
+
         return null;
     }
 

@@ -7,10 +7,9 @@ public class AjaxParameter {
     private HttpServletRequest request;  //Ajax请求
     private Integer page_num;   //第几页
     private Integer page_size; //每页数据量
+    private Integer start_column;//起始行数
+    private Integer end_column;  //结束行数
     private String word;  //搜索内容
-    private String title; //搜索标题
-    private String key_word; //搜索关键字
-    private String goods_url;  //商品链接
     private String order_by;   //排序方式
     private Integer cid;      //类别
     private Integer is_qiang; //淘抢购
@@ -27,6 +26,6 @@ public class AjaxParameter {
 
     public AjaxParameter(HttpServletRequest request) {
         this.request = request;
-        is_gold= null;
+        is_gold = null;
     }
 }
