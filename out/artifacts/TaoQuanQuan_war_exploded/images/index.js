@@ -462,7 +462,7 @@ function initGoodsList() {
         data: {
             page_num: 1, //当前页码
             page_size: 20, //每页数据量
-            items: [{
+            list_items: [{
                 title: "123"
             }],
             is_show: 1,

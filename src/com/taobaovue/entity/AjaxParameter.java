@@ -108,7 +108,7 @@ public class AjaxParameter {
     //取第几行到几行的数据
     public void initColumn() {
         start_column = (page_num - 1) * page_size;
-        end_column = page_num;
+        end_column = page_size;
     }
 
     public HttpServletRequest getRequest() {

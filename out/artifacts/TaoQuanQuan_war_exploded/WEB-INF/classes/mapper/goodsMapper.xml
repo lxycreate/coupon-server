@@ -44,46 +44,46 @@
     </select>
 
     <!--全网商品，获取数据-->
-    <select id="getGoods" resultType="goods" resultMap="goodsMapper" parameterType="pars">
+    <select id="getGoods" resultType="goods" resultMap="goodsMapper">
         select * from goods where 1=1
-        <if test="goods_cid!=null and goods_cid!=''">
+        <if test="goods_cid != null">
             and goods_cid =#{goods_cid}
         </if>
-        <if test="is_qiang!=null and is_qiang!=''">
+        <if test="is_qiang != null">
             and is_qiang =#{is_qiang}
         </if>
-        <if test="is_ju!=null and is_ju!=''">
+        <if test="is_ju != null">
             and is_ju =#{is_ju}
         </if>
-        <if test="is_tmall!=null and is_tmall!=''">
+        <if test="is_tmall != null">
             and is_tmall =#{is_tmall}
         </if>
-        <if test="is_gold!=null and is_gold!=''">
+        <if test="is_gold != null">
             and is_gold =#{is_gold}
         </if>
-        <if test="is_ji!=null and is_ji!=''">
+        <if test="is_ji != null">
             and is_ji =#{is_ji}
         </if>
-        <if test="is_hai!=null and is_hai!=''">
+        <if test="is_hai != null">
             and is_hai =#{is_hai}
         </if>
-        <if test="is_yun!=null and is_yun!=''">
+        <if test="is_yun != null">
             and is_yun =#{is_yun}
         </if>
-        <if test="sale_num!=null and sale_num!=''">
+        <if test="sale_num != null">
             and goods_sale &gt;=#{sale_num}
         </if>
-        <if test="start_price!=null and start_price!=''">
+        <if test="start_price != null">
             and after_coupon &gt;=#{start_price}
         </if>
-        <if test="end_price!=null and end_price!=''">
+        <if test="end_price != null">
             and after_coupon &lt;=#{end_price}
         </if>
-        <if test="start_column!=null and start_column!='' and page_size != null and page_size!=''">
-            limit #{start_column},#{page_size}
-        </if>
-        <if test="sort!=null and sort!='all'">
+        <if test="sort != null and sort != 'all' and sort != ''">
             order by #{sort}
+        </if>
+        <if test="start_column != null and end_column != null">
+            limit #{start_column},#{end_column}
         </if>
     </select>
 

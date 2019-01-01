@@ -1,174 +1,171 @@
 package com.taobaovue.entity;
 
+import java.math.BigDecimal;
+
 public class Goods {
 
-    private String goodsId;        //商品ID
-    private String goodsPic;       //商品主图
-    private String goodsTitle;     //商品标题
-    private String goodsShortTitle; //商品短标题
-    private Integer goodsType;     //商品分类
-    private Double goodsPrice;     //商品价格
-    private Integer goodsSaleNum;  //商品销量
-    private String couponId;       //券ID
-    private String sellerId;       //店铺ID
-    private Double couponApply;    //优惠券满多少使用
-    private Double couponAmount;   //优惠券面值
-    private String endTime;        //优惠券结束时间
-    private Double dsr;            //DSR描述评分
-    private Integer isTmall;       //是否天猫
-    private String goodUrl;        //商品链接
+    private String goods_pic; //商品图片
+    private String goods_title; //商品标题
+    private String goods_url;  //商品链接
+    private Integer cid;  //商品目录
+    private Double goods_price; // 商品价格
+    private Double after_coupon;   //券后价
+    private Double coupon_price;  //优惠券面值
+    private Double dsr;  //评分
+    private Integer is_qiang;  //淘抢购
+    private Integer is_ju;    //聚划算
+    private Integer is_tmall;  //天猫
+    private Integer is_gold;   //金牌卖家
+    private Integer is_ji;     //极有家
+    private Integer is_hai;   //海淘
+    private Integer is_yun;   //运费险
+    private String coupon_url;//优惠券链接
+    private Integer goods_sale; //商品销量
 
     public Goods() {
-        goodsId = "";
-        goodsPic = "";
-        goodsTitle = "";
-        goodsShortTitle = "";
-        goodsType = 0;
-        goodsPrice = 0.0;
-        goodsSaleNum = 0;
-        couponId = "";
-        sellerId = "";
-        couponApply = 0.0;
-        couponAmount = 0.0;
-        endTime = "";
-        dsr = 0.0;
-        isTmall = 1;
-        goodUrl = "";
+
     }
 
-    //商品ID
-    public String getGoodsId() {
-        return goodsId;
+    //保留一位小数
+    public Double keepOneDecimal(Double temp) {
+        BigDecimal bd = new BigDecimal(temp);
+        Double result = bd.setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
+        return result;
     }
 
-    public void setGoodsId(String goodsId) {
-        this.goodsId = goodsId;
+    public String getGoods_pic() {
+        return goods_pic;
     }
 
-    //商品主图
-    public String getGoodsPic() {
-        return goodsPic;
+    public void setGoods_pic(String goods_pic) {
+        this.goods_pic = goods_pic;
     }
 
-    public void setGoodsPic(String goodsPic) {
-        this.goodsPic = goodsPic;
+    public String getGoods_title() {
+        return goods_title;
     }
 
-    //商品标题
-    public String getGoodsTitle() {
-        return goodsTitle;
+    public void setGoods_title(String goods_title) {
+        this.goods_title = goods_title;
     }
 
-    public void setGoodsTitle(String goodsTitle) {
-        this.goodsTitle = goodsTitle;
+    public String getGoods_url() {
+        return goods_url;
     }
 
-    //商品短标题
-    public String getGoodsShortTitle() {
-        return goodsShortTitle;
+    public void setGoods_url(String goods_url) {
+        this.goods_url = goods_url;
     }
 
-    public void setGoodsShortTitle(String goodsShortTitle) {
-        this.goodsShortTitle = goodsShortTitle;
+    public Integer getCid() {
+        return cid;
     }
 
-    //商品分类
-    public Integer getGoodsType() {
-        return goodsType;
+    public void setCid(Integer cid) {
+        this.cid = cid;
     }
 
-    public void setGoodsType(Integer goodsType) {
-        this.goodsType = goodsType;
+    public Double getGoods_price() {
+        return goods_price;
     }
 
-    //商品价格
-    public Double getGoodsPrice() {
-        return goodsPrice;
+    public void setGoods_price(Double goods_price) {
+        this.goods_price = keepOneDecimal(goods_price);
     }
 
-    public void setGoodsPrice(Double goodsPrice) {
-        this.goodsPrice = goodsPrice;
+    public Double getAfter_coupon() {
+        return after_coupon;
     }
 
-    //商品销量
-    public Integer getGoodsSaleNum() {
-        return goodsSaleNum;
+    public void setAfter_coupon(Double after_coupon) {
+        this.after_coupon = keepOneDecimal(after_coupon);
     }
 
-    public void setGoodsSaleNum(Integer goodsSaleNum) {
-        this.goodsSaleNum = goodsSaleNum;
+    public Double getCoupon_price() {
+        return coupon_price;
     }
 
-    //优惠券ID
-    public String getCouponId() {
-        return couponId;
+    public void setCoupon_price(Double coupon_price) {
+        this.coupon_price = Math.floor(coupon_price);
     }
 
-    public void setCouponId(String couponId) {
-        this.couponId = couponId;
-    }
-
-    //店铺ID
-    public String getSellerId() {
-        return sellerId;
-    }
-
-    public void setSellerId(String sellerId) {
-        this.sellerId = sellerId;
-    }
-
-    //优惠券满多少减
-    public Double getCouponApply() {
-        return couponApply;
-    }
-
-    public void setCouponApply(Double couponApply) {
-        this.couponApply = couponApply;
-    }
-
-    //优惠券大小
-    public Double getCouponAmount() {
-        return couponAmount;
-    }
-
-    public void setCouponAmount(Double couponAmount) {
-        this.couponAmount = couponAmount;
-    }
-
-    //优惠券结束时间
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }
-
-    //DSR评分
     public Double getDsr() {
         return dsr;
     }
 
     public void setDsr(Double dsr) {
-        this.dsr = dsr;
+        this.dsr = keepOneDecimal(dsr);
     }
 
-    //是否天猫
-    public Integer getIsTmall() {
-        return isTmall;
+    public Integer getIs_qiang() {
+        return is_qiang;
     }
 
-    public void setIsTmall(Integer isTmall) {
-        this.isTmall = isTmall;
-        createGoodUrl(isTmall);
+    public void setIs_qiang(Integer is_qiang) {
+        this.is_qiang = is_qiang;
     }
 
-    //商品链接
-    public void createGoodUrl(Integer isTmall) {
-        if (isTmall == 1) {
-            goodUrl = "https://item.tmall.com/item.htm?id=" + goodsId;
-        } else {
-            goodUrl = "https://item.taobao.com/item.htm?id=" + goodsId;
-        }
+    public Integer getIs_ju() {
+        return is_ju;
+    }
+
+    public void setIs_ju(Integer is_ju) {
+        this.is_ju = is_ju;
+    }
+
+    public Integer getIs_tmall() {
+        return is_tmall;
+    }
+
+    public void setIs_tmall(Integer is_tmall) {
+        this.is_tmall = is_tmall;
+    }
+
+    public Integer getIs_gold() {
+        return is_gold;
+    }
+
+    public void setIs_gold(Integer is_gold) {
+        this.is_gold = is_gold;
+    }
+
+    public Integer getIs_ji() {
+        return is_ji;
+    }
+
+    public void setIs_ji(Integer is_ji) {
+        this.is_ji = is_ji;
+    }
+
+    public Integer getIs_hai() {
+        return is_hai;
+    }
+
+    public void setIs_hai(Integer is_hai) {
+        this.is_hai = is_hai;
+    }
+
+    public Integer getIs_yun() {
+        return is_yun;
+    }
+
+    public void setIs_yun(Integer is_yun) {
+        this.is_yun = is_yun;
+    }
+
+    public String getCoupon_url() {
+        return coupon_url;
+    }
+
+    public void setCoupon_url(String coupon_url) {
+        this.coupon_url = coupon_url;
+    }
+
+    public Integer getGoods_sale() {
+        return goods_sale;
+    }
+
+    public void setGoods_sale(Integer goods_sale) {
+        this.goods_sale = goods_sale;
     }
 }
