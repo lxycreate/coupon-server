@@ -46,7 +46,7 @@
     <!--全网商品，获取数据-->
     <select id="getGoods" resultType="goods" resultMap="goodsMapper">
         select * from goods where 1=1
-        <if test="goods_cid != null">
+        <if test="goods_cid != null and goods_cid != 0">
             and goods_cid =#{goods_cid}
         </if>
         <if test="is_qiang != null">
@@ -79,8 +79,11 @@
         <if test="end_price != null">
             and after_coupon &lt;=#{end_price}
         </if>
-        <if test="sort != null and sort != 'all' and sort != ''">
-            order by #{sort}
+        <if test="sort != null and sort != 'all' and sort_word != null and sort_type == 'asc'">
+            order by ${sort}
+        </if>
+        <if test="sort != null and sort != 'all' and sort_word != null and sort_type == 'desc'">
+            order by ${sort}
         </if>
         <if test="start_column != null and end_column != null">
             limit #{start_column},#{end_column}

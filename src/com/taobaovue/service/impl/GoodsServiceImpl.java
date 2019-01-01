@@ -23,7 +23,7 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public GoodsJson getGoods(AjaxParameter pars) {
         List<SqlGoods> sql_goods = goods_dao.getGoods(pars);
-        System.out.println("每页数据量" + pars.getStart_column());
+
         return createJson(sql_goods);
     }
 
@@ -65,7 +65,8 @@ public class GoodsServiceImpl implements GoodsService {
             temp.setCoupon_url(temp_sql.getCoupon_url());
             //销量
             temp.setGoods_sale(temp_sql.getGoods_sale());
-
+            //券的面值
+            temp.setCoupon_price(temp_sql.getCoupon_price());
             goods_list.add(temp);
         }
         temp_json.setGoods(goods_list);

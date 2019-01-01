@@ -776,6 +776,7 @@ li {
     line-height: 30px;
     font-size: 14px;
     color: #ffffff;
+    text-decoration: none;
 }
 
 .goods_area .goods_list .item .container .img_box .link_box>a:hover {
@@ -831,7 +832,7 @@ li {
     display: inline-block;
     width: 18px;
     height: 18px;
-    margin: -3px 5px 0 0;
+    margin: -3px 2px 0 0;
     vertical-align: middle;
 }
 
@@ -845,6 +846,10 @@ li {
 
 .goods_area .goods_list .item .text_box .org_price>span {
     display: inline-block;
+    /* vertical-align: middle; */
+}
+
+.goods_area .goods_list .item .text_box .org_price .box>span {
     vertical-align: middle;
 }
 
@@ -886,6 +891,7 @@ li {
     color: #ffffff;
     text-align: center;
     line-height: 18px;
+    vertical-align: middle;
     background-color: #ff0036;
 }
 
@@ -930,6 +936,10 @@ li {
 .goods_area .goods_list .item .text_box .sale>span {
     display: inline-block;
     color: #666666;
+    /* vertical-align: middle; */
+}
+
+.goods_area .goods_list .item .text_box .sale_container>span {
     vertical-align: middle;
 }
 
@@ -946,7 +956,9 @@ li {
 /* 领券   start */
 .goods_area .goods_list .item .text_box .quan {
     display: block;
-    margin-top: 3px;
+    width: 60%;
+    max-width: 120px;
+    margin: 3px 0 0 auto;
     color: #fa5319;
     text-align: right;
 }
@@ -973,6 +985,14 @@ li {
     font-weight: bold;
     line-height: 20px;
     vertical-align: middle;
+}
+
+.goods_area .goods_list .item .text_box .sale_container {
+    display: block;
+}
+
+.goods_area .goods_list .item .text_box .quan_container {
+    display: block;
 }
 
 /* 领券   end */

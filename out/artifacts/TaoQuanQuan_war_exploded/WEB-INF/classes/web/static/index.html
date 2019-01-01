@@ -173,73 +173,80 @@
             <!-- 筛选   END -->
 
             <!-- 商品区域   START -->
-            <div class="goods_area  toggle-goods_area js_goods_area">
+            <div class="goods_area js_goods_area">
                 <!-- 商品列表   START -->
                 <ul class="goods_list js_goods_list">
-                    <li class="toggle-li">
-                        <span class="item toggle-item">
-                            <span class="container toggle-container">
-                                <!-- 图片 -->
-                                <span class="img_box toggle-box-first">
-                                    <img src="../images/test.jpg">
+                    <li v-for="item in list_items">
+                        <span class="item">
+                            <span class="container">
+                                <!-- 商品图片 -->
+                                <span class="img_box">
+                                    <img v-bind:src="item.goods_pic">
                                     <span class="link_box">
-                                        <a><i class="icon-font i-right"></i>去天猫</a>
-                                        <a><i class="icon-font i-installment"></i>去领券</a>
+                                        <a v-show="item.is_tmall" v-bind:href="item.goods_url" target="_blank"><i class="icon-font i-right"></i>去天猫</a>
+                                        <a v-show="!item.is_tmall" v-bind:href="item.goods_url" target="_blank"><i class="icon-font i-right"></i>去淘宝</a>
+                                        <a v-bind:href="item.coupon_url" target="_blank"><i class="icon-font i-installment"></i>去领券</a>
                                     </span>
-                                    <span v-if="is_show" class="ju">正在参加聚划算</span>
+                                    <span v-show="item.is_ju" class="ju">正在参加聚划算</span>
                                 </span>
+                                <!-- 商品图片 -->
                             </span>
-                            <!-- container -->
-                            <span class="container toggle-container">
-                                <span class="text_box toggle-box-second">
+                            <span class="container">
+                                <span class="text_box">
                                     <!-- 标题 -->
-                                    <a class="title">
-                                        <img src="../images/tmall.png">
-                                        特美刻TOMIC家用多功能电火锅料理锅烤盘学生宿舍涮烤两用2-4人
+                                    <a class="title" target="_blank">
+                                        <img v-show="item.is_tmall" src="../images/tmall.png">
+                                        <img v-show="!item.is_tmall" src="../images/taobao.png">
+                                        {{item.goods_title}}
                                     </a>
                                     <!-- 价格 -->
                                     <span class="org_price">
                                         <span class="box">
                                             <span class="price_title">原价</span>
                                             <span class="icon">￥</span>
-                                            <span class="num">100</span>
+                                            <span class="num">{{item.goods_price}}</span>
                                         </span>
-                                        <!-- 标签 -->
-                                        <span class="tag_box">
-                                            <span class="xian">险</span>
+                                        <span v-show="item.is_yun" class="tag_box">
+                                            <span v-show="item.is_yun" class="xian">险</span>
                                         </span>
                                     </span>
+                                    <!-- 券后价 -->
                                     <span class="price">
                                         <span class="price_title">券后</span>
                                         <span class="icon">￥</span>
-                                        <span class="num">50</span>
+                                        <span class="num">{{item.after_coupon}}</span>
                                     </span>
-                                    <!-- 价格 end-->
+                                    <!-- 价格   end -->
                                     <!-- 销量 -->
-                                    <span class="sale toggle-sale">
-                                        <span class="toggle-sale_container">
-                                            <span class="sale_title toggle-sale_child">
+                                    <span class="sale">
+                                        <span class="sale_container">
+                                            <span class="sale_title">
                                                 销量
                                             </span>
-                                            <span class="num toggle-sale_child">10000</span>
+                                            <span class="num">
+                                                {{item.goods_sale}}
+                                            </span>
                                         </span>
                                     </span>
-                                    <!-- 销量 end -->
+                                    <!-- 销量   end -->
                                     <!-- 优惠券 -->
-                                    <a class="quan toggle-quan">
-                                        <span class="toggle-quan_container">
-                                            <span class="quan_title toggle-quan_title">领券</span>
+                                    <a v-bind:href="item.coupon_url" class="quan" target="_blank">
+                                        <span class="quan_container">
+                                            <span class="quan_title">
+                                                领券
+                                            </span>
                                             <i class="icon-font i-coupon-pc"></i>
-                                            <span class="num">50</span>
+                                            <span class="num">{{item.coupon_price}}</span>
                                         </span>
                                     </a>
-                                    <!-- 优惠券 end-->
+                                    <!-- 优惠券   end -->
                                 </span>
+                                <!-- text_box -->
                             </span>
                             <!-- container -->
                         </span>
+                        <!-- item -->
                     </li>
-
                 </ul>
                 <!-- 商品列表   START -->
             </div>

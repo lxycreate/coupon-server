@@ -83,61 +83,61 @@ function initCatalogBox() {
             catalog_value: '0',
             catalog_items: [{
                     name: "全部", // 目录名
-                    value: 1, //目录对应值
+                    value: 0, //目录对应值
                     is_select: true //是否被选中
                 }, {
                     name: "女装",
-                    value: 2,
+                    value: 1,
                     is_select: false
                 },
                 {
                     name: "男装",
-                    value: 3,
+                    value: 2,
                     is_select: false
                 },
                 {
                     name: "内衣",
-                    value: 4,
+                    value: 3,
                     is_select: false
                 },
                 {
                     name: "数码家电",
-                    value: 5,
-                    is_select: false
-                },
-                {
-                    name: "家具套装",
-                    value: 6,
+                    value: 4,
                     is_select: false
                 },
                 {
                     name: "美食",
-                    value: 7,
+                    value: 5,
                     is_select: false
                 },
                 {
                     name: "美妆个护",
-                    value: 8,
+                    value: 6,
                     is_select: false
                 },
                 {
                     name: "母婴",
-                    value: 9,
+                    value: 7,
                     is_select: false
                 },
                 {
                     name: "鞋包配饰",
-                    value: 10,
+                    value: 8,
+                    is_select: false
+                },
+                {
+                    name: "家居家装",
+                    value: 9,
                     is_select: false
                 },
                 {
                     name: "文体车品",
-                    value: 11,
+                    value: 10,
                     is_select: false
                 },
                 {
                     name: "其他",
-                    value: 12,
+                    value: 11,
                     is_select: false
                 }
             ],
@@ -213,13 +213,13 @@ function initCatalogBox() {
         },
         created: function () {
             // 初始化目录
-            this.catalog_value = '1';
+            this.catalog_value = '0';
         },
         watch: {
             // 监听目录参数
             catalog_value: function () {
                 // 参数中添加目录信息
-                if (this.catalog_value != 1) {
+                if (this.catalog_value != 0) {
                     addProperty('goods_cid', this.catalog_value);
                 } else {
                     deleteProperty('goods_cid');
@@ -263,7 +263,7 @@ function initCatalogBox() {
                 for (var i = 0; i < this.catalog_items.length; ++i) {
                     this.catalog_items[i].is_select = false;
                 }
-                this.catalog_items[value - 1].is_select = true;
+                this.catalog_items[value].is_select = true;
             },
             // 多选筛选条件事件
             multiSelect: function (index) {
@@ -356,14 +356,14 @@ function initSortBtn() {
                         rotateZ: '-180deg'
                     });
                     // 价格升序排序
-                    addProperty('sort', 'price asc');
+                    addProperty('sort', 'goods_price asc');
                 } else {
                     Velocity(this.$refs.js_transform, {
                         'margin-top': '12px',
                         rotateZ: '0deg'
                     });
                     // 价格降序排序
-                    addProperty('sort', 'price desc');
+                    addProperty('sort', 'goods_price desc');
                 }
             },
             // 重置价格排序的icon
@@ -462,9 +462,7 @@ function initGoodsList() {
         data: {
             page_num: 1, //当前页码
             page_size: 20, //每页数据量
-            list_items: [{
-                title: "123"
-            }],
+            list_items: [],
             is_show: 1,
             toggle_list: false, //切换列表显示方式
 
@@ -475,7 +473,10 @@ function initGoodsList() {
             search_data['page_size'] = this.page_size;
         },
         methods: {
-
+            // 清空当前商品列表
+            clearListItems: function () {
+                this.list_items = [];
+            }
         }
     });
 }
@@ -539,6 +540,8 @@ function mouseDown(event) {
 //添加搜索参数属性
 function addProperty(pro_name, pro_value) {
     search_data[pro_name] = pro_value;
+    js_goods_area.clearListItems();
+    getGoods();
     console.log('添加属性：' + pro_name + '  属性值为：' + pro_value);
     console.log(JSON.stringify(search_data));
 }
@@ -547,6 +550,8 @@ function addProperty(pro_name, pro_value) {
 function deleteProperty(pro_name) {
     if (search_data.hasOwnProperty(pro_name)) {
         delete search_data[pro_name];
+        js_goods_area.clearListItems();
+        getGoods();
         console.log('删除属性' + pro_name);
     }
     console.log(JSON.stringify(search_data));
@@ -559,12 +564,22 @@ function getGoods() {
         method: 'get',
         params: search_data
     }).then(function (response) {
+        //处理返回的数据
+        taskData(response);
         console.log(response);
     }).catch(function (error) {
 
     });
 }
 
+// 处理返回的数据
+function taskData(response) {
+    if (response.data.goods != null && response.data.goods.length != 0) {
+        for (var i = 0; i < response.data.goods.length; ++i) {
+            js_goods_area.list_items.push(response.data.goods[i]);
+        }
+    }
+}
 // 测试
 function test() {
     axios({
