@@ -168,7 +168,7 @@
                     </ul>
                     <!--  -->
                     <!-- 遮罩,弹出擦边栏时防止误触 -->
-                    <div class="shade"></div>
+                    <div v-show="is_show_shade" ref="js_shade" class="shade"></div>
                 </div>
                 <!-- 排序方式   end -->
             </div>
@@ -252,9 +252,14 @@
                     </li>
                 </ul>
                 <!-- 商品列表   END -->
-                <div class="loading">
-                    <img src="../images/loading.gif">
-                </div>
+                <!-- loading动画 start-->
+                <transition name="loading">
+                    <div v-show="is_show_loading" class="loading">
+                        <span>加载中...</span>
+                        <img src="../images/loading.gif">
+                    </div>
+                </transition>
+                <!-- loading动画 end-->
             </div>
             <!-- 商品区域   END -->
         </div>

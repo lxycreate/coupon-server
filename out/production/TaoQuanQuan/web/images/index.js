@@ -322,6 +322,7 @@ function initSortBtn() {
         el: '.js_sort_way',
         data: {
             is_show_side: false, //侧边栏当前是否显示
+            is_show_shade: false, //遮罩
             sort_item: [{
                 name: '综合', //名称
                 type: '', //类型
@@ -386,6 +387,7 @@ function initSortBtn() {
             showSide: function () {
                 if (isMidSmallScreen() && !this.is_show_side) {
                     this.stopSideAnimate();
+                    this.is_show_shade = true;
                     this.is_show_side = true;
                     Velocity(this.$refs.js_confirm_btn, {
                         'margin-left': '-298px'
@@ -401,6 +403,7 @@ function initSortBtn() {
                 if (isMidSmallScreen() && this.is_show_side) {
                     this.stopSideAnimate();
                     this.is_show_side = false;
+                    this.is_show_shade = false;
                     Velocity(this.$refs.js_confirm_btn, {
                         'margin-left': '5px'
                         // 必须带px单位
@@ -467,6 +470,7 @@ function initGoodsList() {
             list_items: [],
             is_show: 1,
             toggle_list: false, //切换列表显示方式
+            is_show_loading: false  //是否显示加载动画
 
         },
         created: function () {
@@ -527,9 +531,13 @@ function isMidSmallScreen() {
 
 // 鼠标按下事件（显示或隐藏侧边栏）   开始
 function mouseDown(event) {
-    var point = event || window.event;
-    var screen_width = document.body.clientWidth;
-    if (screen_width < 992 && screen_width - point.clientX > 300 && event.target != js_sort_way.$refs.js_show_side) {
+    // var point = event || window.event;
+    // var screen_width = document.body.clientWidth;
+    // if (screen_width < 992 && screen_width - point.clientX > 300 && event.target != js_sort_way.$refs.js_show_side) {
+    //     console.log('在侧栏外');
+    //     js_sort_way.hideSide();
+    // }
+    if (event.target == js_sort_way.$refs.js_shade) {
         console.log('在侧栏外');
         js_sort_way.hideSide();
     }

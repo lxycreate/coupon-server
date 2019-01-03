@@ -470,12 +470,17 @@ function initGoodsList() {
             list_items: [],
             is_show: 1,
             toggle_list: false, //切换列表显示方式
+            is_show_loading: true //是否显示加载动画
 
         },
         created: function () {
             // 初始化search_data
             search_data['page_num'] = this.page_num;
             search_data['page_size'] = this.page_size;
+            setTimeout(function () {
+                js_goods_area.is_show_loading = false;
+                console.log('关闭');
+            }, 1000);
         },
         methods: {
             // 清空当前商品列表
@@ -530,8 +535,8 @@ function isMidSmallScreen() {
 
 // 鼠标按下事件（显示或隐藏侧边栏）   开始
 function mouseDown(event) {
-    var point = event || window.event;
-    var screen_width = document.body.clientWidth;
+    // var point = event || window.event;
+    // var screen_width = document.body.clientWidth;
     // if (screen_width < 992 && screen_width - point.clientX > 300 && event.target != js_sort_way.$refs.js_show_side) {
     //     console.log('在侧栏外');
     //     js_sort_way.hideSide();
@@ -610,3 +615,8 @@ function test() {
 
     });
 }
+
+// window.setTimeout(function(){
+//     js_goods_area.is_show_loading = false;
+//     console.log('关闭');
+// },3000);

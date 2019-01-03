@@ -477,8 +477,10 @@ li {
 }
 
 @media(min-width:992px) {
+
     /* 遮罩 */
     .filter_box .shade {
+        z-index: -1;
         display: none !important;
     }
 }
@@ -977,9 +979,9 @@ li {
 /* 销量   end */
 /* 领券   start */
 .goods_area .goods_list .item .text_box .quan {
+    position: relative;
     display: block;
-    width: 60%;
-    max-width: 120px;
+    max-width: 150px;
     margin: 3px 0 0 auto;
     color: #fa5319;
     text-align: right;
@@ -1109,11 +1111,60 @@ li {
 }
 
 /* 切换列表显示方式   end */
+/* loading动画  start*/
 .goods_area .loading {
     position: fixed;
-    /* width: */
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    width: 120px;
+    height: 50px;
+    margin-top: -45px;
+    margin-left: -80px;
+    padding: 15px 20px 20px 20px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px #999999;
+    background-color: #ffffff;
 }
 
+.goods_area .loading>span {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    text-align: center;
+    color: #333333;
+}
+
+.goods_area .loading>img {
+    position: relative;
+    display: block;
+    width: 80%;
+    margin: 0 10%;
+}
+
+.loading-enter-active {
+    animation: loading-in .6s;
+}
+
+.loading-leave-active {
+    animation: loading-in .6s reverse;
+}
+
+@keyframes loading-in {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* loading动画  end*/
 @media(max-width:1199px) {
     .goods_area .goods_list>li {
         width: 25%;
