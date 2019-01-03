@@ -9,24 +9,10 @@
     <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/service/impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/service/impl/GoodsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/production/TaoQuanQuan/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/production/TaoQuanQuan/web/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/images/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/images/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/production/TaoQuanQuan/web/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/production/TaoQuanQuan/web/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/service/impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/service/impl/GoodsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/images/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/images/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/entity/AjaxParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobaovue/entity/AjaxParameter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/images/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/index.html" afterDir="false" />
@@ -46,7 +32,7 @@
     <session id="-246403539">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="21" />
+          <entry key="project.closed" value="23" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.18" value="1" />
@@ -57,14 +43,14 @@
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.29" value="1" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -124,7 +110,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/AjaxParameter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
+            <state relative-caret-position="836">
               <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
             </state>
           </provider>
@@ -179,8 +165,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="82" column="28" lean-forward="true" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
+            <state relative-caret-position="114">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -209,7 +195,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
+            <state relative-caret-position="266">
               <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -902,7 +888,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -971,6 +956,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1110,12 +1096,14 @@
       <workItem from="1546242268709" duration="11312000" />
       <workItem from="1546306058110" duration="6188000" />
       <workItem from="1546329200831" duration="4477000" />
-      <workItem from="1546340086891" duration="4424000" />
+      <workItem from="1546340086891" duration="5199000" />
+      <workItem from="1546488034675" duration="556000" />
+      <workItem from="1546511778893" duration="1501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62921000" />
+    <option name="totallyTimeSpent" value="65753000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1128,9 +1116,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.25545675" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.26354083" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1276,6 +1263,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/AjaxParameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/Goods.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -1304,10 +1298,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/controller/GetGoodsController.java">
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/dao/GoodsDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+        <state relative-caret-position="190">
+          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1321,10 +1315,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/dao/GoodsDao.java">
+    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/controller/GetGoodsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+        <state relative-caret-position="323">
+          <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1333,7 +1327,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
+        <state relative-caret-position="266">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1341,17 +1335,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobaovue/entity/AjaxParameter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="82" column="28" lean-forward="true" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
+        <state relative-caret-position="114">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
         </state>
       </provider>
     </entry>

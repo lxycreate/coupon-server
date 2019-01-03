@@ -167,8 +167,10 @@
                         </li>
                     </ul>
                     <!--  -->
+                    <!-- 遮罩,弹出擦边栏时防止误触 -->
+                    <div class="shade"></div>
                 </div>
-                <!-- 排序方式   START -->
+                <!-- 排序方式   end -->
             </div>
             <!-- 筛选   END -->
 
@@ -184,7 +186,8 @@
                                     <img v-bind:src="item.goods_pic">
                                     <span class="link_box">
                                         <a v-show="item.is_tmall" v-bind:href="item.goods_url" target="_blank"><i class="icon-font i-right"></i>去天猫</a>
-                                        <a v-show="!item.is_tmall" v-bind:href="item.goods_url" target="_blank"><i class="icon-font i-right"></i>去淘宝</a>
+                                        <a v-show="!item.is_tmall" v-bind:href="item.goods_url" target="_blank"><i
+                                                class="icon-font i-right"></i>去淘宝</a>
                                         <a v-bind:href="item.coupon_url" target="_blank"><i class="icon-font i-installment"></i>去领券</a>
                                     </span>
                                     <span v-show="item.is_ju" class="ju">正在参加聚划算</span>
@@ -248,7 +251,10 @@
                         <!-- item -->
                     </li>
                 </ul>
-                <!-- 商品列表   START -->
+                <!-- 商品列表   END -->
+                <div class="loading">
+                    <img src="../images/loading.gif">
+                </div>
             </div>
             <!-- 商品区域   END -->
         </div>

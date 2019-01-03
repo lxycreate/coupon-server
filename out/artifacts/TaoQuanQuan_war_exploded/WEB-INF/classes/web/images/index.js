@@ -1,5 +1,5 @@
 // 域名加端口号
-var base_url = 'http://127.0.0.1:8088';
+var base_url = 'http://192.168.43.248:8088';
 
 // 筛选条件对象
 var js_filter_container;
@@ -7,7 +7,9 @@ var js_filter_container;
 var js_sort_way;
 //商品列表
 var js_goods_area;
-
+//清空商品数组的标志
+//(ajax参数新增加参数或者减少参数时,就把当前商品数组清空)
+var clear_list_flag = false;
 //Ajax获取数所需的参数
 var search_data = {};
 
@@ -540,7 +542,9 @@ function mouseDown(event) {
 //添加搜索参数属性
 function addProperty(pro_name, pro_value) {
     search_data[pro_name] = pro_value;
-    js_goods_area.clearListItems();
+
+    //清空数组
+    clear_list_flag = true;
     getGoods();
     console.log('添加属性：' + pro_name + '  属性值为：' + pro_value);
     console.log(JSON.stringify(search_data));
@@ -550,7 +554,8 @@ function addProperty(pro_name, pro_value) {
 function deleteProperty(pro_name) {
     if (search_data.hasOwnProperty(pro_name)) {
         delete search_data[pro_name];
-        js_goods_area.clearListItems();
+        //清空数组
+        clear_list_flag = true;
         getGoods();
         console.log('删除属性' + pro_name);
     }
@@ -574,12 +579,16 @@ function getGoods() {
 
 // 处理返回的数据
 function taskData(response) {
+    if (clear_list_flag) {
+        js_goods_area.clearListItems();
+    }
     if (response.data.goods != null && response.data.goods.length != 0) {
         for (var i = 0; i < response.data.goods.length; ++i) {
             js_goods_area.list_items.push(response.data.goods[i]);
         }
     }
 }
+
 // 测试
 function test() {
     axios({
