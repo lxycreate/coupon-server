@@ -470,13 +470,17 @@ function initGoodsList() {
             list_items: [],
             is_show: 1,
             toggle_list: false, //切换列表显示方式
-            is_show_loading: false  //是否显示加载动画
+            is_show_loading: true //是否显示加载动画
 
         },
         created: function () {
             // 初始化search_data
             search_data['page_num'] = this.page_num;
             search_data['page_size'] = this.page_size;
+            setTimeout(function () {
+                js_goods_area.is_show_loading = false;
+                console.log('关闭');
+            }, 1000);
         },
         methods: {
             // 清空当前商品列表
@@ -611,3 +615,8 @@ function test() {
 
     });
 }
+
+// window.setTimeout(function(){
+//     js_goods_area.is_show_loading = false;
+//     console.log('关闭');
+// },3000);

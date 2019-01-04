@@ -555,9 +555,13 @@ function mouseDown(event) {
 function addProperty(pro_name, pro_value) {
     search_data[pro_name] = pro_value;
 
-    //清空数组
+    //清空数组标志
     clear_list_flag = true;
-    getGoods();
+    // 显示加载动画
+    js_goods_area.is_show_loading = true;
+    setTimeout(function () {
+        getGoods();
+    }, 300);
     console.log('添加属性：' + pro_name + '  属性值为：' + pro_value);
     console.log(JSON.stringify(search_data));
 }
@@ -566,9 +570,15 @@ function addProperty(pro_name, pro_value) {
 function deleteProperty(pro_name) {
     if (search_data.hasOwnProperty(pro_name)) {
         delete search_data[pro_name];
-        //清空数组
+        //清空数组标志
         clear_list_flag = true;
-        getGoods();
+        // 显示加载动画
+        js_goods_area.is_show_loading = true;
+        // 延迟请求减少价格排序的图标旋转时的卡顿
+        setTimeout(function () {
+            getGoods();
+        }, 300);
+
         console.log('删除属性' + pro_name);
     }
     console.log(JSON.stringify(search_data));
@@ -585,12 +595,17 @@ function getGoods() {
         taskData(response);
         console.log(response);
     }).catch(function (error) {
-
+        console.log('请求商品数据出错: ' + error);
     });
 }
 
 // 处理返回的数据
 function taskData(response) {
+    // 关闭加载动画
+    setTimeout(function () {
+        js_goods_area.is_show_loading = false;
+    }, 800);
+    // 清空数组
     if (clear_list_flag) {
         js_goods_area.clearListItems();
     }
