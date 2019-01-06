@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+[v-cloak] {
+    display: none !important;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +18,6 @@ li {
 .main_body {
     position: relative;
     margin: auto;
-    height: 1080px;
 }
 
 /* -----------------------------------------------导航   开始----------------------------------- */
@@ -236,6 +239,7 @@ li {
 }
 
 .filter_box .filter_container {
+    position: relative;
     padding-bottom: 10px;
     background-color: #ffffff;
 }
@@ -416,13 +420,30 @@ li {
     cursor: pointer;
 }
 
+.filter_box .loading {
+    position: absolute;
+    z-index: 50;
+    top: 50%;
+    left: 50%;
+    width:50px;
+    height: 30px;
+    margin: -15px 0 0 -25px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.filter_box .loading>img {
+    width: 50px;
+}
+
+/* 排序 START */
 .filter_box .sort_way {
     min-height: 30px;
-    background-color: #eeeeee;
 }
 
 .filter_box .sort_way .btn_box {
     display: block;
+    background-color: #eeeeee;
 }
 
 .filter_box .sort_way .btn_box .btn {
@@ -698,7 +719,7 @@ li {
     }
 
     /* 遮罩  开始 */
-    .filter_box .shade {
+    .filter_box .sort_way .shade {
         position: fixed;
         top: 0;
         left: 0;
@@ -730,11 +751,23 @@ li {
 /* -----------------------------------------------商品   开始----------------------------------- */
 
 .goods_area {
+    position: relative;
     max-width: 1200px;
     margin: auto;
 }
 
+.goods_area .loading_sort {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    color: #666666;
+    text-align: center;
+    /* background-color: #ffffff; */
+}
+
 .goods_area .goods_list {
+    min-height: 50px;
     font-size: 0;
     text-align: left;
 }
@@ -747,6 +780,7 @@ li {
 }
 
 .goods_area .goods_list>li .item {
+    position: relative;
     display: block;
     width: 95%;
     margin: auto;
@@ -960,7 +994,6 @@ li {
 .goods_area .goods_list .item .text_box .sale>span {
     display: inline-block;
     color: #666666;
-    /* vertical-align: middle; */
 }
 
 .goods_area .goods_list .item .text_box .sale_container>span {
@@ -1111,60 +1144,7 @@ li {
 }
 
 /* 切换列表显示方式   end */
-/* loading动画  start*/
-.goods_area .loading {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 999;
-    width: 120px;
-    height: 50px;
-    margin-top: -45px;
-    margin-left: -80px;
-    padding: 15px 20px 20px 20px;
-    border-radius: 3px;
-    box-shadow: 0 0 5px #999999;
-    background-color: #ffffff;
-}
 
-.goods_area .loading>span {
-    position: relative;
-    display: block;
-    font-size: 15px;
-    text-align: center;
-    color: #333333;
-}
-
-.goods_area .loading>img {
-    position: relative;
-    display: block;
-    width: 80%;
-    margin: 0 10%;
-}
-
-.loading-enter-active {
-    animation: loading-in .6s;
-}
-
-.loading-leave-active {
-    animation: loading-in .6s reverse;
-}
-
-@keyframes loading-in {
-    0% {
-        transform: scale(0);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* loading动画  end*/
 @media(max-width:1199px) {
     .goods_area .goods_list>li {
         width: 25%;
@@ -1195,3 +1175,9 @@ li {
 }
 
 /* -----------------------------------------------商品   结束----------------------------------- */
+
+
+.footer {
+    position: relative;
+    /* height: 200px; */
+}

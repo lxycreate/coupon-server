@@ -36,7 +36,7 @@
         <!-- 导航   START -->
         <div class="header">
             <!-- logo和搜索框   START -->
-            <div v-bind:class="{ceil_fixed : is_fixed}" class="ceil_box js_ceil_box">
+            <div v-bind:class="{ceil_fixed : is_fixed}" class="ceil_box js_ceil_box" v-cloak>
                 <div class="header_logo">
                     <a v-show="is_show" class="logo_box">
                         <img src="../images/logo.png">
@@ -47,7 +47,7 @@
                     </form>
                 </div>
             </div>
-            <p v-show="is_show" class="ceil_filler js_ceil_filler"></p>
+            <p v-show="is_show" class="ceil_filler js_ceil_filler" v-cloak></p>
             <!-- logo和搜索框   END -->
 
             <!-- 按钮   START -->
@@ -65,7 +65,7 @@
         <div class="mid_bottom_bg">
             <!-- 筛选 START-->
             <div class="filter_box">
-                <div class="filter_container js_filter_container" ref="js_filter_container">
+                <div class="filter_container js_filter_container" ref="js_filter_container" v-cloak>
                     <p class="clear_all">
                         <a>清空所有条件</a>
                     </p>
@@ -127,9 +127,15 @@
                         </ul>
                     </div>
                     <!-- 更多筛选条件   END -->
+                    <!-- 加载动画  START -->
+                    <div v-if="is_loading" class="loading">
+                        <img src="../images/loading.gif">
+                    </div>
+                    <!-- 加载动画  END -->
                 </div>
+
                 <!-- 排序方式   START -->
-                <div class="sort_way js_sort_way">
+                <div class="sort_way js_sort_way" v-cloak>
                     <!-- 放在这是因为上面的元素过度动画会影响这个元素的动画 -->
                     <p class="confirm_btn js_confirm_btn" ref="js_confirm_btn">
                         <span class="confirm" @click="clear">清空</span>
@@ -175,7 +181,9 @@
             <!-- 筛选   END -->
 
             <!-- 商品区域   START -->
-            <div class="goods_area js_goods_area">
+            <div class="goods_area js_goods_area" v-cloak>
+                <!-- 加载动画 -->
+                <span v-show="is_loading_sort" class="loading_sort">加载中...</span>
                 <!-- 商品列表   START -->
                 <ul class="goods_list js_goods_list">
                     <li v-for="item in list_items">
@@ -252,16 +260,12 @@
                     </li>
                 </ul>
                 <!-- 商品列表   END -->
-                <!-- loading动画 start-->
-                <transition name="loading">
-                    <div v-show="is_show_loading" class="loading">
-                        <span>加载中...</span>
-                        <img src="../images/loading.gif">
-                    </div>
-                </transition>
-                <!-- loading动画 end-->
+
             </div>
             <!-- 商品区域   END -->
+        </div>
+        <div class="footer">
+
         </div>
     </div>
     <!-- 内容   END -->
