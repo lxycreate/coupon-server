@@ -570,40 +570,37 @@ function mouseDown(event) {
 function addProperty(pro_name, pro_value) {
     search_data[pro_name] = pro_value;
 
-    //清空数组标志
-    clear_list_flag = true;
-    //切换排序方式时显示"加载中..."
-    if (pro_name == 'sort') {
-        js_goods_area.is_loading_sort = true;
-    } else {
-        js_filter_container.is_loading = true;
-    }
-    setTimeout(function () {
-        getGoods();
-    }, 400);
-    console.log('添加属性：' + pro_name + '  属性值为：' + pro_value);
-    console.log(JSON.stringify(search_data));
+    loadingGoods(pro_name);
+    // console.log('添加属性：' + pro_name + '  属性值为：' + pro_value);
+    // console.log(JSON.stringify(search_data));
 }
 
 //删除搜索参数中的属性
 function deleteProperty(pro_name) {
     if (search_data.hasOwnProperty(pro_name)) {
         delete search_data[pro_name];
-        //清空数组标志
-        clear_list_flag = true;
-        if (pro_name != 'sort') {
-            js_filter_container.is_loading = true;
-        }
-        // 延迟请求减少价格排序的图标旋转时的卡顿
-        setTimeout(function () {
-            getGoods();
-        }, 400);
-
-        console.log('删除属性' + pro_name);
+        loadingGoods(pro_name);
+        // console.log('删除属性' + pro_name);
     }
-    console.log(JSON.stringify(search_data));
+    // console.log(JSON.stringify(search_data));
 }
 
+//加载商品
+function loadingGoods(pro_name) {
+    //清空数组标志
+    clear_list_flag = true;
+    // 隐藏"没有更多了..."
+    js_goods_area.is_more_goods = true;
+    //切换排序方式时显示"加载中..."
+    js_goods_area.is_loading_sort = true;
+
+    if (pro_name != 'sort') {
+        js_filter_container.is_loading = true;
+    }
+    setTimeout(function () {
+        getGoods();
+    }, 400);
+}
 //加载下一页
 function loadNextPage() {
     search_data['page_num'] = js_goods_area.page_num + 1;
@@ -611,6 +608,7 @@ function loadNextPage() {
     clear_list_flag = false;
     // 显示加载动画
     js_goods_area.is_loading_more = true;
+
     setTimeout(function () {
         getGoods();
     }, 400);
@@ -643,11 +641,16 @@ function taskData(response) {
     if (clear_list_flag) {
         js_goods_area.clearListItems();
     }
+    //关闭动画
+    closeLoading();
     // 判断返回的数据是否等于每页数据量(如果是，说明还有下一页,否则没有)
     if (response.data.goods.length == js_goods_area.page_size) {
         js_goods_area.is_more_goods = true;
     } else {
-        js_goods_area.is_more_goods = false;
+        // 保证加载动画结束后才出现"没有更多了..."提示
+        setTimeout(function () {
+            js_goods_area.is_more_goods = false;
+        }, 400);
     }
     // 将返回的商品数据装入Vue对象中的数组中,显示到界面中
     if (response.data.goods != null && response.data.goods.length != 0) {
@@ -655,9 +658,6 @@ function taskData(response) {
             js_goods_area.list_items.push(response.data.goods[i]);
         }
     }
-
-    //关闭动画
-    closeLoading();
 }
 
 //直接滚动到顶部,没有动画
@@ -673,7 +673,7 @@ function closeLoading() {
         js_goods_area.is_loading_sort = false;
         js_filter_container.is_loading = false;
         js_goods_area.is_loading_more = false;
-    }, 300);
+    }, 400);
 }
 // 测试
 function test() {
