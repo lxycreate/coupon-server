@@ -2,6 +2,7 @@ package com.taobaovue.entity;
 
 import java.math.BigDecimal;
 
+//返回到网页用的类
 public class Goods {
 
     private String goods_pic; //商品图片

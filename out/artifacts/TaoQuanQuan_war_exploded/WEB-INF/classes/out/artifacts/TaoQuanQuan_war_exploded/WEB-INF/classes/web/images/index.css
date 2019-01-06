@@ -226,6 +226,7 @@ li {
 /* -----------------------------------------------导航   结束----------------------------------- */
 .mid_bottom_bg {
     max-width: 1920px;
+    min-height: 400px;
     margin: auto;
     padding: 20px 0;
     background-color: #f5f5f5;
@@ -242,25 +243,6 @@ li {
     position: relative;
     padding-bottom: 10px;
     background-color: #ffffff;
-}
-
-.filter_box .clear_all {
-    display: none;
-    padding: 0 10px;
-    height: 40px;
-    line-height: 40px;
-    text-align: right;
-}
-
-.filter_box .clear_all>a {
-    display: inline-block;
-    height: 30px;
-    text-align: center;
-    font-size: 15px;
-    color: #ffffff;
-    line-height: 30px;
-    vertical-align: middle;
-    background-color: #fa5319;
 }
 
 .filter_box>div ul {
@@ -399,6 +381,10 @@ li {
     color: #999999;
 }
 
+.filter_box .more_filter ul .btn {
+    margin-left: 90px;
+}
+
 .filter_box .more_filter ul li .confirm {
     width: 50px;
     height: 25px;
@@ -425,7 +411,7 @@ li {
     z-index: 50;
     top: 50%;
     left: 50%;
-    width:50px;
+    width: 50px;
     height: 30px;
     margin: -15px 0 0 -25px;
     text-align: center;
@@ -767,7 +753,6 @@ li {
 }
 
 .goods_area .goods_list {
-    min-height: 50px;
     font-size: 0;
     text-align: left;
 }
@@ -1144,6 +1129,12 @@ li {
 }
 
 /* 切换列表显示方式   end */
+.goods_area .tip {
+    display: block;
+    margin: 10px auto 0 auto;
+    text-align: center;
+    color:#666666;
+}
 
 @media(max-width:1199px) {
     .goods_area .goods_list>li {
@@ -1179,5 +1170,5 @@ li {
 
 .footer {
     position: relative;
-    /* height: 200px; */
+    height: 200px;
 }

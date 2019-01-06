@@ -226,6 +226,7 @@ li {
 /* -----------------------------------------------导航   结束----------------------------------- */
 .mid_bottom_bg {
     max-width: 1920px;
+    min-height: 400px;
     margin: auto;
     padding: 20px 0;
     background-color: #f5f5f5;
@@ -1130,7 +1131,7 @@ li {
 /* 切换列表显示方式   end */
 .goods_area .tip {
     display: block;
-    margin: 10px auto 0 auto;
+    margin: 15px auto 0 auto;
     text-align: center;
     color:#666666;
 }
@@ -1169,5 +1170,5 @@ li {
 
 .footer {
     position: relative;
-    /* height: 200px; */
+    height: 200px;
 }

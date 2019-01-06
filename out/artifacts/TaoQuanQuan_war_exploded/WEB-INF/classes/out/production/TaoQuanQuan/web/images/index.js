@@ -85,7 +85,7 @@ function initScroll() {
         // console.log(scroll_top);
         // console.log( document.body.scrollTop + "!!!!!!!!");
         if (scroll_top + window_height + 1 >= scroll_height && js_goods_area.is_more_goods) {
-
+            loadNextPage();
         }
         // 滚动到底部加载更多数据   end
     }
@@ -229,7 +229,6 @@ function initCatalogBox() {
                 name: '总销量≥',
                 value: ''
             },
-            is_show_confirm: false, //是否显示“清空 确认按钮”
             is_loading: false
         },
         created: function () {
@@ -255,29 +254,9 @@ function initCatalogBox() {
                 } else {
                     addProperty(this.filter_items[index - 1].an_name, '1');
                 }
-            },
-            'quan_item.start_price': function () {
-                this.isShowConfirmBtn();
-            },
-            'quan_item.end_price': function () {
-                this.isShowConfirmBtn();
-            },
-            'sale_item.value': function () {
-                this.isShowConfirmBtn();
-            },
-            'score_item.value': function () {
-                this.isShowConfirmBtn();
             }
         },
         methods: {
-            //是否显示隐藏的清空和确认按钮
-            isShowConfirmBtn: function () {
-                if (this.quan_item.start_price == '' && this.quan_item.end_price == '' && this.sale_item.value == '' && this.score_item.value == '') {
-                    this.is_show_confirm = false;
-                } else {
-                    this.is_show_confirm = true;
-                }
-            },
             // 单选目录事件
             selectCatalogItem: function (value) {
                 this.catalog_value = value;
@@ -490,7 +469,8 @@ function initGoodsList() {
             is_show: 1,
             toggle_list: false, //切换列表显示方式
             is_loading_sort: false, //排序加载动画
-            is_more_goods: false //是否还有更多商品
+            is_loading_more: false, //加载下一页提示
+            is_more_goods: false //是否还有更多商品提示
         },
         created: function () {
             // 初始化search_data
@@ -630,8 +610,10 @@ function loadNextPage() {
     //清空数组标志
     clear_list_flag = false;
     // 显示加载动画
-    js_tips_box.is_show_loading = true;
-    getGoods();
+    js_goods_area.is_loading_more = true;
+    setTimeout(function () {
+        getGoods();
+    }, 400);
     js_goods_area.page_num = js_goods_area.page_num + 1;
 }
 
@@ -661,19 +643,19 @@ function taskData(response) {
     if (clear_list_flag) {
         js_goods_area.clearListItems();
     }
-
-    // 将返回的商品数据装入Vue对象中的数组中,显示到界面中
-    if (response.data.goods != null && response.data.goods.length != 0) {
-        for (var i = 0; i < response.data.goods.length; ++i) {
-            js_goods_area.list_items.push(response.data.goods[i]);
-        }
-    }
     // 判断返回的数据是否等于每页数据量(如果是，说明还有下一页,否则没有)
     if (response.data.goods.length == js_goods_area.page_size) {
         js_goods_area.is_more_goods = true;
     } else {
         js_goods_area.is_more_goods = false;
     }
+    // 将返回的商品数据装入Vue对象中的数组中,显示到界面中
+    if (response.data.goods != null && response.data.goods.length != 0) {
+        for (var i = 0; i < response.data.goods.length; ++i) {
+            js_goods_area.list_items.push(response.data.goods[i]);
+        }
+    }
+
     //关闭动画
     closeLoading();
 }
@@ -687,8 +669,11 @@ function scrollToTopDirect() {
 
 //关闭加载动画
 function closeLoading() {
-    js_goods_area.is_loading_sort = false;
-    js_filter_container.is_loading = false;
+    setTimeout(function () {
+        js_goods_area.is_loading_sort = false;
+        js_filter_container.is_loading = false;
+        js_goods_area.is_loading_more = false;
+    }, 300);
 }
 // 测试
 function test() {
