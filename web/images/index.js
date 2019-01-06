@@ -85,7 +85,7 @@ function initScroll() {
         // console.log(scroll_top);
         // console.log( document.body.scrollTop + "!!!!!!!!");
         if (scroll_top + window_height + 1 >= scroll_height && js_goods_area.is_more_goods) {
-
+            loadNextPage();
         }
         // 滚动到底部加载更多数据   end
     }
@@ -469,7 +469,8 @@ function initGoodsList() {
             is_show: 1,
             toggle_list: false, //切换列表显示方式
             is_loading_sort: false, //排序加载动画
-            is_more_goods: false //是否还有更多商品
+            is_loading_more: false, //加载下一页提示
+            is_more_goods: false //是否还有更多商品提示
         },
         created: function () {
             // 初始化search_data
@@ -609,8 +610,10 @@ function loadNextPage() {
     //清空数组标志
     clear_list_flag = false;
     // 显示加载动画
-    js_tips_box.is_show_loading = true;
-    getGoods();
+    js_goods_area.is_loading_more = true;
+    setTimeout(function () {
+        getGoods();
+    }, 400);
     js_goods_area.page_num = js_goods_area.page_num + 1;
 }
 
@@ -669,6 +672,7 @@ function closeLoading() {
     setTimeout(function () {
         js_goods_area.is_loading_sort = false;
         js_filter_container.is_loading = false;
+        js_goods_area.is_loading_more = false;
     }, 300);
 }
 // 测试

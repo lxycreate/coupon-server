@@ -752,7 +752,6 @@ li {
 }
 
 .goods_area .goods_list {
-    min-height: 50px;
     font-size: 0;
     text-align: left;
 }
@@ -1129,6 +1128,12 @@ li {
 }
 
 /* 切换列表显示方式   end */
+.goods_area .tip {
+    display: block;
+    margin: 10px auto 0 auto;
+    text-align: center;
+    color:#666666;
+}
 
 @media(max-width:1199px) {
     .goods_area .goods_list>li {

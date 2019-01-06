@@ -66,7 +66,7 @@
             <!-- 筛选 START-->
             <div class="filter_box">
                 <div class="filter_container js_filter_container" ref="js_filter_container" v-cloak>
-                    
+
                     <!-- 分类选择  START -->
                     <div class="select_box js_catalog_box">
                         <span class="name"> {{catalog_name}} </span>
@@ -118,8 +118,8 @@
                             </li>
 
                             <li class="btn">
-                                <span  @click="clear" class="confirm">重置</span>
-                                <span  @click="confirm" class="confirm">确认</span>
+                                <span @click="clear" class="confirm">重置</span>
+                                <span @click="confirm" class="confirm">确认</span>
                             </li>
 
                         </ul>
@@ -258,7 +258,8 @@
                     </li>
                 </ul>
                 <!-- 商品列表   END -->
-
+                <span v-show="is_loading_more" class="tip">正在加载...</span>
+                <span v-show="!is_more_goods" class="tip">没有更多了...</span>
             </div>
             <!-- 商品区域   END -->
         </div>
