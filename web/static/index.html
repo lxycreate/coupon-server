@@ -118,8 +118,8 @@
                             </li>
 
                             <li class="btn">
-                                <span v-show="is_show_confirm" @click="clear" class="confirm">清空</span>
-                                <span v-show="is_show_confirm" @click="confirm" class="confirm">确认</span>
+                                <span  @click="clear" class="confirm">重置</span>
+                                <span  @click="confirm" class="confirm">确认</span>
                             </li>
 
                         </ul>
@@ -136,7 +136,7 @@
                 <div class="sort_way js_sort_way" v-cloak>
                     <!-- 放在这是因为上面的元素过度动画会影响这个元素的动画 -->
                     <p class="confirm_btn js_confirm_btn" ref="js_confirm_btn">
-                        <span class="confirm" @click="clear">清空</span>
+                        <span class="confirm" @click="clear">重置</span>
                         <span class="confirm" @click="confirm">确认</span>
                     </p>
                     <!--  -->

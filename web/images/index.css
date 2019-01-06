@@ -380,6 +380,10 @@ li {
     color: #999999;
 }
 
+.filter_box .more_filter ul .btn {
+    margin-left: 90px;
+}
+
 .filter_box .more_filter ul li .confirm {
     width: 50px;
     height: 25px;
@@ -406,7 +410,7 @@ li {
     z-index: 50;
     top: 50%;
     left: 50%;
-    width:50px;
+    width: 50px;
     height: 30px;
     margin: -15px 0 0 -25px;
     text-align: center;

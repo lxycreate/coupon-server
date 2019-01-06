@@ -255,29 +255,29 @@ function initCatalogBox() {
                 } else {
                     addProperty(this.filter_items[index - 1].an_name, '1');
                 }
-            },
-            'quan_item.start_price': function () {
-                this.isShowConfirmBtn();
-            },
-            'quan_item.end_price': function () {
-                this.isShowConfirmBtn();
-            },
-            'sale_item.value': function () {
-                this.isShowConfirmBtn();
-            },
-            'score_item.value': function () {
-                this.isShowConfirmBtn();
             }
+            // 'quan_item.start_price': function () {
+            //     this.isShowConfirmBtn();
+            // },
+            // 'quan_item.end_price': function () {
+            //     this.isShowConfirmBtn();
+            // },
+            // 'sale_item.value': function () {
+            //     this.isShowConfirmBtn();
+            // },
+            // 'score_item.value': function () {
+            //     this.isShowConfirmBtn();
+            // }
         },
         methods: {
             //是否显示隐藏的清空和确认按钮
-            isShowConfirmBtn: function () {
-                if (this.quan_item.start_price == '' && this.quan_item.end_price == '' && this.sale_item.value == '' && this.score_item.value == '') {
-                    this.is_show_confirm = false;
-                } else {
-                    this.is_show_confirm = true;
-                }
-            },
+            // isShowConfirmBtn: function () {
+            //     if (this.quan_item.start_price == '' && this.quan_item.end_price == '' && this.sale_item.value == '' && this.score_item.value == '') {
+            //         this.is_show_confirm = false;
+            //     } else {
+            //         this.is_show_confirm = true;
+            //     }
+            // },
             // 单选目录事件
             selectCatalogItem: function (value) {
                 this.catalog_value = value;
@@ -687,8 +687,10 @@ function scrollToTopDirect() {
 
 //关闭加载动画
 function closeLoading() {
-    js_goods_area.is_loading_sort = false;
-    js_filter_container.is_loading = false;
+    setTimeout(function () {
+        js_goods_area.is_loading_sort = false;
+        js_filter_container.is_loading = false;
+    }, 300);
 }
 // 测试
 function test() {

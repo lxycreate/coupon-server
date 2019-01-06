@@ -66,9 +66,7 @@
             <!-- 筛选 START-->
             <div class="filter_box">
                 <div class="filter_container js_filter_container" ref="js_filter_container" v-cloak>
-                    <p class="clear_all">
-                        <a>清空所有条件</a>
-                    </p>
+                    
                     <!-- 分类选择  START -->
                     <div class="select_box js_catalog_box">
                         <span class="name"> {{catalog_name}} </span>
@@ -120,8 +118,8 @@
                             </li>
 
                             <li class="btn">
-                                <span v-show="is_show_confirm" @click="clear" class="confirm">清空</span>
-                                <span v-show="is_show_confirm" @click="confirm" class="confirm">确认</span>
+                                <span  @click="clear" class="confirm">清空</span>
+                                <span  @click="confirm" class="confirm">确认</span>
                             </li>
 
                         </ul>
@@ -218,7 +216,7 @@
                                             <span class="num">{{item.goods_price}}</span>
                                         </span>
                                         <span v-show="item.is_yun" class="tag_box">
-                                            <span v-show="item.is_yun" class="xian">险</span>
+                                            <span v-show="item.is_yun" class="xian" title="运费险">险</span>
                                         </span>
                                     </span>
                                     <!-- 券后价 -->
