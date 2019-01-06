@@ -244,25 +244,6 @@ li {
     background-color: #ffffff;
 }
 
-.filter_box .clear_all {
-    display: none;
-    padding: 0 10px;
-    height: 40px;
-    line-height: 40px;
-    text-align: right;
-}
-
-.filter_box .clear_all>a {
-    display: inline-block;
-    height: 30px;
-    text-align: center;
-    font-size: 15px;
-    color: #ffffff;
-    line-height: 30px;
-    vertical-align: middle;
-    background-color: #fa5319;
-}
-
 .filter_box>div ul {
     display: inline-block;
     font-size: 0;
