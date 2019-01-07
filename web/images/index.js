@@ -81,7 +81,7 @@ function initScroll() {
         if (scroll_top + window_height + 1 >= scroll_height && js_goods_area.can_ajax && js_goods_area.is_more_goods) {
             // console.log(scroll_top + window_height + 1);
             // console.log(scroll_height);
-            loadNextPage();
+            // loadNextPage();
         }
         // 滚动到底部加载更多数据   end
         // 滚动到顶部   start

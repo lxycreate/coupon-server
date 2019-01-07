@@ -1225,5 +1225,16 @@ li {
 
 .footer {
     position: relative;
-    height: 200px;
+    min-height: 100px;
+    background-color: #eeeeee;
+}
+
+.footer .txt {
+    position: relative;
+    display: block;
+    padding-top:43px;
+    text-align: center;
+    line-height: 1;
+    font-size: 18px;
+    color: #666666;
 }
