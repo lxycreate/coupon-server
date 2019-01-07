@@ -228,7 +228,7 @@ li {
     max-width: 1920px;
     min-height: 500px;
     margin: auto;
-    padding: 20px 0;
+    padding: 20px 0 30px 0;
     background-color: #f5f5f5;
 }
 
@@ -1058,21 +1058,27 @@ li {
 
 /* 领券   end */
 /* 切换列表显示方式   start */
-.toggle-goods_area {
+.toggle_goods_area {
     padding: 0 !important;
 }
 
-.toggle-li {
-    width: 100% !important;
+.toggle_goods_list {
+    margin-top: 20px;
 }
 
-.toggle-item {
+.toggle_li {
+    width: 100% !important;
+    margin-top: 1px !important;
+}
+
+.toggle_item {
     width: auto !important;
     padding: 6px !important;
     font-size: 0 !important;
+    box-shadow: none !important;
 }
 
-.toggle-container {
+.toggle_container {
     display: inline-block !important;
     width: calc(100% - 146px);
     height: 140px;
@@ -1080,13 +1086,13 @@ li {
     vertical-align: top !important;
 }
 
-.toggle-container:first-child {
+.toggle_container:first-child {
     width: 140px !important;
     height: 140px !important;
     margin-right: 6px !important;
 }
 
-.toggle-box-second {
+.toggle_text_box {
     position: absolute !important;
     top: 0;
     left: 0;
@@ -1094,7 +1100,7 @@ li {
     height: 100%;
 }
 
-.toggle-sale {
+.toggle_sale {
     position: absolute;
     display: inline-block !important;
     top: 100%;
@@ -1104,20 +1110,20 @@ li {
     text-align: left;
 }
 
-.toggle-sale_container {
+.toggle_sale_container {
     display: inline-block;
     width: 100%;
     max-width: 100px;
 }
 
-.toggle-sale_child {
+.toggle_sale_child {
     display: block !important;
     text-align: center;
     margin: 2px 0 0 0 !important;
 }
 
-.toggle-quan {
-    position: absolute;
+.toggle_quan {
+    position: absolute !important;
     display: inline-block !important;
     top: 100%;
     left: 50%;
@@ -1127,7 +1133,7 @@ li {
     text-align: right !important;
 }
 
-.toggle-quan_container {
+.toggle_quan_container {
     display: inline-block;
     width: 100%;
     max-width: 100px;
@@ -1137,7 +1143,7 @@ li {
     border: 1px solid #fa5319;
 }
 
-.toggle-quan_title {
+.toggle_quan_title {
     display: block !important;
     height: 20px;
     text-align: center;
@@ -1232,7 +1238,7 @@ li {
 .footer .txt {
     position: relative;
     display: block;
-    padding-top:43px;
+    padding-top: 43px;
     text-align: center;
     line-height: 1;
     font-size: 18px;

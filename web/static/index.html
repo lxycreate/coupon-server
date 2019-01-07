@@ -104,18 +104,18 @@
                             <li class="sale">
                                 <span>{{sale_item.name}}</span>
                                 <input maxlength="8" v-model="sale_item.value" v-bind:class="{input_error:sale_item.is_error}"
-                                     onkeyup="onlyPositiveInt(this)">
+                                    onkeyup="onlyPositiveInt(this)">
                             </li>
                             <li class="score">
                                 <span>{{score_item.name}}</span>
                                 <input maxlength="3" v-model="score_item.value" v-bind:class="{input_error:score_item.is_error}"
-                                      onkeyup="zeroToFive(this)">
+                                    onkeyup="zeroToFive(this)">
                                 <span class="tip">{{score_item.tip}}</span>
                             </li>
                             <li class="quan">
                                 <span>{{quan_item.name}}</span>
                                 <input maxlength="8" class="one" v-model="quan_item.start_price" v-bind:class="{input_error:quan_item.is_start_error}"
-                                    placeholder="最低价"  onkeyup="onlyPositiveInt(this)">
+                                    placeholder="最低价" onkeyup="onlyPositiveInt(this)">
                                 <span class="split">—</span>
                                 <input maxlength="8" class="two" v-model="quan_item.end_price" v-bind:class="{input_error:quan_item.is_end_error}"
                                     placeholder="最高价" onkeyup="onlyPositiveInt(this)">
@@ -183,21 +183,20 @@
             <!-- 筛选   END -->
 
             <!-- 商品区域   START -->
-            <div class="goods_area js_goods_area" v-cloak>
+            <div class="goods_area js_goods_area" v-bind:class="{toggle_goods_area:toggle_list}" v-cloak>
                 <!-- 加载动画 -->
                 <span v-show="is_loading" class="loading">加载中...</span>
                 <!-- 商品列表   START -->
-                <ul class="goods_list js_goods_list">
-                    <li v-for="item in list_items">
-                        <span class="item">
-                            <span class="container">
+                <ul class="goods_list js_goods_list" v-bind:class="{toggle_goods_list:toggle_list}">
+                    <li v-for="item in list_items" v-bind:class="{toggle_li:toggle_list}">
+                        <span class="item" v-bind:class="{toggle_item:toggle_list}">
+                            <span class="container" v-bind:class="{toggle_container:toggle_list}">
                                 <!-- 商品图片 -->
                                 <span class="img_box">
                                     <img v-bind:src="item.goods_pic">
                                     <span class="link_box">
                                         <a v-if="item.is_tmall" v-bind:href="item.goods_url" target="_blank"><i class="icon-font i-right"></i>去天猫</a>
-                                        <a v-if="!item.is_tmall" v-bind:href="item.goods_url" target="_blank"><i
-                                                class="icon-font i-right"></i>去淘宝</a>
+                                        <a v-if="!item.is_tmall" v-bind:href="item.goods_url" target="_blank"><i class="icon-font i-right"></i>去淘宝</a>
                                         <a v-bind:href="item.coupon_url" target="_blank"><i class="icon-font i-installment"></i>去领券</a>
                                     </span>
                                     <span v-if="item.is_ju" class="ju">正在参加聚划算</span>
@@ -205,8 +204,8 @@
                                 </span>
                                 <!-- 商品图片 -->
                             </span>
-                            <span class="container">
-                                <span class="text_box">
+                            <span class="container" v-bind:class="{toggle_container:toggle_list}">
+                                <span class="text_box" v-bind:class="{toggle_text_box:toggle_list}">
                                     <!-- 标题 -->
                                     <a class="title" target="_blank">
                                         <img v-if="item.is_tmall" src="../images/tmall.png">
@@ -232,21 +231,21 @@
                                     </span>
                                     <!-- 价格   end -->
                                     <!-- 销量 -->
-                                    <span class="sale">
-                                        <span class="sale_container">
-                                            <span class="sale_title">
+                                    <span class="sale" v-bind:class="{toggle_sale:toggle_list}">
+                                        <span class="sale_container" v-bind:class="{toggle_sale_container:toggle_list}">
+                                            <span class="sale_title" v-bind:class="{toggle_sale_child:toggle_list}">
                                                 销量
                                             </span>
-                                            <span class="num">
+                                            <span class="num" v-bind:class="{toggle_sale_child:toggle_list}">
                                                 {{item.goods_sale}}
                                             </span>
                                         </span>
                                     </span>
                                     <!-- 销量   end -->
                                     <!-- 优惠券 -->
-                                    <a v-bind:href="item.coupon_url" class="quan" target="_blank">
-                                        <span class="quan_container">
-                                            <span class="quan_title">
+                                    <a v-bind:href="item.coupon_url" class="quan" target="_blank" v-bind:class="{toggle_quan:toggle_list}">
+                                        <span class="quan_container" v-bind:class="{toggle_quan_container:toggle_list}">
+                                            <span class="quan_title" v-bind:class="{toggle_quan_title:toggle_list}">
                                                 领券
                                             </span>
                                             <i class="icon-font i-coupon-pc"></i>
@@ -272,7 +271,7 @@
             <!-- 商品区域   END -->
         </div>
         <div class="footer">
-            <span class="txt">本站所有资源均来自阿里巴巴</span>
+            <span class="txt">本站所有数据均来自阿里巴巴</span>
         </div>
     </div>
     <!-- 内容   END -->
