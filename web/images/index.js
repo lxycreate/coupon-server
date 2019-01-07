@@ -31,7 +31,7 @@ window.onload = function () {
     firstLoad();
 }
 
-// 搜索框吸顶   开始
+// 滚动事件   开始
 function initScroll() {
     var js_ceil_box = new Vue({
         el: ".js_ceil_box",
@@ -79,8 +79,8 @@ function initScroll() {
         var scroll_height = document.documentElement.scrollHeight;
 
         if (scroll_top + window_height + 1 >= scroll_height && js_goods_area.can_ajax && js_goods_area.is_more_goods) {
-            console.log(scroll_top + window_height + 1);
-            console.log(scroll_height);
+            // console.log(scroll_top + window_height + 1);
+            // console.log(scroll_height);
             loadNextPage();
         }
         // 滚动到底部加载更多数据   end
@@ -93,7 +93,7 @@ function initScroll() {
         // 滚动到顶部   end
     }
 }
-// 搜索框吸顶   结束
+// 滚动事件   结束
 
 // 筛选对象  开始
 function initCatalogBox() {
@@ -242,30 +242,6 @@ function initCatalogBox() {
             // 初始化目录
             this.catalog_value = '0';
         },
-        watch: {
-            // 监听目录参数
-            catalog_value: function () {
-                // 参数中添加目录信息
-                if (this.catalog_value != 0) {
-                    js_goods_area.resetPageNum();
-                    addProperty('goods_cid', this.catalog_value);
-                } else {
-                    js_goods_area.resetPageNum();
-                    deleteProperty('goods_cid');
-                }
-            },
-
-            // 监听筛选参数
-            filter_value: function () {
-                var index = parseInt(this.filter_value);
-                if (index < 0) {
-                    index = -index;
-                    deleteProperty(this.filter_items[index - 1].an_name);
-                } else {
-                    addProperty(this.filter_items[index - 1].an_name, '1');
-                }
-            }
-        },
         methods: {
             // 单选目录事件
             selectCatalogItem: function (value) {
@@ -274,6 +250,14 @@ function initCatalogBox() {
                     this.catalog_items[i].is_select = false;
                 }
                 this.catalog_items[value].is_select = true;
+                // 参数中添加目录信息
+                if (this.catalog_value != 0) {
+                    js_goods_area.resetPageNum();
+                    addProperty('goods_cid', this.catalog_value);
+                } else {
+                    js_goods_area.resetPageNum();
+                    deleteProperty('goods_cid');
+                }
             },
             // 多选筛选条件事件
             multiSelect: function (index) {
@@ -310,9 +294,21 @@ function initCatalogBox() {
                         deleteProperty('is_qiang');
                     }
                 }
+                //向search_data中删除或添加参数
+                var index_temp = parseInt(this.filter_value);
+                if (index_temp < 0) {
+                    index_temp = -index_temp;
+                    deleteProperty(this.filter_items[index_temp - 1].an_name);
+                } else {
+                    addProperty(this.filter_items[index_temp - 1].an_name, '1');
+                }
             },
             clear: function () {
                 console.log('Clear');
+            },
+            resetCatalogItem: function () {
+                catalog_value = '0';
+                catalog_items[0].is_select = true;
             },
             confirm: function () {
                 this.checkAfterCoupon();
@@ -531,7 +527,7 @@ function initGoodsList() {
             list_items: [],
             clear_list_flag: false, //清空数组标志
             toggle_list: false, //切换列表显示方式
-            is_loading_sort: false, //排序加载动画
+            is_loading: false, //排序加载动画
             is_loading_more: false, //加载下一页提示
             is_more_goods: true, //是否还有更多商品
             is_show_totop: false, //是否显示滚动到顶部按钮
@@ -573,7 +569,7 @@ function watchWindow() {
 
 //首次加载
 function firstLoad() {
-    if(js_goods_area.can_ajax){
+    if (js_goods_area.can_ajax) {
         loadGoods('');
     }
 }
@@ -655,7 +651,7 @@ function loadGoods(pro_name) {
     // 隐藏"没有更多了..."
     js_goods_area.is_more_goods = true;
     //切换排序方式时显示"加载中..."
-    js_goods_area.is_loading_sort = true;
+    js_goods_area.is_loading = true;
 
     if (pro_name != 'sort') {
         js_filter_container.is_loading = true;
@@ -732,7 +728,7 @@ function scrollToTopDirect() {
 //关闭加载动画
 function closeLoading() {
     setTimeout(function () {
-        js_goods_area.is_loading_sort = false;
+        js_goods_area.is_loading = false;
         js_filter_container.is_loading = false;
         js_goods_area.is_loading_more = false;
     }, 400);
