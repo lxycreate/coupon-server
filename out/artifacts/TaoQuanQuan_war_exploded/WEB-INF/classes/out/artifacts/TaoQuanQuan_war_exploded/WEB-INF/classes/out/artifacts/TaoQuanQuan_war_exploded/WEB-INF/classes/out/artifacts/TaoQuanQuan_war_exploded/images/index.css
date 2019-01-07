@@ -226,7 +226,7 @@ li {
 /* -----------------------------------------------导航   结束----------------------------------- */
 .mid_bottom_bg {
     max-width: 1920px;
-    min-height: 400px;
+    min-height: 500px;
     margin: auto;
     padding: 20px 0;
     background-color: #f5f5f5;
@@ -747,14 +747,13 @@ li {
     margin: auto;
 }
 
-.goods_area .loading_sort {
+.goods_area .loading {
     position: relative;
     display: block;
     width: 100%;
     margin-top: 10px;
     color: #666666;
     text-align: center;
-    /* background-color: #ffffff; */
 }
 
 .goods_area .goods_list {
@@ -790,7 +789,7 @@ li {
     display: block;
     padding-top: 100%;
     overflow: hidden;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 .goods_area .goods_list .item .container .img_box>img {
@@ -843,12 +842,27 @@ li {
     padding: 5px;
     color: #ffffff;
     font-size: 14px;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     background-color: #7144d5;
     background: -webkit-linear-gradient(right, #63aff9, #8b16f5);
     background: -o-linear-gradient(right, #63aff9, #8b16f5);
     background: -moz-linear-gradient(right, #63aff9, #8b16f5);
     background: linear-gradient(right, #63aff9, #8b16f5);
+}
+
+.goods_area .goods_list .item .container .img_box .qiang {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    /* border-radius: 3px; */
+    background-color: #e63140;
+    background: -webkit-linear-gradient(right, #f58b07, #f51616);
+    background: -o-linear-gradient(right, #f58b07, #f51616);
+    background: -moz-linear-gradient(right, #f58b07, #f51616);
+    background: linear-gradient(right, #f58b07, #f51616);
 }
 
 .goods_area .goods_list .item .container:last-child {

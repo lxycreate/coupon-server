@@ -104,21 +104,21 @@
                             <li class="sale">
                                 <span>{{sale_item.name}}</span>
                                 <input maxlength="8" v-model="sale_item.value" v-bind:class="{input_error:sale_item.is_error}"
-                                    @focus="deleteErrorInput" onkeyup="onlyPositiveInt(this)">
+                                     onkeyup="onlyPositiveInt(this)">
                             </li>
                             <li class="score">
                                 <span>{{score_item.name}}</span>
                                 <input maxlength="3" v-model="score_item.value" v-bind:class="{input_error:score_item.is_error}"
-                                    @focus="deleteErrorInput" onkeyup="zeroToFive(this)">
+                                      onkeyup="zeroToFive(this)">
                                 <span class="tip">{{score_item.tip}}</span>
                             </li>
                             <li class="quan">
                                 <span>{{quan_item.name}}</span>
                                 <input maxlength="8" class="one" v-model="quan_item.start_price" v-bind:class="{input_error:quan_item.is_start_error}"
-                                    placeholder="最低价" @focus="deleteErrorInput" onkeyup="onlyPositiveInt(this)">
+                                    placeholder="最低价"  onkeyup="onlyPositiveInt(this)">
                                 <span class="split">—</span>
                                 <input maxlength="8" class="two" v-model="quan_item.end_price" v-bind:class="{input_error:quan_item.is_end_error}"
-                                    placeholder="最高价" @focus="deleteErrorInput" onkeyup="onlyPositiveInt(this)">
+                                    placeholder="最高价" onkeyup="onlyPositiveInt(this)">
                             </li>
 
                             <li class="btn">
@@ -185,7 +185,7 @@
             <!-- 商品区域   START -->
             <div class="goods_area js_goods_area" v-cloak>
                 <!-- 加载动画 -->
-                <span v-show="is_loading_sort" class="loading_sort">加载中...</span>
+                <span v-show="is_loading" class="loading">加载中...</span>
                 <!-- 商品列表   START -->
                 <ul class="goods_list js_goods_list">
                     <li v-for="item in list_items">
@@ -195,12 +195,13 @@
                                 <span class="img_box">
                                     <img v-bind:src="item.goods_pic">
                                     <span class="link_box">
-                                        <a v-show="item.is_tmall" v-bind:href="item.goods_url" target="_blank"><i class="icon-font i-right"></i>去天猫</a>
-                                        <a v-show="!item.is_tmall" v-bind:href="item.goods_url" target="_blank"><i
+                                        <a v-if="item.is_tmall" v-bind:href="item.goods_url" target="_blank"><i class="icon-font i-right"></i>去天猫</a>
+                                        <a v-if="!item.is_tmall" v-bind:href="item.goods_url" target="_blank"><i
                                                 class="icon-font i-right"></i>去淘宝</a>
                                         <a v-bind:href="item.coupon_url" target="_blank"><i class="icon-font i-installment"></i>去领券</a>
                                     </span>
-                                    <span v-show="item.is_ju" class="ju">正在参加聚划算</span>
+                                    <span v-if="item.is_ju" class="ju">正在参加聚划算</span>
+                                    <span v-if="item.is_qiang" class="qiang">正在参加淘抢购</span>
                                 </span>
                                 <!-- 商品图片 -->
                             </span>
@@ -208,8 +209,8 @@
                                 <span class="text_box">
                                     <!-- 标题 -->
                                     <a class="title" target="_blank">
-                                        <img v-show="item.is_tmall" src="../images/tmall.png">
-                                        <img v-show="!item.is_tmall" src="../images/taobao.png">
+                                        <img v-if="item.is_tmall" src="../images/tmall.png">
+                                        <img v-if="!item.is_tmall" src="../images/taobao.png">
                                         {{item.goods_title}}
                                     </a>
                                     <!-- 价格 -->
@@ -219,7 +220,7 @@
                                             <span class="icon">￥</span>
                                             <span class="num">{{item.goods_price}}</span>
                                         </span>
-                                        <span v-show="item.is_yun" class="tag_box">
+                                        <span v-if="item.is_yun" class="tag_box">
                                             <span v-show="item.is_yun" class="xian" title="运费险">险</span>
                                         </span>
                                     </span>

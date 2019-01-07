@@ -308,10 +308,13 @@ function initCatalogBox() {
                 this.resetCatalogItem();
                 this.resetMultiSelect();
                 this.resetInput();
+                search_data = {};
                 if (temp != '' && temp != undefined && temp != null) {
                     search_data['sort'] = temp;
                 }
                 js_goods_area.resetPageNum();
+                // js_goods_area.scrollToTop();
+                window.scrollTo(0,0);
                 loadGoods('');
                 console.log('Clear');
             },
@@ -749,9 +752,7 @@ function taskData(response) {
 
 //直接滚动到顶部,没有动画
 function scrollToTopDirect() {
-    Velocity(document.documentElement, 'scroll', {
-        offset: 0
-    });
+    window.scrollTo(0,0);
 }
 
 //关闭加载动画
@@ -793,6 +794,7 @@ function zeroToFive(event) {
         }
     }
 }
+
 // 测试
 function test() {
     axios({
@@ -807,9 +809,3 @@ function test() {
 
     });
 }
-
-// console.log(document.body.scrollTop);
-// window.setTimeout(function(){
-//     js_tips_box.is_show_loading = false;
-//     console.log('关闭');
-// },3000);

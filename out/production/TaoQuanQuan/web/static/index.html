@@ -201,6 +201,7 @@
                                         <a v-bind:href="item.coupon_url" target="_blank"><i class="icon-font i-installment"></i>去领券</a>
                                     </span>
                                     <span v-if="item.is_ju" class="ju">正在参加聚划算</span>
+                                    <span v-if="item.is_qiang" class="qiang">正在参加淘抢购</span>
                                 </span>
                                 <!-- 商品图片 -->
                             </span>
@@ -208,8 +209,8 @@
                                 <span class="text_box">
                                     <!-- 标题 -->
                                     <a class="title" target="_blank">
-                                        <img v-show="item.is_tmall" src="../images/tmall.png">
-                                        <img v-show="!item.is_tmall" src="../images/taobao.png">
+                                        <img v-if="item.is_tmall" src="../images/tmall.png">
+                                        <img v-if="!item.is_tmall" src="../images/taobao.png">
                                         {{item.goods_title}}
                                     </a>
                                     <!-- 价格 -->
@@ -219,7 +220,7 @@
                                             <span class="icon">￥</span>
                                             <span class="num">{{item.goods_price}}</span>
                                         </span>
-                                        <span v-show="item.is_yun" class="tag_box">
+                                        <span v-if="item.is_yun" class="tag_box">
                                             <span v-show="item.is_yun" class="xian" title="运费险">险</span>
                                         </span>
                                     </span>
