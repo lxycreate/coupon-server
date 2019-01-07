@@ -86,7 +86,7 @@ function initScroll() {
         var scroll_height = document.documentElement.scrollHeight;
         // console.log(scroll_top);
         // console.log( document.body.scrollTop + "!!!!!!!!");
-        if (scroll_top + window_height + 1 >= scroll_height && js_goods_area.is_more_goods) {
+        if (scroll_top + window_height + 1 >= scroll_height) {
             loadNextPage();
         }
         // 滚动到底部加载更多数据   end
@@ -345,7 +345,7 @@ function initCatalogBox() {
             },
             //检查券后价
             checkAfterCoupon: function () {
-                
+
             },
             //从search_data中删除input
             deleteInputValue: function () {
@@ -541,7 +541,7 @@ function initGoodsList() {
             toggle_list: false, //切换列表显示方式
             is_loading_sort: false, //排序加载动画
             is_loading_more: false, //加载下一页提示
-            is_more_goods: false, //是否还有更多商品提示
+            is_more_goods: true, //是否还有更多商品
             is_show_totop: false //是否显示滚动到顶部按钮
         },
         created: function () {
@@ -677,18 +677,20 @@ function loadNextPage() {
 
 // 获取商品
 function getGoods() {
-    axios({
-        url: base_url + '/getGoods',
-        method: 'get',
-        params: search_data
-    }).then(function (response) {
-        //处理返回的数据
-        taskData(response);
-        console.log(response);
-    }).catch(function (error) {
-        closeLoading();
-        console.log('请求商品数据出错: ' + error);
-    });
+    if (js_goods_area.is_more_goods) {
+        axios({
+            url: base_url + '/getGoods',
+            method: 'get',
+            params: search_data
+        }).then(function (response) {
+            //处理返回的数据
+            taskData(response);
+            console.log(response);
+        }).catch(function (error) {
+            closeLoading();
+            console.log('请求商品数据出错: ' + error);
+        });
+    }
 }
 
 // 处理返回的数据
