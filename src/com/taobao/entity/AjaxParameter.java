@@ -101,7 +101,7 @@ public class AjaxParameter {
             dsr = Double.parseDouble(request.getParameter("dsr"));
         }
         if (request.getParameter("start_price") != null) {
-            start_price = Double.parseDouble(request.getParameter("dsr"));
+            start_price = Double.parseDouble(request.getParameter("start_price"));
         }
         if (request.getParameter("end_price") != null) {
             end_price = Double.parseDouble(request.getParameter("end_price"));

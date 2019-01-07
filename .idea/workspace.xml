@@ -8,73 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/dao/GoodsDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/entity/Goods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/entity/GoodsJson.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/service/GoodsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/com/taobaovue/service/impl/GoodsServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/mapper/goodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/mapper/goodsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/mapper/platformMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/mapper/platformMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/production/TaoQuanQuan/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/production/TaoQuanQuan/web/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/images/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/images/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/production/TaoQuanQuan/web/images/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/production/TaoQuanQuan/web/images/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/production/TaoQuanQuan/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/production/TaoQuanQuan/web/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/production/TaoQuanQuan/web/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/production/TaoQuanQuan/web/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/springMvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/springMvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/mapper/goodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/mapper/goodsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/mapper/platformMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/mapper/platformMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/springMvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/src/springMvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/web/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/images/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/images/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/dao/GoodsDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/entity/Goods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/entity/GoodsJson.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/service/GoodsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/com/taobaovue/service/impl/GoodsServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/mapper/goodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/mapper/goodsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/mapper/platformMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/mapper/platformMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/springMvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/springMvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/mapper/goodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/mapper/goodsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/mapper/platformMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/mapper/platformMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/springMvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/src/springMvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/images/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/images/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TaoQuanQuan/web/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/controller/GetGoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobao/controller/GetGoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/dao/GoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobao/dao/GoodsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/entity/AjaxParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobao/entity/AjaxParameter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/entity/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobao/entity/Goods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/entity/GoodsJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobao/entity/GoodsJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/entity/SqlGoods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobao/entity/SqlGoods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/service/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobao/service/GoodsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobao/service/impl/GoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mapper/platformMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapper/platformMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/springMvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/springMvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/production/TaoQuanQuan/src/mapper/platformMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/production/TaoQuanQuan/src/mapper/platformMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/taobao/entity/AjaxParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobao/entity/AjaxParameter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/index.html" afterDir="false" />
     </list>
@@ -141,14 +76,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="14" />
-          <entry key="java" value="4977" />
+          <entry key="java" value="4988" />
           <entry key="js" value="29" />
           <entry key="xml" value="1485" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4977" />
+          <entry key="JAVA" value="4988" />
           <entry key="JavaScript" value="29" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="SQL" value="18" />
@@ -175,8 +110,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taobao/entity/AjaxParameter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1938">
-              <caret line="102" column="45" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="45" />
+            <state relative-caret-position="128">
+              <caret line="105" column="43" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -226,8 +161,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+            <state relative-caret-position="152">
+              <caret line="78" column="37" lean-forward="true" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -312,6 +247,7 @@
         <option value="$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/com/taobaovue/entity/Goods.java" />
         <option value="$PROJECT_DIR$/src/mapper/goodsMapper.xml" />
+        <option value="$PROJECT_DIR$/src/com/taobao/entity/AjaxParameter.java" />
       </list>
     </option>
   </component>
@@ -982,7 +918,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546841524132" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546849691920" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -1123,12 +1059,12 @@
       <workItem from="1546672784232" duration="2614000" />
       <workItem from="1546740060346" duration="1894000" />
       <workItem from="1546758536355" duration="2550000" />
-      <workItem from="1546840379128" duration="680000" />
+      <workItem from="1546840379128" duration="968000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74150000" />
+    <option name="totallyTimeSpent" value="74438000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1141,8 +1077,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.28536782" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.28536782" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1152,7 +1089,7 @@
       <window_info id="设计师" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3291815" />
-      <window_info anchor="bottom" x="335" y="406" width="1237" height="220" id="Run" order="2" sideWeight="0.4987874" visible="true" weight="0.34519574" />
+      <window_info active="true" anchor="bottom" x="335" y="406" width="1237" height="220" id="Run" order="2" sideWeight="0.4987874" visible="true" weight="0.52313167" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1288,13 +1225,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobao/entity/AjaxParameter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="102" column="45" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taobao/entity/Goods.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -1356,10 +1286,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taobao/entity/AjaxParameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="105" column="43" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+        <state relative-caret-position="152">
+          <caret line="78" column="37" lean-forward="true" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
         </state>
       </provider>
     </entry>

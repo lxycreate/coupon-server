@@ -1139,6 +1139,7 @@ li {
     margin: 15px auto 0 auto;
     text-align: center;
     color: #666666;
+    line-height: 1;
 }
 
 .goods_area .to_top {

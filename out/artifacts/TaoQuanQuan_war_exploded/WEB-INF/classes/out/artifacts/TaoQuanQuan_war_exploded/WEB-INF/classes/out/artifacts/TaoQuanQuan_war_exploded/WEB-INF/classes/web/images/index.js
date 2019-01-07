@@ -86,7 +86,7 @@ function initScroll() {
         var scroll_height = document.documentElement.scrollHeight;
         // console.log(scroll_top);
         // console.log( document.body.scrollTop + "!!!!!!!!");
-        if (scroll_top + window_height + 1 >= scroll_height && js_goods_area.is_more_goods) {
+        if (scroll_top + window_height + 1 >= scroll_height) {
             loadNextPage();
         }
         // 滚动到底部加载更多数据   end
@@ -323,129 +323,34 @@ function initCatalogBox() {
                 console.log('Confirm');
             },
             //删除输入错误提醒框
-            deleteErrorInput: function () {
-                this.sale_item.is_error = false;
-                this.score_item.is_error = false;
-                this.quan_item.is_start_error = false;
-                this.quan_item.is_end_error = false;
-            },
-            // 检查输入是否合法
+            // deleteErrorInput: function () {
+            //     this.sale_item.is_error = false;
+            //     this.score_item.is_error = false;
+            //     this.quan_item.is_start_error = false;
+            //     this.quan_item.is_end_error = false;
+            // },
+            // 检查输入
             checkInputAndGetGoods: function () {
-                var flag = true;
-                if (!this.checkSaleNum()) {
-                    flag = false;
-                }
-                if (!this.checkDsr()) {
-                    flag = false;
-                }
-                if (!this.checkAfterCoupon()) {
-                    flag = false;
-                }
-                if (flag) {
-                    this.deleteErrorInput();
-                    this.deleteInputValue();
-                    this.addInputValue();
-                    if (this.sale_item.value != '' || this.score_item.value != '' || this.quan_item.start_price != '' || this.quan_item.end_price != '') {
-                        loadGoods('input');
-                    }
-                }
-                console.log(flag);
-            },
-            // 检查销量是否合法
-            checkSaleNum: function () {
-                if (this.sale_item.value == '') {
-                    return true;
-                }
-                if (isNumber(this.sale_item.value)) {
-                    var temp = parseInt(this.sale_item.value);
-                    if (temp < 0) {
-                        this.sale_item.is_error = true;
-                        return false;
-                    }
-                    return true;
-                } else {
-                    this.sale_item.value = '';
-                    this.sale_item.is_error = true;
-                    return false;
-                }
-            },
-            //检查评分
-            checkDsr: function () {
-                if (this.score_item.value == '') {
-                    return true;
-                }
-                if (isNumber(this.score_item.value)) {
-                    var temp = parseFloat(this.score_item.value);
-                    if (temp > 5 || temp < 0) {
-                        this.score_item.is_error = true;
-                        return false;
-                    }
-                    return true;
-                } else {
-                    this.score_item.value = '';
-                    this.score_item.is_error = true;
-                    return false;
+                this.checkAfterCoupon();
+                // this.deleteErrorInput();
+                this.deleteInputValue();
+                this.addInputValue();
+                console.log(search_data);
+                if (this.sale_item.value != '' || this.score_item.value != '' || this.quan_item.start_price != '' || this.quan_item.end_price != '') {
+                    loadGoods('input');
                 }
             },
             //检查券后价
             checkAfterCoupon: function () {
-                var start_flag = false;
-                var end_flag = false;
-                var temp_start = '';
-                var temp_end = '';
-                // 处理"最低价"
-                if (this.quan_item.start_price == '') {
-                    start_flag = true;
-                }
-                if (isNumber(this.quan_item.start_price)) {
-                    temp_start = parseFloat(this.quan_item.start_price);
-                    if (temp_start < 0) {
-                        start_flag = false;
-                        this.quan_item.is_start_error = true;
-                    } else {
-                        start_flag = true;
+                if (isNumber(this.quan_item.start_price) && isNumber(this.quan_item.end_price)) {
+                    var start = parseInt(this.quan_item.start_price);
+                    var end = parseInt(this.quan_item.end_price);
+                    if (start > end) {
+                        var temp = this.quan_item.start_price;
+                        this.quan_item.start_price = this.quan_item.end_price;
+                        this.quan_item.end_price = temp;
                     }
-                } else {
-                    start_flag = false;
-                    this.quan_item.start_price = '';
-                    this.quan_item.is_start_error = true;
                 }
-                // 处理最高价
-                if (this.quan_item.end_price == '') {
-                    end_flag = true;
-                }
-                if (isNumber(this.quan_item.end_price)) {
-                    end_flag = true;
-                } else {
-                    end_flag = false;
-                    this.quan_item.end_price = '';
-                    this.quan_item.is_end_error = true;
-                }
-                // if (isNumber(quan_item.start_price)) {
-                //     temp_start = parseFloat(this.quan_item.start_price);
-                // }
-                // if (isNumber(quan_item.end_price)) {
-                //     temp_end = parseFloat(this.quan_item.end_price);
-                // }
-                // //两者都是数字并且最低价大于最高价->交换
-                // if (temp_start != '' && temp_end != '' && temp_start > temp_end) {
-                //     var temp = quan_item.start_price;
-                //     quan_item.start_price = quan_item.end_price;
-                //     if (temp_start < 0) {
-                //         quan_item.end_price = temp;
-                //     } else {
-                //         quan_item.end_price = '';
-                //     }
-                // }
-                // //只有最高价,并且最高价小于0,就把最低价设置为0
-                // if (temp_start == '' && temp_end < 0) {
-
-                // }
-                // 
-                if (start_flag && end_flag) {
-                    return true;
-                }
-                return false;
             },
             //从search_data中删除input
             deleteInputValue: function () {
@@ -641,7 +546,7 @@ function initGoodsList() {
             toggle_list: false, //切换列表显示方式
             is_loading_sort: false, //排序加载动画
             is_loading_more: false, //加载下一页提示
-            is_more_goods: false, //是否还有更多商品提示
+            is_more_goods: true, //是否还有更多商品
             is_show_totop: false //是否显示滚动到顶部按钮
         },
         created: function () {
@@ -777,18 +682,20 @@ function loadNextPage() {
 
 // 获取商品
 function getGoods() {
-    axios({
-        url: base_url + '/getGoods',
-        method: 'get',
-        params: search_data
-    }).then(function (response) {
-        //处理返回的数据
-        taskData(response);
-        console.log(response);
-    }).catch(function (error) {
-        closeLoading();
-        console.log('请求商品数据出错: ' + error);
-    });
+    if (js_goods_area.is_more_goods) {
+        axios({
+            url: base_url + '/getGoods',
+            method: 'get',
+            params: search_data
+        }).then(function (response) {
+            //处理返回的数据
+            taskData(response);
+            console.log(response);
+        }).catch(function (error) {
+            closeLoading();
+            console.log('请求商品数据出错: ' + error);
+        });
+    }
 }
 
 // 处理返回的数据
@@ -835,7 +742,7 @@ function closeLoading() {
 //判断是否是数字
 function isNumber(val) {
     var regPos = /^\d+(\.\d+)?$/; //非负浮点数
-    if (regPos.test(val) || regNeg.test(val)) {
+    if (regPos.test(val)) {
         return true;
     } else {
         return false;
@@ -844,24 +751,32 @@ function isNumber(val) {
 
 //只输入正整数
 function onlyPositiveInt(event) {
-    var reg = /^[0-9]\d*$/;
-    console.log(reg.test(event.value));
-    if (reg.test(event.value)) {
-        console.log('整数');
-    } else {
-        event.value = '';
-    }
+    // var reg = /^[0-9]\d*$/;
+    // console.log(reg.test(event.value));
+    // if (reg.test(event.value)) {
+    //     console.log('整数');
+    // } else {
+    //     event.value = '';
+    // }
+    event.value = event.value.replace(/\D/g, '')
 }
 //0-5
 function zeroToFive(event) {
-    // var reg = /^d*(?:.d{0,2})?$/;
-    // if(reg.test(event.value)){
-    //     console.log('对了');
-    // }
-    // else{
-    //     event.value = '';
-    // }
-    event.value = event.value.replace();
+    console.log(event.value[0]);
+    if (event.value[0] == '.') {
+        event.value = event.value.substr(1);
+        // console.log(event.value.substr(1));
+    }
+    event.value = event.value.replace(/[^\d.]/g, ''); //清除“数字”和“.”以外的字符  
+    event.value = event.value.replace(/\.{2,}/g, "."); //只保留第一个. 清除多余的  
+    // var regPos = /^\d+(\.\d+)?$/; 
+    // console.log(regPos.test('0.3'));
+    if (isNumber(event.value)) {
+        var temp = parseFloat(event.value);
+        if (temp > 5) {
+            event.value = '';
+        }
+    }
 }
 // 测试
 function test() {
