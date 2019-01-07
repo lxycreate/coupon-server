@@ -14,6 +14,7 @@ var js_tips_box;
 var clear_list_flag = false;
 //Ajax获取数所需的参数
 var search_data = {};
+
 //
 var more_search_data = {};
 
@@ -86,7 +87,8 @@ function initScroll() {
         var scroll_height = document.documentElement.scrollHeight;
         // console.log(scroll_top);
         // console.log( document.body.scrollTop + "!!!!!!!!");
-        if (scroll_top + window_height + 1 >= scroll_height) {
+        if (scroll_top + window_height + 1 >= scroll_height && js_goods_area.can_load_next&&js_goods_area.is_more_goods) {
+            js_goods_area.can_load_next = false;
             loadNextPage();
         }
         // 滚动到底部加载更多数据   end
@@ -253,8 +255,10 @@ function initCatalogBox() {
             catalog_value: function () {
                 // 参数中添加目录信息
                 if (this.catalog_value != 0) {
+                    js_goods_area.resetPageNum();
                     addProperty('goods_cid', this.catalog_value);
                 } else {
+                    js_goods_area.resetPageNum();
                     deleteProperty('goods_cid');
                 }
             },
@@ -319,26 +323,16 @@ function initCatalogBox() {
                 console.log('Clear');
             },
             confirm: function () {
-                this.checkInputAndGetGoods();
-                console.log('Confirm');
-            },
-            //删除输入错误提醒框
-            // deleteErrorInput: function () {
-            //     this.sale_item.is_error = false;
-            //     this.score_item.is_error = false;
-            //     this.quan_item.is_start_error = false;
-            //     this.quan_item.is_end_error = false;
-            // },
-            // 检查输入
-            checkInputAndGetGoods: function () {
                 this.checkAfterCoupon();
                 // this.deleteErrorInput();
                 this.deleteInputValue();
                 this.addInputValue();
                 console.log(search_data);
                 if (this.sale_item.value != '' || this.score_item.value != '' || this.quan_item.start_price != '' || this.quan_item.end_price != '') {
+                    js_goods_area.resetPageNum();
                     loadGoods('input');
                 }
+                console.log('Confirm');
             },
             //检查券后价
             checkAfterCoupon: function () {
@@ -506,6 +500,7 @@ function initSortBtn() {
             // 切换排序方式
             changeSortWay: function (index, way) {
                 this.changeSelectedColor(index);
+                js_goods_area.resetPageNum();
                 addProperty('sort', way);
             },
             // 改变被选中的排序按钮的颜色
@@ -547,7 +542,8 @@ function initGoodsList() {
             is_loading_sort: false, //排序加载动画
             is_loading_more: false, //加载下一页提示
             is_more_goods: true, //是否还有更多商品
-            is_show_totop: false //是否显示滚动到顶部按钮
+            is_show_totop: false, //是否显示滚动到顶部按钮
+            can_load_next: true
         },
         created: function () {
             // 初始化search_data
@@ -558,14 +554,17 @@ function initGoodsList() {
             // 清空当前商品列表
             clearListItems: function () {
                 this.list_items = [];
-                this.page_num = 1; //重置当前页码
-                // scrollToTop();
+                this.resetPageNum(); // scrollToTop();
             },
             // 滚动到顶部
             scrollToTop: function () {
                 Velocity(document.documentElement, 'scroll', {
                     offset: 0
                 }, 2000);
+            },
+            resetPageNum: function () {
+                this.page_num = 1; //重置当前页码
+                search_data['page_num'] = '1';
             }
         }
     });
@@ -676,8 +675,9 @@ function loadNextPage() {
 
     setTimeout(function () {
         getGoods();
+        js_goods_area.can_load_next = true; //可以加载下一页
+        js_goods_area.page_num = js_goods_area.page_num + 1;
     }, 800);
-    js_goods_area.page_num = js_goods_area.page_num + 1;
 }
 
 // 获取商品

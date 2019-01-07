@@ -7,15 +7,9 @@ var js_filter_container;
 var js_sort_way;
 //商品列表
 var js_goods_area;
-// 动画盒子
-var js_tips_box;
-//清空商品数组的标志
-//(ajax参数新增加参数或者减少参数时,就把当前商品数组清空)
-var clear_list_flag = false;
+
 //Ajax获取数所需的参数
 var search_data = {};
-//
-var more_search_data = {};
 
 
 // 初始化函数
@@ -33,9 +27,8 @@ window.onload = function () {
     initGoodsList();
     // 窗口大小监听
     watchWindow();
-
-    getGoods();
-
+    //首次加载商品数据
+    firstLoad();
 }
 
 // 搜索框吸顶   开始
@@ -84,9 +77,10 @@ function initScroll() {
         var window_height = document.documentElement.clientHeight;
         //滚动条的总高度
         var scroll_height = document.documentElement.scrollHeight;
-        // console.log(scroll_top);
-        // console.log( document.body.scrollTop + "!!!!!!!!");
-        if (scroll_top + window_height + 1 >= scroll_height) {
+
+        if (scroll_top + window_height + 1 >= scroll_height && js_goods_area.can_ajax && js_goods_area.is_more_goods) {
+            console.log(scroll_top + window_height + 1);
+            console.log(scroll_height);
             loadNextPage();
         }
         // 滚动到底部加载更多数据   end
@@ -253,8 +247,10 @@ function initCatalogBox() {
             catalog_value: function () {
                 // 参数中添加目录信息
                 if (this.catalog_value != 0) {
+                    js_goods_area.resetPageNum();
                     addProperty('goods_cid', this.catalog_value);
                 } else {
+                    js_goods_area.resetPageNum();
                     deleteProperty('goods_cid');
                 }
             },
@@ -319,26 +315,16 @@ function initCatalogBox() {
                 console.log('Clear');
             },
             confirm: function () {
-                this.checkInputAndGetGoods();
-                console.log('Confirm');
-            },
-            //删除输入错误提醒框
-            // deleteErrorInput: function () {
-            //     this.sale_item.is_error = false;
-            //     this.score_item.is_error = false;
-            //     this.quan_item.is_start_error = false;
-            //     this.quan_item.is_end_error = false;
-            // },
-            // 检查输入
-            checkInputAndGetGoods: function () {
                 this.checkAfterCoupon();
                 // this.deleteErrorInput();
                 this.deleteInputValue();
                 this.addInputValue();
                 console.log(search_data);
                 if (this.sale_item.value != '' || this.score_item.value != '' || this.quan_item.start_price != '' || this.quan_item.end_price != '') {
+                    js_goods_area.resetPageNum();
                     loadGoods('input');
                 }
+                console.log('Confirm');
             },
             //检查券后价
             checkAfterCoupon: function () {
@@ -506,6 +492,7 @@ function initSortBtn() {
             // 切换排序方式
             changeSortWay: function (index, way) {
                 this.changeSelectedColor(index);
+                js_goods_area.resetPageNum();
                 addProperty('sort', way);
             },
             // 改变被选中的排序按钮的颜色
@@ -542,12 +529,13 @@ function initGoodsList() {
             page_num: 1, //当前页码
             page_size: 20, //每页数据量
             list_items: [],
-            is_show: 1,
+            clear_list_flag: false, //清空数组标志
             toggle_list: false, //切换列表显示方式
             is_loading_sort: false, //排序加载动画
             is_loading_more: false, //加载下一页提示
             is_more_goods: true, //是否还有更多商品
-            is_show_totop: false //是否显示滚动到顶部按钮
+            is_show_totop: false, //是否显示滚动到顶部按钮
+            can_ajax: true
         },
         created: function () {
             // 初始化search_data
@@ -558,14 +546,17 @@ function initGoodsList() {
             // 清空当前商品列表
             clearListItems: function () {
                 this.list_items = [];
-                this.page_num = 1; //重置当前页码
-                // scrollToTop();
+                this.resetPageNum();
             },
             // 滚动到顶部
             scrollToTop: function () {
                 Velocity(document.documentElement, 'scroll', {
                     offset: 0
                 }, 2000);
+            },
+            resetPageNum: function () {
+                this.page_num = 1; //重置当前页码
+                search_data['page_num'] = '1';
             }
         }
     });
@@ -577,6 +568,13 @@ function watchWindow() {
     checkWindowWidth();
     window.onresize = function () {
         checkWindowWidth();
+    }
+}
+
+//首次加载
+function firstLoad() {
+    if(js_goods_area.can_ajax){
+        loadGoods('');
     }
 }
 
@@ -600,7 +598,6 @@ function checkWindowWidth() {
         // 造成侧栏自动隐藏
         // js_sort_way.hideSide();
         //小屏幕就显示列表切换按钮
-
     }
 }
 
@@ -634,26 +631,27 @@ function mouseDown(event) {
 //添加搜索参数属性
 function addProperty(pro_name, pro_value) {
     search_data[pro_name] = pro_value;
-
-    loadGoods(pro_name);
-    // console.log('添加属性：' + pro_name + '  属性值为：' + pro_value);
-    // console.log(JSON.stringify(search_data));
+    if (js_goods_area.can_ajax) {
+        loadGoods(pro_name);
+    }
 }
 
 //删除搜索参数中的属性
 function deleteProperty(pro_name) {
     if (search_data.hasOwnProperty(pro_name)) {
         delete search_data[pro_name];
-        loadGoods(pro_name);
-        // console.log('删除属性' + pro_name);
+        if (js_goods_area.can_ajax) {
+            loadGoods(pro_name);
+        }
     }
-    // console.log(JSON.stringify(search_data));
 }
 
 //加载商品
 function loadGoods(pro_name) {
+
+    js_goods_area.can_ajax = false;
     //清空数组标志
-    clear_list_flag = true;
+    js_goods_area.clear_list_flag = true;
     // 隐藏"没有更多了..."
     js_goods_area.is_more_goods = true;
     //切换排序方式时显示"加载中..."
@@ -664,44 +662,45 @@ function loadGoods(pro_name) {
     }
     setTimeout(function () {
         getGoods();
+        js_goods_area.can_ajax = true; //可以加载下一页
     }, 400);
 }
 //加载下一页
 function loadNextPage() {
-    search_data['page_num'] = js_goods_area.page_num + 1;
+    js_goods_area.can_ajax = false;
     //清空数组标志
-    clear_list_flag = false;
+    js_goods_area.clear_list_flag = false;
     // 显示加载动画
     js_goods_area.is_loading_more = true;
 
+    search_data['page_num'] = js_goods_area.page_num + 1;
     setTimeout(function () {
         getGoods();
+        js_goods_area.can_ajax = true; //可以加载下一页
+        js_goods_area.page_num = js_goods_area.page_num + 1;
     }, 800);
-    js_goods_area.page_num = js_goods_area.page_num + 1;
 }
 
 // 获取商品
 function getGoods() {
-    if (js_goods_area.is_more_goods) {
-        axios({
-            url: base_url + '/getGoods',
-            method: 'get',
-            params: search_data
-        }).then(function (response) {
-            //处理返回的数据
-            taskData(response);
-            console.log(response);
-        }).catch(function (error) {
-            closeLoading();
-            console.log('请求商品数据出错: ' + error);
-        });
-    }
+    axios({
+        url: base_url + '/getGoods',
+        method: 'get',
+        params: search_data
+    }).then(function (response) {
+        //处理返回的数据
+        taskData(response);
+        console.log(response);
+    }).catch(function (error) {
+        closeLoading();
+        console.log('请求商品数据出错: ' + error);
+    });
 }
 
 // 处理返回的数据
 function taskData(response) {
     // 清空数组
-    if (clear_list_flag) {
+    if (js_goods_area.clear_list_flag) {
         js_goods_area.clearListItems();
     }
     //关闭动画
@@ -751,13 +750,6 @@ function isNumber(val) {
 
 //只输入正整数
 function onlyPositiveInt(event) {
-    // var reg = /^[0-9]\d*$/;
-    // console.log(reg.test(event.value));
-    // if (reg.test(event.value)) {
-    //     console.log('整数');
-    // } else {
-    //     event.value = '';
-    // }
     event.value = event.value.replace(/\D/g, '')
 }
 //0-5
@@ -765,12 +757,10 @@ function zeroToFive(event) {
     console.log(event.value[0]);
     if (event.value[0] == '.') {
         event.value = event.value.substr(1);
-        // console.log(event.value.substr(1));
     }
     event.value = event.value.replace(/[^\d.]/g, ''); //清除“数字”和“.”以外的字符  
     event.value = event.value.replace(/\.{2,}/g, "."); //只保留第一个. 清除多余的  
-    // var regPos = /^\d+(\.\d+)?$/; 
-    // console.log(regPos.test('0.3'));
+
     if (isNumber(event.value)) {
         var temp = parseFloat(event.value);
         if (temp > 5) {
