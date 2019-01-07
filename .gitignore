@@ -1,4 +1,4 @@
 *.class
 
 node_modules/
-/target/
+out/
