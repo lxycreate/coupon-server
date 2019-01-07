@@ -6,12 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/WEB-INF/classes/out/artifacts/TaoQuanQuan_war_exploded/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TaoQuanQuan_war_exploded/images/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -917,7 +912,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546862500706" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546863411369" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -1058,12 +1053,12 @@
       <workItem from="1546672784232" duration="2614000" />
       <workItem from="1546740060346" duration="1894000" />
       <workItem from="1546758536355" duration="2550000" />
-      <workItem from="1546840379128" duration="1565000" />
+      <workItem from="1546840379128" duration="1569000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75035000" />
+    <option name="totallyTimeSpent" value="75039000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
