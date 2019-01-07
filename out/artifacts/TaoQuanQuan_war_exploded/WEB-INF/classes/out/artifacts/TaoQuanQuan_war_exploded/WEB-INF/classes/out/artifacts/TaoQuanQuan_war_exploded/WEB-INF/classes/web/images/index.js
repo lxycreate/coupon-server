@@ -7,15 +7,22 @@ var js_filter_container;
 var js_sort_way;
 //商品列表
 var js_goods_area;
-
+// 动画盒子
+var js_tips_box;
+//清空商品数组的标志
+//(ajax参数新增加参数或者减少参数时,就把当前商品数组清空)
+var clear_list_flag = false;
 //Ajax获取数所需的参数
 var search_data = {};
+//
+var more_search_data = {};
 
 
 // 初始化函数
 window.onload = function () {
 
-
+    //直接回到顶部,没有动画
+    scrollToTopDirect();
     // 搜索框吸顶
     initScroll();
     // 筛选
@@ -28,6 +35,7 @@ window.onload = function () {
     watchWindow();
 
     getGoods();
+
 }
 
 // 搜索框吸顶   开始
@@ -49,9 +57,10 @@ function initScroll() {
     });
     window.onscroll = function () {
         // 滚动条距离顶部的高度
-        var scroll_top = document.documentElement.scrollTop || document.body.scrollTop;
+        var scroll_top = document.documentElement.scrollTop;
         //  获取屏幕可是宽度
-        var client_width = document.documentElement.clientWidth || document.body.clientWidth;
+        var client_width = document.documentElement.clientWidth;
+        // 搜索框吸顶  start
         if (scroll_top < 100) {
             js_ceil_box.is_fixed = false;
             js_ceil_box.is_show = true;
@@ -68,6 +77,26 @@ function initScroll() {
             js_ceil_box.is_show = false;
             js_ceil_filler.is_show = true;
         }
+        // 搜索框吸顶   end
+
+        // 滚动到底部加载更多数据   start
+        //可视区的高度
+        var window_height = document.documentElement.clientHeight;
+        //滚动条的总高度
+        var scroll_height = document.documentElement.scrollHeight;
+        // console.log(scroll_top);
+        // console.log( document.body.scrollTop + "!!!!!!!!");
+        if (scroll_top + window_height + 1 >= scroll_height && js_goods_area.is_more_goods) {
+            loadNextPage();
+        }
+        // 滚动到底部加载更多数据   end
+        // 滚动到顶部   start
+        if (scroll_top > window_height) {
+            js_goods_area.is_show_totop = true;
+        } else {
+            js_goods_area.is_show_totop = false;
+        }
+        // 滚动到顶部   end
     }
 }
 // 搜索框吸顶   结束
@@ -196,20 +225,24 @@ function initCatalogBox() {
             quan_item: {
                 name: '券后价格区间',
                 start_price: '', //最低价
-                end_price: '' //最高价
+                end_price: '', //最高价
+                is_start_error: false, //输入是否合法
+                is_end_error: false
             },
             //评分筛选
             score_item: {
                 name: '动态评分≥',
                 value: '',
-                tip: ' (0分-5分)'
+                tip: ' (0分-5分)',
+                is_error: false //输入是否合法
             },
             //销量筛选
             sale_item: {
                 name: '总销量≥',
-                value: ''
+                value: '',
+                is_error: false //输入是否合法
             },
-            is_show_confirm: false, //是否显示“清空 确认按钮”
+            is_loading: false
         },
         created: function () {
             // 初始化目录
@@ -225,6 +258,7 @@ function initCatalogBox() {
                     deleteProperty('goods_cid');
                 }
             },
+
             // 监听筛选参数
             filter_value: function () {
                 var index = parseInt(this.filter_value);
@@ -234,29 +268,9 @@ function initCatalogBox() {
                 } else {
                     addProperty(this.filter_items[index - 1].an_name, '1');
                 }
-            },
-            'quan_item.start_price': function () {
-                this.isShowConfirmBtn();
-            },
-            'quan_item.end_price': function () {
-                this.isShowConfirmBtn();
-            },
-            'sale_item.value': function () {
-                this.isShowConfirmBtn();
-            },
-            'score_item.value': function () {
-                this.isShowConfirmBtn();
             }
         },
         methods: {
-            //是否显示隐藏的清空和确认按钮
-            isShowConfirmBtn: function () {
-                if (this.quan_item.start_price == '' && this.quan_item.end_price == '' && this.sale_item.value == '' && this.score_item.value == '') {
-                    this.is_show_confirm = false;
-                } else {
-                    this.is_show_confirm = true;
-                }
-            },
             // 单选目录事件
             selectCatalogItem: function (value) {
                 this.catalog_value = value;
@@ -305,8 +319,165 @@ function initCatalogBox() {
                 console.log('Clear');
             },
             confirm: function () {
+                this.checkInputAndGetGoods();
                 console.log('Confirm');
+            },
+            //删除输入错误提醒框
+            deleteErrorInput: function () {
+                this.sale_item.is_error = false;
+                this.score_item.is_error = false;
+                this.quan_item.is_start_error = false;
+                this.quan_item.is_end_error = false;
+            },
+            // 检查输入是否合法
+            checkInputAndGetGoods: function () {
+                var flag = true;
+                if (!this.checkSaleNum()) {
+                    flag = false;
+                }
+                if (!this.checkDsr()) {
+                    flag = false;
+                }
+                if (!this.checkAfterCoupon()) {
+                    flag = false;
+                }
+                if (flag) {
+                    this.deleteErrorInput();
+                    this.deleteInputValue();
+                    this.addInputValue();
+                    if (this.sale_item.value != '' || this.score_item.value != '' || this.quan_item.start_price != '' || this.quan_item.end_price != '') {
+                        loadGoods('input');
+                    }
+                }
+                console.log(flag);
+            },
+            // 检查销量是否合法
+            checkSaleNum: function () {
+                if (this.sale_item.value == '') {
+                    return true;
+                }
+                if (isNumber(this.sale_item.value)) {
+                    var temp = parseInt(this.sale_item.value);
+                    if (temp < 0) {
+                        this.sale_item.is_error = true;
+                        return false;
+                    }
+                    return true;
+                } else {
+                    this.sale_item.value = '';
+                    this.sale_item.is_error = true;
+                    return false;
+                }
+            },
+            //检查评分
+            checkDsr: function () {
+                if (this.score_item.value == '') {
+                    return true;
+                }
+                if (isNumber(this.score_item.value)) {
+                    var temp = parseFloat(this.score_item.value);
+                    if (temp > 5 || temp < 0) {
+                        this.score_item.is_error = true;
+                        return false;
+                    }
+                    return true;
+                } else {
+                    this.score_item.value = '';
+                    this.score_item.is_error = true;
+                    return false;
+                }
+            },
+            //检查券后价
+            checkAfterCoupon: function () {
+                var start_flag = false;
+                var end_flag = false;
+                var temp_start = '';
+                var temp_end = '';
+                // 处理"最低价"
+                if (this.quan_item.start_price == '') {
+                    start_flag = true;
+                }
+                if (isNumber(this.quan_item.start_price)) {
+                    temp_start = parseFloat(this.quan_item.start_price);
+                    if (temp_start < 0) {
+                        start_flag = false;
+                        this.quan_item.is_start_error = true;
+                    } else {
+                        start_flag = true;
+                    }
+                } else {
+                    start_flag = false;
+                    this.quan_item.start_price = '';
+                    this.quan_item.is_start_error = true;
+                }
+                // 处理最高价
+                if (this.quan_item.end_price == '') {
+                    end_flag = true;
+                }
+                if (isNumber(this.quan_item.end_price)) {
+                    end_flag = true;
+                } else {
+                    end_flag = false;
+                    this.quan_item.end_price = '';
+                    this.quan_item.is_end_error = true;
+                }
+                // if (isNumber(quan_item.start_price)) {
+                //     temp_start = parseFloat(this.quan_item.start_price);
+                // }
+                // if (isNumber(quan_item.end_price)) {
+                //     temp_end = parseFloat(this.quan_item.end_price);
+                // }
+                // //两者都是数字并且最低价大于最高价->交换
+                // if (temp_start != '' && temp_end != '' && temp_start > temp_end) {
+                //     var temp = quan_item.start_price;
+                //     quan_item.start_price = quan_item.end_price;
+                //     if (temp_start < 0) {
+                //         quan_item.end_price = temp;
+                //     } else {
+                //         quan_item.end_price = '';
+                //     }
+                // }
+                // //只有最高价,并且最高价小于0,就把最低价设置为0
+                // if (temp_start == '' && temp_end < 0) {
+
+                // }
+                // 
+                if (start_flag && end_flag) {
+                    return true;
+                }
+                return false;
+            },
+            //从search_data中删除input
+            deleteInputValue: function () {
+                if (search_data.hasOwnProperty('sale_num')) {
+                    delete search_data['sale_num'];
+                }
+                if (search_data.hasOwnProperty('dsr')) {
+                    delete search_data['dsr'];
+                }
+                if (search_data.hasOwnProperty('start_price')) {
+                    delete search_data['start_price'];
+                }
+                if (search_data.hasOwnProperty('end_price')) {
+                    delete search_data['end_price'];
+                }
+            },
+            //向search_data中添加input值
+            addInputValue: function () {
+                if (this.sale_item.value != '') {
+                    search_data['sale_num'] = this.sale_item.value;
+                }
+                if (this.score_item.value != '') {
+                    search_data['dsr'] = this.score_item.value;
+                }
+                if (this.quan_item.start_price != '') {
+                    search_data['start_price'] = this.quan_item.start_price;
+                }
+                if (this.quan_item.end_price != '') {
+                    search_data['end_price'] = this.quan_item.end_price;
+                }
             }
+            // 
         }
     });
     // Vue App
@@ -320,6 +491,7 @@ function initSortBtn() {
         el: '.js_sort_way',
         data: {
             is_show_side: false, //侧边栏当前是否显示
+            is_show_shade: false, //遮罩
             sort_item: [{
                 name: '综合', //名称
                 type: '', //类型
@@ -384,6 +556,7 @@ function initSortBtn() {
             showSide: function () {
                 if (isMidSmallScreen() && !this.is_show_side) {
                     this.stopSideAnimate();
+                    this.is_show_shade = true;
                     this.is_show_side = true;
                     Velocity(this.$refs.js_confirm_btn, {
                         'margin-left': '-298px'
@@ -399,6 +572,7 @@ function initSortBtn() {
                 if (isMidSmallScreen() && this.is_show_side) {
                     this.stopSideAnimate();
                     this.is_show_side = false;
+                    this.is_show_shade = false;
                     Velocity(this.$refs.js_confirm_btn, {
                         'margin-left': '5px'
                         // 必须带px单位
@@ -465,7 +639,10 @@ function initGoodsList() {
             list_items: [],
             is_show: 1,
             toggle_list: false, //切换列表显示方式
-
+            is_loading_sort: false, //排序加载动画
+            is_loading_more: false, //加载下一页提示
+            is_more_goods: false, //是否还有更多商品提示
+            is_show_totop: false //是否显示滚动到顶部按钮
         },
         created: function () {
             // 初始化search_data
@@ -476,6 +653,14 @@ function initGoodsList() {
             // 清空当前商品列表
             clearListItems: function () {
                 this.list_items = [];
+                this.page_num = 1; //重置当前页码
+                // scrollToTop();
+            },
+            // 滚动到顶部
+            scrollToTop: function () {
+                Velocity(document.documentElement, 'scroll', {
+                    offset: 0
+                }, 2000);
             }
         }
     });
@@ -531,6 +716,10 @@ function mouseDown(event) {
         console.log('在侧栏外');
         js_sort_way.hideSide();
     }
+    // if (event.target == js_sort_way.$refs.js_shade) {
+    //     console.log('在侧栏外');
+    //     js_sort_way.hideSide();
+    // }
     if (event.target == js_sort_way.$refs.js_show_side) {
         console.log("单击筛选");
     }
@@ -540,21 +729,50 @@ function mouseDown(event) {
 //添加搜索参数属性
 function addProperty(pro_name, pro_value) {
     search_data[pro_name] = pro_value;
-    js_goods_area.clearListItems();
-    getGoods();
-    console.log('添加属性：' + pro_name + '  属性值为：' + pro_value);
-    console.log(JSON.stringify(search_data));
+
+    loadGoods(pro_name);
+    // console.log('添加属性：' + pro_name + '  属性值为：' + pro_value);
+    // console.log(JSON.stringify(search_data));
 }
 
 //删除搜索参数中的属性
 function deleteProperty(pro_name) {
     if (search_data.hasOwnProperty(pro_name)) {
         delete search_data[pro_name];
-        js_goods_area.clearListItems();
-        getGoods();
-        console.log('删除属性' + pro_name);
+        loadGoods(pro_name);
+        // console.log('删除属性' + pro_name);
     }
-    console.log(JSON.stringify(search_data));
+    // console.log(JSON.stringify(search_data));
+}
+
+//加载商品
+function loadGoods(pro_name) {
+    //清空数组标志
+    clear_list_flag = true;
+    // 隐藏"没有更多了..."
+    js_goods_area.is_more_goods = true;
+    //切换排序方式时显示"加载中..."
+    js_goods_area.is_loading_sort = true;
+
+    if (pro_name != 'sort') {
+        js_filter_container.is_loading = true;
+    }
+    setTimeout(function () {
+        getGoods();
+    }, 400);
+}
+//加载下一页
+function loadNextPage() {
+    search_data['page_num'] = js_goods_area.page_num + 1;
+    //清空数组标志
+    clear_list_flag = false;
+    // 显示加载动画
+    js_goods_area.is_loading_more = true;
+
+    setTimeout(function () {
+        getGoods();
+    }, 800);
+    js_goods_area.page_num = js_goods_area.page_num + 1;
 }
 
 // 获取商品
@@ -568,17 +786,82 @@ function getGoods() {
         taskData(response);
         console.log(response);
     }).catch(function (error) {
-
+        closeLoading();
+        console.log('请求商品数据出错: ' + error);
     });
 }
 
 // 处理返回的数据
 function taskData(response) {
+    // 清空数组
+    if (clear_list_flag) {
+        js_goods_area.clearListItems();
+    }
+    //关闭动画
+    closeLoading();
+    // 判断返回的数据是否等于每页数据量(如果是，说明还有下一页,否则没有)
+    if (response.data.goods.length == js_goods_area.page_size) {
+        js_goods_area.is_more_goods = true;
+    } else {
+        // 保证加载动画结束后才出现"没有更多了..."提示
+        setTimeout(function () {
+            js_goods_area.is_more_goods = false;
+        }, 400);
+    }
+    // 将返回的商品数据装入Vue对象中的数组中,显示到界面中
     if (response.data.goods != null && response.data.goods.length != 0) {
         for (var i = 0; i < response.data.goods.length; ++i) {
             js_goods_area.list_items.push(response.data.goods[i]);
         }
     }
+}
+
+//直接滚动到顶部,没有动画
+function scrollToTopDirect() {
+    Velocity(document.documentElement, 'scroll', {
+        offset: 0
+    });
+}
+
+//关闭加载动画
+function closeLoading() {
+    setTimeout(function () {
+        js_goods_area.is_loading_sort = false;
+        js_filter_container.is_loading = false;
+        js_goods_area.is_loading_more = false;
+    }, 400);
+}
+
+//判断是否是数字
+function isNumber(val) {
+    var regPos = /^\d+(\.\d+)?$/; //非负浮点数
+    if (regPos.test(val) || regNeg.test(val)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//只输入正整数
+function onlyPositiveInt(event) {
+    var reg = /^[0-9]\d*$/;
+    console.log(reg.test(event.value));
+    if (reg.test(event.value)) {
+        console.log('整数');
+    } else {
+        event.value = '';
+    }
+}
+//0-5
+function zeroToFive(event) {
+    // var reg = /^d*(?:.d{0,2})?$/;
+    // if(reg.test(event.value)){
+    //     console.log('对了');
+    // }
+    // else{
+    //     event.value = '';
+    // }
+    event.value = event.value.replace();
 }
 // 测试
 function test() {
@@ -594,3 +877,9 @@ function test() {
 
     });
 }
+
+// console.log(document.body.scrollTop);
+// window.setTimeout(function(){
+//     js_tips_box.is_show_loading = false;
+//     console.log('关闭');
+// },3000);

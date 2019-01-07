@@ -483,6 +483,11 @@ li {
     color: #fa5319 !important;
 }
 
+.input_error {
+    border-color: red !important;
+    box-shadow: 0 0 5px red;
+}
+
 @media(min-width:992px) {
 
     /* 遮罩 */
@@ -1133,7 +1138,34 @@ li {
     display: block;
     margin: 15px auto 0 auto;
     text-align: center;
-    color:#666666;
+    color: #666666;
+}
+
+.goods_area .to_top {
+    position: fixed;
+    display: block;
+    z-index: 99;
+    top: 100%;
+    left: 100%;
+    width: 45px;
+    height: 45px;
+    margin: -60px 0 0 -60px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.goods_area .to_top:hover {
+    cursor: pointer;
+    background-color: #fa5319;
+}
+
+.goods_area .to_top>i {
+    margin-top: 10px;
+    font-size: 23px;
+    color: #ffffff;
+    font-weight: bolder;
 }
 
 @media(max-width:1199px) {
@@ -1152,6 +1184,10 @@ li {
     .goods_area {
         padding: 0 20px;
     }
+
+    .goods_area .to_top:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 }
 
 @media (max-width:767px) {
@@ -1162,6 +1198,10 @@ li {
     .goods_area .goods_list>li {
         width: 50%;
         margin-top: 10px;
+    }
+
+    .goods_area .to_top:hover {
+        background-color: rgba(0, 0, 0, 0.5);
     }
 }
 

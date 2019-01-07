@@ -3,7 +3,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.taobaovue.dao.GoodsDao">
+<mapper namespace="com.taobao.dao.GoodsDao">
     <resultMap type="goods" id="goodsMapper">
         <id property="goods_id" column="goods_id"></id>
         <result property="platform_id" column="platform_id"/>

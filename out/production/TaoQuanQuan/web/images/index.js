@@ -14,6 +14,8 @@ var js_tips_box;
 var clear_list_flag = false;
 //Ajax获取数所需的参数
 var search_data = {};
+//
+var more_search_data = {};
 
 
 // 初始化函数
@@ -88,6 +90,13 @@ function initScroll() {
             loadNextPage();
         }
         // 滚动到底部加载更多数据   end
+        // 滚动到顶部   start
+        if (scroll_top > window_height) {
+            js_goods_area.is_show_totop = true;
+        } else {
+            js_goods_area.is_show_totop = false;
+        }
+        // 滚动到顶部   end
     }
 }
 // 搜索框吸顶   结束
@@ -216,18 +225,22 @@ function initCatalogBox() {
             quan_item: {
                 name: '券后价格区间',
                 start_price: '', //最低价
-                end_price: '' //最高价
+                end_price: '', //最高价
+                is_start_error: false, //输入是否合法
+                is_end_error: false
             },
             //评分筛选
             score_item: {
                 name: '动态评分≥',
                 value: '',
-                tip: ' (0分-5分)'
+                tip: ' (0分-5分)',
+                is_error: false //输入是否合法
             },
             //销量筛选
             sale_item: {
                 name: '总销量≥',
-                value: ''
+                value: '',
+                is_error: false //输入是否合法
             },
             is_loading: false
         },
@@ -245,6 +258,7 @@ function initCatalogBox() {
                     deleteProperty('goods_cid');
                 }
             },
+
             // 监听筛选参数
             filter_value: function () {
                 var index = parseInt(this.filter_value);
@@ -305,8 +319,65 @@ function initCatalogBox() {
                 console.log('Clear');
             },
             confirm: function () {
+                this.checkInputAndGetGoods();
                 console.log('Confirm');
+            },
+            //删除输入错误提醒框
+            deleteErrorInput: function () {
+                this.sale_item.is_error = false;
+                this.score_item.is_error = false;
+                this.quan_item.is_start_error = false;
+                this.quan_item.is_end_error = false;
+            },
+            // 检查输入是否合法
+            checkInputAndGetGoods: function () {
+                var flag = true;
+                checkAfterCoupon;
+                if (flag) {
+                    this.deleteErrorInput();
+                    this.deleteInputValue();
+                    this.addInputValue();
+                    if (this.sale_item.value != '' || this.score_item.value != '' || this.quan_item.start_price != '' || this.quan_item.end_price != '') {
+                        loadGoods('input');
+                    }
+                }
+                console.log(flag);
+            },
+            //检查券后价
+            checkAfterCoupon: function () {
+                
+            },
+            //从search_data中删除input
+            deleteInputValue: function () {
+                if (search_data.hasOwnProperty('sale_num')) {
+                    delete search_data['sale_num'];
+                }
+                if (search_data.hasOwnProperty('dsr')) {
+                    delete search_data['dsr'];
+                }
+                if (search_data.hasOwnProperty('start_price')) {
+                    delete search_data['start_price'];
+                }
+                if (search_data.hasOwnProperty('end_price')) {
+                    delete search_data['end_price'];
+                }
+            },
+            //向search_data中添加input值
+            addInputValue: function () {
+                if (this.sale_item.value != '') {
+                    search_data['sale_num'] = this.sale_item.value;
+                }
+                if (this.score_item.value != '') {
+                    search_data['dsr'] = this.score_item.value;
+                }
+                if (this.quan_item.start_price != '') {
+                    search_data['start_price'] = this.quan_item.start_price;
+                }
+                if (this.quan_item.end_price != '') {
+                    search_data['end_price'] = this.quan_item.end_price;
+                }
             }
+            // 
         }
     });
     // Vue App
@@ -470,7 +541,8 @@ function initGoodsList() {
             toggle_list: false, //切换列表显示方式
             is_loading_sort: false, //排序加载动画
             is_loading_more: false, //加载下一页提示
-            is_more_goods: false //是否还有更多商品提示
+            is_more_goods: false, //是否还有更多商品提示
+            is_show_totop: false //是否显示滚动到顶部按钮
         },
         created: function () {
             // 初始化search_data
@@ -481,31 +553,19 @@ function initGoodsList() {
             // 清空当前商品列表
             clearListItems: function () {
                 this.list_items = [];
-                page_size = 1; //重置当前页码
+                this.page_num = 1; //重置当前页码
                 // scrollToTop();
+            },
+            // 滚动到顶部
+            scrollToTop: function () {
+                Velocity(document.documentElement, 'scroll', {
+                    offset: 0
+                }, 2000);
             }
         }
     });
 }
 // 商品列表  结束
-
-// 动画盒子   start
-// function initTipsBox() {
-//     js_tips_box = new Vue({
-//         el: '.js_tips_box',
-//         data: {
-//             is_show_loading: false, //是否显示加载动画
-//             is_first_load: true //是否初次加载
-//         },
-//         created: function () {
-//             // setTimeout(function () {
-//             //     this.is_show_loading = false;
-//             //     console.log('关闭加载动画');
-//             // }, 300);
-//         }
-//     });
-// }
-// 动画盒子   end
 
 // 监测窗口大小变化
 function watchWindow() {
@@ -550,16 +610,16 @@ function isMidSmallScreen() {
 
 // 鼠标按下事件（显示或隐藏侧边栏）   开始
 function mouseDown(event) {
-    // var point = event || window.event;
-    // var screen_width = document.body.clientWidth;
-    // if (screen_width < 992 && screen_width - point.clientX > 300 && event.target != js_sort_way.$refs.js_show_side) {
-    //     console.log('在侧栏外');
-    //     js_sort_way.hideSide();
-    // }
-    if (event.target == js_sort_way.$refs.js_shade) {
+    var point = event || window.event;
+    var screen_width = document.body.clientWidth;
+    if (screen_width < 992 && screen_width - point.clientX > 300 && event.target != js_sort_way.$refs.js_show_side) {
         console.log('在侧栏外');
         js_sort_way.hideSide();
     }
+    // if (event.target == js_sort_way.$refs.js_shade) {
+    //     console.log('在侧栏外');
+    //     js_sort_way.hideSide();
+    // }
     if (event.target == js_sort_way.$refs.js_show_side) {
         console.log("单击筛选");
     }
@@ -570,7 +630,7 @@ function mouseDown(event) {
 function addProperty(pro_name, pro_value) {
     search_data[pro_name] = pro_value;
 
-    loadingGoods(pro_name);
+    loadGoods(pro_name);
     // console.log('添加属性：' + pro_name + '  属性值为：' + pro_value);
     // console.log(JSON.stringify(search_data));
 }
@@ -579,14 +639,14 @@ function addProperty(pro_name, pro_value) {
 function deleteProperty(pro_name) {
     if (search_data.hasOwnProperty(pro_name)) {
         delete search_data[pro_name];
-        loadingGoods(pro_name);
+        loadGoods(pro_name);
         // console.log('删除属性' + pro_name);
     }
     // console.log(JSON.stringify(search_data));
 }
 
 //加载商品
-function loadingGoods(pro_name) {
+function loadGoods(pro_name) {
     //清空数组标志
     clear_list_flag = true;
     // 隐藏"没有更多了..."
@@ -611,7 +671,7 @@ function loadNextPage() {
 
     setTimeout(function () {
         getGoods();
-    }, 400);
+    }, 800);
     js_goods_area.page_num = js_goods_area.page_num + 1;
 }
 
@@ -633,10 +693,6 @@ function getGoods() {
 
 // 处理返回的数据
 function taskData(response) {
-    // 关闭加载动画
-    // setTimeout(function () {
-    //     js_tips_box.is_show_loading = false;
-    // }, 500);
     // 清空数组
     if (clear_list_flag) {
         js_goods_area.clearListItems();
@@ -674,6 +730,46 @@ function closeLoading() {
         js_filter_container.is_loading = false;
         js_goods_area.is_loading_more = false;
     }, 400);
+}
+
+//判断是否是数字
+function isNumber(val) {
+    var regPos = /^\d+(\.\d+)?$/; //非负浮点数
+    if (regPos.test(val)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//只输入正整数
+function onlyPositiveInt(event) {
+    // var reg = /^[0-9]\d*$/;
+    // console.log(reg.test(event.value));
+    // if (reg.test(event.value)) {
+    //     console.log('整数');
+    // } else {
+    //     event.value = '';
+    // }
+    event.value = event.value.replace(/\D/g, '')
+}
+//0-5
+function zeroToFive(event) {
+    console.log(event.value[0]);
+    if (event.value[0] == '.') {
+        event.value = event.value.substr(1);
+        // console.log(event.value.substr(1));
+    }
+    event.value = event.value.replace(/[^\d.]/g, ''); //清除“数字”和“.”以外的字符  
+    event.value = event.value.replace(/\.{2,}/g, "."); //只保留第一个. 清除多余的  
+    // var regPos = /^\d+(\.\d+)?$/; 
+    // console.log(regPos.test('0.3'));
+    if (isNumber(event.value)) {
+        var temp = parseFloat(event.value);
+        if (temp > 5) {
+            event.value = '';
+        }
+    }
 }
 // 测试
 function test() {

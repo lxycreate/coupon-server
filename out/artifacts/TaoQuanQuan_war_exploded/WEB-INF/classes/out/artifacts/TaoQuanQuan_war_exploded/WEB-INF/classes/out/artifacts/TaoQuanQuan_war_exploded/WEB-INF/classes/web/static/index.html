@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <!-- 关联 http 头部 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- viewport宽度等于设别宽度 初始缩放比例 1 是否允许用户缩放 否  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- 字符编码为 UTF-8 -->
+    <meta charset="UTF-8">
+
+    <title> 首页</title>
+    <meta name="keywords" content="首页" />
+    <meta name="description" content="首页" />
+
+    <!-- 格式检测 -->
+    <meta name="format-detection" content="telephone=no, email=no" />
+
+    <!-- 内核设置 -->
+    <meta name="renderer" content="webkit">
+
+    <!-- 指定渲染引擎 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="../images/iconfont.css">
+    <link rel="stylesheet" href="../images/index.css">
+    <script src="../images/axios.js"></script>
+    <!-- <script src="../images/jquery.js"></script> -->
+    <script src="../images/velocity.min.js"></script>
+    <script src="../images/vue.js"></script>
+</head>
+
+<body>
+    <!-- 内容   START -->
+    <div class="main_body" onmousedown="mouseDown(event)">
+        <!-- 导航   START -->
+        <div class="header">
+            <!-- logo和搜索框   START -->
+            <div v-bind:class="{ceil_fixed : is_fixed}" class="ceil_box js_ceil_box" v-cloak>
+                <div class="header_logo">
+                    <a v-show="is_show" class="logo_box">
+                        <img src="../images/logo.png">
+                    </a>
+                    <form v-bind:class="{no_margin : !is_show}" class="search_input js_search_input">
+                        <input v-model="searchWord" placeholder="商品标题、关键字">
+                        <i class="icon-font i-search-pc"></i>
+                    </form>
+                </div>
+            </div>
+            <p v-show="is_show" class="ceil_filler js_ceil_filler" v-cloak></p>
+            <!-- logo和搜索框   END -->
+
+            <!-- 按钮   START -->
+            <div class="header_btns">
+                <p class="btn_box">
+                    <a class="cur">全网商品</a>
+                    <a>特惠商品</a>
+                    <a>百元精品</a>
+                </p>
+            </div>
+            <!-- 按钮   END -->
+        </div>
+        <!-- 导航   END -->
+
+        <div class="mid_bottom_bg">
+            <!-- 筛选 START-->
+            <div class="filter_box">
+                <div class="filter_container js_filter_container" ref="js_filter_container" v-cloak>
+
+                    <!-- 分类选择  START -->
+                    <div class="select_box js_catalog_box">
+                        <span class="name"> {{catalog_name}} </span>
+                        <ul>
+                            <!--  -->
+                            <li v-for="item in catalog_items" v-bind:class="{catalog_btn_bg: item.is_select}"
+                                v-on:click="selectCatalogItem(item.value)">
+                                <a>{{item.name}}</a>
+                            </li>
+                            <!--  -->
+                        </ul>
+                    </div>
+                    <!-- 分类选择  END -->
+                    <!-- 多条件筛选   START -->
+                    <div class="multi_select_box">
+                        <span class="name">{{filter_name}}</span>
+                        <ul>
+                            <!-- 分割线 -->
+                            <li v-for="item in filter_items" v-on:click="multiSelect(item.index)" v-bind:class="{is_multi_selected: item.is_small_select}">
+                                <a type="radio">
+                                    <span v-bind:class="{multi_selected: item.is_select}">
+                                        <i class="icon-font i-tick"></i>
+                                    </span>
+                                    {{item.name}}
+                                </a>
+                            </li>
+                            <!-- 分割线 -->
+                        </ul>
+                    </div>
+                    <!-- 多条件筛选   END -->
+                    <!-- 更多筛选条件   START -->
+                    <div class="more_filter">
+                        <span class="name">{{more_filter_name}}</span>
+                        <ul>
+                            <li class="sale">
+                                <span>{{sale_item.name}}</span>
+                                <input maxlength="8" v-model="sale_item.value" v-bind:class="{input_error:sale_item.is_error}"
+                                    @focus="deleteErrorInput" onkeyup="onlyPositiveInt(this)">
+                            </li>
+                            <li class="score">
+                                <span>{{score_item.name}}</span>
+                                <input maxlength="3" v-model="score_item.value" v-bind:class="{input_error:score_item.is_error}"
+                                    @focus="deleteErrorInput" onkeyup="zeroToFive(this)">
+                                <span class="tip">{{score_item.tip}}</span>
+                            </li>
+                            <li class="quan">
+                                <span>{{quan_item.name}}</span>
+                                <input maxlength="8" class="one" v-model="quan_item.start_price" v-bind:class="{input_error:quan_item.is_start_error}"
+                                    placeholder="最低价" @focus="deleteErrorInput">
+                                <span class="split">—</span>
+                                <input maxlength="8" class="two" v-model="quan_item.end_price" v-bind:class="{input_error:quan_item.is_end_error}"
+                                    placeholder="最高价" @focus="deleteErrorInput">
+                            </li>
+
+                            <li class="btn">
+                                <span @click="clear" class="confirm">重置</span>
+                                <span @click="confirm" class="confirm">确认</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- 更多筛选条件   END -->
+                    <!-- 加载动画  START -->
+                    <div v-if="is_loading" class="loading">
+                        <img src="../images/loading.gif">
+                    </div>
+                    <!-- 加载动画  END -->
+                </div>
+
+                <!-- 排序方式   START -->
+                <div class="sort_way js_sort_way" v-cloak>
+                    <!-- 放在这是因为上面的元素过度动画会影响这个元素的动画 -->
+                    <p class="confirm_btn js_confirm_btn" ref="js_confirm_btn">
+                        <span class="confirm" @click="clear">重置</span>
+                        <span class="confirm" @click="confirm">确认</span>
+                    </p>
+                    <!--  -->
+                    <ul class="btn_box">
+                        <!-- "综合" -->
+                        <li class="btn" v-bind:class="{is_sort_selected:sort_item[0].is_select}">
+                            <a @click="changeSortWay(0,'all')">综合</a>
+                        </li>
+                        <!-- "销量" -->
+                        <li class="btn" v-bind:class="{is_sort_selected:sort_item[1].is_select}">
+                            <a @click="changeSortWay(1,'goods_sale desc')">销量
+                            </a>
+                        </li>
+                        <!-- "价格" -->
+                        <li class="btn price" v-bind:class="{is_sort_selected:sort_item[2].is_select}">
+                            <a @click="sortByPrice">价格
+                                <span v-show="sort_item[2].is_select">
+                                    <i ref="js_transform" class="icon-font i-dropdown" v-bind:class="{is_sort_selected:sort_item[2].is_select}"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <!-- "列表显示切换,992及以上不显示" -->
+                        <li class="btn list_toggle">
+                            <a @click="toggleList">
+                                <i v-show="toggle_list.is_first_icon" class="icon-font i-list-index"></i>
+                                <i v-show="!toggle_list.is_first_icon" class="icon-font i-calendar-2"></i>
+                            </a>
+                        </li>
+                        <!-- "筛选,992及以上不显示" -->
+                        <li class="btn filter_btn">
+                            <a ref="js_show_side" @click="toggleSide">筛选</a>
+                        </li>
+                    </ul>
+                    <!--  -->
+                    <!-- 遮罩,弹出擦边栏时防止误触 -->
+                    <div v-show="is_show_shade" ref="js_shade" class="shade"></div>
+                </div>
+                <!-- 排序方式   end -->
+            </div>
+            <!-- 筛选   END -->
+
+            <!-- 商品区域   START -->
+            <div class="goods_area js_goods_area" v-cloak>
+                <!-- 加载动画 -->
+                <span v-show="is_loading_sort" class="loading_sort">加载中...</span>
+                <!-- 商品列表   START -->
+                <ul class="goods_list js_goods_list">
+                    <li v-for="item in list_items">
+                        <span class="item">
+                            <span class="container">
+                                <!-- 商品图片 -->
+                                <span class="img_box">
+                                    <img v-bind:src="item.goods_pic">
+                                    <span class="link_box">
+                                        <a v-show="item.is_tmall" v-bind:href="item.goods_url" target="_blank"><i class="icon-font i-right"></i>去天猫</a>
+                                        <a v-show="!item.is_tmall" v-bind:href="item.goods_url" target="_blank"><i
+                                                class="icon-font i-right"></i>去淘宝</a>
+                                        <a v-bind:href="item.coupon_url" target="_blank"><i class="icon-font i-installment"></i>去领券</a>
+                                    </span>
+                                    <span v-show="item.is_ju" class="ju">正在参加聚划算</span>
+                                </span>
+                                <!-- 商品图片 -->
+                            </span>
+                            <span class="container">
+                                <span class="text_box">
+                                    <!-- 标题 -->
+                                    <a class="title" target="_blank">
+                                        <img v-show="item.is_tmall" src="../images/tmall.png">
+                                        <img v-show="!item.is_tmall" src="../images/taobao.png">
+                                        {{item.goods_title}}
+                                    </a>
+                                    <!-- 价格 -->
+                                    <span class="org_price">
+                                        <span class="box">
+                                            <span class="price_title">原价</span>
+                                            <span class="icon">￥</span>
+                                            <span class="num">{{item.goods_price}}</span>
+                                        </span>
+                                        <span v-show="item.is_yun" class="tag_box">
+                                            <span v-show="item.is_yun" class="xian" title="运费险">险</span>
+                                        </span>
+                                    </span>
+                                    <!-- 券后价 -->
+                                    <span class="price">
+                                        <span class="price_title">券后</span>
+                                        <span class="icon">￥</span>
+                                        <span class="num">{{item.after_coupon}}</span>
+                                    </span>
+                                    <!-- 价格   end -->
+                                    <!-- 销量 -->
+                                    <span class="sale">
+                                        <span class="sale_container">
+                                            <span class="sale_title">
+                                                销量
+                                            </span>
+                                            <span class="num">
+                                                {{item.goods_sale}}
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <!-- 销量   end -->
+                                    <!-- 优惠券 -->
+                                    <a v-bind:href="item.coupon_url" class="quan" target="_blank">
+                                        <span class="quan_container">
+                                            <span class="quan_title">
+                                                领券
+                                            </span>
+                                            <i class="icon-font i-coupon-pc"></i>
+                                            <span class="num">{{item.coupon_price}}</span>
+                                        </span>
+                                    </a>
+                                    <!-- 优惠券   end -->
+                                </span>
+                                <!-- text_box -->
+                            </span>
+                            <!-- container -->
+                        </span>
+                        <!-- item -->
+                    </li>
+                </ul>
+                <!-- 商品列表   END -->
+                <span v-show="is_loading_more" class="tip">正在加载...</span>
+                <span v-show="!is_more_goods" class="tip">没有更多了...</span>
+                <span v-show="is_show_totop" class="to_top" @click="scrollToTop">
+                    <i class="icon-font i-v-top"></i>
+                </span>
+            </div>
+            <!-- 商品区域   END -->
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+    <!-- 内容   END -->
+    <script src="../images/index.js"></script>
+</body>
+
+
+</html>

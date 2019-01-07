@@ -14,8 +14,8 @@
 
     <!-- 设置类型别名 -->
     <typeAliases>
-        <typeAlias type="com.taobaovue.entity.AjaxParameter" alias="pars" />
-        <typeAlias type="com.taobaovue.entity.SqlGoods" alias="goods" />
+        <typeAlias type="com.taobao.entity.AjaxParameter" alias="pars" />
+        <typeAlias type="com.taobao.entity.SqlGoods" alias="goods" />
     </typeAliases>
 
 
