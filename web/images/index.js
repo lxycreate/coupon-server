@@ -752,7 +752,9 @@ function taskData(response) {
 
 //直接滚动到顶部,没有动画
 function scrollToTopDirect() {
-    window.scrollTo(0,0);
+    Velocity(document.documentElement, 'scroll', {
+        offset: 0
+    });
 }
 
 //关闭加载动画
