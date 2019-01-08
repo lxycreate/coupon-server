@@ -30,7 +30,6 @@ window.onload = function () {
     watchWindow();
     //首次加载商品数据
     firstLoad();
-
 }
 
 // 滚动事件   开始
@@ -43,10 +42,16 @@ function initScroll() {
             search_word: ""
         },
         methods: {
-            init: function () {
+            initSearch: function () {
+                var temp = window.location.search;
+                var word = temp.substring(8, temp.length);
                 var url = window.location.href;
                 var valiable = url.split('?')[0];
                 window.history.pushState({}, 0, valiable);
+                if (word.length > 0 && word != undefined) {
+                    this.search_word = word;
+                    this.search();
+                }
             },
             search: function () {
                 if (now_page_name != 'search' && this.search_word != '') {
@@ -358,7 +363,7 @@ function initCatalogBox() {
                 this.deleteInputValue();
                 this.addInputValue();
                 console.log(search_data);
-                if (this.sale_item.value != '' || this.score_item.value != '' || this.quan_item.start_price != '' || this.quan_item.end_price != '') {
+                if (js_goods_area.can_ajax && this.sale_item.value != '' || this.score_item.value != '' || this.quan_item.start_price != '' || this.quan_item.end_price != '') {
                     //确认 加载
                     loadGoods('input');
                 }
@@ -644,6 +649,11 @@ function firstLoad() {
         loadGoods('');
     }
     //"搜索页"加载方式
+    if (now_page_name == 'search' && js_goods_area.can_ajax) {
+        //首次加载
+        js_ceil_box.initSearch();
+        // loadGoods('');
+    }
 }
 
 //搜索
