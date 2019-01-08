@@ -7,8 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/images/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/search.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,7 +75,7 @@
           <entry key="dummy" value="14" />
           <entry key="java" value="4988" />
           <entry key="js" value="29" />
-          <entry key="xml" value="1485" />
+          <entry key="xml" value="1549" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -83,15 +83,15 @@
           <entry key="JAVA" value="4988" />
           <entry key="JavaScript" value="29" />
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="SQL" value="18" />
-          <entry key="XML" value="1467" />
+          <entry key="SQL" value="21" />
+          <entry key="XML" value="1528" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taobao/entity/AjaxParameter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="109">
@@ -142,11 +142,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1078">
-              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+            <state relative-caret-position="47">
+              <caret line="49" column="57" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -239,8 +239,8 @@
         <option value="$PROJECT_DIR$/src/com/taobaovue/entity/AjaxParameter.java" />
         <option value="$PROJECT_DIR$/src/com/taobaovue/service/impl/GoodsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/com/taobaovue/entity/Goods.java" />
-        <option value="$PROJECT_DIR$/src/mapper/goodsMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/taobao/entity/AjaxParameter.java" />
+        <option value="$PROJECT_DIR$/src/mapper/goodsMapper.xml" />
       </list>
     </option>
   </component>
@@ -840,7 +840,7 @@
       <path value="$PROJECT_DIR$/web/node_modules/yeast/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-96" />
     <option name="y" value="42" />
     <option name="width" value="1254" />
@@ -1066,12 +1066,12 @@
       <workItem from="1546740060346" duration="1894000" />
       <workItem from="1546758536355" duration="2550000" />
       <workItem from="1546840379128" duration="2473000" />
-      <workItem from="1546923204680" duration="4073000" />
+      <workItem from="1546923204680" duration="5246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80016000" />
+    <option name="totallyTimeSpent" value="81189000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1086,7 +1086,7 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.29021826" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.29021826" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1096,7 +1096,7 @@
       <window_info id="设计师" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3291815" />
-      <window_info anchor="bottom" x="335" y="406" width="1237" height="220" id="Run" order="2" sideWeight="0.4987874" visible="true" weight="0.4128114" />
+      <window_info active="true" anchor="bottom" x="335" y="406" width="1237" height="220" id="Run" order="2" sideWeight="0.4987874" visible="true" weight="0.4217082" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1289,17 +1289,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1078">
-          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taobao/entity/AjaxParameter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
           <caret line="62" column="45" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapper/goodsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="49" column="57" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
         </state>
       </provider>
     </entry>

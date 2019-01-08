@@ -50,8 +50,8 @@ function initScroll() {
                 window.history.pushState({}, 0, valiable);
                 if (word.length > 0 && word != undefined) {
                     this.search_word = word;
-                    this.search();
                 }
+                this.search();
             },
             search: function () {
                 if (now_page_name != 'search' && this.search_word != '') {
@@ -59,6 +59,10 @@ function initScroll() {
                 }
                 if (now_page_name == 'search' && this.search_word != '') {
                     addProperty('word', this.search_word);
+                }
+                if (now_page_name == 'search' && this.search_word == '') {
+                    search_data['word'] = '';
+                    deleteProperty('word');
                 }
             }
             // 

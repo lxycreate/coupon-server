@@ -46,6 +46,9 @@
     <!--全网商品，获取数据-->
     <select id="getGoods" resultType="goods" resultMap="goodsMapper">
         select * from goods where 1=1
+        <if test="word != null and word != ''">
+            and goods_title like concat(concat("%",#{word}),"%")
+        </if>
         <if test="goods_cid != null and goods_cid != 0">
             and goods_cid =#{goods_cid}
         </if>
