@@ -54,7 +54,7 @@ function initScroll() {
                 }
                 if (now_page_name == 'search' && this.search_word != '') {
                     search_data['word'] = this.search_word;
-                    js_goods_area.resetPageNum();
+                    js_goods_area.initSearchData();
                     if (js_goods_area.can_ajax) {
                         loadGoods('');
                     }
@@ -272,12 +272,11 @@ function initCatalogBox() {
                     this.catalog_items[i].is_select = false;
                 }
                 this.catalog_items[value].is_select = true;
+                js_goods_area.initSearchData();
                 // 参数中添加目录信息
                 if (this.catalog_value != 0) {
-                    js_goods_area.resetPageNum();
                     addProperty('goods_cid', this.catalog_value);
                 } else {
-                    js_goods_area.resetPageNum();
                     deleteProperty('goods_cid');
                 }
             },
@@ -326,24 +325,14 @@ function initCatalogBox() {
                 }
             },
             clear: function () {
-                var temp = search_data['sort'];
                 this.resetCatalogItem();
                 this.resetMultiSelect();
                 this.resetInput();
-                var word = search_data['word'];
-                search_data = {};
-                //保留排序方式
-                if (temp != '' && temp != undefined && temp != null) {
-                    search_data['sort'] = temp;
-                }
-                //搜索页面保留搜索关键词
-                if (now_page_name == 'search' && word != '' && word != undefined && word != null) {
-                    search_data['word'] = word;
-                }
-                js_goods_area.resetPageNum();
-                // js_goods_area.scrollToTop();
+                js_goods_area.clearSearchData();
                 window.scrollTo(0, 0);
-                loadGoods('');
+                if (js_goods_area.can_ajax) {
+                    loadGoods('');
+                }
                 console.log('Clear');
             },
             //重置目录
@@ -376,7 +365,7 @@ function initCatalogBox() {
                 this.addInputValue();
                 console.log(search_data);
                 if (this.sale_item.value != '' || this.score_item.value != '' || this.quan_item.start_price != '' || this.quan_item.end_price != '') {
-                    js_goods_area.resetPageNum();
+                    js_goods_area.initSearchData();
                     loadGoods('input');
                 }
                 console.log('Confirm');
@@ -547,7 +536,7 @@ function initSortBtn() {
             // 切换排序方式
             changeSortWay: function (index, way) {
                 this.changeSelectedColor(index);
-                js_goods_area.resetPageNum();
+                js_goods_area.initSearchData();
                 addProperty('sort', way);
             },
             // 改变被选中的排序按钮的颜色
@@ -593,26 +582,48 @@ function initGoodsList() {
             can_ajax: true
         },
         created: function () {
-            // 初始化search_data
-            search_data['page_num'] = this.page_num;
-            search_data['page_size'] = this.page_size;
+            this.initSearchData();
         },
         methods: {
+            // 初始化search_data
+            initSearchData: function () {
+                this.page_num = 1;
+                search_data['page_num'] = this.page_num;
+                search_data['page_size'] = this.page_size;
+                //特惠商品
+                if (now_page_name == 'bargain') {
+                    search_data['end_price'] = '10';
+                }
+                //百元精品
+                if (now_page_name == 'hundred') {
+                    search_data = '100';
+                }
+            },
             // 清空当前商品列表
             clearListItems: function () {
                 this.list_items = [];
-                this.resetPageNum();
+                this.initSearchData();
+            },
+            // 重置search_data
+            clearSearchData: function () {
+                var temp = search_data['sort'];
+                var word = search_data['word'];
+                search_data = {};
+                //保留排序方式
+                if (temp != '' && temp != undefined && temp != null) {
+                    search_data['sort'] = temp;
+                }
+                //搜索页面保留搜索关键词
+                if (now_page_name == 'search' && word != '' && word != undefined && word != null) {
+                    search_data['word'] = word;
+                }
+                this.initSearchData();
             },
             // 滚动到顶部
             scrollToTop: function () {
                 Velocity(document.documentElement, 'scroll', {
                     offset: 0
                 }, 2000);
-            },
-            resetPageNum: function () {
-                this.page_num = 1; //重置当前页码
-                search_data['page_num'] = '1';
-                search_data['page_size'] = this.page_size;
             }
         }
     });
@@ -819,7 +830,7 @@ function onlyPositiveInt(event) {
 }
 //0-5
 function zeroToFive(event) {
-    console.log(event.value[0]);
+    
     if (event.value[0] == '.') {
         event.value = event.value.substr(1);
     }
