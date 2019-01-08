@@ -1,6 +1,8 @@
 // 域名加端口号
 var base_url = 'http://127.0.0.1:8088';
 
+//搜索框
+var js_ceil_box;
 // 筛选条件对象
 var js_filter_container;
 // 排序方式
@@ -10,7 +12,6 @@ var js_goods_area;
 
 //Ajax获取数所需的参数
 var search_data = {};
-
 
 // 初始化函数
 window.onload = function () {
@@ -29,18 +30,40 @@ window.onload = function () {
     watchWindow();
     //首次加载商品数据
     firstLoad();
+
 }
 
 // 滚动事件   开始
 function initScroll() {
-    var js_ceil_box = new Vue({
+    js_ceil_box = new Vue({
         el: ".js_ceil_box",
         data: {
             is_fixed: false,
             is_show: true,
             search_word: ""
+        },
+        methods: {
+            init: function () {
+                var url = window.location.href;
+                var valiable = url.split('?')[0];
+                window.history.pushState({}, 0, valiable);
+            },
+            search: function () {
+                if (now_page_name != 'search' && this.search_word != '') {
+                    window.location.href = "search.html?search=" + this.search_word;
+                }
+                if (now_page_name == 'search' && this.search_word != '') {
+                    search_data['word'] = this.search_word;
+                    js_goods_area.resetPageNum();
+                    if (js_goods_area.can_ajax) {
+                        loadGoods('');
+                    }
+                }
+            }
+            // 
         }
     });
+
     // 当搜索框设置为fixed后，控制该元素显示，放在搜索框的位置
     var js_ceil_filler = new Vue({
         el: ".js_ceil_filler",
@@ -264,18 +287,18 @@ function initCatalogBox() {
                 if (this.filter_items[index - 1].is_select) {
                     this.filter_items[index - 1].is_select = false;
                     this.filter_value = "-" + index;
-                    if (isMidSmallScreen()) {
-                        //小屏幕下选中背景变橙色标志
-                        this.filter_items[index - 1].is_small_select = false;
-                    }
+                    // if (isMidSmallScreen()) {
+                    //小屏幕下选中背景变橙色标志
+                    this.filter_items[index - 1].is_small_select = false;
+                    // }
                 }
                 // 多选选中
                 else {
                     this.filter_items[index - 1].is_select = true;
                     this.filter_value = index;
-                    if (isMidSmallScreen()) {
-                        this.filter_items[index - 1].is_small_select = true;
-                    }
+                    // if (isMidSmallScreen()) {
+                    this.filter_items[index - 1].is_small_select = true;
+                    // }
                     //"淘抢购"和"聚划算"是互斥的
                     //当两个同时被选中时,取消之前被选中的那个
                     if (index == 1 && this.filter_items[1].is_select) {
@@ -307,9 +330,15 @@ function initCatalogBox() {
                 this.resetCatalogItem();
                 this.resetMultiSelect();
                 this.resetInput();
+                var word = search_data['word'];
                 search_data = {};
+                //保留排序方式
                 if (temp != '' && temp != undefined && temp != null) {
                     search_data['sort'] = temp;
+                }
+                //搜索页面保留搜索关键词
+                if (now_page_name == 'search' && word != '' && word != undefined && word != null) {
+                    search_data['word'] = word;
                 }
                 js_goods_area.resetPageNum();
                 // js_goods_area.scrollToTop();
@@ -600,9 +629,17 @@ function watchWindow() {
 
 //首次加载
 function firstLoad() {
-    if (js_goods_area.can_ajax) {
+    //非"搜索页"加载方式
+    if (now_page_name != 'search' && js_goods_area.can_ajax) {
         loadGoods('');
     }
+    //"搜索页"加载方式
+}
+
+//搜索
+function search() {
+    js_ceil_box.search();
+    return false;
 }
 
 // 判断窗口大小，根据窗口大小显示或隐藏元素
@@ -615,6 +652,7 @@ function checkWindowWidth() {
         //还是将该元素定位重置
         js_filter_container.$refs.js_filter_container.style.marginLeft = '0px';
         js_sort_way.$refs.js_confirm_btn.style.marginLeft = '0px';
+
     } else {
         js_filter_container.catalog_name = "分类";
         js_filter_container.filter_name = "筛选";
@@ -675,7 +713,6 @@ function deleteProperty(pro_name) {
 
 //加载商品
 function loadGoods(pro_name) {
-
     js_goods_area.can_ajax = false;
     //清空数组标志
     js_goods_area.clear_list_flag = true;
@@ -692,6 +729,7 @@ function loadGoods(pro_name) {
         js_goods_area.can_ajax = true; //可以加载下一页
     }, 400);
 }
+
 //加载下一页
 function loadNextPage() {
     js_goods_area.can_ajax = false;
