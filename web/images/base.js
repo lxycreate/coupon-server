@@ -108,7 +108,7 @@ function initScroll() {
         var scroll_height = document.documentElement.scrollHeight;
 
         if (scroll_top + window_height + 1 >= scroll_height && js_goods_area.can_ajax && js_goods_area.is_more_goods) {
-            // loadNextPage();
+            loadNextPage();
         }
         // 滚动到底部加载更多数据   end
         // 滚动到顶部   start
@@ -603,7 +603,7 @@ function initGoodsList() {
                 }
                 //百元精品
                 if (now_page_name == 'hundred') {
-                    search_data = '100';
+                    search_data['end_price'] = '100';
                 }
             },
             // 清空当前商品列表

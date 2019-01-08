@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/images/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/base.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -840,7 +840,7 @@
       <path value="$PROJECT_DIR$/web/node_modules/yeast/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-96" />
     <option name="y" value="42" />
     <option name="width" value="1254" />
@@ -1066,12 +1066,12 @@
       <workItem from="1546740060346" duration="1894000" />
       <workItem from="1546758536355" duration="2550000" />
       <workItem from="1546840379128" duration="2473000" />
-      <workItem from="1546923204680" duration="5771000" />
+      <workItem from="1546923204680" duration="5938000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81714000" />
+    <option name="totallyTimeSpent" value="81881000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1083,7 +1083,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.29021826" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
