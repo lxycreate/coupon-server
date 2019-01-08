@@ -53,11 +53,7 @@ function initScroll() {
                     window.location.href = "search.html?search=" + this.search_word;
                 }
                 if (now_page_name == 'search' && this.search_word != '') {
-                    search_data['word'] = this.search_word;
-                    js_goods_area.initSearchData();
-                    if (js_goods_area.can_ajax) {
-                        loadGoods('');
-                    }
+                    addProperty('word', this.search_word);
                 }
             }
             // 
@@ -102,8 +98,6 @@ function initScroll() {
         var scroll_height = document.documentElement.scrollHeight;
 
         if (scroll_top + window_height + 1 >= scroll_height && js_goods_area.can_ajax && js_goods_area.is_more_goods) {
-            // console.log(scroll_top + window_height + 1);
-            // console.log(scroll_height);
             // loadNextPage();
         }
         // 滚动到底部加载更多数据   end
@@ -272,7 +266,7 @@ function initCatalogBox() {
                     this.catalog_items[i].is_select = false;
                 }
                 this.catalog_items[value].is_select = true;
-                js_goods_area.initSearchData();
+
                 // 参数中添加目录信息
                 if (this.catalog_value != 0) {
                     addProperty('goods_cid', this.catalog_value);
@@ -331,6 +325,7 @@ function initCatalogBox() {
                 js_goods_area.clearSearchData();
                 window.scrollTo(0, 0);
                 if (js_goods_area.can_ajax) {
+                    //清空加载
                     loadGoods('');
                 }
                 console.log('Clear');
@@ -360,12 +355,11 @@ function initCatalogBox() {
             },
             confirm: function () {
                 this.checkAfterCoupon();
-                // this.deleteErrorInput();
                 this.deleteInputValue();
                 this.addInputValue();
                 console.log(search_data);
                 if (this.sale_item.value != '' || this.score_item.value != '' || this.quan_item.start_price != '' || this.quan_item.end_price != '') {
-                    js_goods_area.initSearchData();
+                    //确认 加载
                     loadGoods('input');
                 }
                 console.log('Confirm');
@@ -536,7 +530,7 @@ function initSortBtn() {
             // 切换排序方式
             changeSortWay: function (index, way) {
                 this.changeSelectedColor(index);
-                js_goods_area.initSearchData();
+
                 addProperty('sort', way);
             },
             // 改变被选中的排序按钮的颜色
@@ -585,11 +579,14 @@ function initGoodsList() {
             this.initSearchData();
         },
         methods: {
-            // 初始化search_data
-            initSearchData: function () {
+            resetPageNum: function () {
                 this.page_num = 1;
                 search_data['page_num'] = this.page_num;
                 search_data['page_size'] = this.page_size;
+            },
+            // 初始化search_data
+            initSearchData: function () {
+                this.resetPageNum();
                 //特惠商品
                 if (now_page_name == 'bargain') {
                     search_data['end_price'] = '10';
@@ -602,7 +599,7 @@ function initGoodsList() {
             // 清空当前商品列表
             clearListItems: function () {
                 this.list_items = [];
-                this.initSearchData();
+                this.resetPageNum();
             },
             // 重置search_data
             clearSearchData: function () {
@@ -617,6 +614,7 @@ function initGoodsList() {
                 if (now_page_name == 'search' && word != '' && word != undefined && word != null) {
                     search_data['word'] = word;
                 }
+                //再次初始化
                 this.initSearchData();
             },
             // 滚动到顶部
@@ -642,6 +640,7 @@ function watchWindow() {
 function firstLoad() {
     //非"搜索页"加载方式
     if (now_page_name != 'search' && js_goods_area.can_ajax) {
+        //首次加载
         loadGoods('');
     }
     //"搜索页"加载方式
@@ -708,6 +707,7 @@ function mouseDown(event) {
 function addProperty(pro_name, pro_value) {
     search_data[pro_name] = pro_value;
     if (js_goods_area.can_ajax) {
+        //添加参数加载
         loadGoods(pro_name);
     }
 }
@@ -717,6 +717,7 @@ function deleteProperty(pro_name) {
     if (search_data.hasOwnProperty(pro_name)) {
         delete search_data[pro_name];
         if (js_goods_area.can_ajax) {
+            //删除参数加载 
             loadGoods(pro_name);
         }
     }
@@ -724,6 +725,9 @@ function deleteProperty(pro_name) {
 
 //加载商品
 function loadGoods(pro_name) {
+    //重置页码
+    js_goods_area.resetPageNum();
+
     js_goods_area.can_ajax = false;
     //清空数组标志
     js_goods_area.clear_list_flag = true;
@@ -830,7 +834,7 @@ function onlyPositiveInt(event) {
 }
 //0-5
 function zeroToFive(event) {
-    
+
     if (event.value[0] == '.') {
         event.value = event.value.substr(1);
     }
