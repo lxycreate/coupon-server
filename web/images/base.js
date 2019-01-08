@@ -43,8 +43,9 @@ function initScroll() {
         },
         methods: {
             initSearch: function () {
-                var temp = window.location.search;
+                var temp = decodeURI(window.location.search);
                 var word = temp.substring(8, temp.length);
+                console.log(word);
                 var url = window.location.href;
                 var valiable = url.split('?')[0];
                 window.history.pushState({}, 0, valiable);
@@ -55,7 +56,7 @@ function initScroll() {
             },
             search: function () {
                 if (now_page_name != 'search' && this.search_word != '') {
-                    window.location.href = "search.html?search=" + this.search_word;
+                    window.location.href = "search.html?search=" + encodeURI(this.search_word);
                 }
                 if (now_page_name == 'search' && this.search_word != '') {
                     addProperty('word', this.search_word);
