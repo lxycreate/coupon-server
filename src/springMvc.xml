@@ -13,9 +13,10 @@
     <!--静态资源位置-->
     <mvc:resources mapping="/images/**" location="/images/"/>
     <mvc:resources mapping="/static/**" location="/static/"/>
+    <mvc:resources mapping="/*.html" location="/"/>
     <!--静态资源位置-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/static/"/>
+        <!--<property name="prefix" value="/static/"/>-->
         <property name="suffix" value=".html"/>
     </bean>
 

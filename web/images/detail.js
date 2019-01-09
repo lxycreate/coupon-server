@@ -1,5 +1,5 @@
 // 域名加端口号
-var base_url = 'http://127.0.0.1:8088';
+var base_url = 'http://localhost:8088';
 
 //搜索框
 var js_ceil_box;

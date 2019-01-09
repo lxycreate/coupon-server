@@ -5,7 +5,7 @@
          version="4.0">
     <!--设置首页-->
     <welcome-file-list>
-        <welcome-file>static/welcome.html</welcome-file>
+        <welcome-file>welcome.html</welcome-file>
     </welcome-file-list>
     <!--设置首页-->
 
