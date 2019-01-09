@@ -255,15 +255,17 @@
                                     </span>
                                     <!-- 销量   end -->
                                     <!-- 优惠券 -->
-                                    <a v-bind:href="item.coupon_url" class="quan" target="_blank" v-bind:class="{toggle_quan:toggle_list}">
-                                        <span class="quan_container" v-bind:class="{toggle_quan_container:toggle_list}">
-                                            <span class="quan_title" v-bind:class="{toggle_quan_title:toggle_list}">
-                                                领券
+                                    <span class="quan_box">
+                                        <a v-bind:href="item.coupon_url" class="quan" target="_blank" v-bind:class="{toggle_quan:toggle_list}">
+                                            <span class="quan_container" v-bind:class="{toggle_quan_container:toggle_list}">
+                                                <span class="quan_title" v-bind:class="{toggle_quan_title:toggle_list}">
+                                                    领券
+                                                </span>
+                                                <i class="icon-font i-coupon-pc"></i>
+                                                <span class="num">{{item.coupon_price}}</span>
                                             </span>
-                                            <i class="icon-font i-coupon-pc"></i>
-                                            <span class="num">{{item.coupon_price}}</span>
-                                        </span>
-                                    </a>
+                                        </a>
+                                    </span>
                                     <!-- 优惠券   end -->
                                 </span>
                                 <!-- text_box -->

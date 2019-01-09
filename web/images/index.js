@@ -1,6 +1,8 @@
 // 域名加端口号
 var base_url = 'http://127.0.0.1:8088';
 
+//搜索框
+var js_ceil_box;
 // 筛选条件对象
 var js_filter_container;
 // 排序方式
@@ -10,7 +12,6 @@ var js_goods_area;
 
 //Ajax获取数所需的参数
 var search_data = {};
-
 
 // 初始化函数
 window.onload = function () {
@@ -33,14 +34,42 @@ window.onload = function () {
 
 // 滚动事件   开始
 function initScroll() {
-    var js_ceil_box = new Vue({
+    js_ceil_box = new Vue({
         el: ".js_ceil_box",
         data: {
             is_fixed: false,
             is_show: true,
             search_word: ""
+        },
+        methods: {
+            initSearch: function () {
+                var temp = decodeURI(window.location.search);
+                var word = temp.substring(8, temp.length);
+                console.log(word);
+                var url = window.location.href;
+                var valiable = url.split('?')[0];
+                window.history.pushState({}, 0, valiable);
+                if (word.length > 0 && word != undefined) {
+                    this.search_word = word;
+                }
+                this.search();
+            },
+            search: function () {
+                if (now_page_name != 'search' && this.search_word != '') {
+                    window.location.href = "search.html?search=" + encodeURI(this.search_word);
+                }
+                if (now_page_name == 'search' && this.search_word != '') {
+                    addProperty('word', this.search_word);
+                }
+                if (now_page_name == 'search' && this.search_word == '') {
+                    search_data['word'] = '';
+                    deleteProperty('word');
+                }
+            }
+            // 
         }
     });
+
     // 当搜索框设置为fixed后，控制该元素显示，放在搜索框的位置
     var js_ceil_filler = new Vue({
         el: ".js_ceil_filler",
@@ -79,9 +108,7 @@ function initScroll() {
         var scroll_height = document.documentElement.scrollHeight;
 
         if (scroll_top + window_height + 1 >= scroll_height && js_goods_area.can_ajax && js_goods_area.is_more_goods) {
-            // console.log(scroll_top + window_height + 1);
-            // console.log(scroll_height);
-            // loadNextPage();
+            loadNextPage();
         }
         // 滚动到底部加载更多数据   end
         // 滚动到顶部   start
@@ -249,12 +276,11 @@ function initCatalogBox() {
                     this.catalog_items[i].is_select = false;
                 }
                 this.catalog_items[value].is_select = true;
+
                 // 参数中添加目录信息
                 if (this.catalog_value != 0) {
-                    js_goods_area.resetPageNum();
                     addProperty('goods_cid', this.catalog_value);
                 } else {
-                    js_goods_area.resetPageNum();
                     deleteProperty('goods_cid');
                 }
             },
@@ -264,18 +290,18 @@ function initCatalogBox() {
                 if (this.filter_items[index - 1].is_select) {
                     this.filter_items[index - 1].is_select = false;
                     this.filter_value = "-" + index;
-                    if (isMidSmallScreen()) {
-                        //小屏幕下选中背景变橙色标志
-                        this.filter_items[index - 1].is_small_select = false;
-                    }
+                    // if (isMidSmallScreen()) {
+                    //小屏幕下选中背景变橙色标志
+                    this.filter_items[index - 1].is_small_select = false;
+                    // }
                 }
                 // 多选选中
                 else {
                     this.filter_items[index - 1].is_select = true;
                     this.filter_value = index;
-                    if (isMidSmallScreen()) {
-                        this.filter_items[index - 1].is_small_select = true;
-                    }
+                    // if (isMidSmallScreen()) {
+                    this.filter_items[index - 1].is_small_select = true;
+                    // }
                     //"淘抢购"和"聚划算"是互斥的
                     //当两个同时被选中时,取消之前被选中的那个
                     if (index == 1 && this.filter_items[1].is_select) {
@@ -303,18 +329,15 @@ function initCatalogBox() {
                 }
             },
             clear: function () {
-                var temp = search_data['sort'];
                 this.resetCatalogItem();
                 this.resetMultiSelect();
                 this.resetInput();
-                search_data = {};
-                if (temp != '' && temp != undefined && temp != null) {
-                    search_data['sort'] = temp;
-                }
-                js_goods_area.resetPageNum();
-                // js_goods_area.scrollToTop();
+                js_goods_area.clearSearchData();
                 window.scrollTo(0, 0);
-                loadGoods('');
+                if (js_goods_area.can_ajax) {
+                    //清空加载
+                    loadGoods('');
+                }
                 console.log('Clear');
             },
             //重置目录
@@ -342,12 +365,11 @@ function initCatalogBox() {
             },
             confirm: function () {
                 this.checkAfterCoupon();
-                // this.deleteErrorInput();
                 this.deleteInputValue();
                 this.addInputValue();
                 console.log(search_data);
-                if (this.sale_item.value != '' || this.score_item.value != '' || this.quan_item.start_price != '' || this.quan_item.end_price != '') {
-                    js_goods_area.resetPageNum();
+                if (js_goods_area.can_ajax && this.sale_item.value != '' || this.score_item.value != '' || this.quan_item.start_price != '' || this.quan_item.end_price != '') {
+                    //确认 加载
                     loadGoods('input');
                 }
                 console.log('Confirm');
@@ -518,7 +540,7 @@ function initSortBtn() {
             // 切换排序方式
             changeSortWay: function (index, way) {
                 this.changeSelectedColor(index);
-                js_goods_area.resetPageNum();
+
                 addProperty('sort', way);
             },
             // 改变被选中的排序按钮的颜色
@@ -564,26 +586,52 @@ function initGoodsList() {
             can_ajax: true
         },
         created: function () {
-            // 初始化search_data
-            search_data['page_num'] = this.page_num;
-            search_data['page_size'] = this.page_size;
+            this.initSearchData();
         },
         methods: {
+            resetPageNum: function () {
+                this.page_num = 1;
+                search_data['page_num'] = this.page_num;
+                search_data['page_size'] = this.page_size;
+            },
+            // 初始化search_data
+            initSearchData: function () {
+                this.resetPageNum();
+                //特惠商品
+                if (now_page_name == 'bargain') {
+                    search_data['end_price'] = '10';
+                }
+                //百元精品
+                if (now_page_name == 'hundred') {
+                    search_data['end_price'] = '100';
+                }
+            },
             // 清空当前商品列表
             clearListItems: function () {
                 this.list_items = [];
                 this.resetPageNum();
+            },
+            // 重置search_data
+            clearSearchData: function () {
+                var temp = search_data['sort'];
+                var word = search_data['word'];
+                search_data = {};
+                //保留排序方式
+                if (temp != '' && temp != undefined && temp != null) {
+                    search_data['sort'] = temp;
+                }
+                //搜索页面保留搜索关键词
+                if (now_page_name == 'search' && word != '' && word != undefined && word != null) {
+                    search_data['word'] = word;
+                }
+                //再次初始化
+                this.initSearchData();
             },
             // 滚动到顶部
             scrollToTop: function () {
                 Velocity(document.documentElement, 'scroll', {
                     offset: 0
                 }, 2000);
-            },
-            resetPageNum: function () {
-                this.page_num = 1; //重置当前页码
-                search_data['page_num'] = '1';
-                search_data['page_size'] = this.page_size;
             }
         }
     });
@@ -600,9 +648,23 @@ function watchWindow() {
 
 //首次加载
 function firstLoad() {
-    if (js_goods_area.can_ajax) {
+    //非"搜索页"加载方式
+    if (now_page_name != 'search' && js_goods_area.can_ajax) {
+        //首次加载
         loadGoods('');
     }
+    //"搜索页"加载方式
+    if (now_page_name == 'search' && js_goods_area.can_ajax) {
+        //首次加载
+        js_ceil_box.initSearch();
+        // loadGoods('');
+    }
+}
+
+//搜索
+function search() {
+    js_ceil_box.search();
+    return false;
 }
 
 // 判断窗口大小，根据窗口大小显示或隐藏元素
@@ -615,6 +677,7 @@ function checkWindowWidth() {
         //还是将该元素定位重置
         js_filter_container.$refs.js_filter_container.style.marginLeft = '0px';
         js_sort_way.$refs.js_confirm_btn.style.marginLeft = '0px';
+
     } else {
         js_filter_container.catalog_name = "分类";
         js_filter_container.filter_name = "筛选";
@@ -659,6 +722,7 @@ function mouseDown(event) {
 function addProperty(pro_name, pro_value) {
     search_data[pro_name] = pro_value;
     if (js_goods_area.can_ajax) {
+        //添加参数加载
         loadGoods(pro_name);
     }
 }
@@ -668,6 +732,7 @@ function deleteProperty(pro_name) {
     if (search_data.hasOwnProperty(pro_name)) {
         delete search_data[pro_name];
         if (js_goods_area.can_ajax) {
+            //删除参数加载 
             loadGoods(pro_name);
         }
     }
@@ -675,6 +740,8 @@ function deleteProperty(pro_name) {
 
 //加载商品
 function loadGoods(pro_name) {
+    //重置页码
+    js_goods_area.resetPageNum();
 
     js_goods_area.can_ajax = false;
     //清空数组标志
@@ -692,6 +759,7 @@ function loadGoods(pro_name) {
         js_goods_area.can_ajax = true; //可以加载下一页
     }, 400);
 }
+
 //加载下一页
 function loadNextPage() {
     js_goods_area.can_ajax = false;
@@ -781,7 +849,7 @@ function onlyPositiveInt(event) {
 }
 //0-5
 function zeroToFive(event) {
-    console.log(event.value[0]);
+
     if (event.value[0] == '.') {
         event.value = event.value.substr(1);
     }

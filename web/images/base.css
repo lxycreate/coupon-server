@@ -1017,11 +1017,14 @@ li {
 
 /* 销量   end */
 /* 领券   start */
-.goods_area .goods_list .item .text_box .quan {
-    position: relative;
+.goods_area .goods_list .item .text_box .quan_box {
     display: block;
-    max-width: 150px;
-    margin: 3px 0 0 auto;
+    margin-top: 3px;
+    text-align: right;
+}
+
+.goods_area .goods_list .item .text_box .quan {
+    display: inline-block;
     color: #fa5319;
     text-align: right;
 }
@@ -1055,7 +1058,7 @@ li {
 }
 
 .goods_area .goods_list .item .text_box .quan_container {
-    display: block;
+    display: inline-block;
 }
 
 /* 领券   end */
