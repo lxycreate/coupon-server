@@ -24,7 +24,7 @@ li {
 .header {
     position: relative;
     margin: 40px auto 0 auto;
-    max-width: 1920px;
+    /* max-width: 1920px; */
 }
 
 .header .ceil_box {
@@ -117,7 +117,7 @@ li {
 /* 搜索框   结束 */
 /* 导航按钮   开始 */
 .header .header_btns {
-    max-width: 1920px;
+    /* max-width: 1920px; */
     margin: 40px auto 0 auto;
     background-color: #fa5319;
     height: auto;
@@ -227,7 +227,7 @@ li {
 
 /* -----------------------------------------------导航   结束----------------------------------- */
 .mid_bottom_bg {
-    max-width: 1920px;
+    /* max-width: 1920px; */
     min-height: 500px;
     margin: auto;
     padding: 20px 0 30px 0;

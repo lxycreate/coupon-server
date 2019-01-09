@@ -14,6 +14,11 @@
     <mvc:resources mapping="/images/**" location="/images/"/>
     <mvc:resources mapping="/static/**" location="/static/"/>
     <!--静态资源位置-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/static/"/>
+        <property name="suffix" value=".html"/>
+    </bean>
+
     <!--Spring 3.0.x中使用了annotation-driven后，缺省使用DefaultAnnotationHandlerMapping 来注册handler method和request的mapping关系-->
     <mvc:annotation-driven>
         <!-- 使后缀匹配失效 -->

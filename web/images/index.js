@@ -453,13 +453,13 @@ function initSortBtn() {
         },
         methods: {
             // 价格排序
-            sortByPrice() {
+            sortByPrice: function () {
                 this.changeSelectedColor(2);
                 this.transformIcon();
                 this.sort_item[2].is_up = !this.sort_item[2].is_up;
             },
             //  切换价格排序的icon
-            transformIcon() {
+            transformIcon: function () {
                 Velocity(this.$refs.js_transform, 'stop');
                 if (!this.sort_item[2].is_up) {
                     Velocity(this.$refs.js_transform, {
