@@ -35,6 +35,10 @@
     <!-- <script src="../images/jquery.js"></script> -->
     <script src="../images/velocity.min.js"></script>
     <script src="../images/vue.js"></script>
+    <script>
+        var now_page_name = 'main';
+    </script>
+
 </head>
 
 <body>
@@ -48,7 +52,7 @@
                     <a v-show="is_show" class="logo_box">
                         <img src="../images/logo.png">
                     </a>
-                    <form v-bind:class="{no_margin : !is_show}" class="search_input js_search_input">
+                    <form v-bind:class="{no_margin : !is_show}" class="search_input js_search_input" onsubmit="return search()">
                         <input v-model="search_word" placeholder="商品标题、关键字">
                         <i class="icon-font i-search-pc"></i>
                     </form>
@@ -60,9 +64,9 @@
             <!-- 按钮   START -->
             <div class="header_btns">
                 <p class="btn_box">
-                    <a class="cur all">全网商品</a>
-                    <a class="preference">特惠商品</a>
-                    <a class="hundred">百元精品</a>
+                    <a class="cur all" href="main.html">全网商品</a>
+                    <a class="bargain" href="bargain.html">特惠商品</a>
+                    <a class="hundred" href="hundred.html">百元精品</a>
                 </p>
             </div>
             <!-- 按钮   END -->
@@ -250,15 +254,17 @@
                                     </span>
                                     <!-- 销量   end -->
                                     <!-- 优惠券 -->
-                                    <a v-bind:href="item.coupon_url" class="quan" target="_blank" v-bind:class="{toggle_quan:toggle_list}">
-                                        <span class="quan_container" v-bind:class="{toggle_quan_container:toggle_list}">
-                                            <span class="quan_title" v-bind:class="{toggle_quan_title:toggle_list}">
-                                                领券
+                                    <span class="quan_box" v-bind:class="{toggle_quan_box:toggle_list}">
+                                        <a v-bind:href="item.coupon_url" class="quan" target="_blank" v-bind:class="{toggle_quan:toggle_list}">
+                                            <span class="quan_container" v-bind:class="{toggle_quan_container:toggle_list}">
+                                                <span class="quan_title" v-bind:class="{toggle_quan_title:toggle_list}">
+                                                    领券
+                                                </span>
+                                                <i class="icon-font i-coupon-pc"></i>
+                                                <span class="num">{{item.coupon_price}}</span>
                                             </span>
-                                            <i class="icon-font i-coupon-pc"></i>
-                                            <span class="num">{{item.coupon_price}}</span>
-                                        </span>
-                                    </a>
+                                        </a>
+                                    </span>
                                     <!-- 优惠券   end -->
                                 </span>
                                 <!-- text_box -->

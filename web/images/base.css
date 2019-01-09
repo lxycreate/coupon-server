@@ -1109,8 +1109,8 @@ li {
     position: absolute;
     display: inline-block !important;
     top: 100%;
-    width: 40%;
-    margin-top: -48px !important;
+    /* width: 40%; */
+    margin-top: -46px !important;
     vertical-align: middle;
     text-align: left;
 }
@@ -1127,15 +1127,20 @@ li {
     margin: 2px 0 0 0 !important;
 }
 
-.toggle_quan {
+.toggle_quan_box {
     position: absolute !important;
     display: inline-block !important;
     top: 100%;
-    left: 50%;
-    width: 48%;
+    left: 100%;
+    /* width: 50%; */
     margin-top: -44px !important;
+    margin-left: -106px;
     vertical-align: middle;
     text-align: right !important;
+}
+
+.toggle_quan {
+    width: 100px;
 }
 
 .toggle_quan_container {

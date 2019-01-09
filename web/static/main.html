@@ -255,7 +255,7 @@
                                     </span>
                                     <!-- 销量   end -->
                                     <!-- 优惠券 -->
-                                    <span class="quan_box">
+                                    <span class="quan_box" v-bind:class="{toggle_quan_box:toggle_list}">
                                         <a v-bind:href="item.coupon_url" class="quan" target="_blank" v-bind:class="{toggle_quan:toggle_list}">
                                             <span class="quan_container" v-bind:class="{toggle_quan_container:toggle_list}">
                                                 <span class="quan_title" v-bind:class="{toggle_quan_title:toggle_list}">
