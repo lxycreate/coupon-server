@@ -371,7 +371,7 @@ li {
 
 .filter_box .more_filter ul li>input:focus {
     border-color: #fa5319;
-    box-shadow: 0 0 3px #fa5319;
+    box-shadow: 0 0 5px #fa5319;
 }
 
 .filter_box .more_filter ul li .tip {
