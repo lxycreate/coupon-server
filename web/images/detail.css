@@ -240,15 +240,25 @@ li {
     margin: auto;
 }
 
+/* 商品详情   start */
 .mid .detail_box {
-    display: inline-block;
-    width: 80%;
+    display: block;
     font-size: 0;
+}
+
+.mid .detail_box>.container {
+    display: inline-block;
+    width: calc(100% - 300px);
+    vertical-align: top;
+}
+
+.mid .detail_box>.container:first-child {
+    width: 300px;
 }
 
 .mid .detail_box .img_box {
     display: inline-block;
-    width: 30%;
+    width: 288px;
     padding: 6px;
     background-color: #ffffff;
 }
@@ -256,6 +266,153 @@ li {
 .mid .detail_box .img_box>img {
     width: 100%;
 }
+
+.mid .detail_box .text_box {
+    display: block;
+    width: auto;
+    height: 270px;
+    padding: 15px;
+    margin-left: 10px;
+    background-color: #ffffff;
+}
+
+.mid .detail_box .text_box>.title_box {
+    display: block;
+    text-align: left;
+    font-size: 0;
+}
+
+.mid .detail_box .text_box>.title_box .title {
+    display: block;
+    width: auto;
+    font-size: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mid .detail_box .text_box>.title_box .title:hover {
+    cursor: pointer;
+    color: #fa5319;
+}
+
+.mid .detail_box .text_box>.title_box .icon {
+    display: inline-block;
+    width: 18px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.mid .detail_box .text_box>.title_box .icon>img {
+    width: 100%;
+}
+
+/* 原价 start */
+.mid .detail_box .text_box>.org_price_box {
+    display: inline-block;
+    width: 50%;
+    margin-top: 15px;
+    font-size: 0;
+    vertical-align: top;
+}
+
+.mid .detail_box .org_price>span {
+    display: inline-block;
+    margin-left: 5px;
+    color: #999999;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.mid .detail_box .org_price>span:first-child {
+    margin-left: 0;
+}
+
+.mid .detail_box .org_price .num {
+    font-size: 20px;
+    margin-left: 0;
+}
+
+/* 原价  end */
+.mid .detail_box .text_box>.special_box {
+    display: inline-block;
+    width: 50%;
+    margin-top: 10px;
+    font-size: 0;
+    text-align: right;
+    vertical-align: top;
+}
+
+.mid .detail_box .text_box .special_box>span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 10px 0 0 10px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #ffffff;
+    text-align: center;
+    vertical-align: top;
+    border-radius: 3px;
+}
+
+.mid .detail_box .text_box .special_box>span:first-child {
+    margin-left: 0;
+}
+
+.mid .detail_box .text_box .special_box .qiang {
+    background-color: #fa5319;
+}
+
+.mid .detail_box .text_box .special_box .ju {
+    background-color: #7144d5;
+}
+
+.mid .detail_box .text_box .special_box .jin {
+    background-color: #f7aa23;
+}
+
+.mid .detail_box .text_box .special_box .ji {
+    background-color: #2b14d7;
+}
+
+.mid .detail_box .text_box .special_box .hai {
+    background-color: #2878da;
+}
+
+.mid .detail_box .text_box .special_box .xian {
+    background-color: #ff0036;
+}
+
+.mid .detail_box .text_box .after_coupon_box {
+    display: inline-block;
+    width: 80%;
+    margin-top: 10px;
+    font-size: 0;
+    vertical-align: top;
+}
+
+.mid .detail_box .text_box .after_coupon>span {
+    display: inline-block;
+    margin-left: 5px;
+    color: #ff0036;
+    font-size: 18px;
+}
+
+.mid .detail_box .text_box .after_coupon>span:first-child {
+    margin-left: 0;
+}
+
+.mid .detail_box .text_box .after_coupon .num {
+    margin-left: 0;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* 商品详情   end */
+
+
+
 
 .mid .recommend_box {
     display: inline-block;

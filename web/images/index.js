@@ -470,7 +470,7 @@ function initSortBtn() {
                     addProperty('sort', 'goods_price asc');
                 } else {
                     Velocity(this.$refs.js_transform, {
-                        'margin-top': '14px',
+                        'margin-top': '13px',
                         rotateZ: '0deg'
                     });
                     // 价格降序排序
@@ -481,7 +481,7 @@ function initSortBtn() {
             resetPriceIcon: function () {
                 Velocity(this.$refs.js_transform, 'stop');
                 Velocity(this.$refs.js_transform, {
-                    'margin-top': '14px',
+                    'margin-top': '13px',
                     rotateZ: '0deg'
                 });
                 this.sort_item[2].is_up = false;
