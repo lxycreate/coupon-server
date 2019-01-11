@@ -789,15 +789,10 @@ li {
 .goods_area .goods_list .item .container .img_box {
     position: relative;
     display: block;
-    padding-top: 100%;
     overflow: hidden;
-    /* border-radius: 5px; */
 }
 
 .goods_area .goods_list .item .container .img_box>img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
 }
 
@@ -1041,16 +1036,16 @@ li {
 
 .goods_area .goods_list .item .text_box .quan i {
     display: inline-block;
-    font-size: 20px;
+    font-style: normal;
+    font-size: 15px;
     margin-left: 3px;
     margin-top: 2px;
-    line-height: 20px;
+    line-height: 1;
     vertical-align: middle;
 }
 
 .goods_area .goods_list .item .text_box .quan .num {
     display: inline-block;
-    margin-left: 3px;
     font-size: 18px;
     font-weight: bold;
     line-height: 20px;
@@ -1107,19 +1102,17 @@ li {
 }
 
 .toggle_sale {
-    position: absolute;
+    position: relative;
     display: inline-block !important;
-    top: 100%;
+    width: 50%;
     margin-left: 3px;
-    /* width: 40%; */
-    margin-top: -46px !important;
+    margin-top: 10px !important;
     vertical-align: middle;
     text-align: left;
 }
 
 .toggle_sale_container {
     display: inline-block;
-    width: 100%;
     max-width: 100px;
 }
 
@@ -1130,26 +1123,22 @@ li {
 }
 
 .toggle_quan_box {
-    position: absolute !important;
+    position: relative !important;
     display: inline-block !important;
-    top: 100%;
-    left: 100%;
-    /* width: 50%; */
-    margin-top: -44px !important;
-    margin-left: -106px;
+    width: calc(49% - 3px);
+    margin-top: 10px !important;
     vertical-align: middle;
     text-align: right !important;
 }
 
 .toggle_quan {
-    width: 100px;
+    width:100%;
+    max-width: 80px;
 }
-
 
 .toggle_quan_container {
     display: inline-block;
     width: 100%;
-    max-width: 100px;
     min-height: 40px;
     border-radius: 5px;
     text-align: center;
@@ -1162,8 +1151,13 @@ li {
     text-align: center;
     color: #ffffff;
     line-height: 20px;
+    padding: 3px 0;
     border-radius: 2px 2px 0 0;
     background-color: #fa5319;
+}
+
+.toggle_quan_num {
+    padding: 3px 0;
 }
 
 /* 切换列表显示方式   end */
