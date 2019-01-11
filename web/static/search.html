@@ -256,7 +256,7 @@
                                                 <span class="quan_title" v-bind:class="{toggle_quan_title:toggle_list}">
                                                     领券
                                                 </span>
-                                                <i>￥</i>
+                                                <i v-bind:class="{toggle_quan_icon:toggle_list}">￥</i>
                                                 <span class="num" v-bind:class="{toggle_quan_num:toggle_list}">{{item.coupon_price}}</span>
                                             </span>
                                         </a>

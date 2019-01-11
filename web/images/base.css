@@ -1156,6 +1156,10 @@ li {
     background-color: #fa5319;
 }
 
+.toggle_quan_icon {
+    margin: 0 !important;
+}
+
 .toggle_quan_num {
     padding: 3px 0;
 }

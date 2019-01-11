@@ -1143,8 +1143,14 @@ li {
     display: inline-block;
 }
 
+@media(max-width:992px) {
+    .mid .recommend_box .item:hover .link_box {
+        display: none !important;
+    }
+}
+
 @media(min-width:450px) and (max-width:768px) {
-    .mid .recommend_box .title {
+    .mid .recommend_box>.title {
         padding-left: 10px;
     }
 
@@ -1202,11 +1208,73 @@ li {
 
     .mid .recommend_box .item .container .text_box {
         height: 140px;
-        padding: 6px;
+        padding: 6px 6px 6px 0;
     }
 
     .mid .recommend_box .item .container .text_box>span {
         margin-top: 5px;
+    }
+
+    .mid .recommend_box .item .container .text_box>.sale {
+        position: relative;
+        display: inline-block;
+        width: 50%;
+        margin:10px 0 0 3px !important;
+        vertical-align: middle;
+        text-align: left;
+    }
+
+    .mid .recommend_box .item .container .text_box .sale_container {
+        display: inline-block;
+        max-width: 100px;
+    }
+
+    .mid .recommend_box .item .container .text_box .sale_container>span {
+        display: block;
+        text-align: center;
+        margin: 2px 0 0 0;
+    }
+
+    .mid .recommend_box .item .text_box>.quan_box {
+        position: relative;
+        display: inline-block;
+        width: calc(49% - 3px);
+        margin-top: 10px !important;
+        vertical-align: middle;
+        text-align: right;
+    }
+
+    .mid .recommend_box .item .text_box .quan {
+        width: 100%;
+        max-width: 80px;
+    }
+
+    .mid .recommend_box .item .text_box .quan_container {
+        display: inline-block;
+        width: 100%;
+        min-height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        border: 1px solid #fa5319;
+    }
+
+    .mid .recommend_box .item .text_box .quan .quan_title {
+        display: block;
+        height: 20px;
+        text-align: center;
+        color: #ffffff;
+        line-height: 20px;
+        padding: 3px 0;
+        border-radius: 2px 2px 0 0;
+        background-color: #fa5319;
+    }
+
+    .mid .recommend_box .item .text_box .quan i {
+        margin: 0;
+    }
+
+    .mid .recommend_box .item .text_box .quan .num {
+        padding: 3px 0;
     }
 }
 
