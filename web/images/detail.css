@@ -1161,6 +1161,33 @@ li {
     }
 }
 
+@media(max-width:767px) {
+    .mid .detail_box .text_box>span {
+        margin-top: 10px;
+    }
+
+    .mid .detail_box .text_box .org_price_box {
+        margin-top: 0;
+    }
+
+    .mid .detail_box .text_box .special_box {
+        margin-top: 0;
+    }
+
+    .mid .detail_box .text_box .after_coupon_box {
+        padding: 0;
+        margin-top: 15px;
+    }
+
+    .mid .detail_box .text_box .sale_box {
+        margin-top: 10px;
+    }
+
+    .mid .detail_box .text_box .dsr_box {
+        margin-top: -35px;
+    }
+}
+
 /* 相关推荐   end */
 /* -----------------------------------------------中部   结束----------------------------------- */
 
