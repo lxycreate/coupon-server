@@ -230,7 +230,7 @@ li {
 /* -----------------------------------------------中部   开始----------------------------------- */
 .mid {
     min-height: 500px;
-    padding: 30px 0 30px 0;
+    padding: 20px 0;
     font-size: 0;
     background-color: #f5f5f5;
 }
@@ -258,8 +258,8 @@ li {
 
 .mid .detail_box .img_box {
     display: inline-block;
-    width: 288px;
-    padding: 6px;
+    width: 284px;
+    padding: 8px;
     background-color: #ffffff;
 }
 
@@ -270,19 +270,29 @@ li {
 .mid .detail_box .text_box {
     display: block;
     width: auto;
-    height: 270px;
-    padding: 15px;
+    height: 276px;
+    padding: 12px;
     margin-left: 10px;
     background-color: #ffffff;
 }
 
-.mid .detail_box .text_box>.title_box {
+.mid .detail_box .text_box>span {
+    display: block;
+    padding: 0 8px;
+}
+
+.mid .detail_box .text_box .sale_dsr_limit {
+    padding: 0 8px 8px 8px;
+    /* background-color: #f8f8f8; */
+}
+
+.mid .detail_box .text_box .title_box {
     display: block;
     text-align: left;
     font-size: 0;
 }
 
-.mid .detail_box .text_box>.title_box .title {
+.mid .detail_box .text_box .title_box .title {
     display: block;
     width: auto;
     font-size: 15px;
@@ -291,24 +301,24 @@ li {
     text-overflow: ellipsis;
 }
 
-.mid .detail_box .text_box>.title_box .title:hover {
+.mid .detail_box .text_box .title_box .title:hover {
     cursor: pointer;
     color: #fa5319;
 }
 
-.mid .detail_box .text_box>.title_box .icon {
+.mid .detail_box .text_box .title_box .icon {
     display: inline-block;
     width: 18px;
     margin-right: 5px;
     vertical-align: middle;
 }
 
-.mid .detail_box .text_box>.title_box .icon>img {
+.mid .detail_box .text_box .title_box .icon>img {
     width: 100%;
 }
 
 /* 原价 start */
-.mid .detail_box .text_box>.org_price_box {
+.mid .detail_box .text_box .org_price_box {
     display: inline-block;
     width: 50%;
     margin-top: 15px;
@@ -316,12 +326,17 @@ li {
     vertical-align: top;
 }
 
+.mid .detail_box .org_price {
+    display: block;
+}
+
 .mid .detail_box .org_price>span {
     display: inline-block;
     margin-left: 5px;
     color: #999999;
-    font-size: 18px;
-    line-height: 1;
+    font-size: 15px;
+    line-height: 20px;
+    vertical-align: middle;
 }
 
 .mid .detail_box .org_price>span:first-child {
@@ -334,10 +349,11 @@ li {
 }
 
 /* 原价  end */
-.mid .detail_box .text_box>.special_box {
+/* 标签  start */
+.mid .detail_box .text_box .special_box {
     display: inline-block;
     width: 50%;
-    margin-top: 10px;
+    margin-top: 12px;
     font-size: 0;
     text-align: right;
     vertical-align: top;
@@ -347,7 +363,7 @@ li {
     display: inline-block;
     width: 18px;
     height: 18px;
-    margin: 10px 0 0 10px;
+    margin: 3px 0 0 10px;
     font-size: 14px;
     line-height: 18px;
     color: #ffffff;
@@ -384,19 +400,28 @@ li {
     background-color: #ff0036;
 }
 
+/* 标签   end */
+/* 券后  start */
 .mid .detail_box .text_box .after_coupon_box {
-    display: inline-block;
-    width: 80%;
+    display: block;
     margin-top: 10px;
     font-size: 0;
-    vertical-align: top;
+    padding-top: 8px;
+    /* background-color: #f8f8f8; */
+}
+
+.mid .detail_box .text_box .after_coupon {
+    display: block;
+    margin-top: 5px;
 }
 
 .mid .detail_box .text_box .after_coupon>span {
     display: inline-block;
     margin-left: 5px;
     color: #ff0036;
-    font-size: 18px;
+    font-size: 15px;
+    line-height: 1;
+    vertical-align: middle;
 }
 
 .mid .detail_box .text_box .after_coupon>span:first-child {
@@ -407,6 +432,254 @@ li {
     margin-left: 0;
     font-size: 25px;
     font-weight: bold;
+}
+
+/* 券后  end */
+/* 销量   start */
+.mid .detail_box .text_box .sale_box {
+    display: inline-block;
+    width: 50%;
+    margin-top: 20px;
+    vertical-align: top;
+}
+
+.mid .detail_box .text_box .sale {
+    display: block;
+    font-size: 0;
+}
+
+.mid .detail_box .text_box .sale>span {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 15px;
+    color: #666666;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.mid .detail_box .text_box .sale>span:first-child {
+    margin-left: 0;
+}
+
+.mid .detail_box .text_box .sale .num {
+    font-size: 25px;
+}
+
+/* 销量   end */
+/* 评分   start */
+.mid .detail_box .text_box .dsr_box {
+    display: inline-block;
+    width: 50%;
+    margin-top: -30px;
+    text-align: right;
+}
+
+.mid .detail_box .text_box .dsr {
+    display: inline-block;
+    width: 100px;
+    font-size: 0;
+    border-radius: 5px;
+    border: 1px solid #fa5319;
+    background-color: #ffffff;
+}
+
+.mid .detail_box .text_box .dsr>span {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    color: #666666;
+    line-height: 1;
+    padding: 10px 0;
+}
+
+.mid .detail_box .text_box .dsr .title {
+    color: #ffffff;
+    border-radius: 3px 3px 0 0;
+    background-color: #fa5319;
+}
+
+.mid .detail_box .text_box .dsr .num {
+    width: 98px;
+    color: #fa5319;
+    font-size: 18px;
+}
+
+/* 评分   end */
+/* 优惠券  start */
+.mid .detail_box .text_box .quan_box {
+    display: block;
+    margin-top: 80px;
+    font-size: 0;
+}
+
+.mid .detail_box .text_box .quan_box>span {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: top;
+}
+
+.mid .detail_box .text_box .quan>span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.mid .detail_box .text_box .quan>a {
+    display: inline-block;
+    width: 100px;
+    margin-left: 8px;
+    font-size: 0;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #fa5319;
+}
+
+.mid .detail_box .text_box .quan>a:hover {
+    background-color: #fa5319;
+}
+
+.mid .detail_box .text_box .quan>a:hover .icon {
+    color: #ffffff;
+}
+
+.mid .detail_box .text_box .quan>a:hover .num {
+    color: #ffffff;
+}
+
+.mid .detail_box .text_box .quan .title {
+    font-size: 18px;
+    color: #fa5319;
+
+}
+
+.mid .detail_box .text_box .quan>a>span {
+    display: inline-block;
+    vertical-align: middle;
+    color: #fa5319;
+}
+
+.mid .detail_box .text_box .quan .icon {
+    font-size: 18px;
+}
+
+.mid .detail_box .text_box .quan .num {
+    font-size: 25px;
+}
+
+.mid .detail_box .text_box .quan_time {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 0;
+}
+
+.mid .detail_box .text_box .quan_time>span {
+    display: inline-block;
+    font-size: 18px;
+    color: #999999;
+    line-height: 35px;
+}
+
+.mid .detail_box .text_box .quan_time .date {
+    margin-left: 10px;
+}
+
+@media(max-width:1200px) {
+    .mid .detail_box .text_box .after_coupon_box {
+        background-color: #ffffff;
+    }
+
+    .mid .detail_box .text_box .sale_dsr_limit {
+        background-color: #ffffff;
+    }
+}
+
+/* 优惠券   end */
+@media(min-width:992px) and (max-width:1199px) {
+    .mid {
+        padding: 20px;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .mid {
+        padding: 20px;
+    }
+}
+
+/* @media(min-width:500px) and (max-width:767px) {
+    .mid {
+        padding: 20px 10px;
+    }
+
+    .mid .detail_box>.container {
+        width: calc(100% - 200px);
+    }
+
+    .mid .detail_box>.container:first-child {
+        width: 200px;
+    }
+
+    .mid .detail_box .img_box {
+        width: 188px;
+        padding: 6px;
+    }
+} */
+
+@media(max-width:767px) {
+    .mid {
+        padding: 20px 0;
+    }
+
+    .mid .detail_box>.container {
+        display: block;
+        width: 100%;
+    }
+
+    .mid .detail_box>.container:first-child {
+        width: 100%;
+    }
+
+    .mid .detail_box .img_box {
+        position: relative;
+        display: block;
+        width: auto;
+        padding: 8px;
+        margin: auto;
+        background-color: #ffffff;
+        /* width: 188px;
+        padding: 6px; */
+    }
+
+    .mid .detail_box .img_box>img {
+        display: block;
+        margin: auto;
+    }
+
+    .mid .detail_box .text_box {
+        margin-left: 0;
+        height: auto;
+    }
+
+    .mid .detail_box .text_box>span {
+        padding: 0;
+    }
+
+    .mid .detail_box .text_box .sale_dsr_limit {
+        padding: 0;
+    }
+
+    .mid .detail_box .text_box .quan_box {
+        margin-top: 20px;
+    }
+
+    .mid .detail_box .text_box .quan_time {
+        margin-left: 15px;
+    }
+
+    .mid .detail_box .text_box .quan_time .date {
+        margin-left: 5px;
+    }
 }
 
 /* 商品详情   end */
