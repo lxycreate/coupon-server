@@ -877,6 +877,10 @@ li {
     font-size: 0;
 }
 
+.goods_area .goods_list .item .container .text_box>span {
+    margin-top: 5px;
+}
+
 .goods_area .goods_list .item .text_box .title {
     position: relative;
     display: block;
@@ -1086,7 +1090,7 @@ li {
 .toggle_container {
     display: inline-block !important;
     width: calc(100% - 146px);
-    height: 140px;
+    min-height: 140px;
     padding: 0 !important;
     vertical-align: top !important;
 }
@@ -1098,9 +1102,6 @@ li {
 }
 
 .toggle_text_box {
-    position: absolute !important;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
 }
@@ -1109,6 +1110,7 @@ li {
     position: absolute;
     display: inline-block !important;
     top: 100%;
+    margin-left: 3px;
     /* width: 40%; */
     margin-top: -46px !important;
     vertical-align: middle;

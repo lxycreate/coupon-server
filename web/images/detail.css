@@ -798,12 +798,17 @@ li {
 
 
 /* 相关推荐   start */
-.mid .recommend_box>.title {
+.mid .recommend_box {
     display: block;
     margin-top: 20px;
     font-size: 20px;
-    padding-left: 8px;
+    /* padding-left: 8px; */
     color: #666666;
+}
+
+.mid .recommend_box>.title {
+    display: block;
+    padding-left: 8px;
 }
 
 .mid .recommend_box>.recommend_list {
@@ -1110,8 +1115,49 @@ li {
 }
 
 @media(max-width:449px) {
+    .mid .recommend_box {
+        padding: 0;
+    }
+
+    .mid .recommend_box>.title {
+        margin-bottom: 19px;
+    }
+
     .mid .recommend_box .recommend_list>li {
         width: 100%;
+        margin-top: 1px;
+    }
+
+    .mid .recommend_box .recommend_list>li .item {
+        width: 100%;
+        font-size: 0;
+        box-shadow: none;
+    }
+
+    .mid .recommend_box .item .container {
+        display: inline-block;
+        margin-left: 0;
+        vertical-align: top;
+    }
+
+    .mid .recommend_box .item .container:first-child {
+        width: 140px;
+        height: 140px;
+    }
+
+    .mid .recommend_box .item .container:last-child {
+        width: calc(100% - 152px);
+        height: 152px;
+        padding: 0;
+    }
+
+    .mid .recommend_box .item .container .text_box {
+        height: 140px;
+        padding: 6px;
+    }
+
+    .mid .recommend_box .item .container .text_box>span {
+        margin-top: 5px;
     }
 }
 
