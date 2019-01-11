@@ -610,6 +610,7 @@ li {
     margin-left: 10px;
 }
 
+/* 优惠券   end */
 @media(max-width:1200px) {
     .mid .detail_box .text_box .after_coupon_box {
         background-color: #ffffff;
@@ -620,7 +621,6 @@ li {
     }
 }
 
-/* 优惠券   end */
 @media(min-width:992px) and (max-width:1199px) {
     .mid {
         padding: 20px;
@@ -720,6 +720,7 @@ li {
     }
 
 } */
+
 @media(max-width:767px) {
     .mid {
         padding: 20px 0;
@@ -753,7 +754,7 @@ li {
     .mid .detail_box .text_box {
         margin-left: 0;
         height: auto;
-        padding: 4px 8px 15px 8px;
+        padding: 3px 8px 15px 8px;
     }
 
     .mid .detail_box .text_box>span {
@@ -774,6 +775,39 @@ li {
 
     .mid .detail_box .text_box .quan_time .date {
         margin-left: 5px;
+    }
+
+    .mid .detail_box .text_box .title_box {
+        margin-top: 0;
+    }
+
+    .mid .detail_box .text_box>span {
+        margin-top: 10px;
+    }
+
+    .mid .detail_box .text_box .org_price_box {
+        margin-top: 0;
+    }
+
+    .mid .detail_box .text_box .special_box {
+        margin-top: 0;
+    }
+
+    .mid .detail_box .text_box .after_coupon_box {
+        padding: 0;
+        margin-top: 15px;
+    }
+
+    .mid .detail_box .text_box .sale_box {
+        margin-top: 6px;
+    }
+
+    .mid .detail_box .text_box .dsr_box {
+        margin-top: -35px;
+    }
+
+    .mid .detail_box .text_box .dsr>span {
+        padding: 8px 0;
     }
 }
 
@@ -951,7 +985,7 @@ li {
 .mid .recommend_box .item .text_box .org_price {
     display: block;
     font-size: 0;
-    margin-top: 3px;
+    margin-top: 5px;
     padding-right: 3px;
 }
 
@@ -1011,7 +1045,7 @@ li {
 .mid .recommend_box .item .text_box .price {
     display: block;
     font-size: 0;
-    margin-top: 3px;
+    margin-top: 5px;
 }
 
 .mid .recommend_box .item .text_box .price>span {
@@ -1041,7 +1075,7 @@ li {
 .mid .recommend_box .item .text_box .sale {
     display: block;
     font-size: 0;
-    margin-top: 3px;
+    margin-top: 5px;
 }
 
 .mid .recommend_box .item .text_box .sale>span {
@@ -1084,16 +1118,17 @@ li {
 
 .mid .recommend_box .item .text_box .quan i {
     display: inline-block;
-    font-size: 20px;
+    font-style: normal;
+    font-size: 15px;
     margin-left: 3px;
-    margin-top: 2px;
-    line-height: 20px;
+    /* margin-top: 2px; */
+    line-height: 1;
     vertical-align: middle;
 }
 
 .mid .recommend_box .item .text_box .quan .num {
     display: inline-block;
-    margin-left: 3px;
+    margin-left: 0;
     font-size: 18px;
     font-weight: bold;
     line-height: 20px;
@@ -1109,8 +1144,22 @@ li {
 }
 
 @media(min-width:450px) and (max-width:768px) {
+    .mid .recommend_box .title {
+        padding-left: 10px;
+    }
+
+    .mid .recommend_box .recommend_list {
+        padding: 0 4px;
+        margin-top: 10px;
+    }
+
     .mid .recommend_box .recommend_list>li {
         width: 50%;
+        margin-top: 8px;
+    }
+
+    .mid .recommend_box .recommend_list>li .item {
+        width: 97%;
     }
 }
 
@@ -1161,32 +1210,6 @@ li {
     }
 }
 
-@media(max-width:767px) {
-    .mid .detail_box .text_box>span {
-        margin-top: 10px;
-    }
-
-    .mid .detail_box .text_box .org_price_box {
-        margin-top: 0;
-    }
-
-    .mid .detail_box .text_box .special_box {
-        margin-top: 0;
-    }
-
-    .mid .detail_box .text_box .after_coupon_box {
-        padding: 0;
-        margin-top: 15px;
-    }
-
-    .mid .detail_box .text_box .sale_box {
-        margin-top: 10px;
-    }
-
-    .mid .detail_box .text_box .dsr_box {
-        margin-top: -35px;
-    }
-}
 
 /* 相关推荐   end */
 /* -----------------------------------------------中部   结束----------------------------------- */

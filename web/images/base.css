@@ -1132,7 +1132,7 @@ li {
 }
 
 .toggle_quan {
-    width:100%;
+    width: 100%;
     max-width: 80px;
 }
 
@@ -1205,6 +1205,12 @@ li {
 @media(min-width:992px) and (max-width:1199px) {
     .goods_area {
         padding: 0 20px;
+    }
+}
+
+@media(max-width:992px) {
+    .goods_area .goods_list .item:hover .link_box {
+        display: none !important;
     }
 }
 

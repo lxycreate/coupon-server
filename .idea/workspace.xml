@@ -7,9 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/web/images/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/images/detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/detail.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1315,12 +1315,12 @@
       <workItem from="1547036277578" duration="10295000" />
       <workItem from="1547080209312" duration="3488000" />
       <workItem from="1547088974928" duration="1798000" />
-      <workItem from="1547169647318" duration="2360000" />
+      <workItem from="1547169647318" duration="2844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105322000" />
+    <option name="totallyTimeSpent" value="105806000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
