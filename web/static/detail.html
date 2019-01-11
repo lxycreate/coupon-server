@@ -70,6 +70,8 @@
                 <div class="detail_box">
                     <p class="container">
                         <span class="img_box">
+                            <span class="ju">正在参加聚划算</span>
+                            <span class="qiang">正在参加淘抢购</span>
                             <img src="../images/test.jpg">
                         </span>
                     </p>
@@ -96,9 +98,9 @@
                                 <!-- 特点 -->
                                 <span class="special_box">
                                     <!-- 淘抢购 -->
-                                    <span class="qiang">购</span>
+                                    <!-- <span class="qiang">购</span> -->
                                     <!-- 聚划算 -->
-                                    <span class="ju">聚</span>
+                                    <!-- <span class="ju">聚</span> -->
                                     <!-- 金牌卖家 -->
                                     <span class="jin">金</span>
                                     <!-- 极有家 -->
@@ -153,8 +155,312 @@
                 </div>
                 <!-- 推荐 -->
                 <div class="recommend_box">
+                    <span class="title">相关推荐</span>
                     <ul class="recommend_list">
-                        
+                        <li>
+                            <span class="item">
+                                <!--  -->
+                                <span class="container">
+                                    <!-- 图片 -->
+                                    <span class="img_box">
+                                        <img src="../images/test.jpg">
+                                        <span class="link_box">
+                                            <a target="_blank"><i class="icon-font i-right"></i>去天猫</a>
+                                            <!-- <a target="_blank"><i class="icon-font i-right"></i>去淘宝</a> -->
+                                            <a target="_blank"><i class="icon-font i-installment"></i>去领券</a>
+                                        </span>
+                                        <span class="ju">正在参加聚划算</span>
+                                        <span class="qiang">正在参加淘抢购</span>
+                                    </span>
+                                </span>
+                                <!--  -->
+                                <span class="container">
+                                    <span class="text_box">
+                                        <!-- 标题 -->
+                                        <a class="title" target="_blank">
+                                            <img src="../images/tmall.png">
+                                            <img src="../images/taobao.png">
+                                            测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
+                                        </a>
+                                        <!-- 价格 -->
+                                        <span class="org_price">
+                                            <span class="box">
+                                                <span class="price_title">原价</span>
+                                                <span class="icon">￥</span>
+                                                <span class="num">100</span>
+                                            </span>
+                                            <span v-if="item.is_yun" class="tag_box">
+                                                <span v-show="item.is_yun" class="xian" title="运费险">险</span>
+                                            </span>
+                                        </span>
+                                        <!-- 券后价 -->
+                                        <!-- 券后价 -->
+                                        <span class="price">
+                                            <span class="price_title">券后</span>
+                                            <span class="icon">￥</span>
+                                            <span class="num">100</span>
+                                        </span>
+                                        <!-- 价格   end -->
+                                        <!-- 销量 -->
+                                        <span class="sale" v-bind:class="{toggle_sale:toggle_list}">
+                                            <span class="sale_container" v-bind:class="{toggle_sale_container:toggle_list}">
+                                                <span class="sale_title" v-bind:class="{toggle_sale_child:toggle_list}">
+                                                    销量
+                                                </span>
+                                                <span class="num" v-bind:class="{toggle_sale_child:toggle_list}">
+                                                    200
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <!-- 销量   end -->
+                                        <!-- 优惠券 -->
+                                        <span class="quan_box" v-bind:class="{toggle_quan_box:toggle_list}">
+                                            <a v-bind:href="item.coupon_url" class="quan" target="_blank" v-bind:class="{toggle_quan:toggle_list}">
+                                                <span class="quan_container" v-bind:class="{toggle_quan_container:toggle_list}">
+                                                    <span class="quan_title" v-bind:class="{toggle_quan_title:toggle_list}">
+                                                        领券
+                                                    </span>
+                                                    <i class="icon-font i-coupon-pc"></i>
+                                                    <span class="num">50</span>
+                                                </span>
+                                            </a>
+                                        </span>
+                                        <!-- 优惠券   end -->
+                                    </span>
+                                    <!-- text_box -->
+                                </span>
+                                <!-- container -->
+                            </span>
+                            <!-- item -->
+                        </li>
+                        <li>
+                            <span class="item">
+                                <!--  -->
+                                <span class="container">
+                                    <!-- 图片 -->
+                                    <span class="img_box">
+                                        <img src="../images/test.jpg">
+                                        <span class="link_box">
+                                            <a target="_blank"><i class="icon-font i-right"></i>去天猫</a>
+                                            <!-- <a target="_blank"><i class="icon-font i-right"></i>去淘宝</a> -->
+                                            <a target="_blank"><i class="icon-font i-installment"></i>去领券</a>
+                                        </span>
+                                        <span class="ju">正在参加聚划算</span>
+                                        <span class="qiang">正在参加淘抢购</span>
+                                    </span>
+                                </span>
+                                <!--  -->
+                                <span class="container">
+                                    <span class="text_box">
+                                        <!-- 标题 -->
+                                        <a class="title" target="_blank">
+                                            <img src="../images/tmall.png">
+                                            <img src="../images/taobao.png">
+                                            测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
+                                        </a>
+                                        <!-- 价格 -->
+                                        <span class="org_price">
+                                            <span class="box">
+                                                <span class="price_title">原价</span>
+                                                <span class="icon">￥</span>
+                                                <span class="num">100</span>
+                                            </span>
+                                            <span v-if="item.is_yun" class="tag_box">
+                                                <span v-show="item.is_yun" class="xian" title="运费险">险</span>
+                                            </span>
+                                        </span>
+                                        <!-- 券后价 -->
+                                        <!-- 券后价 -->
+                                        <span class="price">
+                                            <span class="price_title">券后</span>
+                                            <span class="icon">￥</span>
+                                            <span class="num">100</span>
+                                        </span>
+                                        <!-- 价格   end -->
+                                        <!-- 销量 -->
+                                        <span class="sale" v-bind:class="{toggle_sale:toggle_list}">
+                                            <span class="sale_container" v-bind:class="{toggle_sale_container:toggle_list}">
+                                                <span class="sale_title" v-bind:class="{toggle_sale_child:toggle_list}">
+                                                    销量
+                                                </span>
+                                                <span class="num" v-bind:class="{toggle_sale_child:toggle_list}">
+                                                    200
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <!-- 销量   end -->
+                                        <!-- 优惠券 -->
+                                        <span class="quan_box" v-bind:class="{toggle_quan_box:toggle_list}">
+                                            <a v-bind:href="item.coupon_url" class="quan" target="_blank" v-bind:class="{toggle_quan:toggle_list}">
+                                                <span class="quan_container" v-bind:class="{toggle_quan_container:toggle_list}">
+                                                    <span class="quan_title" v-bind:class="{toggle_quan_title:toggle_list}">
+                                                        领券
+                                                    </span>
+                                                    <i class="icon-font i-coupon-pc"></i>
+                                                    <span class="num">50</span>
+                                                </span>
+                                            </a>
+                                        </span>
+                                        <!-- 优惠券   end -->
+                                    </span>
+                                    <!-- text_box -->
+                                </span>
+                                <!-- container -->
+                            </span>
+                            <!-- item -->
+                        </li>
+                        <li>
+                            <span class="item">
+                                <!--  -->
+                                <span class="container">
+                                    <!-- 图片 -->
+                                    <span class="img_box">
+                                        <img src="../images/test.jpg">
+                                        <span class="link_box">
+                                            <a target="_blank"><i class="icon-font i-right"></i>去天猫</a>
+                                            <!-- <a target="_blank"><i class="icon-font i-right"></i>去淘宝</a> -->
+                                            <a target="_blank"><i class="icon-font i-installment"></i>去领券</a>
+                                        </span>
+                                        <span class="ju">正在参加聚划算</span>
+                                        <span class="qiang">正在参加淘抢购</span>
+                                    </span>
+                                </span>
+                                <!--  -->
+                                <span class="container">
+                                    <span class="text_box">
+                                        <!-- 标题 -->
+                                        <a class="title" target="_blank">
+                                            <img src="../images/tmall.png">
+                                            <img src="../images/taobao.png">
+                                            测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
+                                        </a>
+                                        <!-- 价格 -->
+                                        <span class="org_price">
+                                            <span class="box">
+                                                <span class="price_title">原价</span>
+                                                <span class="icon">￥</span>
+                                                <span class="num">100</span>
+                                            </span>
+                                            <span v-if="item.is_yun" class="tag_box">
+                                                <span v-show="item.is_yun" class="xian" title="运费险">险</span>
+                                            </span>
+                                        </span>
+                                        <!-- 券后价 -->
+                                        <!-- 券后价 -->
+                                        <span class="price">
+                                            <span class="price_title">券后</span>
+                                            <span class="icon">￥</span>
+                                            <span class="num">100</span>
+                                        </span>
+                                        <!-- 价格   end -->
+                                        <!-- 销量 -->
+                                        <span class="sale" v-bind:class="{toggle_sale:toggle_list}">
+                                            <span class="sale_container" v-bind:class="{toggle_sale_container:toggle_list}">
+                                                <span class="sale_title" v-bind:class="{toggle_sale_child:toggle_list}">
+                                                    销量
+                                                </span>
+                                                <span class="num" v-bind:class="{toggle_sale_child:toggle_list}">
+                                                    200
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <!-- 销量   end -->
+                                        <!-- 优惠券 -->
+                                        <span class="quan_box" v-bind:class="{toggle_quan_box:toggle_list}">
+                                            <a v-bind:href="item.coupon_url" class="quan" target="_blank" v-bind:class="{toggle_quan:toggle_list}">
+                                                <span class="quan_container" v-bind:class="{toggle_quan_container:toggle_list}">
+                                                    <span class="quan_title" v-bind:class="{toggle_quan_title:toggle_list}">
+                                                        领券
+                                                    </span>
+                                                    <i class="icon-font i-coupon-pc"></i>
+                                                    <span class="num">50</span>
+                                                </span>
+                                            </a>
+                                        </span>
+                                        <!-- 优惠券   end -->
+                                    </span>
+                                    <!-- text_box -->
+                                </span>
+                                <!-- container -->
+                            </span>
+                            <!-- item -->
+                        </li>
+                        <li>
+                            <span class="item">
+                                <!--  -->
+                                <span class="container">
+                                    <!-- 图片 -->
+                                    <span class="img_box">
+                                        <img src="../images/test.jpg">
+                                        <span class="link_box">
+                                            <a target="_blank"><i class="icon-font i-right"></i>去天猫</a>
+                                            <!-- <a target="_blank"><i class="icon-font i-right"></i>去淘宝</a> -->
+                                            <a target="_blank"><i class="icon-font i-installment"></i>去领券</a>
+                                        </span>
+                                        <span class="ju">正在参加聚划算</span>
+                                        <span class="qiang">正在参加淘抢购</span>
+                                    </span>
+                                </span>
+                                <!--  -->
+                                <span class="container">
+                                    <span class="text_box">
+                                        <!-- 标题 -->
+                                        <a class="title" target="_blank">
+                                            <img src="../images/tmall.png">
+                                            <img src="../images/taobao.png">
+                                            测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
+                                        </a>
+                                        <!-- 价格 -->
+                                        <span class="org_price">
+                                            <span class="box">
+                                                <span class="price_title">原价</span>
+                                                <span class="icon">￥</span>
+                                                <span class="num">100</span>
+                                            </span>
+                                            <span v-if="item.is_yun" class="tag_box">
+                                                <span v-show="item.is_yun" class="xian" title="运费险">险</span>
+                                            </span>
+                                        </span>
+                                        <!-- 券后价 -->
+                                        <!-- 券后价 -->
+                                        <span class="price">
+                                            <span class="price_title">券后</span>
+                                            <span class="icon">￥</span>
+                                            <span class="num">100</span>
+                                        </span>
+                                        <!-- 价格   end -->
+                                        <!-- 销量 -->
+                                        <span class="sale" v-bind:class="{toggle_sale:toggle_list}">
+                                            <span class="sale_container" v-bind:class="{toggle_sale_container:toggle_list}">
+                                                <span class="sale_title" v-bind:class="{toggle_sale_child:toggle_list}">
+                                                    销量
+                                                </span>
+                                                <span class="num" v-bind:class="{toggle_sale_child:toggle_list}">
+                                                    200
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <!-- 销量   end -->
+                                        <!-- 优惠券 -->
+                                        <span class="quan_box" v-bind:class="{toggle_quan_box:toggle_list}">
+                                            <a v-bind:href="item.coupon_url" class="quan" target="_blank" v-bind:class="{toggle_quan:toggle_list}">
+                                                <span class="quan_container" v-bind:class="{toggle_quan_container:toggle_list}">
+                                                    <span class="quan_title" v-bind:class="{toggle_quan_title:toggle_list}">
+                                                        领券
+                                                    </span>
+                                                    <i class="icon-font i-coupon-pc"></i>
+                                                    <span class="num">50</span>
+                                                </span>
+                                            </a>
+                                        </span>
+                                        <!-- 优惠券   end -->
+                                    </span>
+                                    <!-- text_box -->
+                                </span>
+                                <!-- container -->
+                            </span>
+                            <!-- item -->
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -163,7 +469,7 @@
 
         <!-- 底部   START -->
         <div class="footer">
-
+                <span class="txt">本站所有数据均来自阿里巴巴</span>
         </div>
         <!-- 底部   END -->
     </div>

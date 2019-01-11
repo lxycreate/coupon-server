@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/web/images/detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/detail.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
