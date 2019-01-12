@@ -1,17 +1,16 @@
 package com.taobao.service.impl;
 
 import com.taobao.dao.GoodsDao;
-import com.taobao.entity.AjaxParameter;
-import com.taobao.entity.Goods;
-import com.taobao.entity.GoodsJson;
-import com.taobao.entity.SqlGoods;
+import com.taobao.entity.*;
 import com.taobao.service.GoodsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Service
@@ -23,56 +22,49 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public GoodsJson getGoods(AjaxParameter pars) {
         List<SqlGoods> sql_goods = goods_dao.getGoods(pars);
-
-        return createJson(sql_goods);
-    }
-
-    public GoodsJson createJson(List<SqlGoods> sql_goods) {
-        List<Goods> goods_list = new ArrayList<Goods>();
         GoodsJson temp_json = new GoodsJson();
-        for (int i = 0; i < sql_goods.size(); ++i) {
-            Goods temp = new Goods();
-            SqlGoods temp_sql = sql_goods.get(i);
-            //图片
-            temp.setGoods_pic(temp_sql.getGoods_pic());
-            //标题
-            temp.setGoods_title(temp_sql.getGoods_title());
-            //商品链接
-            temp.setGoods_url(temp_sql.getGoods_url());
-            //分类
-            temp.setCid(temp_sql.getGoods_cid());
-            //价格
-            temp.setGoods_price(temp_sql.getGoods_price());
-            //券后价
-            temp.setAfter_coupon(temp_sql.getAfter_coupon());
-            //评分
-            temp.setDsr(temp_sql.getDsr());
-            //淘抢购
-            temp.setIs_qiang(temp_sql.getIs_qiang());
-            //聚划算
-            temp.setIs_ju(temp_sql.getIs_ju());
-            //天猫
-            temp.setIs_tmall(temp_sql.getIs_tmall());
-            //金牌卖家
-            temp.setIs_gold(temp_sql.getIs_gold());
-            //海淘
-            temp.setIs_hai(temp_sql.getIs_hai());
-            //极有家
-            temp.setIs_ji(temp_sql.getIs_ji());
-            //运费险
-            temp.setIs_yun(temp_sql.getIs_yun());
-            //优惠券链接
-            temp.setCoupon_url(temp_sql.getCoupon_url());
-            //销量
-            temp.setGoods_sale(temp_sql.getGoods_sale());
-            //券的面值
-            temp.setCoupon_price(temp_sql.getCoupon_price());
-            goods_list.add(temp);
-        }
-        temp_json.setGoods(goods_list);
+        temp_json.setGoods(transFormList(sql_goods));
         return temp_json;
     }
 
+    // SqlGoods列表 ——>  Goods列表
+    public List<Goods> transFormList(List<SqlGoods> sql_goods) {
+        List<Goods> goods_list = new ArrayList<Goods>();
+        for (int i = 0; i < sql_goods.size(); ++i) {
+            Goods temp = new Goods();
+            SqlGoods temp_sql = sql_goods.get(i);
+            temp.transForm(temp_sql);
+            goods_list.add(temp);
+        }
+        return goods_list;
+    }
+
+    //获取商品详情
+    @Override
+    public GoodsDetailJson getGoodsDetail(String goods_id) {
+        GoodsDetailJson temp_json = new GoodsDetailJson();
+        Goods temp_goods = new Goods();
+        //商品详情
+        temp_goods.transForm(goods_dao.getGoodsDetail(goods_id));
+        temp_json.setGoods_detail(temp_goods);
+
+        Integer cid = temp_goods.getCid();
+        //该分类下商品总数
+        Integer temp_count = goods_dao.getGoodsCountByCid(cid);
+        //随机从哪行开始取推荐商品
+        Integer temp_start = (int) Math.random() * temp_count;
+        //随机取4条推荐商品
+        Map<String, Object> temp_map = new HashMap<String,Object>();
+        temp_map.put("goods_id", goods_id);
+        temp_map.put("cid", cid);
+        temp_map.put("start", temp_start);
+        temp_map.put("num", 4);
+        List<SqlGoods> tmep_sql_goods = goods_dao.getRecommendList(temp_map);
+        temp_json.setGoods_list(transFormList(tmep_sql_goods));
+        return temp_json;
+    }
+
+    //测试
     @Override
     public Integer test() {
         return null;

@@ -90,4 +90,28 @@
         </if>
     </select>
 
+    <!--获取商品详情-->
+    <select id="getGoodsDetail" resultType="goods">
+        select * from goods where goods_id = #{goods_id}
+    </select>
+
+    <!--获取当前分类商品的总数-->
+    <select id="getGoodsCountByCid" resultType="Integer">
+        select count(*) from goods where goods_cid = #{cid}
+    </select>
+
+    <!--获取推荐列表-->
+    <select id="getRecommendList" resultType="goods" resultMap="goodsMapper">
+        select * from goods where 1=1
+        <if test="goods_id != null and goods_id != ''" >
+          and goods_id != #{goods_id}
+        </if>
+        <if test="cid != null" >
+            and goods_cid = #{cid}
+        </if>
+        <if test="start != null and num !=null" >
+            limit #{start},#{num}
+        </if>
+    </select>
+
 </mapper>

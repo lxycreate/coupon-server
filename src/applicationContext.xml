@@ -17,7 +17,7 @@
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
         <property name="jdbcUrl" value="jdbc:mysql:///taobao"></property>
-        <property name="user" value="lxy"></property>
+        <property name="user" value="root"></property>
         <property name="password" value="123456"></property>
         <property name="initialPoolSize" value="3"></property>
         <property name="maxPoolSize" value="10"></property>

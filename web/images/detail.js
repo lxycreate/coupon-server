@@ -7,6 +7,7 @@ var js_ceil_box;
 // 初始化函数
 window.onload = function () {
     initScroll();
+    getGoodsDetail();
 }
 
 // 滚动事件   开始
@@ -83,4 +84,19 @@ function initScroll() {
 function search() {
     js_ceil_box.search();
     return false;
+}
+
+//获取商品详情
+function getGoodsDetail() {
+    axios({
+        url: base_url + '/getGoodsDetail',
+        method: 'get',
+        params: {
+            goods_id: '541108477389'
+        }
+    }).then(function (response) {
+        console.log(response);
+    }).catch(function (error) {
+
+    });
 }
