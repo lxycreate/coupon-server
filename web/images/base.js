@@ -44,7 +44,7 @@ function initScroll() {
         methods: {
             initSearch: function () {
                 var temp = decodeURI(window.location.search);
-                var word = temp.substring(8, temp.length);
+                var word = temp.substring(8, temp.length - 1);
                 console.log(word);
                 var url = window.location.href;
                 var valiable = url.split('?')[0];
@@ -56,7 +56,7 @@ function initScroll() {
             },
             search: function () {
                 if (now_page_name != 'search' && this.search_word != '') {
-                    window.location.href = "search.html?search=" + encodeURI(this.search_word);
+                    window.location.href = "search.html?search=" + encodeURI(this.search_word) + "/";
                 }
                 if (now_page_name == 'search' && this.search_word != '') {
                     addProperty('word', this.search_word);
@@ -632,6 +632,10 @@ function initGoodsList() {
                 Velocity(document.documentElement, 'scroll', {
                     offset: 0
                 }, 2000);
+            },
+            goToDetail: function (goods_id) {
+                window.location.href = "detail.html?goods_id=" + goods_id + "/";
+                console.log(goods_id);
             }
         }
     });

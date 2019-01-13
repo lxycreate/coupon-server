@@ -15,7 +15,7 @@ public interface GoodsDao {
     public List<SqlGoods> getGoods(AjaxParameter pars);
 
     // 获取商品详情
-    public SqlGoods getGoodsDetail(String goods_id);
+    public List<SqlGoods> getGoodsDetail(String goods_id);
 
     // 获取当前分类商品的总量
     public Integer getGoodsCountByCid(Integer cid);

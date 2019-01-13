@@ -65,26 +65,27 @@
         <!-- 导航   END -->
 
         <!-- 中间  START -->
-        <div class="mid">
+        <div class="mid js_mid" v-cloak>
             <div class="limit">
                 <!-- 商品详情 -->
                 <div class="detail_box">
                     <p class="container">
                         <span class="img_box">
-                            <span class="ju">正在参加聚划算</span>
-                            <span class="qiang">正在参加淘抢购</span>
-                            <img src="../images/test.jpg">
+                            <span v-if="goods_detail.is_ju" class="ju">正在参加聚划算</span>
+                            <span v-if="goods_detail.is_qiang" class="qiang">正在参加淘抢购</span>
+                            <img v-bind:src="goods_detail.goods_pic">
                         </span>
                     </p>
                     <p class="container">
                         <span class="text_box">
                             <!-- 标题 -->
                             <span class="title_box">
-                                <a class="title">
+                                <a class="title" v-bind:href="goods_detail.goods_url">
                                     <span class="icon">
-                                        <img src="../images/tmall.png">
+                                        <img v-if="goods_detail.is_tmall" src="../images/tmall.png">
+                                        <img v-if="!goods_detail.is_tmall" src="../images/taobao.png">
                                     </span>
-                                    测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
+                                    {{goods_detail.goods_title}}
                                 </a>
                             </span>
                             <span class="">
@@ -93,7 +94,7 @@
                                     <span class="org_price">
                                         <span class="title">原价</span>
                                         <span class="icon">￥</span>
-                                        <span class="num">100</span>
+                                        <span class="num">{{goods_detail.goods_price}}</span>
                                     </span>
                                 </span>
                                 <!-- 特点 -->
@@ -103,13 +104,13 @@
                                     <!-- 聚划算 -->
                                     <!-- <span class="ju">聚</span> -->
                                     <!-- 金牌卖家 -->
-                                    <span class="jin" title="金牌卖家">金</span>
+                                    <span v-if="goods_detail.is_jin" class="jin" title="金牌卖家">金</span>
                                     <!-- 极有家 -->
-                                    <span class="ji" title="极有家">极</span>
+                                    <span v-if="goods_detail.is_ji" class="ji" title="极有家">极</span>
                                     <!-- 海淘 -->
-                                    <span class="hai" title="海淘">海</span>
+                                    <span v-if="goods_detail.is_hai" class="hai" title="海淘">海</span>
                                     <!-- 运费险 -->
-                                    <span class="xian" title="运费险">险</span>
+                                    <span v-if="goods_detail.is_yun" class="xian" title="运费险">险</span>
                                 </span>
                             </span>
                             <!-- 券后  -->
@@ -117,7 +118,7 @@
                                 <span class="after_coupon">
                                     <span class="title">券后</span>
                                     <span class="icon">￥</span>
-                                    <span class="num">100</span>
+                                    <span class="num">{{goods_detail.after_coupon}}</span>
                                 </span>
                             </span>
                             <span class="sale_dsr_limit">
@@ -125,14 +126,14 @@
                                 <span class="sale_box">
                                     <span class="sale">
                                         <span class="title">销量</span>
-                                        <span class="num">2000</span>
+                                        <span class="num">{{goods_detail.goods_sale}}</span>
                                     </span>
                                 </span>
                                 <!-- 评分 -->
                                 <span class="dsr_box">
                                     <span class="dsr">
                                         <span class="title">店铺评分</span>
-                                        <span class="num">4.9</span>
+                                        <span class="num">{{goods_detail.dsr}}</span>
                                     </span>
                                 </span>
                             </span>
@@ -140,14 +141,14 @@
                             <span class="quan_box">
                                 <span class="quan">
                                     <span class="title">领券</span>
-                                    <a href="" title="去领券">
+                                    <a title="去领券" v-bind:href="goods_detail.coupon_url">
                                         <span class="icon">￥</span>
-                                        <span class="num">50</span>
+                                        <span class="num">{{goods_detail.coupon_price}}</span>
                                     </a>
                                 </span>
                                 <span class="quan_time">
                                     <span class="title">截止</span>
-                                    <span class="date">2019-1-20</span>
+                                    <span class="date">{{goods_detail.coupon_end}}</span>
                                 </span>
                             </span>
                         </span>
@@ -158,40 +159,40 @@
                 <div class="recommend_box">
                     <span class="title">相关推荐</span>
                     <ul class="recommend_list">
-                        <li>
+                        <li v-for="item in goods_list">
                             <span class="item">
                                 <!--  -->
                                 <span class="container">
                                     <!-- 图片 -->
                                     <span class="img_box">
-                                        <img src="../images/test.jpg">
+                                        <img v-bind:src="item.goods_pic">
                                         <span class="link_box">
-                                            <a target="_blank"><i class="icon-font i-right"></i>去天猫</a>
-                                            <!-- <a target="_blank"><i class="icon-font i-right"></i>去淘宝</a> -->
+                                            <a target="_blank" v-if="item.is_tmall"><i class="icon-font i-right"></i>去天猫</a>
+                                            <a target="_blank" v-if="!item.is_tmall"><i class="icon-font i-right"></i>去淘宝</a>
                                             <a target="_blank"><i class="icon-font i-installment"></i>去领券</a>
                                         </span>
-                                        <span class="ju">正在参加聚划算</span>
-                                        <span class="qiang">正在参加淘抢购</span>
+                                        <span v-if="item.is_ju" class="ju">正在参加聚划算</span>
+                                        <span v-if="item.is_qiang" class="qiang">正在参加淘抢购</span>
                                     </span>
                                 </span>
                                 <!--  -->
                                 <span class="container">
                                     <span class="text_box">
                                         <!-- 标题 -->
-                                        <a class="title" target="_blank">
-                                            <img src="../images/tmall.png">
-                                            <img src="../images/taobao.png">
-                                            测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
+                                        <a class="title" target="_blank" @click="goToDetail(item.goods_id)">
+                                            <img v-if="item.is_tmall" src="../images/tmall.png">
+                                            <img v-if="!item.is_tmall" src="../images/taobao.png">
+                                            {{item.goods_title}}
                                         </a>
                                         <!-- 价格 -->
                                         <span class="org_price">
                                             <span class="box">
                                                 <span class="price_title">原价</span>
                                                 <span class="icon">￥</span>
-                                                <span class="num">100</span>
+                                                <span class="num">{{item.goods_price}}</span>
                                             </span>
                                             <span v-if="item.is_yun" class="tag_box">
-                                                <span v-show="item.is_yun" class="xian" title="运费险">险</span>
+                                                <span class="xian" title="运费险">险</span>
                                             </span>
                                         </span>
                                         <!-- 券后价 -->
@@ -199,7 +200,7 @@
                                         <span class="price">
                                             <span class="price_title">券后</span>
                                             <span class="icon">￥</span>
-                                            <span class="num">100</span>
+                                            <span class="num">{{item.after_coupon}}</span>
                                         </span>
                                         <!-- 价格   end -->
                                         <!-- 销量 -->
@@ -209,20 +210,20 @@
                                                     销量
                                                 </span>
                                                 <span class="num">
-                                                    200
+                                                    {{item.goods_sale}}
                                                 </span>
                                             </span>
                                         </span>
                                         <!-- 销量   end -->
                                         <!-- 优惠券 -->
                                         <span class="quan_box">
-                                            <a v-bind:href="item.coupon_url" class="quan" target="_blank">
+                                            <a class="quan" target="_blank" v-bind:href="item.coupon_url">
                                                 <span class="quan_container">
                                                     <span class="quan_title">
                                                         领券
                                                     </span>
                                                     <i>￥</i>
-                                                    <span class="num">50</span>
+                                                    <span class="num">{{item.coupon_price}}</span>
                                                 </span>
                                             </a>
                                         </span>
@@ -237,6 +238,10 @@
 
                     </ul>
                 </div>
+                <!-- 滚动至顶部 -->
+                <span v-show="is_show_totop" class="to_top" @click="scrollToTop">
+                    <i class="icon-font i-v-top"></i>
+                </span>
             </div>
         </div>
         <!-- 中间  END -->

@@ -45,7 +45,7 @@ public class GoodsServiceImpl implements GoodsService {
         GoodsDetailJson temp_json = new GoodsDetailJson();
         Goods temp_goods = new Goods();
         //商品详情
-        temp_goods.transForm(goods_dao.getGoodsDetail(goods_id));
+        temp_goods.transForm(goods_dao.getGoodsDetail(goods_id).get(0));
         temp_json.setGoods_detail(temp_goods);
 
         Integer cid = temp_goods.getCid();

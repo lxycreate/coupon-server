@@ -3,11 +3,14 @@ var base_url = 'http://localhost:8088';
 
 //搜索框
 var js_ceil_box;
+//详情区域
+var js_mid;
 
 // 初始化函数
 window.onload = function () {
     initScroll();
-    getGoodsDetail();
+    initMid();
+    // getGoodsDetail();
 }
 
 // 滚动事件   开始
@@ -22,7 +25,7 @@ function initScroll() {
         methods: {
             search: function () {
                 if (this.search_word != '') {
-                    window.location.href = "search.html?search=" + encodeURI(this.search_word);
+                    window.location.href = "search.html?search=" + encodeURI(this.search_word) + "/";
                 }
             }
             // 
@@ -63,21 +66,58 @@ function initScroll() {
         // // 滚动到底部加载更多数据   start
         // //可视区的高度
         var window_height = document.documentElement.clientHeight;
-        // //滚动条的总高度
-        // var scroll_height = document.documentElement.scrollHeight;
-
-        // if (scroll_top + window_height + 1 >= scroll_height && js_goods_area.can_ajax && js_goods_area.is_more_goods) {
-        //     loadNextPage();
-        // }
         // // 滚动到底部加载更多数据   end
         // 滚动到顶部   start
-        // if (scroll_top > window_height) {
-        //     js_goods_area.is_show_totop = true;
-        // } else {
-        //     js_goods_area.is_show_totop = false;
-        // }
+        // console.log(scroll_top);
+        if (scroll_top > window_height) {
+            js_mid.is_show_totop = true;
+        } else {
+            js_mid.is_show_totop = false;
+        }
         // 滚动到顶部   end
     }
+}
+
+//初始化详情区域
+function initMid() {
+    js_mid = new Vue({
+        el: '.js_mid',
+        data: {
+            goods_detail: '',
+            goods_list: [],
+            goods_id: '541108477389',
+            is_show_totop: true
+        },
+        created: function () {
+            this.initGoodsDetail();
+        },
+        methods: {
+            initGoodsDetail: function () {
+                console.log(window.location.search)
+                var temp = decodeURI(window.location.search);
+                if (temp != '' && temp != null) {
+                    this.goods_id = temp.substring(10, temp.length - 1);
+                }
+                console.log(this.goods_id);
+                var url = window.location.href;
+                var valiable = url.split('?')[0];
+                window.history.pushState({}, 0, valiable);
+                if (this.goods_id != null && this.goods_id != '') {
+                    getGoodsDetail(this.goods_id);
+                }
+            },
+            goToDetail: function (goods_id) {
+                window.location.href = "detail.html?goods_id=" + goods_id + "/";
+                console.log(goods_id);
+            },
+            scrollToTop: function () {
+                Velocity(document.documentElement, 'scroll', {
+                    offset: 0
+                }, 2000);
+            }
+            // 
+        }
+    })
 }
 
 //搜索
@@ -87,16 +127,29 @@ function search() {
 }
 
 //获取商品详情
-function getGoodsDetail() {
+function getGoodsDetail(goods_id) {
     axios({
         url: base_url + '/getGoodsDetail',
         method: 'get',
         params: {
-            goods_id: '541108477389'
+            goods_id: goods_id
         }
     }).then(function (response) {
+        if (response != null) {
+            loadData(response);
+        }
         console.log(response);
     }).catch(function (error) {
-
+        console.log(error);
     });
+}
+
+//装填数据
+function loadData(response) {
+    if (response.data.goods_detail != null) {
+        js_mid.goods_detail = response.data.goods_detail;
+    }
+    if (response.data.goods_list != null) {
+        js_mid.goods_list = response.data.goods_list;
+    }
 }

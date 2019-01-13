@@ -219,7 +219,7 @@
                             <span class="container" v-bind:class="{toggle_container:toggle_list}">
                                 <span class="text_box" v-bind:class="{toggle_text_box:toggle_list}">
                                     <!-- 标题 -->
-                                    <a class="title" target="_blank">
+                                    <a class="title" target="_blank" @click="goToDetail(item.goods_id)">
                                         <img v-if="item.is_tmall" src="../images/tmall.png">
                                         <img v-if="!item.is_tmall" src="../images/taobao.png">
                                         {{item.goods_title}}

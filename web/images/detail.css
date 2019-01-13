@@ -325,6 +325,8 @@ li {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-decoration: none;
+    color: black;
 }
 
 .mid .detail_box .text_box .title_box .title:hover {
@@ -1219,7 +1221,7 @@ li {
         position: relative;
         display: inline-block;
         width: 50%;
-        margin:10px 0 0 3px !important;
+        margin: 10px 0 0 3px !important;
         vertical-align: middle;
         text-align: left;
     }
@@ -1280,6 +1282,39 @@ li {
 
 
 /* 相关推荐   end */
+.mid .to_top {
+    position: fixed;
+    display: block;
+    z-index: 99;
+    top: 100%;
+    left: 100%;
+    width: 45px;
+    height: 45px;
+    margin: -60px 0 0 -60px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mid .to_top:hover {
+    cursor: pointer;
+    background-color: #fa5319;
+}
+
+.mid .to_top>i {
+    margin-top: 10px;
+    font-size: 23px;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+@media(max-width:991px) {
+    .mid .to_top:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
 /* -----------------------------------------------中部   结束----------------------------------- */
 
 

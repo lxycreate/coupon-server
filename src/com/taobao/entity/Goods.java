@@ -23,6 +23,7 @@ public class Goods {
     private Integer is_yun;   //运费险
     private String coupon_url;//优惠券链接
     private Integer goods_sale; //商品销量
+    private String coupon_end; //结束时间
 
     public Goods() {
 
@@ -65,6 +66,8 @@ public class Goods {
             this.setGoods_sale(temp_sql.getGoods_sale());
             //券的面值
             this.setCoupon_price(temp_sql.getCoupon_price());
+            //优惠券结束时间
+            this.setCoupon_end(temp_sql.getCoupon_end());
         }
     }
 
@@ -218,4 +221,18 @@ public class Goods {
     public void setGoods_sale(Integer goods_sale) {
         this.goods_sale = goods_sale;
     }
+
+    public String getCoupon_end() {
+        return coupon_end;
+    }
+
+    public void setCoupon_end(String coupon_end) {
+        if (coupon_end != "-1") {
+            String st[] = coupon_end.split(" ");
+            this.coupon_end = st[0];
+        } else {
+            this.coupon_end = "未知";
+        }
+    }
+
 }
