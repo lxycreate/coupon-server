@@ -7,6 +7,7 @@ import com.taobao.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,6 +18,19 @@ import java.util.Map;
 public class GoodsServiceImpl implements GoodsService {
     @Autowired
     GoodsDao goods_dao;
+
+    private static List<Integer> count_list;
+
+    @PostConstruct
+    public void initCountList() {
+        count_list = new ArrayList<Integer>();
+        System.out.println("测试获取某分类下总数");
+        for (int i = 1; i <= 11; ++i) {
+            Integer temp = goods_dao.getGoodsCountByCid(i);
+            count_list.add(temp);
+            System.out.println("分类: " + temp);
+        }
+    }
 
     // 全网商品，获取数据
     @Override
@@ -50,11 +64,14 @@ public class GoodsServiceImpl implements GoodsService {
 
         Integer cid = temp_goods.getCid();
         //该分类下商品总数
-        Integer temp_count = goods_dao.getGoodsCountByCid(cid);
+        Integer temp_count = count_list.get(cid - 1);
         //随机从哪行开始取推荐商品
-        Integer temp_start = (int) Math.random() * temp_count;
+        Double ran = (Math.random() * temp_count);
+        Integer temp_start = ran.intValue();
+        System.out.println("总数:" + temp_count);
+        System.out.println("开始位置:" + temp_start);
         //随机取4条推荐商品
-        Map<String, Object> temp_map = new HashMap<String,Object>();
+        Map<String, Object> temp_map = new HashMap<String, Object>();
         temp_map.put("goods_id", goods_id);
         temp_map.put("cid", cid);
         temp_map.put("start", temp_start);

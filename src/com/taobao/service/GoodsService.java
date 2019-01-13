@@ -1,6 +1,7 @@
 package com.taobao.service;
 
 import com.taobao.entity.AjaxParameter;
+import com.taobao.entity.Goods;
 import com.taobao.entity.GoodsDetailJson;
 import com.taobao.entity.GoodsJson;
 
