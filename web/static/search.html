@@ -227,7 +227,16 @@
                                             <span class="num">{{item.goods_price}}</span>
                                         </span>
                                         <span v-if="item.is_yun" class="tag_box">
-                                            <span v-show="item.is_yun" class="xian" title="运费险">险</span>
+                                            <span v-show="item.is_yun" class="xian" title="运费险" @mouseover="showLayer(item)"
+                                                @mouseout="hideLayer(item)">
+                                                险
+                                            </span>
+                                            <transition name="layer">
+                                                <span v-show="item.is_show_yun" class="layer">
+                                                    运费险
+                                                    <i class="icon-font i-play"></i>
+                                                </span>
+                                            </transition>
                                         </span>
                                     </span>
                                     <!-- 券后价 -->

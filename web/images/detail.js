@@ -86,7 +86,8 @@ function initMid() {
             goods_detail: {},
             goods_list: [],
             goods_id: '541108477389',
-            is_show_totop: false
+            is_show_totop: false,
+            is_show_yun: false
         },
         created: function () {
             this.initGoodsDetail();
@@ -118,6 +119,12 @@ function initMid() {
                 Velocity(document.documentElement, 'scroll', {
                     offset: 0
                 }, 2000);
+            },
+            showLayer: function (obj, type) {
+                obj[type] = true;
+            },
+            hideLayer: function (obj, type) {
+                obj[type] = false;
             }
             // 
         }
@@ -151,9 +158,20 @@ function getGoodsDetail(goods_id) {
 //装填数据
 function loadData(response) {
     if (response.data.goods_detail != null) {
-        js_mid.goods_detail = response.data.goods_detail;
+        // 这里必须先添加属性再另goods_detial = e,否则页面上绑定的v-show/v-if全部失效
+        // 应该是因为先=之后,页面就开始加载,后面新加的属性,就无法生效(为之庆幸)
+        var e = response.data.goods_detail;
+        e['is_show_jin'] = false;
+        e['is_show_ji'] = false;
+        e['is_show_hai'] = false;
+        e['is_show_yun'] = false;
+        js_mid.goods_detail = e;
     }
     if (response.data.goods_list != null) {
-        js_mid.goods_list = response.data.goods_list;
+        for (var i = 0; i < response.data.goods_list.length; ++i) {
+            var e = response.data.goods_list[i];
+            e['is_show_yun'] = false;
+            js_mid.goods_list.push(e);
+        }
     }
 }

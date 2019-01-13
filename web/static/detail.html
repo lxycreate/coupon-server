@@ -104,21 +104,49 @@
                                     <!-- 聚划算 -->
                                     <!-- <span class="ju">聚</span> -->
                                     <!-- 金牌卖家 -->
-                                    <!-- <span class="cover"> -->
-                                    <span v-if="goods_detail.is_jin" class="jin" title="金牌卖家">金</span>
-                                    <!-- </span> -->
+                                    <span v-if="goods_detail.is_gold" class="cover">
+                                        <span class="jin" title="金牌卖家" @mouseover="showLayer(goods_detail,'is_show_jin')"
+                                            @mouseout="hideLayer(goods_detail,'is_show_jin')">金</span>
+                                        <transition name="layer">
+                                            <span v-show="goods_detail.is_show_jin" class="layer jin">
+                                                金牌卖家
+                                                <i class="i_jin icon-font i-play"></i>
+                                            </span>
+                                        </transition>
+                                    </span>
                                     <!-- 极有家 -->
-                                    <!-- <span class="cover"> -->
-                                    <span v-if="goods_detail.is_ji" class="ji" title="极有家">极</span>
-                                    <!-- </span> -->
+                                    <span v-if="goods_detail.is_ji" class="cover">
+                                        <span class="ji" title="极有家" @mouseover="showLayer(goods_detail,'is_show_ji')"
+                                            @mouseout="hideLayer(goods_detail,'is_show_ji')">极</span>
+                                        <transition name="layer">
+                                            <span v-show="goods_detail.is_show_ji" class="layer ji">
+                                                极有家
+                                                <i class="i_ji icon-font i-play"></i>
+                                            </span>
+                                        </transition>
+                                    </span>
                                     <!-- 海淘 -->
-                                    <!-- <span class="cover"> -->
-                                    <span v-if="goods_detail.is_hai" class="hai" title="海淘">海</span>
-                                    <!-- </span> -->
+                                    <span v-if="goods_detail.is_hai" class="cover">
+                                        <span class="hai" title="海淘" @mouseover="showLayer(goods_detail,'is_show_hai')"
+                                            @mouseout="hideLayer(goods_detail,'is_show_hai')">海</span>
+                                        <transition name="layer">
+                                            <span v-show="goods_detail.is_show_hai" class="layer hai">
+                                                海淘
+                                                <i class="i_hai icon-font i-play"></i>
+                                            </span>
+                                        </transition>
+                                    </span>
                                     <!-- 运费险 -->
-                                    <!-- <span class="cover"> -->
-                                    <span v-if="goods_detail.is_yun" class="xian" title="运费险">险</span>
-                                    <!-- </span> -->
+                                    <span v-if="goods_detail.is_yun" class="cover">
+                                        <span class="xian" title="运费险" @mouseover="showLayer(goods_detail,'is_show_yun')"
+                                            @mouseout="hideLayer(goods_detail,'is_show_yun')">险</span>
+                                        <transition name="layer">
+                                            <span v-if="goods_detail.is_show_yun" class="layer xian">
+                                                运费险
+                                                <i class="i_xian icon-font i-play"></i>
+                                            </span>
+                                        </transition>
+                                    </span>
                                 </span>
                             </span>
                             <!-- 券后  -->
@@ -200,7 +228,14 @@
                                                 <span class="num">{{item.goods_price}}</span>
                                             </span>
                                             <span v-if="item.is_yun" class="tag_box">
-                                                <span class="xian" title="运费险">险</span>
+                                                <span class="xian" title="运费险" @mouseover="showLayer(item,'is_show_yun')"
+                                                    @mouseout="hideLayer(item,'is_show_yun')">险</span>
+                                                <transition name="layer">
+                                                    <span v-show="item.is_show_yun" class="layer">
+                                                        运费险
+                                                        <i class="icon-font i-play"></i>
+                                                    </span>
+                                                </transition>
                                             </span>
                                         </span>
                                         <!-- 券后价 -->

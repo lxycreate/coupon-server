@@ -404,6 +404,10 @@ li {
     margin-left: 0;
 }
 
+.mid .detail_box .text_box .special_box .cover {
+    position: relative;
+}
+
 .mid .detail_box .text_box .special_box .cover>span {
     display: block;
     border-radius: 3px;
@@ -418,7 +422,7 @@ li {
 }
 
 .mid .detail_box .text_box .special_box .jin {
-    background-color: #f7aa23;
+    background-color: #efa21b;
 }
 
 .mid .detail_box .text_box .special_box .ji {
@@ -433,6 +437,89 @@ li {
     background-color: #ff0036;
 }
 
+/* 弹层   start */
+.mid .detail_box .text_box .special_box .cover>.layer {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 100%;
+    display: block;
+    width: 75px;
+    height: 26px;
+    margin: -12px 0 0 -102px;
+    line-height: 25px;
+    border-radius: 2px;
+    font-size: 14px;
+    box-shadow: 0 0 2px #999999;
+}
+
+.mid .detail_box .text_box .special_box .cover .layer i {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 0;
+    margin-left: -8px;
+    font-size: 0;
+    border-bottom: 15px solid #ff0036;
+    border-right: 15px solid transparent;
+}
+
+.mid .detail_box .text_box .special_box .cover .layer .i_jin {
+    border-bottom-color: #efa21b;
+}
+
+.mid .detail_box .text_box .special_box .cover .layer .i_ji {
+    border-bottom-color: #2b14d7;
+}
+
+.mid .detail_box .text_box .special_box .cover .layer .i_hai {
+    border-bottom-color: #2878da;
+}
+
+.layer-enter-active {
+    /* animation-timing-function: linear; */
+    animation: layer-in .2s;
+}
+
+.layer-leave-active {
+    /* animation-timing-function: linear; */
+    animation: layer-in .2s reverse;
+}
+
+@keyframes layer-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.test-enter-active {
+    animation: test .2s;
+}
+
+.test-leave-active {
+    animation: test .2s reverse;
+}
+
+@keyframes test {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 弹层   end */
 /* 标签   end */
 /* 券后  start */
 .mid .detail_box .text_box .after_coupon_box {
@@ -1010,7 +1097,35 @@ li {
 }
 
 .mid .recommend_box .item .text_box .org_price .tag_box {
+    position: relative;
     width: 20%;
+}
+
+.mid .recommend_box .item .text_box .org_price .tag_box>.layer {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 100%;
+    display: block;
+    width: 70px;
+    height: 26px;
+    margin: -12px 0 0 -100px;
+    line-height: 25px;
+    border-radius: 2px;
+    font-size: 14px;
+    box-shadow: 0 0 2px #999999;
+}
+
+.mid .recommend_box .item .text_box .org_price .tag_box>.layer i {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 0;
+    margin-left: -8px;
+    font-size: 0;
+    border-bottom: 15px solid #ff0036;
+    border-right: 15px solid transparent;
 }
 
 .mid .recommend_box .item .text_box .org_price .price_title {
