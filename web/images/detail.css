@@ -296,8 +296,8 @@ li {
 .mid .detail_box .text_box {
     display: block;
     width: auto;
-    height: 276px;
-    padding: 12px;
+    height: 280px;
+    padding: 10px;
     margin-left: 10px;
     background-color: #ffffff;
 }
@@ -537,7 +537,7 @@ li {
 /* 优惠券  start */
 .mid .detail_box .text_box .quan_box {
     display: block;
-    margin-top: 80px;
+    margin-top: 90px;
     font-size: 0;
 }
 

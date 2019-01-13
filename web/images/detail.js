@@ -25,7 +25,7 @@ function initScroll() {
         methods: {
             search: function () {
                 if (this.search_word != '') {
-                    window.location.href = "search.html?search=" + encodeURI(this.search_word) + "/";
+                    window.location.href = "search.html?search=" + encodeURI(this.search_word);
                 }
             }
             // 
@@ -86,7 +86,7 @@ function initMid() {
             goods_detail: '',
             goods_list: [],
             goods_id: '541108477389',
-            is_show_totop: true
+            is_show_totop: false
         },
         created: function () {
             this.initGoodsDetail();
@@ -96,18 +96,22 @@ function initMid() {
                 console.log(window.location.search)
                 var temp = decodeURI(window.location.search);
                 if (temp != '' && temp != null) {
-                    this.goods_id = temp.substring(10, temp.length - 1);
+                    this.goods_id = temp.substring(10, temp.length);
                 }
                 console.log(this.goods_id);
-                var url = window.location.href;
-                var valiable = url.split('?')[0];
-                window.history.pushState({}, 0, valiable);
+
+                // 加上这个后退异常
+                // var url = window.location.href;
+                // var valiable = url.split('?')[0];
+                // window.history.pushState({}, 0, valiable);
+                // 加上这个后退异常
+
                 if (this.goods_id != null && this.goods_id != '') {
                     getGoodsDetail(this.goods_id);
                 }
             },
             goToDetail: function (goods_id) {
-                window.location.href = "detail.html?goods_id=" + goods_id + "/";
+                window.location.href = "detail.html?goods_id=" + goods_id;
                 console.log(goods_id);
             },
             scrollToTop: function () {
