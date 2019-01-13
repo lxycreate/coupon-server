@@ -304,11 +304,11 @@ li {
 
 .mid .detail_box .text_box>span {
     display: block;
-    padding: 0 8px;
+    /* padding: 0 8px; */
 }
 
 .mid .detail_box .text_box .sale_dsr_limit {
-    padding: 0 8px 8px 8px;
+    /* padding: 0 8px 8px 8px; */
     /* background-color: #f8f8f8; */
 }
 
