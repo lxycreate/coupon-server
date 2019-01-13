@@ -83,7 +83,7 @@ function initMid() {
     js_mid = new Vue({
         el: '.js_mid',
         data: {
-            goods_detail: '',
+            goods_detail: {},
             goods_list: [],
             goods_id: '541108477389',
             is_show_totop: false

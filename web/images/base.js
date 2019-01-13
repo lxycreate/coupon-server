@@ -645,11 +645,22 @@ function initGoodsList() {
                     offset: 0
                 }, 2000);
             },
+            // 跳转详情页
             goToDetail: function (goods_id) {
                 window.location.href = "detail.html?goods_id=" + goods_id;
                 console.log(goods_id);
+            },
+            // 显示运费险弹窗
+            showLayer: function (item) {
+                item.is_show_yun = true;
+            },
+            // 隐藏运费险弹窗
+            hideLayer: function (item) {
+                item.is_show_yun = false;
             }
+            // 
         }
+        // 
     });
 }
 // 商品列表  结束
@@ -828,7 +839,11 @@ function taskData(response) {
     // 将返回的商品数据装入Vue对象中的数组中,显示到界面中
     if (response.data.goods != null && response.data.goods.length != 0) {
         for (var i = 0; i < response.data.goods.length; ++i) {
-            js_goods_area.list_items.push(response.data.goods[i]);
+            var e = response.data.goods[i];
+            if (e.is_yun == "1") {
+                e['is_show_yun'] = false;
+            }
+            js_goods_area.list_items.push(e);
         }
     }
 }

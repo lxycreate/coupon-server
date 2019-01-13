@@ -888,7 +888,7 @@ li {
 
 .goods_area .goods_list .item .text_box .title:hover {
     cursor: pointer;
-    color: #fa5319;
+    color: #ff4200;
 }
 
 .goods_area .goods_list .item .text_box .title>img {
@@ -921,6 +921,7 @@ li {
 }
 
 .goods_area .goods_list .item .text_box .org_price .tag_box {
+    position: relative;
     width: 20%;
 }
 
@@ -946,6 +947,7 @@ li {
 }
 
 .goods_area .goods_list .item .text_box .tag_box>span {
+    position: relative;
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -956,6 +958,72 @@ li {
     line-height: 18px;
     vertical-align: middle;
     background-color: #ff0036;
+}
+
+/* .goods_area .goods_list .item .text_box .tag_box>span:first-child:hover {
+    cursor: pointer;
+} */
+
+.goods_area .goods_list .item .text_box .tag_box .layer {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 100%;
+    display: block;
+    width: 70px;
+    height: 26px;
+    margin: -12px 0 0 -100px;
+    line-height: 25px;
+    border-radius: 2px;
+    font-size: 14px;
+    box-shadow: 0 0 2px #999999;
+    background-color: #ff0036;
+}
+
+.goods_area .goods_list .item .text_box .tag_box .layer>i {
+    /* position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 100%;
+    margin: -5px 0 0 -10px;
+    color: #ff0036;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: left;
+    transform: rotate(30deg); */
+    position: absolute;
+    top:0;
+    left: 100%;
+    width: 0;
+    height: 0;
+    margin-left: -8px;
+    font-size: 0;
+    border-bottom: 15px solid #ff0036;
+    border-right: 15px solid transparent;
+}
+
+.layer-enter-active {
+    /* animation-timing-function: linear; */
+    animation: layer-in .2s;
+}
+
+.layer-leave-active {
+    /* animation-timing-function: linear; */
+    animation: layer-in .2s reverse;
+}
+
+@keyframes layer-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* 原价   end */
@@ -1024,7 +1092,7 @@ li {
 
 .goods_area .goods_list .item .text_box .quan {
     display: inline-block;
-    color: #fa5319;
+    color: #ff4200;
     text-align: right;
 }
 

@@ -307,10 +307,10 @@ li {
     /* padding: 0 8px; */
 }
 
-.mid .detail_box .text_box .sale_dsr_limit {
-    /* padding: 0 8px 8px 8px; */
-    /* background-color: #f8f8f8; */
-}
+/* .mid .detail_box .text_box .sale_dsr_limit {
+    padding: 0 8px 8px 8px;
+    background-color: #f8f8f8;
+} */
 
 .mid .detail_box .text_box .title_box {
     display: block;
@@ -331,7 +331,7 @@ li {
 
 .mid .detail_box .text_box .title_box .title:hover {
     cursor: pointer;
-    color: #fa5319;
+    color: #ff4200;
 }
 
 .mid .detail_box .text_box .title_box .icon {
@@ -402,6 +402,11 @@ li {
 
 .mid .detail_box .text_box .special_box>span:first-child {
     margin-left: 0;
+}
+
+.mid .detail_box .text_box .special_box .cover>span {
+    display: block;
+    border-radius: 3px;
 }
 
 .mid .detail_box .text_box .special_box .qiang {
@@ -972,7 +977,7 @@ li {
 
 .mid .recommend_box .item .text_box .title:hover {
     cursor: pointer;
-    color: #fa5319;
+    color: #ff4200;
 }
 
 .mid .recommend_box .item .text_box .title>img {
@@ -1108,7 +1113,7 @@ li {
 
 .mid .recommend_box .item .text_box .quan {
     display: inline-block;
-    color: #fa5319;
+    color: #ff4200;
     text-align: right;
 }
 
