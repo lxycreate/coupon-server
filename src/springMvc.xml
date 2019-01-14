@@ -28,5 +28,5 @@
     <!--Spring 3.0.x中使用了annotation-driven后，缺省使用DefaultAnnotationHandlerMapping 来注册handler method和request的mapping关系-->
     <!--不加mvc:annotation-driven匹配不到接口-->
     <!-- 开启注解扫描 -->
-    <mvc:annotation-driven/>
+    <!--<mvc:annotation-driven/>-->
 </beans>
