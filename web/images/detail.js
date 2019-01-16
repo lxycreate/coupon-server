@@ -83,6 +83,7 @@ function initMid() {
     js_mid = new Vue({
         el: '.js_mid',
         data: {
+            goods_pic: '/images/default.gif',
             goods_detail: {},
             goods_list: [],
             goods_id: '541108477389',
@@ -166,6 +167,7 @@ function loadData(response) {
         e['is_show_hai'] = false;
         e['is_show_yun'] = false;
         js_mid.goods_detail = e;
+        js_mid.goods_pic = e.goods_pic;
     }
     if (response.data.goods_list != null) {
         for (var i = 0; i < response.data.goods_list.length; ++i) {
