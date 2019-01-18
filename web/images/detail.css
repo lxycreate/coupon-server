@@ -478,12 +478,10 @@ li {
 }
 
 .layer-enter-active {
-    /* animation-timing-function: linear; */
     animation: layer-in .2s;
 }
 
 .layer-leave-active {
-    /* animation-timing-function: linear; */
     animation: layer-in .2s reverse;
 }
 
