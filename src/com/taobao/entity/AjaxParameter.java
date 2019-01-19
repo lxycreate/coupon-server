@@ -128,147 +128,147 @@ public class AjaxParameter {
         this.request = request;
     }
 
-//    public Integer getPage_num() {
-//        return page_num;
-//    }
-//
-//    public void setPage_num(Integer page_num) {
-//        this.page_num = page_num;
-//    }
-//
-//    public Integer getPage_size() {
-//        return page_size;
-//    }
-//
-//    public void setPage_size(Integer page_size) {
-//        this.page_size = page_size;
-//    }
-//
-//    public Integer getStart_column() {
-//        return start_column;
-//    }
-//
-//    public void setStart_column(Integer start_column) {
-//        this.start_column = start_column;
-//    }
-//
-//    public Integer getEnd_column() {
-//        return end_column;
-//    }
-//
-//    public void setEnd_column(Integer end_column) {
-//        this.end_column = end_column;
-//    }
-//
-//    public String getWord() {
-//        return word;
-//    }
-//
-//    public void setWord(String word) {
-//        this.word = word;
-//    }
-//
-//    public String getSort() {
-//        return sort;
-//    }
-//
-//    public void setSort(String sort) {
-//        this.sort = sort;
-//    }
-//
-//    public Integer getGoods_cid() {
-//        return goods_cid;
-//    }
-//
-//    public void setGoods_cid(Integer goods_cid) {
-//        this.goods_cid = goods_cid;
-//    }
-//
-//    public Integer getIs_qiang() {
-//        return is_qiang;
-//    }
-//
-//    public void setIs_qiang(Integer is_qiang) {
-//        this.is_qiang = is_qiang;
-//    }
-//
-//    public Integer getIs_ju() {
-//        return is_ju;
-//    }
-//
-//    public void setIs_ju(Integer is_ju) {
-//        this.is_ju = is_ju;
-//    }
-//
-//    public Integer getIs_tmall() {
-//        return is_tmall;
-//    }
-//
-//    public void setIs_tmall(Integer is_tmall) {
-//        this.is_tmall = is_tmall;
-//    }
-//
-//    public Integer getIs_gold() {
-//        return is_gold;
-//    }
-//
-//    public void setIs_gold(Integer is_gold) {
-//        this.is_gold = is_gold;
-//    }
-//
-//    public Integer getIs_ji() {
-//        return is_ji;
-//    }
-//
-//    public void setIs_ji(Integer is_ji) {
-//        this.is_ji = is_ji;
-//    }
-//
-//    public Integer getIs_hai() {
-//        return is_hai;
-//    }
-//
-//    public void setIs_hai(Integer is_hai) {
-//        this.is_hai = is_hai;
-//    }
-//
-//    public Integer getIs_yun() {
-//        return is_yun;
-//    }
-//
-//    public void setIs_yun(Integer is_yun) {
-//        this.is_yun = is_yun;
-//    }
-//
-//    public Integer getSale_num() {
-//        return sale_num;
-//    }
-//
-//    public void setSale_num(Integer sale_num) {
-//        this.sale_num = sale_num;
-//    }
-//
-//    public Double getDsr() {
-//        return dsr;
-//    }
-//
-//    public void setDsr(Double dsr) {
-//        this.dsr = dsr;
-//    }
-//
-//    public Double getStart_price() {
-//        return start_price;
-//    }
-//
-//    public void setStart_price(Double start_price) {
-//        this.start_price = start_price;
-//    }
-//
-//    public Double getEnd_price() {
-//        return end_price;
-//    }
-//
-//    public void setEnd_price(Double end_price) {
-//        this.end_price = end_price;
-//    }
+    public Integer getPage_num() {
+        return page_num;
+    }
+
+    public void setPage_num(Integer page_num) {
+        this.page_num = page_num;
+    }
+
+    public Integer getPage_size() {
+        return page_size;
+    }
+
+    public void setPage_size(Integer page_size) {
+        this.page_size = page_size;
+    }
+
+    public Integer getStart_column() {
+        return start_column;
+    }
+
+    public void setStart_column(Integer start_column) {
+        this.start_column = start_column;
+    }
+
+    public Integer getEnd_column() {
+        return end_column;
+    }
+
+    public void setEnd_column(Integer end_column) {
+        this.end_column = end_column;
+    }
+
+    public String getWord() {
+        return word;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+
+    public String getSort() {
+        return sort;
+    }
+
+    public void setSort(String sort) {
+        this.sort = sort;
+    }
+
+    public Integer getGoods_cid() {
+        return goods_cid;
+    }
+
+    public void setGoods_cid(Integer goods_cid) {
+        this.goods_cid = goods_cid;
+    }
+
+    public Integer getIs_qiang() {
+        return is_qiang;
+    }
+
+    public void setIs_qiang(Integer is_qiang) {
+        this.is_qiang = is_qiang;
+    }
+
+    public Integer getIs_ju() {
+        return is_ju;
+    }
+
+    public void setIs_ju(Integer is_ju) {
+        this.is_ju = is_ju;
+    }
+
+    public Integer getIs_tmall() {
+        return is_tmall;
+    }
+
+    public void setIs_tmall(Integer is_tmall) {
+        this.is_tmall = is_tmall;
+    }
+
+    public Integer getIs_gold() {
+        return is_gold;
+    }
+
+    public void setIs_gold(Integer is_gold) {
+        this.is_gold = is_gold;
+    }
+
+    public Integer getIs_ji() {
+        return is_ji;
+    }
+
+    public void setIs_ji(Integer is_ji) {
+        this.is_ji = is_ji;
+    }
+
+    public Integer getIs_hai() {
+        return is_hai;
+    }
+
+    public void setIs_hai(Integer is_hai) {
+        this.is_hai = is_hai;
+    }
+
+    public Integer getIs_yun() {
+        return is_yun;
+    }
+
+    public void setIs_yun(Integer is_yun) {
+        this.is_yun = is_yun;
+    }
+
+    public Integer getSale_num() {
+        return sale_num;
+    }
+
+    public void setSale_num(Integer sale_num) {
+        this.sale_num = sale_num;
+    }
+
+    public Double getDsr() {
+        return dsr;
+    }
+
+    public void setDsr(Double dsr) {
+        this.dsr = dsr;
+    }
+
+    public Double getStart_price() {
+        return start_price;
+    }
+
+    public void setStart_price(Double start_price) {
+        this.start_price = start_price;
+    }
+
+    public Double getEnd_price() {
+        return end_price;
+    }
+
+    public void setEnd_price(Double end_price) {
+        this.end_price = end_price;
+    }
 }
