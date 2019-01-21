@@ -61,46 +61,58 @@ public class AjaxParameter {
         if (request.getParameter("sort") != null) {
             sort = request.getParameter("sort");
         }
-        if (request.getParameter("goods_cid") != null) {
+        if (request.getParameter("goods_cid") != null && checkIsInt(request.getParameter("goods_cid"))) {
             goods_cid = Integer.parseInt(request.getParameter("goods_cid"));
+            if (goods_cid < 0 || goods_cid > 11) {
+                goods_cid = null;
+            }
         }
-        if (request.getParameter("is_qiang") != null) {
+        if (request.getParameter("is_qiang") != null && checkZeroOrOne(request.getParameter("is_qiang"))) {
             is_qiang = Integer.parseInt(request.getParameter("is_qiang"));
         }
-        if (request.getParameter("is_ju") != null) {
+        if (request.getParameter("is_ju") != null && checkZeroOrOne(request.getParameter("is_ju"))) {
             is_ju = Integer.parseInt(request.getParameter("is_ju"));
         }
-        if (request.getParameter("is_tmall") != null) {
+        if (request.getParameter("is_tmall") != null && checkZeroOrOne(request.getParameter("is_tmall"))) {
             is_tmall = Integer.parseInt(request.getParameter("is_tmall"));
         }
-        if (request.getParameter("is_gold") != null) {
+        if (request.getParameter("is_gold") != null && checkZeroOrOne(request.getParameter("is_gold"))) {
             is_gold = Integer.parseInt(request.getParameter("is_gold"));
         }
-        if (request.getParameter("is_ji") != null) {
+        if (request.getParameter("is_ji") != null && checkZeroOrOne(request.getParameter("is_ji"))) {
             is_ji = Integer.parseInt(request.getParameter("is_ji"));
         }
-        if (request.getParameter("is_hai") != null) {
+        if (request.getParameter("is_hai") != null && checkZeroOrOne(request.getParameter("is_hai"))) {
             is_hai = Integer.parseInt(request.getParameter("is_hai"));
         }
-        if (request.getParameter("is_yun") != null) {
+        if (request.getParameter("is_yun") != null && checkZeroOrOne(request.getParameter("is_yun"))) {
             is_yun = Integer.parseInt(request.getParameter("is_yun"));
         }
-        if (request.getParameter("sale_num") != null) {
+        if (request.getParameter("sale_num") != null && checkIsInt(request.getParameter("sale_num"))) {
             sale_num = Integer.parseInt(request.getParameter("sale_num"));
         }
-        if (request.getParameter("dsr") != null) {
+        if (request.getParameter("dsr") != null && checkIsDouble(request.getParameter("dsr"))) {
             dsr = Double.parseDouble(request.getParameter("dsr"));
+            if (dsr > 5.0) {
+                dsr = 5.0;
+            }
         }
-        if (request.getParameter("start_price") != null) {
+        if (request.getParameter("start_price") != null && checkIsDouble(request.getParameter("start_price"))) {
             start_price = Double.parseDouble(request.getParameter("start_price"));
+            if (start_price < 0) {
+                start_price = 0.1;
+            }
         }
-        if (request.getParameter("end_price") != null) {
+        if (request.getParameter("end_price") != null && checkIsDouble(request.getParameter("end_price"))) {
             end_price = Double.parseDouble(request.getParameter("end_price"));
+            if (end_price < 0) {
+                end_price = 10000.0;
+            }
         }
-        if (request.getParameter("page_num") != null) {
+        if (request.getParameter("page_num") != null && checkIsInt(request.getParameter("page_num"))) {
             page_num = Integer.parseInt(request.getParameter("page_num"));
         }
-        if (request.getParameter("page_size") != null) {
+        if (request.getParameter("page_size") != null && checkIsInt(request.getParameter("page_size"))) {
             page_size = Integer.parseInt(request.getParameter("page_size"));
             if (page_size > 100) {
                 page_size = 100;
@@ -112,6 +124,34 @@ public class AjaxParameter {
     public void initColumn() {
         start_column = (page_num - 1) * page_size;
         end_column = page_size;
+    }
+
+    // 检查是否为0或1
+    public Boolean checkZeroOrOne(String s) {
+        if (s.equals("0") || s.equals("1")) {
+            return true;
+        }
+        return false;
+    }
+
+    // 检查是否为整数
+    public Boolean checkIsInt(String s) {
+        try {
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    // 检查是否为小数
+    public Boolean checkIsDouble(String s) {
+        try {
+            Double.parseDouble(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     public HttpServletRequest getRequest() {
@@ -126,32 +166,8 @@ public class AjaxParameter {
         return page_num;
     }
 
-    public void setPage_num(Integer page_num) {
-        this.page_num = page_num;
-    }
-
     public Integer getPage_size() {
         return page_size;
-    }
-
-    public void setPage_size(Integer page_size) {
-        this.page_size = page_size;
-    }
-
-    public Integer getStart_column() {
-        return start_column;
-    }
-
-    public void setStart_column(Integer start_column) {
-        this.start_column = start_column;
-    }
-
-    public Integer getEnd_column() {
-        return end_column;
-    }
-
-    public void setEnd_column(Integer end_column) {
-        this.end_column = end_column;
     }
 
     public String getWord() {
@@ -168,101 +184,5 @@ public class AjaxParameter {
 
     public void setSort(String sort) {
         this.sort = sort;
-    }
-
-    public Integer getGoods_cid() {
-        return goods_cid;
-    }
-
-    public void setGoods_cid(Integer goods_cid) {
-        this.goods_cid = goods_cid;
-    }
-
-    public Integer getIs_qiang() {
-        return is_qiang;
-    }
-
-    public void setIs_qiang(Integer is_qiang) {
-        this.is_qiang = is_qiang;
-    }
-
-    public Integer getIs_ju() {
-        return is_ju;
-    }
-
-    public void setIs_ju(Integer is_ju) {
-        this.is_ju = is_ju;
-    }
-
-    public Integer getIs_tmall() {
-        return is_tmall;
-    }
-
-    public void setIs_tmall(Integer is_tmall) {
-        this.is_tmall = is_tmall;
-    }
-
-    public Integer getIs_gold() {
-        return is_gold;
-    }
-
-    public void setIs_gold(Integer is_gold) {
-        this.is_gold = is_gold;
-    }
-
-    public Integer getIs_ji() {
-        return is_ji;
-    }
-
-    public void setIs_ji(Integer is_ji) {
-        this.is_ji = is_ji;
-    }
-
-    public Integer getIs_hai() {
-        return is_hai;
-    }
-
-    public void setIs_hai(Integer is_hai) {
-        this.is_hai = is_hai;
-    }
-
-    public Integer getIs_yun() {
-        return is_yun;
-    }
-
-    public void setIs_yun(Integer is_yun) {
-        this.is_yun = is_yun;
-    }
-
-    public Integer getSale_num() {
-        return sale_num;
-    }
-
-    public void setSale_num(Integer sale_num) {
-        this.sale_num = sale_num;
-    }
-
-    public Double getDsr() {
-        return dsr;
-    }
-
-    public void setDsr(Double dsr) {
-        this.dsr = dsr;
-    }
-
-    public Double getStart_price() {
-        return start_price;
-    }
-
-    public void setStart_price(Double start_price) {
-        this.start_price = start_price;
-    }
-
-    public Double getEnd_price() {
-        return end_price;
-    }
-
-    public void setEnd_price(Double end_price) {
-        this.end_price = end_price;
     }
 }
