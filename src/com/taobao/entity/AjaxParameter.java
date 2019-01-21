@@ -60,6 +60,9 @@ public class AjaxParameter {
         }
         if (request.getParameter("sort") != null) {
             sort = request.getParameter("sort");
+            if(!sort.equals("goods_price asc")&&!sort.equals("goods_price desc")&&!sort.equals("goods_sale desc")){
+                sort = null;
+            }
         }
         if (request.getParameter("goods_cid") != null && checkIsInt(request.getParameter("goods_cid"))) {
             goods_cid = Integer.parseInt(request.getParameter("goods_cid"));
