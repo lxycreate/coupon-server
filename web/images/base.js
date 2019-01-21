@@ -9,6 +9,8 @@ var js_filter_container;
 var js_sort_way;
 //商品列表
 var js_goods_area;
+// 请求错误计数器
+var error_count = 0;
 
 //Ajax获取数所需的参数
 var search_data = {};
@@ -814,6 +816,10 @@ function getGoods() {
         taskData(response);
         // console.log(response);
     }).catch(function (error) {
+        error_count++;
+        if (error_count >= 3) {
+            js_goods_area.can_ajax = false;
+        }
         closeLoading();
         console.log('请求商品数据出错: ' + error);
     });
