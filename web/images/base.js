@@ -812,7 +812,7 @@ function getGoods() {
     }).then(function (response) {
         //处理返回的数据
         taskData(response);
-        console.log(response);
+        // console.log(response);
     }).catch(function (error) {
         closeLoading();
         console.log('请求商品数据出错: ' + error);

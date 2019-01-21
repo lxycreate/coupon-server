@@ -6,13 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobao/dao/GoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobao/dao/GoodsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobao/entity/AjaxParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobao/entity/AjaxParameter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/taobao/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/taobao/service/impl/GoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapper/goodsMapper.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,10 +93,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/taobao/service/impl/GoodsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
+            <state relative-caret-position="133">
               <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
               <folding>
                 <element signature="e#3036#3037#0" expanded="true" />
@@ -112,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/taobao/entity/AjaxParameter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3040">
-              <caret line="164" column="25" selection-start-line="164" selection-start-column="18" selection-end-line="164" selection-end-column="25" />
+            <state relative-caret-position="152">
+              <caret line="104" column="34" lean-forward="true" selection-start-line="104" selection-start-column="34" selection-end-line="104" selection-end-column="34" />
               <folding>
                 <element signature="e#4366#4367#0" expanded="true" />
                 <element signature="e#4397#4398#0" expanded="true" />
@@ -1470,12 +1464,12 @@
       <workItem from="1547804051126" duration="4095000" />
       <workItem from="1547860356217" duration="3110000" />
       <workItem from="1547957385066" duration="5236000" />
-      <workItem from="1548031212551" duration="1439000" />
+      <workItem from="1548031212551" duration="1745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156701000" />
+    <option name="totallyTimeSpent" value="157007000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1488,6 +1482,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.2077607" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1499,7 +1494,7 @@
       <window_info id="设计师" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291815" />
-      <window_info active="true" anchor="bottom" x="335" y="406" width="1237" height="220" id="Run" order="2" sideWeight="0.4987874" visible="true" weight="0.52846974" />
+      <window_info active="true" anchor="bottom" x="335" y="406" width="1237" height="220" id="Run" order="2" sideWeight="0.4987874" visible="true" weight="0.33274022" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1712,21 +1707,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/taobao/service/impl/GoodsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-          <folding>
-            <element signature="e#3036#3037#0" expanded="true" />
-            <element signature="e#3063#3064#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/taobao/entity/AjaxParameter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3040">
-          <caret line="164" column="25" selection-start-line="164" selection-start-column="18" selection-end-line="164" selection-end-column="25" />
+        <state relative-caret-position="152">
+          <caret line="104" column="34" lean-forward="true" selection-start-line="104" selection-start-column="34" selection-end-line="104" selection-end-column="34" />
           <folding>
             <element signature="e#4366#4367#0" expanded="true" />
             <element signature="e#4397#4398#0" expanded="true" />
@@ -1800,6 +1784,17 @@
             <element signature="e#6964#6965#0" expanded="true" />
             <element signature="e#7014#7015#0" expanded="true" />
             <element signature="e#7056#7057#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/taobao/service/impl/GoodsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+          <folding>
+            <element signature="e#3036#3037#0" expanded="true" />
+            <element signature="e#3063#3064#0" expanded="true" />
           </folding>
         </state>
       </provider>
