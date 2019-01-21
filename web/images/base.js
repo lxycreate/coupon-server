@@ -785,8 +785,7 @@ function loadGoods(pro_name) {
     }
     setTimeout(function () {
         getGoods();
-        js_goods_area.can_ajax = true; //可以加载下一页
-    }, 400);
+    }, 300);
 }
 
 //加载下一页
@@ -800,9 +799,8 @@ function loadNextPage() {
     search_data['page_num'] = js_goods_area.page_num + 1;
     setTimeout(function () {
         getGoods();
-        js_goods_area.can_ajax = true; //可以加载下一页
         js_goods_area.page_num = js_goods_area.page_num + 1;
-    }, 800);
+    }, 600);
 }
 
 // 获取商品
@@ -814,6 +812,7 @@ function getGoods() {
     }).then(function (response) {
         //处理返回的数据
         taskData(response);
+        js_goods_area.can_ajax = true; //可以加载下一页
         // console.log(response);
     }).catch(function (error) {
         error_count++;
@@ -840,7 +839,7 @@ function taskData(response) {
         // 保证加载动画结束后才出现"没有更多了..."提示
         setTimeout(function () {
             js_goods_area.is_more_goods = false;
-        }, 400);
+        }, 300);
     }
     // 将返回的商品数据装入Vue对象中的数组中,显示到界面中
     if (response.data.goods != null && response.data.goods.length != 0) {
@@ -867,7 +866,7 @@ function closeLoading() {
         js_goods_area.is_loading = false;
         js_filter_container.is_loading = false;
         js_goods_area.is_loading_more = false;
-    }, 400);
+    }, 300);
 }
 
 //判断是否是数字
