@@ -118,7 +118,7 @@
         <if test="end_price != null">
             and after_coupon &lt;=#{end_price}
         </if>
-        <if test="sort != null and sort != 'all' and sort_word != null">
+        <if test="sort != null and sort != 'all'">
             order by ${sort}
         </if>
         <if test="start_column != null and end_column != null">
