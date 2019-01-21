@@ -9,7 +9,7 @@ import java.util.Map;
 public interface GoodsDao {
 
     // 数据总条数
-    public Integer getGoodsNum();
+    public Integer getGoodsNum(AjaxParameter pars);
 
     // 全网商品,获取数据
     public List<SqlGoods> getGoods(AjaxParameter pars);

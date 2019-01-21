@@ -35,7 +35,15 @@ public class GoodsServiceImpl implements GoodsService {
     // 全网商品，获取数据
     @Override
     public GoodsJson getGoods(AjaxParameter pars) {
-        List<SqlGoods> sql_goods = goods_dao.getGoods(pars);
+        List<SqlGoods> sql_goods = new ArrayList<>();
+        Integer goods_count = goods_dao.getGoodsNum(pars);
+        Integer page_count = goods_count / pars.getPage_size();
+        if (goods_count % pars.getPage_size() != 0) {
+            page_count = page_count + 1;
+        }
+        if (pars.getPage_num() <= page_count) {
+            sql_goods = goods_dao.getGoods(pars);
+        }
         GoodsJson temp_json = new GoodsJson();
         temp_json.setGoods(transFormList(sql_goods));
         return temp_json;
@@ -58,26 +66,26 @@ public class GoodsServiceImpl implements GoodsService {
     public GoodsDetailJson getGoodsDetail(String goods_id) {
         GoodsDetailJson temp_json = new GoodsDetailJson();
         Goods temp_goods = new Goods();
-        //商品详情
-        temp_goods.transForm(goods_dao.getGoodsDetail(goods_id).get(0));
-        temp_json.setGoods_detail(temp_goods);
+        if (temp_goods != null) {
+            //商品详情
+            temp_goods.transForm(goods_dao.getGoodsDetail(goods_id).get(0));
+            temp_json.setGoods_detail(temp_goods);
 
-        Integer cid = temp_goods.getCid();
-        //该分类下商品总数
-        Integer temp_count = count_list.get(cid - 1);
-        //随机从哪行开始取推荐商品
-        Double ran = (Math.random() * temp_count);
-        Integer temp_start = ran.intValue();
-        System.out.println("总数:" + temp_count);
-        System.out.println("开始位置:" + temp_start);
-        //随机取4条推荐商品
-        Map<String, Object> temp_map = new HashMap<String, Object>();
-        temp_map.put("goods_id", goods_id);
-        temp_map.put("cid", cid);
-        temp_map.put("start", temp_start);
-        temp_map.put("num", 4);
-        List<SqlGoods> tmep_sql_goods = goods_dao.getRecommendList(temp_map);
-        temp_json.setGoods_list(transFormList(tmep_sql_goods));
+            Integer cid = temp_goods.getCid();
+            //该分类下商品总数
+            Integer temp_count = count_list.get(cid - 1);
+            //随机从哪行开始取推荐商品
+            Double ran = (Math.random() * temp_count);
+            Integer temp_start = ran.intValue();
+            //随机取4条推荐商品
+            Map<String, Object> temp_map = new HashMap<String, Object>();
+            temp_map.put("goods_id", goods_id);
+            temp_map.put("cid", cid);
+            temp_map.put("start", temp_start);
+            temp_map.put("num", 4);
+            List<SqlGoods> temp_sql_goods = goods_dao.getRecommendList(temp_map);
+            temp_json.setGoods_list(transFormList(temp_sql_goods));
+        }
         return temp_json;
     }
 

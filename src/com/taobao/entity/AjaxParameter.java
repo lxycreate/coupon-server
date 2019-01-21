@@ -8,11 +8,9 @@ public class AjaxParameter {
     private Integer page_num;   //第几页
     private Integer page_size; //每页数据量
     private Integer start_column;//起始行数
-    private Integer end_column;  //结束行数
+    private Integer end_column;  //取多少条
     private String word;  //搜索内容
     private String sort;   //排序
-    private String sort_word; //排序字段
-    private String sort_type; //排序方式asc or desc
     private Integer goods_cid;      //类别
     private Integer is_qiang; //淘抢购
     private Integer is_ju;    //聚划算
@@ -35,14 +33,12 @@ public class AjaxParameter {
 
     // 初始化参数
     public void initParameters() {
-        page_num = null;
-        page_size = null;
-        start_column = null;
-        end_column = null;
+        page_num = 1;
+        page_size = 20;
+        start_column = 0;
+        end_column = 20;
         word = null;
         sort = null;
-        sort_word = null;
-        sort_type = null;
         goods_cid = null;
         is_qiang = null;
         is_ju = null;
@@ -64,11 +60,6 @@ public class AjaxParameter {
         }
         if (request.getParameter("sort") != null) {
             sort = request.getParameter("sort");
-            String s[] = sort.split(" ");
-            if(s.length==2){
-                sort_word = s[0];
-                sort_type = s[1];
-            }
         }
         if (request.getParameter("goods_cid") != null) {
             goods_cid = Integer.parseInt(request.getParameter("goods_cid"));
@@ -111,6 +102,9 @@ public class AjaxParameter {
         }
         if (request.getParameter("page_size") != null) {
             page_size = Integer.parseInt(request.getParameter("page_size"));
+            if (page_size > 100) {
+                page_size = 100;
+            }
         }
     }
 
