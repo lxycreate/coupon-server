@@ -323,14 +323,17 @@ function initCatalogBox() {
                         this.filter_items[1].is_select = false;
                         this.filter_items[1].is_small_select = false;
                         // this.filter_value = "-2";
-                        deleteProperty('is_ju');
+                        if (search_data.hasOwnProperty('is_ju')) {
+                            delete search_data['is_ju'];
+                        }
                     }
                     if (index == 2 && this.filter_items[0].is_select) {
                         //取消选中"淘抢购"
                         this.filter_items[0].is_select = false;
                         this.filter_items[0].is_small_select = false;
-                        // this.filter_value = "-1";
-                        deleteProperty('is_qiang');
+                        if (search_data.hasOwnProperty('is_qiang')) {
+                            delete search_data['is_qiang'];
+                        }
                     }
                 }
                 //向search_data中删除或添加参数
