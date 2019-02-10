@@ -49,7 +49,6 @@ li {
     top: 0;
     padding: 10px 0 15px 0;
     z-index: 100;
-    box-shadow: 0 3px 2px #dddddd;
 }
 
 .header .logo_box {
@@ -540,10 +539,15 @@ li {
         z-index: 999;
         width: 300px;
         height: 100%;
-        overflow: auto;
-        margin-left: 5px;
-        box-shadow: -2px 0 2px #eeeeee;
+        padding-bottom: 0;
         background-color: #ffffff;
+    }
+
+    .filter_box .filter_container .btn_top_container {
+        position: relative;
+        width: 100%;
+        height: calc(100% - 50px);
+        overflow: auto;
     }
 
     .filter_box .filter_container .name {
@@ -600,7 +604,7 @@ li {
 
     .filter_box .more_filter ul {
         display: block;
-        padding: 0 0 60px 15px;
+        padding: 0 0 15px 15px;
     }
 
     .filter_box .more_filter ul li {
@@ -676,19 +680,16 @@ li {
         margin-left: 0;
     }
 
-    .filter_box .confirm_btn {
-        position: fixed;
-        z-index: 999;
+    .filter_box .filter_container .btn_bottom_container {
+        position: absolute;
         top: 100%;
-        left: 100%;
-        width: 298px;
+        margin-top: -50px;
+        width: 100%;
         height: 50px;
-        margin: -50px 0 0 5px;
         text-align: right;
-        background-color: #ffffff;
     }
 
-    .filter_box .confirm_btn .confirm {
+    .filter_box .btn_bottom_container .confirm {
         display: inline-block !important;
         width: 80px;
         height: 30px;
@@ -702,7 +703,7 @@ li {
         background-color: #fa5319;
     }
 
-    .filter_box .confirm_btn .confirm:first-child {
+    .filter_box .btn_bottom_container .confirm:first-child {
         margin-left: 0;
         background-color: #666666;
     }
@@ -775,7 +776,6 @@ li {
     display: block;
     width: 95%;
     margin: auto;
-    /* transition: all .3s ease; */
     background-color: #ffffff;
 }
 
@@ -839,7 +839,6 @@ li {
     padding: 5px;
     color: #ffffff;
     font-size: 14px;
-    /* border-radius: 3px; */
     background-color: #7144d5;
     background: -webkit-linear-gradient(right, #63aff9, #8b16f5);
     background: -o-linear-gradient(right, #63aff9, #8b16f5);
@@ -854,7 +853,6 @@ li {
     padding: 5px;
     color: #ffffff;
     font-size: 14px;
-    /* border-radius: 3px; */
     background-color: #e63140;
     background: -webkit-linear-gradient(right, #f58b07, #f51616);
     background: -o-linear-gradient(right, #f58b07, #f51616);
@@ -909,7 +907,6 @@ li {
 
 .goods_area .goods_list .item .text_box .org_price>span {
     display: inline-block;
-    /* vertical-align: middle; */
 }
 
 .goods_area .goods_list .item .text_box .org_price .box>span {
@@ -960,10 +957,6 @@ li {
     background-color: #ff0036;
 }
 
-/* .goods_area .goods_list .item .text_box .tag_box>span:first-child:hover {
-    cursor: pointer;
-} */
-
 .goods_area .goods_list .item .text_box .tag_box .layer {
     position: absolute;
     z-index: 99;
@@ -981,20 +974,8 @@ li {
 }
 
 .goods_area .goods_list .item .text_box .tag_box .layer>i {
-    /* position: absolute;
-    display: block;
-    width: 20px;
-    height: 20px;
-    top: 50%;
-    left: 100%;
-    margin: -5px 0 0 -10px;
-    color: #ff0036;
-    font-size: 18px;
-    line-height: 20px;
-    text-align: left;
-    transform: rotate(30deg); */
     position: absolute;
-    top:0;
+    top: 0;
     left: 100%;
     width: 0;
     height: 0;
@@ -1312,7 +1293,6 @@ li {
 }
 
 /* -----------------------------------------------商品   结束----------------------------------- */
-
 
 .footer {
     position: relative;

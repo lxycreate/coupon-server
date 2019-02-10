@@ -514,9 +514,6 @@ function initSortBtn() {
                     this.stopSideAnimate();
                     this.is_show_shade = true;
                     this.is_show_side = true;
-                    Velocity(this.$refs.js_confirm_btn, {
-                        'margin-left': '-298px'
-                    });
                     Velocity(js_filter_container.$refs.js_filter_container, {
                         'margin-left': '-300px'
                     });
@@ -529,13 +526,8 @@ function initSortBtn() {
                     this.stopSideAnimate();
                     this.is_show_side = false;
                     this.is_show_shade = false;
-                    Velocity(this.$refs.js_confirm_btn, {
-                        'margin-left': '5px'
-                        // 必须带px单位
-                        // 设置为5px而不是0px是为了消除box-shadow的影响(侧边显示一些颜色块)
-                    });
                     Velocity(js_filter_container.$refs.js_filter_container, {
-                        'margin-left': '5px'
+                        'margin-left': '0px'
                         // 同上
                     });
                     console.log('隐藏侧边栏');
@@ -551,13 +543,11 @@ function initSortBtn() {
             },
             // 停止侧边动画(防止操作频率过快导致异常)
             stopSideAnimate: function () {
-                Velocity(this.$refs.js_confirm_btn, 'stop');
                 Velocity(js_filter_container.$refs.js_filter_container, 'stop');
             },
             // 切换排序方式
             changeSortWay: function (index, way) {
                 this.changeSelectedColor(index);
-
                 addProperty('sort', way);
             },
             // 改变被选中的排序按钮的颜色
@@ -570,14 +560,6 @@ function initSortBtn() {
                     this.sort_item[i].is_select = false;
                 }
                 this.sort_item[index].is_select = true;
-            },
-            // 清空
-            clear: function () {
-                js_filter_container.clear();
-            },
-            // 确认
-            confirm: function () {
-                js_filter_container.confirm();
             }
             // 事件 end
         }
@@ -886,9 +868,9 @@ function isNumber(val) {
 function onlyPositiveInt(event) {
     event.value = event.value.replace(/\D/g, '')
 }
+
 //0-5
 function zeroToFive(event) {
-
     if (event.value[0] == '.') {
         event.value = event.value.substr(1);
     }

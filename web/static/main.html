@@ -78,67 +78,73 @@
             <!-- 筛选 START-->
             <div class="filter_box">
                 <div class="filter_container js_filter_container" ref="js_filter_container" v-cloak>
+                    <div class="btn_top_container">
+                        <!-- 分类选择  START -->
+                        <div class="select_box js_catalog_box">
+                            <span class="name"> {{catalog_name}} </span>
+                            <ul>
+                                <!--  -->
+                                <li v-for="item in catalog_items" v-bind:class="{catalog_btn_bg: item.is_select}"
+                                    v-on:click="selectCatalogItem(item.value)">
+                                    <a>{{item.name}}</a>
+                                </li>
+                                <!--  -->
+                            </ul>
+                        </div>
+                        <!-- 分类选择  END -->
+                        <!-- 多条件筛选   START -->
+                        <div class="multi_select_box">
+                            <span class="name">{{filter_name}}</span>
+                            <ul>
+                                <!-- 分割线 -->
+                                <li v-for="item in filter_items" v-on:click="multiSelect(item.index)" v-bind:class="{is_multi_selected: item.is_small_select}">
+                                    <a type="radio">
+                                        <span v-bind:class="{multi_selected: item.is_select}">
+                                            <i class="icon-font i-tick"></i>
+                                        </span>
+                                        {{item.name}}
+                                    </a>
+                                </li>
+                                <!-- 分割线 -->
+                            </ul>
+                        </div>
+                        <!-- 多条件筛选   END -->
+                        <!-- 更多筛选条件   START -->
+                        <div class="more_filter">
+                            <span class="name">{{more_filter_name}}</span>
+                            <ul>
+                                <li class="sale">
+                                    <span>{{sale_item.name}}</span>
+                                    <input maxlength="8" v-model="sale_item.value" v-bind:class="{input_error:sale_item.is_error}"
+                                        onkeyup="onlyPositiveInt(this)">
+                                </li>
+                                <li class="score">
+                                    <span>{{score_item.name}}</span>
+                                    <input maxlength="3" v-model="score_item.value" v-bind:class="{input_error:score_item.is_error}"
+                                        onkeyup="zeroToFive(this)">
+                                    <span class="tip">{{score_item.tip}}</span>
+                                </li>
+                                <li class="quan">
+                                    <span>{{quan_item.name}}</span>
+                                    <input maxlength="8" class="one" v-model="quan_item.start_price" v-bind:class="{input_error:quan_item.is_start_error}"
+                                        placeholder="最低价" onkeyup="onlyPositiveInt(this)">
+                                    <span class="split">—</span>
+                                    <input maxlength="8" class="two" v-model="quan_item.end_price" v-bind:class="{input_error:quan_item.is_end_error}"
+                                        placeholder="最高价" onkeyup="onlyPositiveInt(this)">
+                                </li>
 
-                    <!-- 分类选择  START -->
-                    <div class="select_box js_catalog_box">
-                        <span class="name"> {{catalog_name}} </span>
-                        <ul>
-                            <!--  -->
-                            <li v-for="item in catalog_items" v-bind:class="{catalog_btn_bg: item.is_select}"
-                                v-on:click="selectCatalogItem(item.value)">
-                                <a>{{item.name}}</a>
-                            </li>
-                            <!--  -->
-                        </ul>
+                                <li class="btn">
+                                    <span @click="clear" class="confirm">重置</span>
+                                    <span @click="confirm" class="confirm">确认</span>
+                                </li>
+
+                            </ul>
+                        </div>
                     </div>
-                    <!-- 分类选择  END -->
-                    <!-- 多条件筛选   START -->
-                    <div class="multi_select_box">
-                        <span class="name">{{filter_name}}</span>
-                        <ul>
-                            <!-- 分割线 -->
-                            <li v-for="item in filter_items" v-on:click="multiSelect(item.index)" v-bind:class="{is_multi_selected: item.is_small_select}">
-                                <a type="radio">
-                                    <span v-bind:class="{multi_selected: item.is_select}">
-                                        <i class="icon-font i-tick"></i>
-                                    </span>
-                                    {{item.name}}
-                                </a>
-                            </li>
-                            <!-- 分割线 -->
-                        </ul>
-                    </div>
-                    <!-- 多条件筛选   END -->
-                    <!-- 更多筛选条件   START -->
-                    <div class="more_filter">
-                        <span class="name">{{more_filter_name}}</span>
-                        <ul>
-                            <li class="sale">
-                                <span>{{sale_item.name}}</span>
-                                <input maxlength="8" v-model="sale_item.value" v-bind:class="{input_error:sale_item.is_error}"
-                                    onkeyup="onlyPositiveInt(this)">
-                            </li>
-                            <li class="score">
-                                <span>{{score_item.name}}</span>
-                                <input maxlength="3" v-model="score_item.value" v-bind:class="{input_error:score_item.is_error}"
-                                    onkeyup="zeroToFive(this)">
-                                <span class="tip">{{score_item.tip}}</span>
-                            </li>
-                            <li class="quan">
-                                <span>{{quan_item.name}}</span>
-                                <input maxlength="8" class="one" v-model="quan_item.start_price" v-bind:class="{input_error:quan_item.is_start_error}"
-                                    placeholder="最低价" onkeyup="onlyPositiveInt(this)">
-                                <span class="split">—</span>
-                                <input maxlength="8" class="two" v-model="quan_item.end_price" v-bind:class="{input_error:quan_item.is_end_error}"
-                                    placeholder="最高价" onkeyup="onlyPositiveInt(this)">
-                            </li>
-
-                            <li class="btn">
-                                <span @click="clear" class="confirm">重置</span>
-                                <span @click="confirm" class="confirm">确认</span>
-                            </li>
-
-                        </ul>
+                    <!-- 重置、确认按钮 -->
+                    <div class="btn_bottom_container">
+                        <span class="confirm" @click="clear">重置</span>
+                        <span class="confirm" @click="confirm">确认</span>
                     </div>
                     <!-- 更多筛选条件   END -->
                     <!-- 加载动画  START -->
@@ -150,11 +156,6 @@
 
                 <!-- 排序方式   START -->
                 <div class="sort_way js_sort_way" v-cloak>
-                    <!-- 放在这是因为上面的元素过度动画会影响这个元素的动画 -->
-                    <p class="confirm_btn js_confirm_btn" ref="js_confirm_btn">
-                        <span class="confirm" @click="clear">重置</span>
-                        <span class="confirm" @click="confirm">确认</span>
-                    </p>
                     <!--  -->
                     <ul class="btn_box">
                         <!-- "综合" -->
@@ -236,7 +237,7 @@
                                                 @mouseout="hideLayer(item)">
                                                 险
                                             </span>
-                                            <transition name="layer" >
+                                            <transition name="layer">
                                                 <span v-show="item.is_show_yun" class="layer">
                                                     运费险
                                                     <i class="icon-font i-play"></i>
