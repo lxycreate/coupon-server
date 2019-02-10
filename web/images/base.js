@@ -690,7 +690,6 @@ function checkWindowWidth() {
         //虽然实际使用中几乎不存在设备的尺寸突然变大变小(除了开发者模式调试)
         //还是将该元素定位重置
         js_filter_container.$refs.js_filter_container.style.marginLeft = '0px';
-        js_sort_way.$refs.js_confirm_btn.style.marginLeft = '0px';
 
     } else {
         js_filter_container.catalog_name = "分类";

@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6b55afe-840f-4367-bc2e-05ed1ae9c4a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/images/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/images/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/main.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -114,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/static/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4427">
-              <caret line="233" column="60" selection-start-line="233" selection-start-column="60" selection-end-line="233" selection-end-column="60" />
+            <state relative-caret-position="4332">
+              <caret line="228" column="60" selection-start-line="228" selection-start-column="60" selection-end-line="228" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -1021,7 +1018,7 @@
       <path value="$PROJECT_DIR$/web/node_modules/yeast/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="735" />
     <option name="width" value="915" />
     <option name="height" value="930" />
@@ -1379,7 +1376,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.2271625" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1606,8 +1603,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/static/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4427">
-          <caret line="233" column="60" selection-start-line="233" selection-start-column="60" selection-end-line="233" selection-end-column="60" />
+        <state relative-caret-position="4332">
+          <caret line="228" column="60" selection-start-line="228" selection-start-column="60" selection-end-line="228" selection-end-column="60" />
         </state>
       </provider>
     </entry>
