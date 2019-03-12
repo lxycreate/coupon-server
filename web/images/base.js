@@ -93,7 +93,7 @@ function initScroll() {
     });
     window.onscroll = function () {
         // 滚动条距离顶部的高度
-        var scroll_top = document.documentElement.scrollTop;
+        var scroll_top = document.documentElement.scrollTop|| window.pageYOffset;
         //  获取屏幕可是宽度
         var client_width = document.documentElement.clientWidth;
         // 搜索框吸顶  start
@@ -120,7 +120,6 @@ function initScroll() {
         var window_height = document.documentElement.clientHeight;
         //滚动条的总高度
         var scroll_height = document.documentElement.scrollHeight;
-
         if (scroll_top + window_height + 1 >= scroll_height && js_goods_area.can_ajax && js_goods_area.is_more_goods) {
             loadNextPage();
         }
