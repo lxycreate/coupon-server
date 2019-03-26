@@ -140,6 +140,11 @@
 
                         </ul>
                     </div>
+                    <!-- 重置、确认按钮 -->
+                    <div class="btn_bottom_container">
+                        <span class="confirm" @click="clear">重置</span>
+                        <span class="confirm" @click="confirm">确认</span>
+                    </div>
                     <!-- 更多筛选条件   END -->
                     <!-- 加载动画  START -->
                     <div v-if="is_loading" class="loading">
@@ -150,12 +155,7 @@
 
                 <!-- 排序方式   START -->
                 <div class="sort_way js_sort_way" v-cloak>
-                    <!-- 放在这是因为上面的元素过度动画会影响这个元素的动画 -->
-                    <p class="confirm_btn js_confirm_btn" ref="js_confirm_btn">
-                        <span class="confirm" @click="clear">重置</span>
-                        <span class="confirm" @click="confirm">确认</span>
-                    </p>
-                    <!--  -->
+                   
                     <ul class="btn_box">
                         <!-- "综合" -->
                         <li class="btn" v-bind:class="{is_sort_selected:sort_item[0].is_select}">
