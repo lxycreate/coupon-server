@@ -74,7 +74,7 @@ public class GoodsServiceImpl implements GoodsService {
 
             Integer cid = temp_goods.getCid();
             //该分类下商品总数
-            Integer temp_count = goods_dao.getGoodsCountByCid(cid);
+            Integer temp_count = 1000;
             //随机从哪行开始取推荐商品
             Double ran = (Math.random() * temp_count);
             Integer temp_start = ran.intValue();
