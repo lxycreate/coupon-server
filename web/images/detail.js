@@ -7,7 +7,7 @@ var js_ceil_box;
 var js_mid;
 
 // 初始化函数
-window.onload = function () {
+window.onload = function() {
     initScroll();
     initMid();
     // getGoodsDetail();
@@ -23,12 +23,12 @@ function initScroll() {
             search_word: ""
         },
         methods: {
-            search: function () {
-                if (this.search_word != '') {
-                    window.location.href = "search.html?search=" + encodeURI(this.search_word);
+            search: function() {
+                    if (this.search_word != '') {
+                        window.location.href = "search.html?search=" + encodeURI(this.search_word);
+                    }
                 }
-            }
-            // 
+                // 
         }
     });
 
@@ -39,7 +39,7 @@ function initScroll() {
             is_show: false
         }
     });
-    window.onscroll = function () {
+    window.onscroll = function() {
         // 滚动条距离顶部的高度
         var scroll_top = document.documentElement.scrollTop;
         //  获取屏幕可是宽度
@@ -90,11 +90,11 @@ function initMid() {
             is_show_totop: false,
             is_show_yun: false
         },
-        created: function () {
+        created: function() {
             this.initGoodsDetail();
         },
         methods: {
-            initGoodsDetail: function () {
+            initGoodsDetail: function() {
                 console.log(window.location.search)
                 var temp = decodeURI(window.location.search);
                 if (temp != '' && temp != null) {
@@ -112,22 +112,22 @@ function initMid() {
                     getGoodsDetail(this.goods_id);
                 }
             },
-            goToDetail: function (goods_id) {
+            goToDetail: function(goods_id) {
                 window.location.href = "detail.html?goods_id=" + goods_id;
                 console.log(goods_id);
             },
-            scrollToTop: function () {
+            scrollToTop: function() {
                 Velocity(document.documentElement, 'scroll', {
                     offset: 0
                 }, 2000);
             },
-            showLayer: function (obj, type) {
+            showLayer: function(obj, type) {
                 obj[type] = true;
             },
-            hideLayer: function (obj, type) {
-                obj[type] = false;
-            }
-            // 
+            hideLayer: function(obj, type) {
+                    obj[type] = false;
+                }
+                // 
         }
     })
 }
@@ -146,12 +146,12 @@ function getGoodsDetail(goods_id) {
         params: {
             goods_id: goods_id
         }
-    }).then(function (response) {
+    }).then(function(response) {
         if (response != null) {
             loadData(response);
         }
-        console.log(response);
-    }).catch(function (error) {
+        // console.log(response);
+    }).catch(function(error) {
         console.log(error);
     });
 }
@@ -166,6 +166,25 @@ function loadData(response) {
         e['is_show_ji'] = false;
         e['is_show_hai'] = false;
         e['is_show_yun'] = false;
+        if (e.is_ju == '-1') {
+            e.is_ju = 0;
+        }
+        if (e.is_qiang == '-1') {
+            e.is_qiang = 0;
+        }
+        if (e.is_yun == '-1') {
+            e.is_yun = 0;
+        }
+        if (e.is_gold == '-1') {
+            e.is_gold = 0;
+        }
+        if (e.is_ji == '-1') {
+            e.is_ji = 0;
+        }
+        if (e.is_hai == '-1') {
+            e.is_hai = 0;
+        }
+        console.log(e);
         js_mid.goods_detail = e;
         js_mid.goods_pic = e.goods_pic;
     }
@@ -173,6 +192,24 @@ function loadData(response) {
         for (var i = 0; i < response.data.goods_list.length; ++i) {
             var e = response.data.goods_list[i];
             e['is_show_yun'] = false;
+            if (e.is_ju == '-1') {
+                e.is_ju = 0;
+            }
+            if (e.is_qiang == '-1') {
+                e.is_qiang = 0;
+            }
+            if (e.is_yun == '-1') {
+                e.is_yun = 0;
+            }
+            if (e.is_gold == '-1') {
+                e.is_gold = 0;
+            }
+            if (e.is_ji == '-1') {
+                e.is_ji = 0;
+            }
+            if (e.is_hai == '-1') {
+                e.is_hai = 0;
+            }
             js_mid.goods_list.push(e);
         }
     }

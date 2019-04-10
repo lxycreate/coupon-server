@@ -16,7 +16,7 @@ var error_count = 0;
 var search_data = {};
 
 // 初始化函数
-window.onload = function () {
+window.onload = function() {
 
     //直接回到顶部,没有动画
     scrollToTopDirect();
@@ -44,7 +44,7 @@ function initScroll() {
             search_word: ""
         },
         methods: {
-            initSearch: function () {
+            initSearch: function() {
                 var temp = decodeURI(window.location.search);
                 var word = temp.substring(8, temp.length);
                 console.log(word);
@@ -60,27 +60,27 @@ function initScroll() {
                     loadGoods('');
                 }
             },
-            search: function () {
+            search: function() {
 
-                if (now_page_name != 'search' && this.search_word != '') {
-                    window.location.href = "search.html?search=" + encodeURI(this.search_word);
-                }
+                    if (now_page_name != 'search' && this.search_word != '') {
+                        window.location.href = "search.html?search=" + encodeURI(this.search_word);
+                    }
 
-                if (now_page_name == 'search' && this.search_word != '') {
-                    // 不支持后退
-                    addProperty('word', this.search_word);
-                    // 支持后退
-                    // window.location.href = "search.html?search=" + encodeURI(this.search_word);
+                    if (now_page_name == 'search' && this.search_word != '') {
+                        // 不支持后退
+                        addProperty('word', this.search_word);
+                        // 支持后退
+                        // window.location.href = "search.html?search=" + encodeURI(this.search_word);
+                    }
+                    if (now_page_name == 'search' && this.search_word == '') {
+                        // 不支持后退
+                        search_data['word'] = '';
+                        deleteProperty('word');
+                        // 支持后退
+                        // window.location.href = "search.html?search=all";
+                    }
                 }
-                if (now_page_name == 'search' && this.search_word == '') {
-                    // 不支持后退
-                    search_data['word'] = '';
-                    deleteProperty('word');
-                    // 支持后退
-                    // window.location.href = "search.html?search=all";
-                }
-            }
-            // 
+                // 
         }
     });
 
@@ -91,9 +91,9 @@ function initScroll() {
             is_show: false
         }
     });
-    window.onscroll = function () {
+    window.onscroll = function() {
         // 滚动条距离顶部的高度
-        var scroll_top = document.documentElement.scrollTop|| window.pageYOffset;
+        var scroll_top = document.documentElement.scrollTop || window.pageYOffset;
         //  获取屏幕可是宽度
         var client_width = document.documentElement.clientWidth;
         // 搜索框吸顶  start
@@ -277,13 +277,13 @@ function initCatalogBox() {
             },
             is_loading: false
         },
-        created: function () {
+        created: function() {
             // 初始化目录
             this.catalog_value = '0';
         },
         methods: {
             // 单选目录事件
-            selectCatalogItem: function (value) {
+            selectCatalogItem: function(value) {
                 this.catalog_value = value;
                 for (var i = 0; i < this.catalog_items.length; ++i) {
                     this.catalog_items[i].is_select = false;
@@ -298,7 +298,7 @@ function initCatalogBox() {
                 }
             },
             // 多选筛选条件事件
-            multiSelect: function (index) {
+            multiSelect: function(index) {
                 // 多选取消选中
                 if (this.filter_items[index - 1].is_select) {
                     this.filter_items[index - 1].is_select = false;
@@ -344,7 +344,7 @@ function initCatalogBox() {
                     addProperty(this.filter_items[index_temp - 1].an_name, '1');
                 }
             },
-            clear: function () {
+            clear: function() {
                 this.resetCatalogItem();
                 this.resetMultiSelect();
                 this.resetInput();
@@ -357,7 +357,7 @@ function initCatalogBox() {
                 console.log('Clear');
             },
             //重置目录
-            resetCatalogItem: function () {
+            resetCatalogItem: function() {
                 this.catalog_value = '0';
                 for (var i = 1; i < this.catalog_items.length; ++i) {
                     this.catalog_items[i].is_select = false;
@@ -365,7 +365,7 @@ function initCatalogBox() {
                 this.catalog_items[0].is_select = true;
             },
             //重置多选
-            resetMultiSelect: function () {
+            resetMultiSelect: function() {
                 this.filter_value = '';
                 for (var i = 0; i < this.filter_items.length; ++i) {
                     this.filter_items[i].is_select = false;
@@ -373,13 +373,13 @@ function initCatalogBox() {
                 }
             },
             //重置输入框
-            resetInput: function () {
+            resetInput: function() {
                 this.sale_item.value = '';
                 this.score_item.value = '';
                 this.quan_item.start_price = '';
                 this.quan_item.end_price = '';
             },
-            confirm: function () {
+            confirm: function() {
                 this.checkAfterCoupon();
                 this.deleteInputValue();
                 this.addInputValue();
@@ -391,7 +391,7 @@ function initCatalogBox() {
                 console.log('Confirm');
             },
             //检查券后价
-            checkAfterCoupon: function () {
+            checkAfterCoupon: function() {
                 if (isNumber(this.quan_item.start_price) && isNumber(this.quan_item.end_price)) {
                     var start = parseInt(this.quan_item.start_price);
                     var end = parseInt(this.quan_item.end_price);
@@ -403,7 +403,7 @@ function initCatalogBox() {
                 }
             },
             //从search_data中删除input
-            deleteInputValue: function () {
+            deleteInputValue: function() {
                 if (search_data.hasOwnProperty('sale_num')) {
                     delete search_data['sale_num'];
                 }
@@ -418,21 +418,21 @@ function initCatalogBox() {
                 }
             },
             //向search_data中添加input值
-            addInputValue: function () {
-                if (this.sale_item.value != '') {
-                    search_data['sale_num'] = this.sale_item.value;
+            addInputValue: function() {
+                    if (this.sale_item.value != '') {
+                        search_data['sale_num'] = this.sale_item.value;
+                    }
+                    if (this.score_item.value != '') {
+                        search_data['dsr'] = this.score_item.value;
+                    }
+                    if (this.quan_item.start_price != '') {
+                        search_data['start_price'] = this.quan_item.start_price;
+                    }
+                    if (this.quan_item.end_price != '') {
+                        search_data['end_price'] = this.quan_item.end_price;
+                    }
                 }
-                if (this.score_item.value != '') {
-                    search_data['dsr'] = this.score_item.value;
-                }
-                if (this.quan_item.start_price != '') {
-                    search_data['start_price'] = this.quan_item.start_price;
-                }
-                if (this.quan_item.end_price != '') {
-                    search_data['end_price'] = this.quan_item.end_price;
-                }
-            }
-            // 
+                // 
         }
     });
     // Vue App
@@ -455,7 +455,7 @@ function initSortBtn() {
                 name: '销量',
                 type: 'goods_sale',
                 is_select: false
-                // 销量只有降序排序
+                    // 销量只有降序排序
             }, {
                 name: '价格',
                 type: 'goods_price',
@@ -469,13 +469,13 @@ function initSortBtn() {
         },
         methods: {
             // 价格排序
-            sortByPrice: function () {
+            sortByPrice: function() {
                 this.changeSelectedColor(2);
                 this.transformIcon();
                 this.sort_item[2].is_up = !this.sort_item[2].is_up;
             },
             //  切换价格排序的icon
-            transformIcon: function () {
+            transformIcon: function() {
                 Velocity(this.$refs.js_transform, 'stop');
                 if (!this.sort_item[2].is_up) {
                     Velocity(this.$refs.js_transform, {
@@ -494,7 +494,7 @@ function initSortBtn() {
                 }
             },
             // 重置价格排序的icon
-            resetPriceIcon: function () {
+            resetPriceIcon: function() {
                 Velocity(this.$refs.js_transform, 'stop');
                 Velocity(this.$refs.js_transform, {
                     'margin-top': '13px',
@@ -503,12 +503,12 @@ function initSortBtn() {
                 this.sort_item[2].is_up = false;
             },
             // 切换列表显示方式
-            toggleList: function () {
+            toggleList: function() {
                 this.toggle_list.is_first_icon = !this.toggle_list.is_first_icon;
                 js_goods_area.toggle_list = !js_goods_area.toggle_list;
             },
             // 显示筛选侧边
-            showSide: function () {
+            showSide: function() {
                 if (isMidSmallScreen() && !this.is_show_side) {
                     this.stopSideAnimate();
                     this.is_show_shade = true;
@@ -520,20 +520,20 @@ function initSortBtn() {
                 }
             },
             // 隐藏筛选侧边
-            hideSide: function () {
+            hideSide: function() {
                 if (isMidSmallScreen() && this.is_show_side) {
                     this.stopSideAnimate();
                     this.is_show_side = false;
                     this.is_show_shade = false;
                     Velocity(js_filter_container.$refs.js_filter_container, {
                         'margin-left': '0px'
-                        // 同上
+                            // 同上
                     });
                     console.log('隐藏侧边栏');
                 }
             },
             // 切换侧边显示状态
-            toggleSide: function () {
+            toggleSide: function() {
                 if (this.is_show_side) {
                     this.hideSide();
                 } else {
@@ -541,26 +541,26 @@ function initSortBtn() {
                 }
             },
             // 停止侧边动画(防止操作频率过快导致异常)
-            stopSideAnimate: function () {
+            stopSideAnimate: function() {
                 Velocity(js_filter_container.$refs.js_filter_container, 'stop');
             },
             // 切换排序方式
-            changeSortWay: function (index, way) {
+            changeSortWay: function(index, way) {
                 this.changeSelectedColor(index);
                 addProperty('sort', way);
             },
             // 改变被选中的排序按钮的颜色
-            changeSelectedColor: function (index) {
-                // 价格图标按钮重置
-                if (index != 2) {
-                    this.resetPriceIcon();
+            changeSelectedColor: function(index) {
+                    // 价格图标按钮重置
+                    if (index != 2) {
+                        this.resetPriceIcon();
+                    }
+                    for (var i = 0; i < this.sort_item.length; ++i) {
+                        this.sort_item[i].is_select = false;
+                    }
+                    this.sort_item[index].is_select = true;
                 }
-                for (var i = 0; i < this.sort_item.length; ++i) {
-                    this.sort_item[i].is_select = false;
-                }
-                this.sort_item[index].is_select = true;
-            }
-            // 事件 end
+                // 事件 end
         }
     });
     // Vue App
@@ -583,17 +583,17 @@ function initGoodsList() {
             is_show_totop: false, //是否显示滚动到顶部按钮
             can_ajax: true
         },
-        created: function () {
+        created: function() {
             this.initSearchData();
         },
         methods: {
-            resetPageNum: function () {
+            resetPageNum: function() {
                 this.page_num = 1;
                 search_data['page_num'] = this.page_num;
                 search_data['page_size'] = this.page_size;
             },
             // 初始化search_data
-            initSearchData: function () {
+            initSearchData: function() {
                 this.resetPageNum();
                 //特惠商品
                 if (now_page_name == 'bargain') {
@@ -605,12 +605,12 @@ function initGoodsList() {
                 }
             },
             // 清空当前商品列表
-            clearListItems: function () {
+            clearListItems: function() {
                 this.list_items = [];
                 this.resetPageNum();
             },
             // 重置search_data
-            clearSearchData: function () {
+            clearSearchData: function() {
                 var temp = search_data['sort'];
                 var word = search_data['word'];
                 search_data = {};
@@ -626,25 +626,25 @@ function initGoodsList() {
                 this.initSearchData();
             },
             // 滚动到顶部
-            scrollToTop: function () {
+            scrollToTop: function() {
                 Velocity(document.documentElement, 'scroll', {
                     offset: 0
                 }, 2000);
             },
             // 跳转详情页
-            goToDetail: function (goods_id) {
+            goToDetail: function(goods_id) {
                 window.location.href = "detail.html?goods_id=" + goods_id;
                 console.log(goods_id);
             },
             // 显示运费险弹窗
-            showLayer: function (item) {
+            showLayer: function(item) {
                 item.is_show_yun = true;
             },
             // 隐藏运费险弹窗
-            hideLayer: function (item) {
-                item.is_show_yun = false;
-            }
-            // 
+            hideLayer: function(item) {
+                    item.is_show_yun = false;
+                }
+                // 
         }
         // 
     });
@@ -654,7 +654,7 @@ function initGoodsList() {
 // 监测窗口大小变化
 function watchWindow() {
     checkWindowWidth();
-    window.onresize = function () {
+    window.onresize = function() {
         checkWindowWidth();
     }
 }
@@ -766,7 +766,7 @@ function loadGoods(pro_name) {
     if (pro_name != 'sort') {
         js_filter_container.is_loading = true;
     }
-    setTimeout(function () {
+    setTimeout(function() {
         getGoods();
     }, 300);
 }
@@ -780,7 +780,7 @@ function loadNextPage() {
     js_goods_area.is_loading_more = true;
 
     search_data['page_num'] = js_goods_area.page_num + 1;
-    setTimeout(function () {
+    setTimeout(function() {
         getGoods();
         js_goods_area.page_num = js_goods_area.page_num + 1;
     }, 600);
@@ -792,12 +792,12 @@ function getGoods() {
         url: base_url + '/getGoods',
         method: 'get',
         params: search_data
-    }).then(function (response) {
+    }).then(function(response) {
         //处理返回的数据
         taskData(response);
         js_goods_area.can_ajax = true; //可以加载下一页
         // console.log(response);
-    }).catch(function (error) {
+    }).catch(function(error) {
         error_count++;
         if (error_count >= 3) {
             js_goods_area.can_ajax = false;
@@ -820,7 +820,7 @@ function taskData(response) {
         js_goods_area.is_more_goods = true;
     } else {
         // 保证加载动画结束后才出现"没有更多了..."提示
-        setTimeout(function () {
+        setTimeout(function() {
             js_goods_area.is_more_goods = false;
         }, 300);
     }
@@ -830,6 +830,24 @@ function taskData(response) {
             var e = response.data.goods[i];
             if (e.is_yun == "1") {
                 e['is_show_yun'] = false;
+            }
+            if (e.is_ju == '-1') {
+                e.is_ju = 0;
+            }
+            if (e.is_qiang == '-1') {
+                e.is_qiang = 0;
+            }
+            if (e.is_yun == '-1') {
+                e.is_yun = 0;
+            }
+            if (e.is_gold == '-1') {
+                e.is_gold = 0;
+            }
+            if (e.is_ji == '-1') {
+                e.is_ji = 0;
+            }
+            if (e.is_hai == '-1') {
+                e.is_hai = 0;
             }
             js_goods_area.list_items.push(e);
         }
@@ -845,7 +863,7 @@ function scrollToTopDirect() {
 
 //关闭加载动画
 function closeLoading() {
-    setTimeout(function () {
+    setTimeout(function() {
         js_goods_area.is_loading = false;
         js_filter_container.is_loading = false;
         js_goods_area.is_loading_more = false;
@@ -891,9 +909,9 @@ function test() {
         params: {
             test: 1
         }
-    }).then(function (response) {
+    }).then(function(response) {
         console.log(response);
-    }).catch(function (error) {
+    }).catch(function(error) {
 
     });
 }
