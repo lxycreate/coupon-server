@@ -8,15 +8,15 @@ public class CorsFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) {
-        try {
-            HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
-            httpResponse.addHeader("Access-Control-Allow-Origin", "*");
-            filterChain.doFilter(servletRequest, servletResponse);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ServletException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
+//            httpResponse.addHeader("Access-Control-Allow-Origin", "*");
+//            filterChain.doFilter(servletRequest, servletResponse);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (ServletException e) {
+//            e.printStackTrace();
+//        }
     }
 
 }
