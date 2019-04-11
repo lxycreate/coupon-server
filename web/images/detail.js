@@ -167,25 +167,26 @@ function loadData(response) {
         e['is_show_hai'] = false;
         e['is_show_yun'] = false;
         if (e.is_ju == '-1') {
-            e.is_ju = 0;
+            e.is_ju = false;
         }
         if (e.is_qiang == '-1') {
-            e.is_qiang = 0;
+            e.is_qiang = false;
         }
         if (e.is_yun == '-1') {
-            e.is_yun = 0;
+            e.is_yun = false;
         }
         if (e.is_gold == '-1') {
-            e.is_gold = 0;
+            e.is_gold = false;
         }
         if (e.is_ji == '-1') {
-            e.is_ji = 0;
+            e.is_ji = false;
         }
         if (e.is_hai == '-1') {
-            e.is_hai = 0;
+            e.is_hai = false;
         }
-        console.log(e);
         js_mid.goods_detail = e;
+        console.log(js_mid.goods_detail);
+        console.log('111');
         js_mid.goods_pic = e.goods_pic;
     }
     if (response.data.goods_list != null) {
@@ -193,22 +194,22 @@ function loadData(response) {
             var e = response.data.goods_list[i];
             e['is_show_yun'] = false;
             if (e.is_ju == '-1') {
-                e.is_ju = 0;
+                e.is_ju = false;
             }
             if (e.is_qiang == '-1') {
-                e.is_qiang = 0;
+                e.is_qiang = false;
             }
             if (e.is_yun == '-1') {
-                e.is_yun = 0;
+                e.is_yun = false;
             }
             if (e.is_gold == '-1') {
-                e.is_gold = 0;
+                e.is_gold = false;
             }
             if (e.is_ji == '-1') {
-                e.is_ji = 0;
+                e.is_ji = false;
             }
             if (e.is_hai == '-1') {
-                e.is_hai = 0;
+                e.is_hai = false;
             }
             js_mid.goods_list.push(e);
         }

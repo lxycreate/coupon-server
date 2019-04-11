@@ -828,26 +828,23 @@ function taskData(response) {
     if (response.data.goods != null && response.data.goods.length != 0) {
         for (var i = 0; i < response.data.goods.length; ++i) {
             var e = response.data.goods[i];
-            if (e.is_yun == "1") {
-                e['is_show_yun'] = false;
-            }
             if (e.is_ju == '-1') {
-                e.is_ju = 0;
+                e.is_ju = false;
             }
             if (e.is_qiang == '-1') {
-                e.is_qiang = 0;
+                e.is_qiang = false;
             }
             if (e.is_yun == '-1') {
-                e.is_yun = 0;
+                e.is_yun = false;
             }
             if (e.is_gold == '-1') {
-                e.is_gold = 0;
+                e.is_gold = false;
             }
             if (e.is_ji == '-1') {
-                e.is_ji = 0;
+                e.is_ji = false;
             }
             if (e.is_hai == '-1') {
-                e.is_hai = 0;
+                e.is_hai = false;
             }
             js_goods_area.list_items.push(e);
         }

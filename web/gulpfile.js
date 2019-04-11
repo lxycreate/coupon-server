@@ -19,4 +19,6 @@ gulp.task('webserver-static', gulp.series(function () {
 // gulp.task('default', function () {
 //     gulp.run('webserver-static');
 // });
-gulp.task('default', gulp.series['webserver-static']);
+gulp.task('main', gulp.series['webserver-static']),{
+    
+};
