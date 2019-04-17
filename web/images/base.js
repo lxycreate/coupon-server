@@ -68,6 +68,7 @@ function initScroll() {
 
                     if (now_page_name == 'search' && this.search_word != '') {
                         // 不支持后退
+                        scrollToTopDirect();
                         addProperty('word', this.search_word);
                         // 支持后退
                         // window.location.href = "search.html?search=" + encodeURI(this.search_word);
