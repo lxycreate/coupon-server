@@ -16,9 +16,5 @@ gulp.task('webserver-static', gulp.series(function () {
     gulp.watch('static/*.*').on("change", browserSync.reload);;
 }));
 
-// gulp.task('default', function () {
-//     gulp.run('webserver-static');
-// });
-gulp.task('main', gulp.series['webserver-static']),{
-    
-};
+gulp.task('default', gulp.series('webserver-static', function() {
+}));

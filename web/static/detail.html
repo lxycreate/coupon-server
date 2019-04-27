@@ -42,7 +42,8 @@
                     <a v-show="is_show" class="logo_box" href="main.html">
                         <img src="../images/logo.png">
                     </a>
-                    <form v-bind:class="{no_margin : !is_show}" class="search_input js_search_input" onsubmit="return search()">
+                    <form v-bind:class="{no_margin : !is_show}" class="search_input js_search_input"
+                        onsubmit="return search()">
                         <input v-model="search_word" placeholder="商品标题、关键字">
                         <i class="icon-font i-search-pc" @click="search"></i>
                     </form>
@@ -105,7 +106,8 @@
                                     <!-- <span class="ju">聚</span> -->
                                     <!-- 金牌卖家 -->
                                     <span v-if="goods_detail.is_gold" class="cover">
-                                        <span class="jin" title="金牌卖家" @mouseover="showLayer(goods_detail,'is_show_jin')"
+                                        <span class="jin" title="金牌卖家"
+                                            @mouseover="showLayer(goods_detail,'is_show_jin')"
                                             @mouseout="hideLayer(goods_detail,'is_show_jin')">金</span>
                                         <transition name="layer">
                                             <span v-show="goods_detail.is_show_jin" class="layer jin">
@@ -138,7 +140,8 @@
                                     </span>
                                     <!-- 运费险 -->
                                     <span v-if="goods_detail.is_yun" class="cover">
-                                        <span class="xian" title="运费险" @mouseover="showLayer(goods_detail,'is_show_yun')"
+                                        <span class="xian" title="运费险"
+                                            @mouseover="showLayer(goods_detail,'is_show_yun')"
                                             @mouseout="hideLayer(goods_detail,'is_show_yun')">险</span>
                                         <transition name="layer">
                                             <span v-show="goods_detail.is_show_yun" class="layer xian">
@@ -203,8 +206,10 @@
                                     <span class="img_box">
                                         <img v-bind:src="item.goods_pic">
                                         <span class="link_box">
-                                            <a target="_blank" v-if="item.is_tmall"><i class="icon-font i-right"></i>去天猫</a>
-                                            <a target="_blank" v-if="!item.is_tmall"><i class="icon-font i-right"></i>去淘宝</a>
+                                            <a target="_blank" v-if="item.is_tmall"><i
+                                                    class="icon-font i-right"></i>去天猫</a>
+                                            <a target="_blank" v-if="!item.is_tmall"><i
+                                                    class="icon-font i-right"></i>去淘宝</a>
                                             <a target="_blank"><i class="icon-font i-installment"></i>去领券</a>
                                         </span>
                                         <span v-if="item.is_ju" class="ju">正在参加聚划算</span>
@@ -228,7 +233,8 @@
                                                 <span class="num">{{item.goods_price}}</span>
                                             </span>
                                             <span v-if="item.is_yun" class="tag_box">
-                                                <span class="xian" title="运费险" @mouseover="showLayer(item,'is_show_yun')"
+                                                <span class="xian" title="运费险"
+                                                    @mouseover="showLayer(item,'is_show_yun')"
                                                     @mouseout="hideLayer(item,'is_show_yun')">险</span>
                                                 <transition name="layer">
                                                     <span v-show="item.is_show_yun" class="layer">
