@@ -201,7 +201,7 @@
                 <span v-show="is_loading" class="loading">加载中...</span>
                 <!-- 商品列表   START -->
                 <ul class="goods_list js_goods_list" v-bind:class="{toggle_goods_list:toggle_list}">
-                    <li v-for="item in list_items" v-bind:class="{toggle_li:toggle_list}">
+                    <li v-for="(item,index) in list_items" v-bind:class="{toggle_li:toggle_list}" v-bind:key="index">
                         <span class="item" v-bind:class="{toggle_item:toggle_list}">
                             <span class="container" v-bind:class="{toggle_container:toggle_list}">
                                 <!-- 商品图片 -->
@@ -233,8 +233,8 @@
                                             <span class="num">{{item.goods_price}}</span>
                                         </span>
                                         <span v-if="item.is_yun" class="tag_box">
-                                            <span v-show="item.is_yun" class="xian" title="运费险" @mouseover="showLayer(item)"
-                                                @mouseout="hideLayer(item)">
+                                            <span v-show="item.is_yun" class="xian" title="运费险" @mouseover="showLayer(index)"
+                                                @mouseout="hideLayer(index)">
                                                 险
                                             </span>
                                             <transition name="layer">
