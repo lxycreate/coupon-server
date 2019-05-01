@@ -111,21 +111,21 @@
                             <li class="sale">
                                 <span>{{sale_item.name}}</span>
                                 <input maxlength="8" v-model="sale_item.value" v-bind:class="{input_error:sale_item.is_error}"
-                                    onkeyup="onlyPositiveInt(this)">
+                                    onkeyup="onlyPositiveInt(this)" v-on:blur="fixValueRemains(sale_item)">
                             </li>
                             <li class="score">
                                 <span>{{score_item.name}}</span>
                                 <input maxlength="3" v-model="score_item.value" v-bind:class="{input_error:score_item.is_error}"
-                                    onkeyup="zeroToFive(this)">
+                                    onkeyup="zeroToFive(this)" v-on:blur="fixValueRemains(score_item)">
                                 <span class="tip">{{score_item.tip}}</span>
                             </li>
                             <li class="quan">
                                 <span>{{quan_item.name}}</span>
                                 <input maxlength="8" class="one" v-model="quan_item.start_price" v-bind:class="{input_error:quan_item.is_start_error}"
-                                    placeholder="最低价" onkeyup="onlyPositiveInt(this)">
+                                    placeholder="最低价" onkeyup="onlyPositiveInt(this)" v-on:blur="fixValueRemains(quan_item)">
                                 <span class="split">—</span>
                                 <input maxlength="8" class="two" v-model="quan_item.end_price" v-bind:class="{input_error:quan_item.is_end_error}"
-                                    placeholder="最高价" onkeyup="onlyPositiveInt(this)">
+                                    placeholder="最高价" onkeyup="onlyPositiveInt(this)" v-on:blur="fixValueRemains(quan_item)">
                             </li>
 
                             <li class="btn">

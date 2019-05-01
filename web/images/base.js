@@ -432,7 +432,20 @@ function initCatalogBox() {
                 if (this.quan_item.end_price != '') {
                     search_data['end_price'] = this.quan_item.end_price;
                 }
-            }
+            },
+            // 修复输入后在相应的value中残留的事件
+            fixValueRemains: function (obj) {
+                if (obj == this.sale_item) {
+                    this.sale_item.value = obj.value.replace(/\D/g, "");
+                }
+                if (obj == this.score_item) {
+                    this.score_item.value = obj.value.replace(/[^\d.]/g, "");
+                }
+                if (obj == this.quan_item) {
+                    this.quan_item.start_price = obj.start_price.replace(/\D/g, "");
+                    this.quan_item.end_price = obj.end_price.replace(/\D/g, "");
+                }
+            },
             // 
         }
     });
