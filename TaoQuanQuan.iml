@@ -22,8 +22,6 @@
         <fileset id="fileset" name="SpringMvc" removed="false">
           <file>file://$MODULE_DIR$/src/applicationContext.xml</file>
           <file>file://$MODULE_DIR$/src/springMvc.xml</file>
-          <file>file://$MODULE_DIR$/src/mybatis.xml</file>
-          <file>file://$MODULE_DIR$/src/mapper/platMapper.xml</file>
         </fileset>
       </configuration>
     </facet>
